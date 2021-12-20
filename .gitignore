@@ -1,0 +1,8 @@
+node_modules
+/.cache/
+/.idea/
+/.yarn/cache/
+/yarn-error.log
+/package-lock.json
+/.docz/app/db.json
+/.yarn/install-state.gz
