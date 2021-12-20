@@ -33,8 +33,10 @@
     "gatsby-theme-docz": "2.3.1",
     "gatsby-transformer-remark": "4.1.0",
     "gatsby-transformer-sharp": "3.2.0",
+    "gh-pages": "^3.2.3",
     "i18next": "20.2.4",
     "lodash": "4.17.21",
+    "postcss": "8.4.5",
     "preact": "10.5.13",
     "preact-render-to-string": "5.1.19",
     "prismjs": "1.23.0",
@@ -66,7 +68,10 @@
     "react-split-pane": "0.1.92"
   },
   "resolutions": {
-    "graphql": "15.5.0"
+    "graphql": "15.5.0",
+    "get-pkg-repo": "4.1.1",
+    "hosted-git-info": "^2.1.4",
+    "webpack": "5.52.1"
   },
   "keywords": [
     "gatsby"
