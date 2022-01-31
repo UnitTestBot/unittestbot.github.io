@@ -4,8 +4,7 @@ on:
     branches:
       - source
 jobs:
-  Build:
-    - name: Set up environment
+  build:
     runs-on: ubuntu-latest
     
     steps:
@@ -16,8 +15,9 @@ jobs:
           node-version: '14'
           
     - name: Install dependencies
-      run: npm install yarn -g
-      run: npm install gatsby-cli -g
+      run: npm install
+      run: npm install -g yarn
+      run: npm install -g gatsby-cli
           
     - name: Build Site
       run: npm run develop
