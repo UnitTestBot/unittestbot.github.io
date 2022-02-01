@@ -18,6 +18,7 @@ jobs:
       run:
         npm install -g yarn
         npm install -g gatsby-cli
+        npm install
           
     - name: Build Site
       run: npm run develop
