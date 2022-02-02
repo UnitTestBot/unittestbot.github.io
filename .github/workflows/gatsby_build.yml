@@ -21,4 +21,4 @@ jobs:
         yarn install
           
     - name: Build Site
-      run: npm run develop
+      run: npm run build
