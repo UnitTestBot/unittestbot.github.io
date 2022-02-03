@@ -1,14 +1,14 @@
 name: Build Site
 on:
   push:
+  pull_request:
     branches:
       - source
 jobs:
   build:
     runs-on: ubuntu-latest
     
-    steps:
-    
+    steps:    
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
       with:
@@ -16,9 +16,10 @@ jobs:
           
     - name: Install dependencies
       run:
+        npm install
         npm install -g yarn
         npm install -g gatsby-cli
-        yarn install
+        yarn
           
     - name: Build Site
       run: npm run build
