@@ -19,7 +19,7 @@ jobs:
         npm install
         npm install -g yarn
         npm install -g gatsby-cli
-        yarn
+        sudo yarn
         apt install python3
  
     - name: Build UTBot Site
@@ -38,7 +38,7 @@ jobs:
         npm install
         npm install -g yarn
         npm install -g gatsby-cli
-        yarn
+        sudo yarn
         apt install python3
  
     - name: Develop UTBot Site
