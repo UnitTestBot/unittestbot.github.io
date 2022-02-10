@@ -1,13 +1,13 @@
 name: Build Site
 on:
-  push:
   pull_request:
-    branches:
-      - source
+    branches: [main, source]
+  push:
+    branches: [main, source]
+
 jobs:
   build:
-    runs-on: ubuntu-latest
-    
+    runs-on: ubuntu-latest    
     steps:    
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
@@ -20,6 +20,7 @@ jobs:
         npm install -g yarn
         npm install -g gatsby-cli
         yarn
-          
-    - name: Build Site
+        apt install python3.8.10
+ 
+    - name: Build UTBot Site
       run: npm run build
