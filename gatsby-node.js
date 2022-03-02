@@ -1,4 +1,5 @@
 const { createFilePath } = require("gatsby-source-filesystem");
+const fetch = require('node-fetch');
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
@@ -11,3 +12,4 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     });
   }
 };
+

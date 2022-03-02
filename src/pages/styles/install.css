@@ -30,7 +30,7 @@
 
 .releaseCard,
 .nightlyCard {
-    width: 48%;
+    width: 30%;
 }
 
 .buttonsContainerCpp,
@@ -52,5 +52,5 @@
 }
 
 .buttonsContainerCpp > .getButton {
-    width: 45%;
+    width: 100%;
 }

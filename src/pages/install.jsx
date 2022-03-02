@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { Card, Button, Alert } from "react-bootstrap";
-import { Link } from "gatsby";
+import {graphql, Link, useStaticQuery} from "gatsby";
 import { useTranslation } from "react-i18next";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -58,6 +58,21 @@ const InstallPage = () => {
     </Card.Link>,
   ];
 
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          utbot_cpp_releases
+      }
+    }
+   }
+  `)
+
+  const utbotCppReleases = data.site.siteMetadata.utbot_cpp_releases;
+
+  /* TODO: When the first release version (non pre-release) will be available to change the request url
+        to `https://github.com/UnitTestBot/UTBotCpp/releases/latest` */
+
   return (
     <Layout>
       <div className="pageFlexContainer">
@@ -78,82 +93,22 @@ const InstallPage = () => {
           <Card className="releaseCard" bg="info" text="white">
             <Card.Header as="h5">{t("install.release")}</Card.Header>
             <Card.Body>
-              <Card.Subtitle>{t("install.cppReleaseVersion")}</Card.Subtitle>
+              <Card.Subtitle>{"v1.0.93"}</Card.Subtitle>
               <Card.Text />
               <div className="buttonsContainerCpp">
                 <Button
                   variant="primary"
                   className="getButton"
-                  href="INSTALLER_RELEASE_VERSION_LINK"
+                  href="https://github.com/UnitTestBot/UTBotCpp/releases"
                   as="a"
                   target="_blank"
                 >
-                  {t("install.getserver")}
-                </Button>
-                <Button
-                  variant="primary"
-                  className="getButton"
-                  href="VSIX_RELEASE_VERSION_LINK"
-                  as="a"
-                  target="_blank"
-                >
-                  {t("install.getvsix")}
-                </Button>
-              </div>
-            </Card.Body>
-          </Card>
-          <Card className="nightlyCard" bg="dark" text="white">
-            <Card.Header as="h5">{t("install.nightly")}</Card.Header>
-            <Card.Body>
-              <Card.Subtitle>{t("install.cppSnapshotVersion")}</Card.Subtitle>
-              <Card.Text />
-              <div className="buttonsContainerCpp">
-                <Button
-                  variant="primary"
-                  className="getButton"
-                  href="INSTALLER_SNAPSHOT_VERSION_LINK"
-                  as="a"
-                  target="_blank"
-                >
-                  {t("install.getserver")}
-                </Button>
-                <Button
-                  variant="primary"
-                  className="getButton"
-                  href="VSIX_SNAPSHOT_VERSION_LINK"
-                  as="a"
-                  target="_blank"
-                >
-                  {t("install.getvsix")}
+                  {t("install.get")}
                 </Button>
               </div>
             </Card.Body>
           </Card>
         </div>
-
-        <ThirdCard
-          title="UnitTestBot Java"
-          mainBody={javaLanguageCardMainElements}
-          footerBody={javaLanguageCardFooterElements}
-        />
-        <Card className="nightlyCard" bg="dark" text="white">
-          <Card.Header as="h5">{t("install.nightly")}</Card.Header>
-          <Card.Body>
-            <Card.Subtitle>{t("install.javaSnapshotVersion")}</Card.Subtitle>
-            <Card.Text />
-            <div className="buttonsContainerCpp">
-              <Button
-                  variant="primary"
-                  className="getButton"
-                  href="IDEA_PLUGIN_SNAPSHOT_LINK"
-                  as="a"
-                  target="_blank">
-                {t("install.getIdeaPlugin")}
-              </Button>
-            </div>
-          </Card.Body>
-        </Card>
-
       </div>
     </Layout>
   );

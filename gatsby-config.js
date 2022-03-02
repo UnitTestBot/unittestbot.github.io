@@ -8,7 +8,8 @@ module.exports = {
     author: `Huawei`,
     backend_host: `http://10.198.126.224:10000`,
     backend_survey_host: `http://sat-dev-services.inhuawei.com:8888/`,
-    codehub_host: `https://codehub-g.huawei.com/d00555580/UnitTestBot/home`,
+    github_host: `https://github.com/UnitTestBot`,
+    utbot_cpp_releases: `https://api.github.com/repos/UnitTestBot/UTBotCpp/releases`
   },
 
   plugins: [

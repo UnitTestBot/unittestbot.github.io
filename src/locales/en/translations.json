@@ -30,9 +30,9 @@
 
     },
     "install": {
-        "mainPart1": "UnitTestBot can be used for C language and Java. In both cases, UnitTestBot is implemented as an extension for another Code Editor/IDE.",
-        "mainPart2": "If you use <b>C language</b>, then you need UnitTestBot C/C++ version, that works together with <b>Visual Studio Code</b>. <br/> In case of <b>Java</b>, you can use UnitTestBot as a plugin for <b>Intellij IDEA</b>.",
-        "cppAlert": "<b>UnitTestBot C/C++</b> supports only C language for now. C++ language support is coming in <b>December 2021</b>.",
+        "mainPart1": "UnitTestBot can be used for C language. UnitTestBot is implemented as an extension for another Code Editor/IDE.",
+        "mainPart2": "If you use <b>C language</b>, then you need UnitTestBot C/C++ version, that works together with <b>Visual Studio Code</b>.",
+        "cppAlert": "<b>UnitTestBot C/C++</b> supports only C language for now.</b>",
         "cppPart1": "UnitTestBot for C/C++ is delivered in two parts: server and client.",
         "cppPart2": "Server is presented as a docker container. Server part of UnitTestBot C/C++ handles all the work in terms of tests generation.",
         "cppPart3": "VS Code extension serves as a client. UTBot VS Code Plugin provides friendly and intuitive user interface. It interacts with server via gRPC channel.",
@@ -48,6 +48,7 @@
         "javaSnapshotVersion": "UTBOT_JAVA_SNAPSHOT_VERSION",
         "getvsix": "Get VSCode Plugin",
         "getserver": "Get Server Installer",
+        "get": "Get",
         "getIdeaPlugin" : "Get IntelliJ IDEA Plugin",
         "javaGuide": "Installation Guide"
     },
@@ -74,6 +75,6 @@
         "searchPlaceholder": "Type to search...",
         "search": "Search",
         "gitlab": "Gitlab",
-        "codehub": "CodeHub"
+        "github": "GitHub"
     }
 }

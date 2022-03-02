@@ -25,12 +25,12 @@ const ContactsPage = () => {
     query {
       site {
         siteMetadata {
-          codehub_host
+          github_host
         }
       }
     }
   `)
-  const codehubHost = data.site.siteMetadata.codehub_host;
+  const githubHost = data.site.siteMetadata.github_host;
 
   const contactsCardFooterElements = [
     <>
@@ -38,7 +38,7 @@ const ContactsPage = () => {
       <Card.Link
         as="a"
         target="_blank"
-        href={codehubHost}
+        href={githubHost}
       >
         {t("contacts.issueTracker")}
       </Card.Link>
