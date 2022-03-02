@@ -3,11 +3,8 @@ name: Formatting Tests
 route: /docs/cpp/usage/format-tests
 parent: Documentation
 menu: Usage
-description: Generated tests can be formatted in 'one-line' or in a more verbose form. The formatting settings can be set in Visual Studio Code Settings. 
+description: Generated tests can be formatted in 'one-line' or in a more verbose form. The formatting settings can be set in Visual Studio Code Settings.
 ---
-
-import VerboseTestsImg from '/resources/images/verbose.png';
-import ShortTestsImg from '/resources/images/short.png';
 
 # Formatting Tests
 
@@ -27,7 +24,7 @@ UnitTestBot supports two formatting styles for generated tests:
 Below we attach the screenshots that show how the same tests look when they are generated with (and without) verbose mode.
 
 * **Verbose**
-    <img src={ VerboseTestsImg } className="usageGif"/>
+    ![verboseImg](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/images/verbose.png)
 
 * **Short**
-   <img src={ ShortTestsImg } className="usageGif"/>
+    ![shortImg](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/images/short.png)

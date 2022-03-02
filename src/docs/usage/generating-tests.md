@@ -6,8 +6,6 @@ menu: Usage
 description: This page describes various tests generation scenarios that UTBot supports (project, folder, file, function, line).
 ---
 
-import ProjectGif from '/resources/gifs/project.gif'
-
 # Generating Tests
 In this section we describe various tests generation scenarios that UTBot supports.
 
@@ -19,15 +17,12 @@ You can generate tests for the entire project.
 1. Right mouse click on VS Code Explorer;
 2. Select `UTBot: Generate Tests for Project`.
 
-<img src={ProjectGif} className="usageGif"/>
+![projectGif](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/gifs/project.gif)
 
 >📝**Note**
 >
 > It can take some time to analyze a big project. If you see a pop-up message at the right bottom corner of the IDE window, it means analysis is still in progress.
 > Once code analysis is completed, a test folder will be created.
-
-
-import FolderGif from '/resources/gifs/folder.gif'
 
 ## Generating Tests for Folder
 
@@ -38,10 +33,7 @@ You can generate tests for the folder.
 2. Select `UTBot: Generate Tests for Folder`;
 3. Specify the path to the folder you want to generate tests for.
 
-<img src={FolderGif} className="usageGif"/>
-
-
-import FileGif from '/resources/gifs/file.gif'
+![folderGif](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/gifs/folder.gif)
 
 ## Generating Tests for File
 
@@ -55,14 +47,10 @@ You can generate tests for a `'*.c'` file.
 1. Right mouse click to a target source file;
 2. Select `UTBot: Generate Tests... for Current File`.
 
-
-<img src={FileGif} className="usageGif"/>
+![file.Gif](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/gifs/file.gif)
 
 Once code analysis is completed, a test folder with test named according convention `test_%filename%.cpp` will be created.
 Now you can sync local and remote environments, recompile the project and run tests.
-
-
-import FunctionGif from '/resources/gifs/function.gif'
 
 ## Generating Tests for Function
 
@@ -73,14 +61,10 @@ Generate tests for a particular function is also possible.
 2. Right mouse click to a text editor;
 3. Select `UTBot: Generate Tests... > for Current Function`.
 
-
-<img src={FunctionGif} className="usageGif"/>
+![functionGif](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/gifs/function.gif)
 
 Once code analysis is completed, a test folder with test named according convention `test_%filename%.cpp` will be created.
 Now you can sync local and remote environments, recompile the project and run tests.
-
-
-import LineGif from '/resources/gifs/line.gif'
 
 ## Generating Tests for Line
 
@@ -91,14 +75,10 @@ It's even possible to cover a particular branch instead of entire function.
 2. Right mouse click to a text editor;
 3. Select `UTBot: Generate Tests... > for Current Line`.
 
-<img src={LineGif} className="usageGif"/>
-
+![lineGif](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/gifs/line.gif)
 
 Once code analysis is completed, a test folder with a test file named according convention `test_%filename%.cpp` will be created.
 Now you can sync local and remote environments, recompile the project and the run test.
-
-
-import ResultGif from '/resources/gifs/result.gif'
 
 ## Generating Tests with Prompted Result
 
@@ -108,19 +88,16 @@ If you need to find parameters for which a function returns a specific output, y
 >
 > In general, UTBot **is not able to solve NP-hard problems**, that's why it is meaningless to use this feature on, for example, hash functions.
 
-
 **How-to steps**:
 1. Move the caret inside a function body;
 2. Right mouse click to a text editor;
 3. Select `UTBot: Generate Tests... > with a Prompted Result`.
 
-<img src={ResultGif} className="usageGif"/>
+![resultGif](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/gifs/result.gif)
 
 Set up a condition (as an inequation or as an equation) the target output satisfies:
 an operator (in C syntax),
 a value (constants supported only).
-
-import AssertGif from '/resources/gifs/assert.gif'
 
 ## Generating Tests that Fail Assertion
 If some code blocks in your project are guarded by asserts (means, classic C-language asserts provided by "assert.h") you probably want to know which parameters break them. With UnitTestBot you can generate tests to find such parameters.
@@ -130,7 +107,7 @@ If some code blocks in your project are guarded by asserts (means, classic C-lan
 2. Right mouse click to a text editor;
 3. Select `UTBot: Generate Tests... > that Fail an Assertion`.
 
-<img src={AssertGif} className="usageGif"/>
+![assertGif](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/gifs/assert.gif)
 
 Once code analysis is completed, a test folder with a test file named according convention `test_%filename%.cpp` will be created.
 

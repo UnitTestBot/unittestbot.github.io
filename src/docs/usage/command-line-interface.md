@@ -3,7 +3,7 @@ name: Command Line Interface
 route: /docs/cpp/usage/cli
 parent: Documentation
 menu: Usage
-description: Command Line Interface (CLI) allows users to get access to all UnitTestBot features via command line without any specific client (i.e. VSCode). 
+description: Command Line Interface (CLI) allows users to get access to all UnitTestBot features via command line without any specific client (i.e. VSCode).
 ---
 
 # Command Line Interface
@@ -16,7 +16,7 @@ Command Line Interface is essential for the ones who need to generate tests for 
 What's more, UTBot CLI version allows to run your custom generation and running scenarios combining them with some external tools.
 
 
-**UnitTestBot CLI** is a part of a server executable and can be downloaded from [here](/install). 
+**UnitTestBot CLI** is a part of a server executable and can be downloaded from [here](install). 
 
 The executable provides several commands: it allows user to run server or CLI commands. 
 If no command is specified, server will be run.
@@ -100,10 +100,10 @@ Options:
 [Option Group: Settings context]
   Options:
     -g,--generate-for-static    True, if you want UTBot to generate tests for static functions.
-    -v,--verbose                Set if Huawei's five rule standard is required.
+    -v,--verbose                Set if Huawei’s five rule standard is required.
     --timeout INT=30            Maximum time (in seconds) is allowed for generation tests per function. Set to non-positive number to disable it.
     --no-deterministic-searcher Use deterministic searcher to traverse bitcode in the same way every time. It may significantly slow down generation.
-    --no-stubs                  True, if you don't want UTBot to use generated stubs from <testsDir>/stubs folder instead real files.
+    --no-stubs                  True, if you don’t want UTBot to use generated stubs from <testsDir>/stubs folder instead real files.
 
 Subcommands:
   project                     Generate tests for C project.
@@ -174,10 +174,10 @@ Options:
 [Option Group: Settings context]
   Options:
     -g,--generate-for-static    True, if you want UTBot to generate tests for static functions.
-    -v,--verbose                Set if Huawei's five rule standard is required.
+    -v,--verbose                Set if Huawei’s five rule standard is required.
     --timeout INT=30            Maximum time (in seconds) is allowed for generation tests per function. Set to non-positive number to disable it.
     --no-deterministic-searcher Use deterministic searcher to traverse bitcode in the same way every time. It may significantly slow down generation.
-    --no-stubs                  True, if you don't want UTBot to use generated stubs from <testsDir>/stubs folder instead real files.
+    --no-stubs                  True, if you don’t want UTBot to use generated stubs from <testsDir>/stubs folder instead real files.
 
 Subcommands:
   test                        Run specified test
@@ -228,10 +228,10 @@ Options:
 [Option Group: Settings context]
   Options:
     -g,--generate-for-static    True, if you want UTBot to generate tests for static functions.
-    -v,--verbose                Set if Huawei's five rule standard is required.
+    -v,--verbose                Set if Huawei’s five rule standard is required.
     --timeout INT=30            Maximum time (in seconds) is allowed for generation tests per function. Set to non-positive number to disable it.
     --no-deterministic-searcher Use deterministic searcher to traverse bitcode in the same way every time. It may significantly slow down generation.
-    --no-stubs                  True, if you don't want UTBot to use generated stubs from <testsDir>/stubs folder instead real files.
+    --no-stubs                  True, if you don’t want UTBot to use generated stubs from <testsDir>/stubs folder instead real files.
 ```
 
 ### Examples
