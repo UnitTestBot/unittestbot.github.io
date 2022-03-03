@@ -3,17 +3,17 @@ name: Introduction
 route: /docs/cpp
 parent: Documentation
 menu: General
-description: UnitTestBot (aka UTBot) tool provides engineers with a simple way to generate unit tests and visualize coverage for projects written in C Programming Language. It is an IDE extension (the client) paired with a docker container with the server application running inside.
+description: UnitTestBot (aka UTBot) tool provides engineers with a simple 1-mouse-click way to automatically generate unit tests and visualize coverage for projects written in C and C++ Programming Languages. It is an IDE extension (the client) paired with server application.
 ---
 
 # Introduction
 
 ## What is UnitTestBot?
-UnitTestBot (aka UTBot) tool provides engineers with a simple way to generate unit tests and visualize coverage for projects written in C Programming Language. It is an IDE extension (the client) paired with a docker container with the server application running inside.
+UnitTestBot (aka UTBot) tool provides engineers with a simple 1-mouse-click way to automatically generate unit tests and visualize coverage for projects written in C and C++ Programming Languages. It is an IDE extension (the client) paired with server application.
 
-The tool uses symbolic analysis for test cases generation. It is based on the KLEE Symbolic Virtual Machine with a new advanced PDR algorithm being developed by Research Group from Saint Petersburg State University. UnitTestBot incorporates machine learning for test names and test inputs generation. Tests are generated with Google Test Framework macros and can be formatted according to the Huawei Coding Standards.
+The tool uses [symbolic execution](https://en.wikipedia.org/wiki/Symbolic_execution) for test cases generation. UTBot uses KLEE Symbolic Virtual Machine enchanced with a new advanced bidirectional symbolic execution algorithm developed by Research Group from Saint Petersburg State University. Tests are generated in form of [Google Test Framework](https://github.com/google/googletest).
 
-## Tests Generation
+## Tests Generation: Regression Suite
 **UnitTestBot** generates test cases by code, trying to cover maximum statements and execution paths.
 We treat source code as *source of truth* assuming that behavior is correct (corresponds to initial user demand).
 Generated tests are placed in the so-called ***regression suite***. Thus, we *fixate* current behavior by test cases.
@@ -26,9 +26,9 @@ new behavior.
 
 UTBot provides dramatic code quality improvement in the long term: after tests are generated no change can break behavior without an alarm.
 
-## Errors Detection
+## Test Generation: Errors Detection
 
-UnitTestBot is not only able to fixate an existing code, but it also helps to find real bugs in your project.  Some code fragments might be invalid, while developers don't know about it. For example, buffer overflows, assertion failures, segmentation faults, and so on. If UTBot finds an execution
+UnitTestBot is not only able to fixate the behavior in an existing code, but it also helps to find real bugs in your project. Some code fragments might be invalid, while developers don't know about it. For example, buffer overflows, assertion failures, segmentation faults, and so on. If UTBot finds an execution
 path leading to such a situation, it creates a special test case that is added to the so-called ***error suite***. 
 
 
@@ -43,5 +43,5 @@ UTBot tries to generate test cases that:
 
 Of course, in an ideal world we would like to test **every** execution path of the program (so-called *path coverage*), but the number of such
 paths is often infinite due to loops and recursion. UnitTestBot aims to maximize other types of coverages: ***statement coverage***
-and ***branch coverage***, most commonly used in coverage quality assessment tools.
+and ***branch coverage***, most commonly used as metrics for coverage quality assessment tools.
 

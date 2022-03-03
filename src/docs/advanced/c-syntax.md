@@ -1,14 +1,14 @@
 ---
-name: Supported Syntax
-route: /docs/cpp/advanced/syntax
+name: Supported C Syntax
+route: /docs/cpp/advanced/c-syntax
 parent: Documentation
 menu: Advanced
-description: There are numerous constructions in C language that should be in various ways. Here we introduce all C syntax that current version of UTBot supports with some examples.   
+description: There are numerous constructions in C language that should be in various ways. Here we introduce all C syntax that current version of UTBot supports with some examples.
 ---
-# Supported Syntax
+# Supported C Syntax
 
 UnitTestBot supports the majority of C language features. Here you can find test cases examples on main syntax constructions.
-All code snippets below were taken from [this repo](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/tree/master/cpp/c-example).
+All code snippets below were taken from [this directory](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/).
 
 <!-- toc -->
 
@@ -36,7 +36,7 @@ All code snippets below were taken from [this repo](https://rnd-gitlab-msc.huawe
 ## Integral types
 > `short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, unsigned char`
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/basic_functions.c#L11)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/types/types.c#L23)
 ```cpp
 signed long long int max_long(long long a, signed long long b) {
     if (a > b) {
@@ -46,7 +46,8 @@ signed long long int max_long(long long a, signed long long b) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/types/types_test.cpp#L76)
+###### Tests code
+ 
 ```cpp
 TEST(regression, max_long_test_1)
 {
@@ -84,7 +85,7 @@ TEST(regression, max_long_test_2)
 ## Character types
 > `char, signed char`
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/types/types.c#L38)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/types/types.c#L42)
 ```cpp
 signed char some_func(char a, unsigned char b) {
     if (b == 'z' && a > b) return a;
@@ -93,7 +94,8 @@ signed char some_func(char a, unsigned char b) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/types/types_test.cpp#L175)
+###### Tests code
+
 ```cpp
 TEST(regression, some_func_test_1)
 {
@@ -159,7 +161,7 @@ TEST(error, some_func_test_4)
 ## Floating-point types
 > `double, float, long double`
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/floats/floating_point.c#L26)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/floats/floating_point.c#L30)
 ```cpp
 float long_double_arith(long double x) {
     x *= 2;
@@ -173,7 +175,8 @@ float long_double_arith(long double x) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/floats/floating_point_test.cpp#L106)
+###### Tests code
+  
 ```cpp
 TEST(regression, long_double_arith_test_1)
 {
@@ -206,10 +209,11 @@ TEST(regression, long_double_arith_test_2)
 }
 ```
 
+
 ## _Bool type
 > There is also a type alias bool for _Bool, defined in `<stdbool.h>`.
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/types/types.c#L44)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/types/types.c#L48)
 ```cpp
 int fun_that_accept_bools(_Bool a, bool b) {
     if (a && b) return 1;
@@ -219,7 +223,10 @@ int fun_that_accept_bools(_Bool a, bool b) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/types/types_test.cpp#L236)
+
+
+###### Tests code
+  
 ```cpp
 TEST(regression, fun_that_accept_bools_test_1)
 {
@@ -288,7 +295,7 @@ TEST(regression, fun_that_accept_bools_test_4)
 
 ## Structs as parameters
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/types/types.c#L118)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/types/types.c#L122)
 ```cpp
 struct SupportedStruct5 {
     short b;
@@ -304,7 +311,8 @@ int structWithConstFields(struct SupportedStruct5 st) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/types/types_test.cpp#L512)
+###### Tests code
+  
 ```cpp
 TEST(regression, structWithConstFields_test_1)
 {
@@ -339,7 +347,7 @@ TEST(regression, structWithConstFields_test_2)
 
 ## Structs as return values
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/types/types.c#L80)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/types/types.c#L84)
 ```cpp
 struct SupportedStruct4 {
     char* c;
@@ -355,7 +363,8 @@ const struct SupportedStruct4 structWithConstPointerReturn(int a) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/types/types_test.cpp#L437)
+###### Tests code
+
 ```cpp
 TEST(regression, structWithConstPointerReturn_test_1)
 {
@@ -388,7 +397,7 @@ TEST(regression, structWithConstPointerReturn_test_2)
 
 ## Unions
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/structures/simple_unions.c#L52)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/structures/simple_unions.c#L56)
 ```cpp
 union MainUnion {
     union InnerUnion {
@@ -427,7 +436,8 @@ signed char operate_with_inner_unions(union MainUnion st) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/structures/simple_unions_test.cpp#L257)
+###### Tests code
+
 ```cpp
 template<typename T, size_t N>
 T from_bytes(const char (&bytes)[N]) {
@@ -562,7 +572,7 @@ TEST(regression, operate_with_inner_unions_test_8)
 ## Pointers as parameters and return types
 > If a pointer is used as a return value, UTBot is not yet capable of determining if it is used as an array, so only value under the pointer itself will be checked in generated tests.
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/pointers/pointer_parameters.c#L3)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib//pointers/pointer_parameters.c#L7)
 ```cpp
 int c_strcmp(const char* a, const char *b) {
     for (int i = 0; ; i++) {
@@ -593,7 +603,8 @@ int* five_square_numbers(int from) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/pointers/pointer_parameters_test.cpp#L9)
+###### Tests code
+
 ```cpp
 TEST(regression, c_strcmp_test_1)
 {
@@ -695,7 +706,7 @@ TEST(regression, five_square_numbers_test_1)
 
 ## Pointers as struct fields members
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/structures/structs/structs_with_pointers.c#L24)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib//structures/structs/structs_with_pointers.c#L28)
 ```cpp
 struct List {
     struct List * next;
@@ -714,7 +725,8 @@ int list_sum_sign(struct List *head) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/structures/structs/structs_with_pointers_test.cpp#L71)
+###### Tests code
+
 ```cpp
 TEST(regression, list_sum_sign_test_1)
 {
@@ -767,7 +779,7 @@ TEST(regression, list_sum_sign_test_3)
 > * We support arrays of pointers to functions also, but 1-dimensional only.
 > * If a function takes pointer to another function as parameter, UTBot generates stub for this parameter.
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/pointers/function_pointers.c#L62)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/pointers/function_pointers.c#L66)
 ```cpp
 typedef int (*op_func)(int, int);
 
@@ -799,7 +811,8 @@ char* pointerParam(char* (*f)(int*), int* x) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/pointers/function_pointers_test.cpp#L337)
+###### Tests code
+
 ```cpp
 
 TEST(regression, return_op_test_1)
@@ -904,7 +917,7 @@ TEST(regression, pointerParam_test_2)
 
 ## Arrays
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/structures/structs/structs_with_pointers.c#L24)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/structures/struct_arrays.c#L18)
 ```cpp
 struct Trio {
     int a;
@@ -925,7 +938,8 @@ int index_of_struct_with_equal_fields(struct Trio arr []) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/structures/struct_arrays_test.cpp#L100)
+###### Tests code
+
 ```cpp
 TEST(regression, index_of_struct_with_equal_fields_test_1)
 {
@@ -1021,7 +1035,7 @@ TEST(regression, index_of_struct_with_equal_fields_test_6)
 ## Multidimensional arrays and pointers
 > Arrays of any dimensions are supported, but as for pointers, only 1-d and 2-d are supported.
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/multi_arrays.c#L63)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/multi_arrays.c#L67)
 ```cpp
 int some_method(int ** pointer2d) {
     int x = 2;
@@ -1036,7 +1050,8 @@ int some_method(int ** pointer2d) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/multi_arrays_test.cpp#L195)
+###### Tests code
+
 ```cpp
 TEST(regression, some_method_test_1)
 {
@@ -1121,7 +1136,7 @@ TEST(regression, some_method_test_4)
 
 ## Enums
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/structures/enums.c#L5)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/structures/enums.c#L9)
 ```cpp
 enum Sign {
     NEGATIVE,
@@ -1146,7 +1161,8 @@ int enumSignPointerToInt(enum Sign *s) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/structures/enums_test.cpp#L9)
+###### Tests code
+
 ```cpp
 TEST(regression, enumSignToInt_test_1)
 {
@@ -1242,7 +1258,7 @@ TEST(regression, enumSignPointerToInt_test_3)
 
 ## Typedef
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/types/typedefs_1.c#L20)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/types/typedefs_1.c#L20)
 ```cpp
 typedef struct __typeDefStruct {
     int a;
@@ -1261,7 +1277,8 @@ int sign_of_typedef_struct2(TypeDefStruct2 x) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/types/typedefs_1_test.cpp#L86)
+###### Tests code
+
 ```cpp
 TEST(regression, sign_of_typedef_struct2_test_1)
 {
@@ -1311,7 +1328,7 @@ TEST(regression, sign_of_typedef_struct2_test_3)
 
 ## Static functions
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/static.c#L4)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/static.c#L8)
 ```cpp
 static int static_simple(int dx)
 {
@@ -1327,7 +1344,8 @@ static int static_simple(int dx)
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/static_test.cpp#L11)
+###### Tests code
+
 ```cpp
 TEST(regression, static_simple_test_1)
 {
@@ -1395,7 +1413,7 @@ TEST(regression, static_simple_test_3)
 
 ## Qualifiers: const, volatile, restrict etc.
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/keywords/qualifiers.c#L45)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/keywords/qualifiers.c#L49)
 ```cpp
 const char * const foo_bar(volatile int a) {
     if (a < 0) {
@@ -1408,7 +1426,8 @@ const char * const foo_bar(volatile int a) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/keywords/qualifiers_test.cpp#L192)
+###### Tests code
+
 ```cpp
 TEST(regression, foo_bar_test_1)
 {
@@ -1458,7 +1477,7 @@ TEST(regression, foo_bar_test_3)
 
 ## Global variables
 
-###### [Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/globals.c#L60)
+[Source code example](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example/lib/globals.c#L64)
 ```cpp
 static char* global_mutable_string;
 static const char* global_const_string;
@@ -1483,7 +1502,8 @@ char use_global_strings() {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/globals_test.cpp#L177)
+###### Tests code
+
 ```cpp
 TEST(regression, use_global_strings_test_1)
 {

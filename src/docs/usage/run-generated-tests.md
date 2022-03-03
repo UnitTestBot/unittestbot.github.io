@@ -6,11 +6,7 @@ menu: Usage
 description: UnitTestBot provides an opportunity to run generated tests right from Visual Studio Code. The tests can be run either one-by-one or all together.
 ---
 
-import RunTestGif from '/resources/gifs/runtest.gif';
-import RunTestsGif from '/resources/gifs/runtests.gif';
-
 # Run Generated Tests
-
 
 ## Coverage and Test Results
 
@@ -33,9 +29,9 @@ Besides, UTBot can display results on the VS Code gutter near the test headers.
 
 Below we provide examples of how you can run single test or the whole test file.
 
-<img src={RunTestGif} className="runGif"/>
+![runtestGif](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/gifs/runtest.gif)
 
-<img src={RunTestsGif} className="runGif"/>
+![runtestsGif](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/gifs/runtests.gif)
 
 <!-- ## Test Console 
 

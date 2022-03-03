@@ -3,10 +3,8 @@ name: VS Code Extension Settings
 route: /docs/cpp/usage/vscode-extension-settings
 parent: Documentation
 menu: Usage
-description: UnitTestBot extension for VSCode provides flexibility in its configuration via settings. The extension can be adjust as you please and this page gives a detailed description of all available settings. 
+description: UnitTestBot extension for VSCode provides flexibility in its configuration via settings. The extension can be adjust as you please and this page gives a detailed description of all available settings.
 ---
-
-import SettingsOpenImg from '/resources/gifs/settings.gif'
 
 # VS Code Extension Settings
 
@@ -15,8 +13,7 @@ Extension settings might be accessed as follows: `File > Preferences > Settings 
 
 In case you are looking for some specific setting(s), search bar might be used.
 
-<img src={SettingsOpenImg} className="usageGif"/>
-
+![settingsGif](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/gifs/settings.gif)
 
 For convenience, all the settings are divided into the following groups: 
 * Deployment
@@ -216,5 +213,5 @@ Set to `0` to disable it.
 **JSON identifier**: `unittestbot.advanced.timeoutPerTest`.
 
 Maximum time (in seconds) allowed for a single test being run. After that, the test is automatically cancelled.
-The option can be used if some of the generated tests force the user code to hang; in such a case, [Run All Tests and Show Coverage](/docs/cpp/usage/run-generated-tests) option will also hang. However, if the timeout for test is specified, hanging tests will be cancelled silently and the coverage will be shown.
+The option can be used if some of the generated tests force the user code to hang; in such a case, [Run All Tests and Show Coverage](run-generated-tests) option will also hang. However, if the timeout for test is specified, hanging tests will be cancelled silently and the coverage will be shown.
 Set to `0` to disable it.

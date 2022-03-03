@@ -10,7 +10,7 @@ UTBot is able to generate tests for C code that reads values from **stdin**, **f
 
 Here is an example of a function that reads values from stdin:
 
-[Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/symbolic_stdin.c#L3)
+###### [Source code example](https://github.com/UnitTestBot/UTBotCpp/blob/main/integration-tests/c-example/lib/symbolic_stdin.c)
 ```cpp
 int check_password(int fd) {
   char buf[5];
@@ -23,7 +23,8 @@ int check_password(int fd) {
   return 0;
 }
 ```
-###### [Redirecting stdin](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/symbolic_stdin_test.h#L266)
+
+###### Redirecting stdin
 ```cpp
 void utbot_redirect_stdin(const char* buf, int &res) {
     int fds[2];
@@ -38,7 +39,7 @@ void utbot_redirect_stdin(const char* buf, int &res) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/symbolic_stdin_test.cpp#L9)
+###### Tests code example
 ```cpp
 TEST(regression, check_password_test_1)
 {

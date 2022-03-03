@@ -6,10 +6,6 @@ menu: Advanced
 description: UTBot writes logs for most of the operations it executes. The server generates logs and temporary files while tests generation. Client logs monitor requests sent to server and received responses.
 ---
 
-import UTBotServerLog from '/resources/images/utbotServerLog.png';
-import UTBotClientLog from '/resources/images/utbotServerLog.png';
-import changeLogLevel from '/resources/gifs/logLevel.gif';
-
 # UTBot logging principles
 
 ## Server log
@@ -37,14 +33,14 @@ As you can see, the server creates a subdirectory for each client. There are two
 
 Besides writing server log to files, UTBot sends the same logs to clients so they can be viewed in VS Code directly. You can find them in a tab called **UTBot: Server Log**.
 
-<img src={UTBotServerLog} className="demoImg"/>
+![utbotServerLogImg](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/images/utbotServerLog.png)
 
 Logging level can be changed using the **UTBot: Log Settings** menu item.
 
-<img src={changeLogLevel} className="usageGif"/>
+![logLevelGif](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/gifs/logLevel.gif)
 
 ## Client logs
 
 Client logs monitors sent requests and received responses. They can be viewed in **UTBot: Client Log** tab.
 
-<img src={UTBotClientLog} className="demoImg"/>
+![utbotClientLogImg](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/images/utbotClientLog.png)
