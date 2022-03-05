@@ -9,6 +9,7 @@ module.exports = {
     backend_host: `http://10.198.126.224:10000`,
     backend_survey_host: `http://sat-dev-services.inhuawei.com:8888/`,
     github_host: `https://github.com/UnitTestBot`,
+    github_issues: `https://github.com/UnitTestBot/unittestbot.github.io/issues`,
     utbot_cpp_releases: `https://api.github.com/repos/UnitTestBot/UTBotCpp/releases`
   },
 

@@ -62,15 +62,14 @@ const InstallPage = () => {
     query {
       site {
         siteMetadata {
-          utbot_cpp_releases
+          github_host
       }
     }
    }
   `)
+  const githubHost = data.site.github_host;
 
-  const utbotCppReleases = data.site.siteMetadata.utbot_cpp_releases;
-
-  /* TODO: When the first release version (non pre-release) will be available to change the request url
+  /* TODO: When the first release version (non pre-release) will be available change request url
         to `https://github.com/UnitTestBot/UTBotCpp/releases/latest` */
 
   return (
@@ -99,7 +98,7 @@ const InstallPage = () => {
                 <Button
                   variant="primary"
                   className="getButton"
-                  href="https://github.com/UnitTestBot/UTBotCpp/releases"
+                  href={githubHost}
                   as="a"
                   target="_blank"
                 >
