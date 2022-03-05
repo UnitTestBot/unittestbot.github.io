@@ -10,7 +10,7 @@ UTBot is able to generate tests for C code that reads values from **stdin**, **f
 
 Here is an example of a function that reads values from stdin:
 
-[Source code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/lib/symbolic_stdin.c#L3)
+###### [Source code example](https://github.com/UnitTestBot/UTBotCpp/blob/main/integration-tests/c-example/lib/symbolic_stdin.c)
 ```cpp
 int check_password(int fd) {
   char buf[5];
@@ -23,7 +23,8 @@ int check_password(int fd) {
   return 0;
 }
 ```
-###### [Redirecting stdin](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/symbolic_stdin_test.h#L266)
+
+###### Redirecting stdin
 ```cpp
 void utbot_redirect_stdin(const char* buf, int &res) {
     int fds[2];
@@ -38,197 +39,4 @@ void utbot_redirect_stdin(const char* buf, int &res) {
 }
 ```
 
-###### [Tests code example](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/blob/master/cpp/c-example/tests-utbot/lib/symbolic_stdin_test.cpp#L9)
-```cpp
-TEST(regression, check_password_test_1)
-{
-    // Redirect stdin
-    char stdin_buf[] = "hello";
-    int utbot_redirect_stdin_status = 0;
-    utbot_redirect_stdin(stdin_buf, utbot_redirect_stdin_status);
-    if (utbot_redirect_stdin_status != 0) {
-        FAIL() << "Unable to redirect stdin.";
-    }
-    // Construct input
-    int fd = 0;
-
-    // Expected output
-    int expected = 1;
-
-    // Trigger the function
-    int actual = check_password(fd);
-
-    // Check results
-    EXPECT_EQ(expected, actual);
-}
-
-TEST(regression, check_password_test_2)
-{
-    // Construct input
-    int fd = 1;
-
-    // Expected output
-    int expected = 0;
-
-    // Trigger the function
-    int actual = check_password(fd);
-
-    // Check results
-    EXPECT_EQ(expected, actual);
-}
-
-TEST(regression, check_password_test_3)
-{
-    // Construct input
-    int fd = 3;
-
-    // Expected output
-    int expected = 0;
-
-    // Trigger the function
-    int actual = check_password(fd);
-
-    // Check results
-    EXPECT_EQ(expected, actual);
-}
-
-TEST(regression, check_password_test_4)
-{
-    // Redirect stdin
-    char stdin_buf[] = "\x97""\x97""\x97""\x97""\x97""";
-    int utbot_redirect_stdin_status = 0;
-    utbot_redirect_stdin(stdin_buf, utbot_redirect_stdin_status);
-    if (utbot_redirect_stdin_status != 0) {
-        FAIL() << "Unable to redirect stdin.";
-    }
-    // Construct input
-    int fd = 0;
-
-    // Expected output
-    int expected = 0;
-
-    // Trigger the function
-    int actual = check_password(fd);
-
-    // Check results
-    EXPECT_EQ(expected, actual);
-}
-
-TEST(regression, check_password_test_5)
-{
-    // Redirect stdin
-    char stdin_buf[] = "he\0""hh";
-    int utbot_redirect_stdin_status = 0;
-    utbot_redirect_stdin(stdin_buf, utbot_redirect_stdin_status);
-    if (utbot_redirect_stdin_status != 0) {
-        FAIL() << "Unable to redirect stdin.";
-    }
-    // Construct input
-    int fd = 0;
-
-    // Expected output
-    int expected = 0;
-
-    // Trigger the function
-    int actual = check_password(fd);
-
-    // Check results
-    EXPECT_EQ(expected, actual);
-}
-
-TEST(regression, check_password_test_6)
-{
-    // Redirect stdin
-    char stdin_buf[] = "hell\0""";
-    int utbot_redirect_stdin_status = 0;
-    utbot_redirect_stdin(stdin_buf, utbot_redirect_stdin_status);
-    if (utbot_redirect_stdin_status != 0) {
-        FAIL() << "Unable to redirect stdin.";
-    }
-    // Construct input
-    int fd = 0;
-
-    // Expected output
-    int expected = 0;
-
-    // Trigger the function
-    int actual = check_password(fd);
-
-    // Check results
-    EXPECT_EQ(expected, actual);
-}
-
-TEST(regression, check_password_test_7)
-{
-    // Construct input
-    int fd = 1024;
-
-    // Expected output
-    int expected = 0;
-
-    // Trigger the function
-    int actual = check_password(fd);
-
-    // Check results
-    EXPECT_EQ(expected, actual);
-}
-
-TEST(regression, check_password_test_8)
-{
-    // Redirect stdin
-    char stdin_buf[] = "h\0""hhh";
-    int utbot_redirect_stdin_status = 0;
-    utbot_redirect_stdin(stdin_buf, utbot_redirect_stdin_status);
-    if (utbot_redirect_stdin_status != 0) {
-        FAIL() << "Unable to redirect stdin.";
-    }
-    // Construct input
-    int fd = 0;
-
-    // Expected output
-    int expected = 0;
-
-    // Trigger the function
-    int actual = check_password(fd);
-
-    // Check results
-    EXPECT_EQ(expected, actual);
-}
-
-TEST(regression, check_password_test_9)
-{
-    // Construct input
-    int fd = -1;
-
-    // Expected output
-    int expected = 0;
-
-    // Trigger the function
-    int actual = check_password(fd);
-
-    // Check results
-    EXPECT_EQ(expected, actual);
-}
-
-TEST(regression, check_password_test_10)
-{
-    // Redirect stdin
-    char stdin_buf[] = "hel\0""h";
-    int utbot_redirect_stdin_status = 0;
-    utbot_redirect_stdin(stdin_buf, utbot_redirect_stdin_status);
-    if (utbot_redirect_stdin_status != 0) {
-        FAIL() << "Unable to redirect stdin.";
-    }
-    // Construct input
-    int fd = 0;
-
-    // Expected output
-    int expected = 0;
-
-    // Trigger the function
-    int actual = check_password(fd);
-
-    // Check results
-    EXPECT_EQ(expected, actual);
-}
-```
+###### Tests code example

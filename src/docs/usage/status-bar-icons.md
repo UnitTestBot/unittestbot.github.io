@@ -6,7 +6,6 @@ menu: Usage
 description: Before you start working with UnitTestBot, it's worth to pay attention on the IDE's status bar and UTBot-specific controls.
 ---
 
-import StatusbarImg from '/resources/images/statusbar.png';
 import ConnectionOkImg from '/resources/images/connectionOK.png';
 import ConnectionAlertImg from '/resources/images/connectionALERT.png';
 
@@ -14,12 +13,11 @@ import ConnectionAlertImg from '/resources/images/connectionALERT.png';
 
 Before you start working with UnitTestBot, it's worth to pay attention to the IDE's status bar and UTBot-specific controls there:
 
-<img src={StatusbarImg} className="docImg"/>
-
+![statusbarImg](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/images/statusbar.png)
 
 ## Connection Status
 Connection status indicates whether the client and the server are established a connection. 
-If the connection is lost, **OK** (<img src={ConnectionOkImg} style={{display: 'inline-block'}} className="docImg"/>) status changes to **ALERT** (<img src={ConnectionAlertImg} style={{display: 'inline-block'}} className="docImg"/>).
+If the connection is lost, **OK** (![connectionOKImg](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/images/connectionOK.png)) status changes to **ALERT** (![connectionALERTImg](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/images/connectionALERT.png)).
 In this case you need to check if UTBot container is still running.
 
 ## Five Rules

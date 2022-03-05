@@ -3,11 +3,8 @@ name: Makefiles
 route: /docs/cpp/advanced/makefiles
 parent: Documentation
 menu: Advanced
-description: UnitTestBot generates Makefiles in order to run the tests. Makefiles are not limitted to the internal usage by UTBot, but also might serve as instrument to run generated tests from the command line. This page provides step-by-step instruction on how to do that. 
+description: UnitTestBot generates Makefiles in order to run the tests. Makefiles are not limitted to the internal usage by UTBot, but also might serve as instrument to run generated tests from the command line. This page provides step-by-step instruction on how to do that.
 ---
-
-import MakefileRun from '/resources/images/makefileRun.png';
-
 
 # Makefiles
 
@@ -21,4 +18,4 @@ Please note: makefiles and tests are generated at the same time.
 3. Run `make -s -f calc.mk run`, for example.
 4. Congratulations! Your tests are run and status is shown in the command line.
 
-<img src={MakefileRun} className="demoImg"/>
+![makefileRunImg](https://github.com/UnitTestBot/unittestbot.github.io/raw/source/resources/images/makefileRun.png)

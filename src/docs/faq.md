@@ -2,50 +2,31 @@
 name: FAQ
 route: /docs/cpp/faq
 parent: Documentation
-description: In case you've faced some issues, we may have already detected them. This page describes all known problems with corresponding solutions. 
+description: In case you've faced some issues, we may have already detected them. This page describes all known problems with corresponding solutions.
 ---
 
-import CertificatesIssuePng from '/resources/images/CertificatesIssue.png';
-
-
 # FAQ
+### UTBot fails to build from docker
+  * invoke `source ~/.runtime_env.sh` shell command and try again.
 
+### Quickstart Wizard tab did not open when you launched the plugin
+   * in VSCode inovke  `Run UTBot: Quickstart Wizard` command from the Command pallette `Shift + Ctrl + P` or `F1`
 
-## Docker complains about Harbor certificates identity during installation
+### Source file is not registered: /path/to/file/filename.c
+  * Open `UTBot explorer` from left corner or press F1 and type `View: Show UTBot explorer`
+  * In `UTBOT FOLDERS` mark source as UTBot Source Folder
+    `src`, `lib`, `build\src`, `build\lib`
 
-### Issue Description
+### File not found in compilation_commands.json
+  * Delete build directory from your project path
 
-You may face such errors while installing the UnitTestBot C++ docker image on a target host:
+### bear make -j
+  * Delete build directory from your project path
 
-<img src={CertificatesIssuePng} className="demoPng"/>
+### UNAVAILABLE: No connection established in vscode
+  * Check if utbot server is up
+  * in VSCode inovke `Developer: Reload Window` command from the Command pallette `Shift + Ctrl + P` or `F1`
 
-### Solution
-
-> 📝 **Note**
->
-> Only **sudo**ers can make this change.
-
-
-You need to add a Harbor certificate to `/etc/docker/cert.d` folder like it is shown below:
-
-```sh
-$ ls -lah /etc/docker/certs.d/docker-hub.tools.huawei.com/cacert.crt
--rw-r--r-- 1 root root 4.7K Nov 26 18:16 /etc/docker/certs.d/docker-hub.tools.huawei.com/cacert.crt
-$ ls -lah /etc/docker/certs.d/10.116.240.150/cacert.crt
--rw-r--r-- 1 root root 4.7K Nov 26 18:16 /etc/docker/certs.d/10.116.240.150/cacert.crt
-```
-
-...and add the corresponding insecure-registries parameter to /etc/docker/daemon.json configuration file (create one if it doesn't exist):
-
-```sh
-$ cat /etc/docker/daemon.json
-{
-  "insecure-registries" : ["docker-hub.tools.huawei.com"],
-  "data-root": "/mnt/docker-data",
-  "storage-driver": "overlay"
-}
-```
-
-> 📝 **Note**
->
-> Each zone (Green/Yellow/Red) has its own Docker hub, please check the exact URL with system administrator.
+### No logs, or incorrect logs
+  * kill all utbot server instance and run new one.
+    `ps aux | grep "utbot server" | grep -v grep | awk '{print $2;}' | xargs kill`

@@ -31,11 +31,11 @@ executable
 |     |---- C.c
 ```
 
-If we run test generation for `C.c`, all functions from `lib1.a` will be replaced with their stubs on build step. So, if the function `foo` from `C.c` calls the function `bar` from `A.c`, then stub for the function `bar` will be invoked instead. Note that you can still generate tests using the exact definition of `bar`; for that, you will need to unmark `Use Stubs` checkbox in [settings](/docs/cpp/usage/vscode-extension-settings#use-stubs).
+If we run test generation for `C.c`, all functions from `lib1.a` will be replaced with their stubs on build step. So, if the function `foo` from `C.c` calls the function `bar` from `A.c`, then stub for the function `bar` will be invoked instead. Note that you can still generate tests using the exact definition of `bar`; for that, you will need to unmark `Use Stubs` checkbox in [settings](vscode-extension-settings#use-stubs).
 
 ### Stub file example
 Stub files can be found in `tests/stubs` folder. 
-This is an example of stub file generated for `c-example/lib/dependent_functions.c` from the [example project](https://rnd-gitlab-msc.huawei.com/unittestbot/SampleSolutions/-/tree/master/cpp/c-example):
+This is an example of stub file generated for `c-example/lib/dependent_functions.c` from the [example project](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/c-example):
 ```cpp
 // 1624618650000000000
 // Please, do not change the line above
@@ -156,6 +156,7 @@ Here `pointerToPointer_symbolic` stores return value for `pointerToPointer` stub
 As it was noted, it is easy to rewrite UTBot stubs into anything you want them to be.
 You should modify only function bodies and not touch header include, or `KLEE_MODE` ifdefs.
 Consider the simplest example:
+
 ```cpp
 // 1624618650000000000
 // Please, do not change the line above
@@ -181,6 +182,7 @@ int double_max(int a, int b) {
 In such a case, UTBot will generate tests for functions from other CMake modules implying that `double_max(int a, int b) = a`.
 
 However, you can also use symbolic variable power when modifying stubs. Suppose that you want your function not to return any value, but perform some checks on the arguments prior to that. Also, there may be a special case in that function that is highly important to be reflected in the stub. In that case, you can insert those checks in the stub, and, if they succeed, return a symbolic value:
+
 ```cpp
 // 1624618650000000000
 // Please, do not change the line above
