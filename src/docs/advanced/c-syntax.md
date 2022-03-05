@@ -940,6 +940,10 @@ int index_of_struct_with_equal_fields(struct Trio arr []) {
 
 ###### Tests code
 
+<!--
+The tag below is used in order to avoid Liquid exception when deploy on gh pages.
+-->
+[//]: # ({% raw %})
 ```cpp
 TEST(regression, index_of_struct_with_equal_fields_test_1)
 {
@@ -1031,6 +1035,7 @@ TEST(regression, index_of_struct_with_equal_fields_test_6)
     EXPECT_EQ(expected, actual);
 }
 ```
+[//]:# ({% endraw %})
 
 ## Multidimensional arrays and pointers
 > Arrays of any dimensions are supported, but as for pointers, only 1-d and 2-d are supported.
@@ -1052,6 +1057,10 @@ int some_method(int ** pointer2d) {
 
 ###### Tests code
 
+<!--
+The tag below is used in order to avoid Liquid exception when deploy on gh pages.
+-->
+[//]: # ({% raw %})
 ```cpp
 TEST(regression, some_method_test_1)
 {
@@ -1133,6 +1142,7 @@ TEST(regression, some_method_test_4)
     EXPECT_EQ(expected, actual);
 }
 ```
+[//]:# ({% endraw %})
 
 ## Enums
 

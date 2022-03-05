@@ -6,7 +6,7 @@ module.exports = {
     title: `UnitTestBot`,
     description: `Unit tests generation tool`,
     author: `Huawei`,
-    backend_host: `http://10.198.126.224:10000`,
+    backend_host: `http://127.0.0.1:10000`,
     backend_survey_host: `http://sat-dev-services.inhuawei.com:8888/`,
     codehub_host: `https://codehub-g.huawei.com/d00555580/UnitTestBot/home`,
   },

@@ -6,7 +6,7 @@ git clone https://github.com/UnitTestBot/UTBotCpp.wiki.git "../Wiki"
 
 python3 add_gatsby_header_to_md_files.py "../Wiki" "../src/docs"
 
-python3  remove_html_tags_from_md_files.py "../src/docs"
+python3  prepare_md_files_for_gatsby.py "../src/docs"
 
 rm "../src/docs/_Sidebar.md"
 
