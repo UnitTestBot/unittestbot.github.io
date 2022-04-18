@@ -1,6 +1,5 @@
 {
   "main.js": "render-page.js",
   "render-page.js.map": "render-page.js.map",
-  "static/targetsFileNotPresentedInCommands.png": "static/targetsFileNotPresentedInCommands-ecca2c584d95d49d19c054a7ccfd8f96.png",
   "static/utbot-logo-5.svg": "static/utbot-logo-5-2302f3ae73b14cb5b856cdb7675a9a5a.svg"
 }
