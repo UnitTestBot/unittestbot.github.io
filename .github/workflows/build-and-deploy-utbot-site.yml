@@ -25,7 +25,7 @@ jobs:
     - name: Build UTBot Site
       run: npm run build
 
-  Develop:
+  Deploy:
     runs-on: ubuntu-latest    
     steps:    
     - uses: actions/checkout@v2
@@ -34,7 +34,6 @@ jobs:
           node-version: '14'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           allowed-associations: '["CONTRIBUTOR"]'
-
           
     - name: Install dependencies
       run: |
@@ -44,5 +43,6 @@ jobs:
         yarn
         sudo apt install python3
  
-    - name: Develop UTBot Site
-      run: npm run develop
+    - name: Deploy UTBot Site
+      run: |
+        pwd
