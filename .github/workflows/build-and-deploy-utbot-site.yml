@@ -32,7 +32,7 @@ jobs:
         git config user.name 'github-actions[bot]'
         git config user.email 'github-actions[bot]@users.noreply.github.com'
         pwd && ls
-        cp -r public ../
+        cp -r public ..
         git fetch
         git checkout main
         rm -r *
