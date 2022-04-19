@@ -29,6 +29,13 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ github.token }}
       run: |
-        cd /home && sudo mkdir github && cd github
-        git clone https://github.com/UnitTestBot/unittestbot.github.io.git
-        ls
+        git config user.name 'github-actions[bot]'
+        git config user.email 'github-actions[bot]@users.noreply.github.com'
+        git checkout -b source
+        cp public ../
+        git checkout -b main
+        rm -r *
+        cp -R ../public unittestbot.github.io
+        git add .
+        git commit -am "Update Site Content"
+        git push
