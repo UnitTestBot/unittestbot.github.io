@@ -23,14 +23,15 @@ jobs:
         sudo apt install python3
  
     - name: Build UTBot Site
-      run: npm run build
+      run: |
+        npm run build
+        pwd && ls
  
     - name: Deploy UTBot Site
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
       run: |
         git config user.name 'github-actions[bot]'
         git config user.email 'github-actions[bot]@users.noreply.github.com'
+        pwd && ls
         cp -r public ../
         git fetch
         git checkout main
@@ -39,3 +40,4 @@ jobs:
         git add .
         git commit -am "Update Site content"
         git push
+        pwd && ls
