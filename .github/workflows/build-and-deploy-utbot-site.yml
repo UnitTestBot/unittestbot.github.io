@@ -34,7 +34,7 @@ jobs:
         cp public ../
         git switch main
         rm -r *
-        cp -R ../public unittestbot.github.io
+        cp -R ../public .
         git add .
         git commit -am "Update Site Content"
         git push
