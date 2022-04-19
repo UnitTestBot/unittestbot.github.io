@@ -7,14 +7,12 @@ on:
 
 jobs:
   Build-And-Deploy:
-    runs-on: ubuntu-latest    
+    runs-on: ubuntu-latest
     steps:    
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
       with:
           node-version: '14'
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          allowed-associations: '["CONTRIBUTOR"]'
           
     - name: Install dependencies
       run: |
@@ -28,5 +26,9 @@ jobs:
       run: npm run build
  
     - name: Deploy UTBot Site
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
       run: |
-        pwd
+        cd /home && mkdir github && cd github
+        git clone https://github.com/UnitTestBot/unittestbot.github.io.git
+        ls
