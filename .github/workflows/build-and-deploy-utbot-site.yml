@@ -29,6 +29,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ github.token }}
       run: |
-        cd /home && mkdir github && cd github
+        cd /home && sudo mkdir github && cd github
         git clone https://github.com/UnitTestBot/unittestbot.github.io.git
         ls
