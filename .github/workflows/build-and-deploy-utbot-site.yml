@@ -31,9 +31,9 @@ jobs:
       run: |
         git config user.name 'github-actions[bot]'
         git config user.email 'github-actions[bot]@users.noreply.github.com'
-        git checkout -b source
+        git switch source
         cp public ../
-        git checkout -b main
+        git switch main
         rm -r *
         cp -R ../public unittestbot.github.io
         git add .
