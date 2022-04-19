@@ -32,9 +32,9 @@ jobs:
         git config user.name 'github-actions[bot]'
         git config user.email 'github-actions[bot]@users.noreply.github.com'
         cp -r public ../
-        git switch main
+        git checkout main
         rm -r *
         cp -at ../public .
         git add .
-        git commit -am "Update Site Content"
+        git commit -am "Update Site content"
         git push
