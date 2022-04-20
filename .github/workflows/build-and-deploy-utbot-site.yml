@@ -34,7 +34,7 @@ jobs:
         git fetch
         git checkout main
         rm -r *
-        sudo mv /usr/public .
+        sudo mv /usr/public/* .
         git add .
         git commit -am "Update Site content"
         git push
