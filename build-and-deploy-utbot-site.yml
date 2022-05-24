@@ -1,0 +1,43 @@
+name: Build and Deploy Site
+on:
+  pull_request:
+    branches: [source]
+  push:
+    branches: [source]
+
+jobs:
+  Build-And-Deploy:
+    runs-on: ubuntu-latest
+    steps:    
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+          node-version: '14'
+          
+    - name: Install dependencies
+      run: |
+        npm install
+        npm install -g yarn
+        npm install -g gatsby-cli
+        yarn
+        sudo apt install python3
+ 
+    - name: Build UTBot Site
+      run: |
+        npm run build
+ 
+    - name: Deploy UTBot Site
+      run: |
+        git config user.name 'github-actions[bot]'
+        git config user.email 'github-actions[bot]@users.noreply.github.com'
+        sudo cp -r public /usr
+        git fetch
+        git clean -f -d
+        git checkout main
+        rm -rf *
+        sudo cp -r /usr/public/* .
+        touch CNAME
+        echo "www.utbot.org" >> CNAME
+        git add .
+        git commit -am "Update Site content"
+        git push
