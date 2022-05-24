@@ -34,7 +34,9 @@ jobs:
         git fetch
         git checkout main
         rm -r *
-        sudo mv /usr/public/* .
+        sudo cp /usr/public/* .
+        touch CNAME
+        echo "www.utbot.org" >> CNAME
         git add .
         git commit -am "Update Site content"
         git push
