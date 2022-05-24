@@ -31,11 +31,11 @@ jobs:
         git config user.name 'github-actions[bot]'
         git config user.email 'github-actions[bot]@users.noreply.github.com'
         sudo cp -r public /usr
+        git fetch
+        git clean -f
         git checkout main
         rm -rf *
-        sudo cp /usr/public .
-        cp public/* .
-        rm -rf public
+        sudo cp /usr/public/* .
         touch CNAME
         echo "www.utbot.org" >> CNAME
         git add .
