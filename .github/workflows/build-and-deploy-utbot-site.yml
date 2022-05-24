@@ -32,7 +32,7 @@ jobs:
         git config user.email 'github-actions[bot]@users.noreply.github.com'
         sudo cp -r public /usr
         git fetch
-        git clean -f
+        git clean -f -d
         git checkout main
         rm -rf *
         sudo cp /usr/public/* .
