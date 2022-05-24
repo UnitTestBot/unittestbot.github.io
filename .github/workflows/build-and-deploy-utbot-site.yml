@@ -33,8 +33,10 @@ jobs:
         sudo cp -r public /usr
         git fetch
         git checkout main
-        rm -r *
-        sudo cp /usr/public/* .
+        rm -rf *
+        sudo cp /usr/public .
+        cp public/* .
+        rm -rf public
         touch CNAME
         echo "www.utbot.org" >> CNAME
         git add .
