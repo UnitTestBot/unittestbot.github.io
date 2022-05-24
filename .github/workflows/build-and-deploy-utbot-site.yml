@@ -35,7 +35,7 @@ jobs:
         git clean -f -d
         git checkout main
         rm -rf *
-        sudo cp /usr/public/* .
+        sudo cp -r /usr/public/* .
         touch CNAME
         echo "www.utbot.org" >> CNAME
         git add .
