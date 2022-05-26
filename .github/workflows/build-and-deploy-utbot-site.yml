@@ -1,7 +1,5 @@
 name: Build and Deploy Site
 on:
-  pull_request:
-    branches: [source]
   push:
     branches: [source]
 
