@@ -4,8 +4,6 @@
     background:#282c34;
     margin-bottom: 60px;
     width: 100%;
-    height: 465px;
-  
 }
 
 .headerContainer {
@@ -13,10 +11,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .mainHeaderWrapper {
-    height: 100%;
     width: 50%;
     display: flex;
     align-items: center;
@@ -95,4 +94,20 @@
     .columnHeader {
         margin-bottom: 15px;
     }
+}
+
+@media screen and (max-width: 600px) {
+    span.imageWrapper {
+        display: none;
+    }
+
+    .mainHeaderWrapper {
+        justify-content: flex-start;
+        width: 100%
+    }
+}
+
+.actions button {
+    width: 130px !important;
+    margin: 5px;
 }

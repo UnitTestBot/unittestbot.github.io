@@ -478,7 +478,6 @@ const UTBotOnlinePage = () => {
                         marginTop: "1vh",
                         marginBottom: "1vh",
                         display: "flex",
-                        flexDirection: "row",
                         minWidth: "886px",
                     }}>
                         {(isSurveyActive || isSubmitted) && <div style={{
