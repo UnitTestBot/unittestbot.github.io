@@ -78,15 +78,15 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "cd scripts ; sh build.sh",
+    "develop": "cd scripts ; sh develop.sh",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "lint": "yarn eslint **/*.js **/*.jsx",
-    "deploy": "gh-pages -d public -b main"
+    "deploy": "gh-pages -d public -b source"
   },
   "repository": {
     "type": "git",
