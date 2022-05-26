@@ -1,6 +1,6 @@
 name: Build and Deploy Site
 on:
-  pull-request:
+  pull_request:
     branches: [source]
 
 jobs:
