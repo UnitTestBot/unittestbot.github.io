@@ -14,15 +14,15 @@ jobs:
           
     - name: Install dependencies
       run: |
-        npm install
-        npm install -g yarn
-        npm install -g gatsby-cli
-        yarn
+        sudo npm install
+        sudo npm install -g yarn
+        sudo npm install -g gatsby-cli
+        sudo yarn
         sudo apt install python3
  
     - name: Build UTBot Site
-      run: |
-        npm run build
+      run:
+        sudo npm run build
  
     - name: Deploy UTBot Site
       run: |
@@ -37,5 +37,5 @@ jobs:
         touch CNAME
         echo "www.utbot.org" >> CNAME
         git add .
-        git commit -am "Update Site content"
+        git commit -am ${{ github.event.head_commit.message }}
         git push
