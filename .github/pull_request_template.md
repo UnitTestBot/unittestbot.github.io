@@ -6,7 +6,7 @@ Fixes # (issue)
 
 ## Type of Change
 
-Write detailed desciption of what functionality has been changed or added with your changes.
+Write detailed description of what functionality has been changed or added with your changes.
 
 ## Visual proofs (screenshots, logs, images)
 
