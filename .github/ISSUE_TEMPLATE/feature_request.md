@@ -1,3 +1,12 @@
+---
+name: Feature request
+about: Suggest an idea for this project
+title: ''
+labels: ''
+assignees: ''
+
+---
+
 **Description**
 
 _Substitute this text with a concise description of the problem. Please be clear what parts of the problem are considered to be in-scope and out-of-scope._
