@@ -1,0 +1,53 @@
+
+// prefer default export if available
+const preferDefault = m => (m && m.default) || m
+
+
+exports.components = {
+  "component---src-docs-advanced-c-syntax-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/c-syntax.md")),
+  "component---src-docs-advanced-compile-database-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/compile-database.md")),
+  "component---src-docs-advanced-coverage-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/coverage.md")),
+  "component---src-docs-advanced-cpp-syntax-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/cpp-syntax.md")),
+  "component---src-docs-advanced-generating-and-running-tests-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/generating-and-running-tests.md")),
+  "component---src-docs-advanced-incrementality-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/incrementality.md")),
+  "component---src-docs-advanced-klee-patches-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/klee-patches.md")),
+  "component---src-docs-advanced-linking-bitcode-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/linking-bitcode.md")),
+  "component---src-docs-advanced-makefiles-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/makefiles.md")),
+  "component---src-docs-advanced-preparing-sources-for-klee-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/preparing-sources-for-klee.md")),
+  "component---src-docs-advanced-stubs-inside-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/stubs-inside.md")),
+  "component---src-docs-advanced-symbolic-execution-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/symbolic-execution.md")),
+  "component---src-docs-advanced-symbolic-stdin-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/symbolic-stdin.md")),
+  "component---src-docs-advanced-targets-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/targets.md")),
+  "component---src-docs-advanced-utbot-inside-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/utbot-inside.md")),
+  "component---src-docs-advanced-utbot-logging-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/advanced/utbot-logging.md")),
+  "component---src-docs-develop-todo-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/develop/todo.md")),
+  "component---src-docs-develop-troubleshooting-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/develop/troubleshooting.md")),
+  "component---src-docs-faq-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/faq.md")),
+  "component---src-docs-general-home-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/general/Home.md")),
+  "component---src-docs-general-system-requirements-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/general/system-requirements.md")),
+  "component---src-docs-installation-install-server-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/installation/install-server.md")),
+  "component---src-docs-installation-install-vscode-plugin-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/installation/install-vscode-plugin.md")),
+  "component---src-docs-installation-use-cases-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/installation/use-cases.md")),
+  "component---src-docs-usage-command-line-interface-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/usage/command-line-interface.md")),
+  "component---src-docs-usage-configuring-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/usage/configuring.md")),
+  "component---src-docs-usage-docker-free-wsl-2-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/usage/docker-free-wsl2.md")),
+  "component---src-docs-usage-format-tests-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/usage/format-tests.md")),
+  "component---src-docs-usage-generating-tests-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/usage/generating-tests.md")),
+  "component---src-docs-usage-run-generated-tests-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/usage/run-generated-tests.md")),
+  "component---src-docs-usage-status-bar-icons-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/usage/status-bar-icons.md")),
+  "component---src-docs-usage-step-by-step-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/usage/step-by-step.md")),
+  "component---src-docs-usage-stubs-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/usage/stubs.md")),
+  "component---src-docs-usage-vscode-extension-settings-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/usage/vscode-extension-settings.md")),
+  "component---src-docs-usage-vscode-plugin-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/usage/vscode-plugin.md")),
+  "component---src-docs-usage-wizard-md": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/docs/usage/wizard.md")),
+  "component---src-pages-404-jsx": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/pages/404.jsx")),
+  "component---src-pages-contact-jsx": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/pages/contact.jsx")),
+  "component---src-pages-docs-java-jsx": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/pages/docs/java.jsx")),
+  "component---src-pages-docs-jsx": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/pages/docs.jsx")),
+  "component---src-pages-index-jsx": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/pages/index.jsx")),
+  "component---src-pages-install-jsx": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/pages/install.jsx")),
+  "component---src-pages-search-jsx": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/pages/search.jsx")),
+  "component---src-pages-survey-jsx": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/pages/survey.jsx")),
+  "component---src-pages-utbot-jsx": preferDefault(require("/home/runner/work/unittestbot.github.io/unittestbot.github.io/src/pages/utbot.jsx"))
+}
+
