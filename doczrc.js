@@ -6,7 +6,10 @@ export default {
   menu: [
     {
       name: "General",
-      menu: ["Introduction", "System Requirements"],
+      menu: [
+        "Introduction",
+        "System Requirements",
+      ],
     },
     {
       name: "Installation",
@@ -19,8 +22,10 @@ export default {
     {
       name: "Usage",
       menu: [
+        "Step by step",
         "Quickstart with UTBot Wizard",
         "Statusbar Icons",
+        "VS Code plugin",
         "VS Code Extension Settings",
         "Configuring Project",
         "Generating Tests",
@@ -28,16 +33,34 @@ export default {
         "Run Generated Tests",
         "Stubs",
         "Command Line Interface",
+        "Docker-free-wsl2",
       ],
     },
     {
       name: "Advanced",
       menu: [
         "How UTBot Works",
-        "Supported Syntax",
         "Makefiles",
         "Symbolic Stdin",
         "UTBot Logging Principles",
+        "Targets",
+        "Compile database",
+        "Coverage",
+        "Generating and running tests",
+        "Incrementality",
+        "Linking bitcode",
+        "Preparing sources for KLEE",
+        "Stubs inside",
+        "KLEE patches",
+        "Supported C Syntax",
+        "Supported C++ Syntax",
+      ],
+    },
+    {
+      name: "Develop",
+      menu: [
+        "ToDo",
+        "Troubleshooting",
       ],
     },
     "FAQ",

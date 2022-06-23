@@ -6,27 +6,37 @@ description: In case you've faced some issues, we may have already detected them
 ---
 
 # FAQ
+
 ### UTBot fails to build from docker
-  * invoke `source ~/.runtime_env.sh` shell command and try again.
+
+* invoke `source ~/.runtime_env.sh` shell command and try again.
 
 ### Quickstart Wizard tab did not open when you launched the plugin
-   * in VSCode inovke  `Run UTBot: Quickstart Wizard` command from the Command pallette `Shift + Ctrl + P` or `F1`
+
+* in VSCode inovke  `Run UTBot: Quickstart Wizard` command from the Command pallette `Shift + Ctrl + P` or `F1`
 
 ### Source file is not registered: /path/to/file/filename.c
-  * Open `UTBot explorer` from left corner or press F1 and type `View: Show UTBot explorer`
-  * In `UTBOT FOLDERS` mark source as UTBot Source Folder
-    `src`, `lib`, `build\src`, `build\lib`
+
+* Open `UTBot explorer` from left corner or press F1 and type `View: Show UTBot explorer`
+* In `UTBOT FOLDERS` mark source as UTBot Source Folder
+  `src`, `lib`, `build\src`, `build\lib`
 
 ### File not found in compilation_commands.json
-  * Delete build directory from your project path
+
+* in VSCode inovke  `UTBot: Reset cache and configure project` command from the Command pallette `Shift + Ctrl + P`
+  or `F1`
 
 ### bear make -j
-  * Delete build directory from your project path
+
+* in VSCode inovke  `UTBot: Reset cache and configure project` command from the Command pallette `Shift + Ctrl + P`
+  or `F1`
 
 ### UNAVAILABLE: No connection established in vscode
-  * Check if utbot server is up
-  * in VSCode inovke `Developer: Reload Window` command from the Command pallette `Shift + Ctrl + P` or `F1`
+
+* Check if utbot server is up
+* in VSCode inovke `Developer: Reload Window` command from the Command pallette `Shift + Ctrl + P` or `F1`
 
 ### No logs, or incorrect logs
-  * kill all utbot server instance and run new one.
-    `ps aux | grep "utbot server" | grep -v grep | awk '{print $2;}' | xargs kill`
+
+* kill all utbot server instance and run new one.
+  `ps aux | grep "utbot server" | grep -v grep | awk '{print $2;}' | xargs kill`

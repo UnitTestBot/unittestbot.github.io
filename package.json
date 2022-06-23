@@ -3,7 +3,7 @@
   "private": true,
   "description": "A web page for UnitTestBot C/C++ and UnitTestBot Java",
   "version": "0.1.0",
-  "author": "Huawei",
+  "author": "UnitTestBot",
   "dependencies": {
     "@emotion/react": "11.1.5",
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "3.0.2",
@@ -78,8 +78,8 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "cd scripts ; sh build.sh",
-    "develop": "cd scripts ; sh develop.sh",
+    "build": "/bin/bash build.sh",
+    "develop": "/bin/bash develop.sh",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

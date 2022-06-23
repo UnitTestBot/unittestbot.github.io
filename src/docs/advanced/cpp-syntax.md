@@ -5,10 +5,11 @@ parent: Documentation
 menu: Advanced
 description: There are numerous constructions in C++ language that should be in various ways. Here we introduce all C++ syntax that current version of UTBot supports with some examples.
 ---
+
 # Supported C++ Syntax
 
-Support of C++ language features is very limited. Here you can find test cases examples.
-All code snippets below were taken from [this directory](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/cpp-example/).
+Support of C++ language features is very limited. Here you can find test cases examples. All code snippets below were
+taken from [this directory](https://github.com/UnitTestBot/UTBotCpp/tree/main/integration-tests/cpp-example/).
 
 <!-- toc -->
 
@@ -46,7 +47,7 @@ int double_abs_const_lvalue_reference(const int& a) {
 ```
 
 ###### Tests code
- 
+
 ```cpp
 TEST(regression, double_abs_lvalue_reference_test_1)
 {
@@ -116,6 +117,7 @@ TEST(regression, double_abs_const_lvalue_reference_test_2)
     EXPECT_EQ(expected, actual);
 }
 ```
+
 
 ## Class as parameters
 
@@ -300,7 +302,7 @@ TEST(regression, abs_point_test_3)
 
 ## Class methods
 
-> For genetating method tests UTBot need default constructor of class  
+> For genetating method tests UTBot need default constructor of class
 
 ```cpp
 class Point_2d {

@@ -5,10 +5,18 @@ module.exports = {
   siteMetadata: {
     title: `UnitTestBot`,
     description: `Unit tests generation tool`,
-    author: `Huawei`,
-    backend_host: `http://127.0.0.1:10000`,
-    backend_survey_host: `http://sat-dev-services.inhuawei.com:8888/`,
-    codehub_host: `https://codehub-g.huawei.com/d00555580/UnitTestBot/home`,
+    author: `UnitTestBot`,
+    backend_host: `https://utbot.org`, // `http://127.0.0.1:10000`,
+    // backend_survey_host: `<backend-survey-host-url>`,
+    github_utbot: `https://github.com/UnitTestBot`,
+    discussions_utbot: `https://github.com/orgs/UnitTestBot/discussions`,
+    github_issues: `https://github.com/UnitTestBot/unittestbot.github.io/issues`,
+    utbot_cpp_releases_link: `https://github.com/UnitTestBot/UTBotCpp/releases`,
+    utbot_cpp_releases_info: `https://api.github.com/repos/UnitTestBot/UTBotCpp/releases`,
+    utbot_java_releases_link: `https://github.com/UnitTestBot/UTBotJava/releases`,
+    utbot_java_releases_info: `https://api.github.com/repos/UnitTestBot/UTBotJava/releases`,
+    build_number: `11`,
+    build_date: `2022-6-17`,
   },
 
   plugins: [
@@ -54,7 +62,7 @@ module.exports = {
           {
             name: "en",
             filterNodes: node =>
-              !isNil(node.frontmatter) && !isNil(node.frontmatter.name),
+                !isNil(node.frontmatter) && !isNil(node.frontmatter.name),
           },
         ],
         fields: [
@@ -65,7 +73,7 @@ module.exports = {
         ],
         // A function for filtering nodes. () => true by default
         filterNodes: node =>
-          !isNil(node.frontmatter) && !isNil(node.frontmatter.name),
+            !isNil(node.frontmatter) && !isNil(node.frontmatter.name),
         // How to resolve each field's value for a supported node type
         resolvers: {
           // For any node of type MarkdownRemark, list how to resolve the fields' values
