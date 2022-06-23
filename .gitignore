@@ -1,11 +1,11 @@
 node_modules
-public
+/public/
 /.cache/
 /.idea/
 /.yarn/cache/
 /.docz
 /yarn-error.log
-/yarn.lock
+yarn.lock
 /package-lock.json
 /.docz/app/db.json
 /.yarn/

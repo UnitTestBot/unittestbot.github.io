@@ -229,17 +229,9 @@ const UTBotOnlinePage = () => {
         defineMonacoThemes(monaco);
     };
 
-    function CopyToClipboard(toCopy) {
-        if  (toCopy != null) {
-            const el = document.createElement(`textarea`)
-            el.value = toCopy
-            el.setAttribute(`readonly`, ``)
-            el.style.position = `absolute`
-            el.style.left = `-9999px`
-            document.body.appendChild(el)
-            el.select()
-            document.execCommand(`copy`)
-            document.body.removeChild(el)
+    function copyLink() {
+        if (typeof window !== 'undefined') {
+            navigator.clipboard.writeText(window.location.href)
         }
     }
 
@@ -295,8 +287,7 @@ const UTBotOnlinePage = () => {
                                         <Button
                                             variant="light"
                                             style={{marginTop: "5px", marginBottom: "5px", width: "125px"}}
-                                            /*onClick={/!*CopyToClipboard(typeof window != 'undefined' ?
-                                                window.location.href : null)*!/}*/
+                                            onClick={copyLink}
                                         >Copy Link</Button>
                                     </OverlayTrigger>
                                 </div>
