@@ -8,19 +8,20 @@ description: Command Line Interface (CLI) allows users to get access to all Unit
 
 # Command Line Interface
 
-**Command Line Interface (CLI)** allows users to get access to all UnitTestBot features via command line without any specific client (i.e. VSCode).
+**Command Line Interface (CLI)** allows users to get access to all UnitTestBot features via command line without any
+specific client (i.e. VSCode).
 
-All the commands that are provided in UnitTestBot extension for Microsoft Visual Studio Code can be accessed directly from the terminal.
+All the commands that are provided in UnitTestBot extension for Microsoft Visual Studio Code can be accessed directly
+from the terminal.
 
-Command Line Interface is essential for the ones who need to generate tests for really big projects, then run them and collect coverage information.
-What's more, UTBot CLI version allows to run your custom generation and running scenarios combining them with some external tools.
+Command Line Interface is essential for the ones who need to generate tests for really big projects, then run them and
+collect coverage information. What's more, UTBot CLI version allows to run your custom generation and running scenarios
+combining them with some external tools.
 
+**UnitTestBot CLI** is a part of a server executable and can be downloaded from [here](install).
 
-**UnitTestBot CLI** is a part of a server executable and can be downloaded from [here](install). 
-
-The executable provides several commands: it allows user to run server or CLI commands. 
-If no command is specified, server will be run.
-In order to learn more about utbot executable features use `-h/--help` option.
+The executable provides several commands: it allows user to run server or CLI commands. If no command is specified,
+server will be run. In order to learn more about utbot executable features use `-h/--help` option.
 
 ```sh
 user@laptop:~$ ./utbot --help
@@ -42,8 +43,8 @@ In case to read all information, please use `--help-all` option. It will display
 
 ## Server Command
 
-In order to run UTBot in server mode, please use `server` subcommand. 
-The command options can be viewed via `./utbot server --help`.
+In order to run UTBot in server mode, please use `server` subcommand. The command options can be viewed
+via `./utbot server --help`.
 
 ```sh
 user@laptop:~$ ./utbot server --help
@@ -62,9 +63,10 @@ Options:
 ```
 
 ### Examples
+
 Let us provide with several examples of how you can run UnitTestBot executable in server mode.
 
-In case you are fine with default settings you can avoid passing parameters and just run executable. 
+In case you are fine with default settings you can avoid passing parameters and just run executable.
 
 ```sh
 user@laptop:~$ ./utbot
@@ -76,12 +78,10 @@ If you want to be more specific in terms of your settings (e.g., change port and
 user@laptop:~$ ./utbot --port 2130 --log "/home/utbot/logs".
 ```
 
-
-
 ## Generate Command
 
-If you want to generate tests for the source code, you need to use `generate` subcommand. 
-The command options can be viewed via `./utbot generate --help`.
+If you want to generate tests for the source code, you need to use `generate` subcommand. The command options can be
+viewed via `./utbot generate --help`.
 
 ```sh
 user@laptop:~$ ./utbot generate --help
@@ -100,7 +100,7 @@ Options:
 [Option Group: Settings context]
   Options:
     -g,--generate-for-static    True, if you want UTBot to generate tests for static functions.
-    -v,--verbose                Set if Huawei’s five rule standard is required.
+    -v,--verbose                Set if Five Rules Standard is required.
     --timeout INT=30            Maximum time (in seconds) is allowed for generation tests per function. Set to non-positive number to disable it.
     --no-deterministic-searcher Use deterministic searcher to traverse bitcode in the same way every time. It may significantly slow down generation.
     --no-stubs                  True, if you don’t want UTBot to use generated stubs from <testsDir>/stubs folder instead real files.
@@ -118,14 +118,14 @@ Subcommands:
   predicate                   Generate tests with given result.
 ```
 
-The command provides other subcommands, that specify test generation mode. It's required to use one.
-These subcommands  may require additional options (i.e., `--line-number`) in order to run them. 
-Existing options can be displayed via `./utbot generate [SUBCOMMAND] --help`. You can also check them via global `--help-all` option.
+The command provides other subcommands, that specify test generation mode. It's required to use one. These subcommands
+may require additional options (i.e., `--line-number`) in order to run them. Existing options can be displayed
+via `./utbot generate [SUBCOMMAND] --help`. You can also check them via global `--help-all` option.
 
 Generated tests can be found in a test folder (`tests` subfolder in the project directory by default).
 
-
 ### Examples
+
 Below we demonstrate several examples of how to run generation commands.
 
 **Generate tests for snippet**
@@ -134,28 +134,31 @@ Below we demonstrate several examples of how to run generation commands.
 user@laptop:~$ ./utbot generate --project-path "/home/snippets/" snippet --file-path "home/snippets/snippet.c"
 ```
 
-Here, `--project-path` is path to the parent directory of the given snippet file  `snippet.c`.   
+Here, `--project-path` is path to the parent directory of the given snippet file  `snippet.c`.
 
 **Generate tests for project**
+
 ```sh
 user@laptop:~$ ./utbot generate --project-path "/home/projects/c-project" project
 ```
 
 **Generate tests for function**
+
 ```sh
 user@laptop:~$ ./utbot generate --project-path "/home/projects/c-project" function --file-path /home/projects/c-project/complex_structs.c --line-number 39
 ```
 
 **Generate tests with prompted result**
+
 ```sh
 user@laptop:~$ ./utbot generate --project-path "/home/projects/c-project/"  predicate --file-path "/home/projects/c-project/basic_functions.c" --line-number 5 --predicate == --return-value 11 --validation-type int32
 ```
 
-
 ## Run Command
-One of the main features of UnitTestBot that allows to run tests with coverage is available in CLI mode as well.
-In order to run the tests, type in the following command: `./utbot run [OPTIONS] [SUBCOMMAND] [SUBCOMMAND OPTIONS]>`. 
-Subcommand in this case specifies whether to run all generated tests, tests in one file, or just one specific test.  
+
+One of the main features of UnitTestBot that allows to run tests with coverage is available in CLI mode as well. In
+order to run the tests, type in the following command: `./utbot run [OPTIONS] [SUBCOMMAND] [SUBCOMMAND OPTIONS]>`.
+Subcommand in this case specifies whether to run all generated tests, tests in one file, or just one specific test.
 
 ```sh
 user@laptop:~$ ./utbot run --help
@@ -174,7 +177,7 @@ Options:
 [Option Group: Settings context]
   Options:
     -g,--generate-for-static    True, if you want UTBot to generate tests for static functions.
-    -v,--verbose                Set if Huawei’s five rule standard is required.
+    -v,--verbose                Set if Five Rules Standard is required.
     --timeout INT=30            Maximum time (in seconds) is allowed for generation tests per function. Set to non-positive number to disable it.
     --no-deterministic-searcher Use deterministic searcher to traverse bitcode in the same way every time. It may significantly slow down generation.
     --no-stubs                  True, if you don’t want UTBot to use generated stubs from <testsDir>/stubs folder instead real files.
@@ -184,6 +187,7 @@ Subcommands:
   file                        Run all tests in specified file
   project                     Run all tests for this project
 ```
+
 Similiarly to `generate` subcommands, you can access manual for `run` subcommands via `./utbot run [SUBCOMMAND] --help`.
 
 ### Examples
@@ -201,13 +205,15 @@ user@laptop:~$ ./utbot run --project-path "/home/projects/c-project" file --file
 ```
 
 **Run specific test**
+
 ```sh
 user@laptop:~$ ./utbot run --project-path "/home/projects/c-project" test --file-path "/home/projects/c-project/tests/basic_functions_test.cpp" --test-suite "regression" --test-name "max__test_1"
 ```
 
 ## All Command
 
-For simplicity, UTBot CLI provides `all` command, that firstly generates stubs for the project, then generates project tests and finally runs them with coverage.
+For simplicity, UTBot CLI provides `all` command, that firstly generates stubs for the project, then generates project
+tests and finally runs them with coverage.
 
 ```sh
 user@laptop:~$ ./utbot all --help
@@ -228,7 +234,7 @@ Options:
 [Option Group: Settings context]
   Options:
     -g,--generate-for-static    True, if you want UTBot to generate tests for static functions.
-    -v,--verbose                Set if Huawei’s five rule standard is required.
+    -v,--verbose                Set if Five Rules Standard is required.
     --timeout INT=30            Maximum time (in seconds) is allowed for generation tests per function. Set to non-positive number to disable it.
     --no-deterministic-searcher Use deterministic searcher to traverse bitcode in the same way every time. It may significantly slow down generation.
     --no-stubs                  True, if you don’t want UTBot to use generated stubs from <testsDir>/stubs folder instead real files.

@@ -13,36 +13,49 @@ import "./styles/contact.css";
 const ContactsPage = () => {
   const { t, i18n } = useTranslation();
   const contactsCardBodyElements = [
-    <p>{t("contacts.description")}</p>,
     <p
-      dangerouslySetInnerHTML={{
-        __html: `${t("contacts.ivanov")} <br/> ${t("contacts.stromov")} <br/> ${t("contacts.qianxiang")}`,
-      }}
-    />,
+        dangerouslySetInnerHTML={{
+          __html: `${t("contacts.description")} ${t("contacts.email")}`,
+        }}
+    />
   ];
 
   const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
-          codehub_host
+          github_issues
+          discussions_utbot
         }
       }
     }
   `)
-  const codehubHost = data.site.siteMetadata.codehub_host;
+  const githubIssues = data.site.siteMetadata.github_issues;
+  const discussionsUtbot = data.site.siteMetadata.discussions_utbot;
 
   const contactsCardFooterElements = [
     <>
-      {t("contacts.submitProblem")}{" "}
-      <Card.Link
-        as="a"
-        target="_blank"
-        href={codehubHost}
-      >
-        {t("contacts.issueTracker")}
-      </Card.Link>
-    </>,
+      <div>
+        {t("contacts.submitProblem")}{" "}
+        <Card.Link
+            as="a"
+            target="_blank"
+            href={githubIssues}
+        >
+          {t("contacts.issues")}
+        </Card.Link>
+      </div>
+      <div>
+        {t("contacts.doInDiscussions")}{" "}
+        <Card.Link
+            as="a"
+            target="_blank"
+            href={discussionsUtbot}
+        >
+          {t("contacts.discussions")}
+        </Card.Link>
+      </div>
+    </>
   ];
 
   return (

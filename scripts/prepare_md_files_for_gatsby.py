@@ -1,5 +1,4 @@
 import re
-import shutil
 from pathlib import Path
 from sys import argv
 
@@ -50,10 +49,10 @@ def remove_tags(directory: Path):
 # Shielding Liquid tags (in order to deploy on github pages): double curly braces.
 
 def shield_double_brackets(lines_for_update: list):
-    check = 0
+    check = False
     for line in lines_for_update:
         if re.fullmatch(r".*{\s*{.*", line):
-            check = 1
+            check = True
             break
 
     if check:
@@ -79,6 +78,8 @@ def find_and_shield_double_brackets(old_data: str) -> str:
             new_lines += shield_double_brackets(lines_for_check)
             lines_for_check = []
             new_lines.append(line)
+    if lines_for_check:
+        new_lines += shield_double_brackets(lines_for_check)
     new_data = "\n".join([line for line in new_lines])
 
     return new_data

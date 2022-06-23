@@ -5,12 +5,17 @@ parent: Documentation
 menu: Advanced
 description: This page provides a detailed description on how UnitTestBot handles input functions such as read, scanf, etc.
 ---
+
 # Symbolic stdin
-UTBot is able to generate tests for C code that reads values from **stdin**, **file descriptor** or **STDIN_FILENO**. UTBot marks read values as symbolic, generates tests, puts the needed data into a C-string buffer and redirects **stdin** to the buffer so tests can be executed properly.
+
+UTBot is able to generate tests for C code that reads values from **stdin**, **file descriptor** or **STDIN_FILENO**.
+UTBot marks read values as symbolic, generates tests, puts the needed data into a C-string buffer and redirects **
+stdin** to the buffer so tests can be executed properly.
 
 Here is an example of a function that reads values from stdin:
 
 ###### [Source code example](https://github.com/UnitTestBot/UTBotCpp/blob/main/integration-tests/c-example/lib/symbolic_stdin.c)
+
 ```cpp
 int check_password(int fd) {
   char buf[5];
@@ -25,6 +30,7 @@ int check_password(int fd) {
 ```
 
 ###### Redirecting stdin
+
 ```cpp
 void utbot_redirect_stdin(const char* buf, int &res) {
     int fds[2];
@@ -40,6 +46,7 @@ void utbot_redirect_stdin(const char* buf, int &res) {
 ```
 
 ###### Tests code example
+
 ```cpp
 TEST(regression, check_password_test_1)
 {

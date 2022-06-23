@@ -1,12 +1,11 @@
 import * as React from "react";
 
 import { Card, Button, Alert } from "react-bootstrap";
-import { Link } from "gatsby";
+import {graphql, Link, useStaticQuery} from "gatsby";
 import { useTranslation } from "react-i18next";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import PrimaryCard from "../components/cards/PrimaryCard";
-import ThirdCard from "../components/cards/ThirdCard";
 import withTrans from "../i18n/withTrans";
 import "./styles/page.css";
 import "./styles/install.css";
@@ -21,43 +20,28 @@ const InstallPage = () => {
   mainCardBodyElements.push(
     <p dangerouslySetInnerHTML={{ __html: t("install.mainPart2") }} />
   );
-
-  const cppLanguageCardMainElements = [
+  mainCardBodyElements.push(
     <Alert
-      variant="warning"
-      dangerouslySetInnerHTML={{ __html: t("install.cppAlert") }}
+        variant="warning"
+        dangerouslySetInnerHTML={{ __html: t("install.alert") }}
     />,
-    <p>{t("install.cppPart1")}</p>,
-    <p>{t("install.cppPart2")}</p>,
-    <p>{t("install.cppPart3")}</p>,
-  ];
-  const cppLanguageCardFooterElements = [
-    <Card.Link
-      as={Link}
-      to="/docs/cpp/installation/installing-the-utbot-server"
-      href="/docs/cpp/installation/installing-the-utbot-server"
-    >
-      {t("install.cppGuide")}
-    </Card.Link>,
-  ];
+  );
 
-  const javaLanguageCardMainElements = [
-    <Alert
-      variant="info"
-      dangerouslySetInnerHTML={{ __html: t("install.javaAlert") }}
-    />,
-    <p>{t("install.javaPart1")}</p>,
-  ];
-  const javaLanguageCardFooterElements = [
-    <Card.Link
-        as={Link}
-        to="/docs/java/"
-        href="/docs/java/"
-    >
-      {t("install.cppGuide")}
-    </Card.Link>,
-  ];
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          utbot_cpp_releases_info
+          utbot_java_releases_info
+          utbot_cpp_releases_link
+          utbot_java_releases_link
+      }
+    }
+   }
+  `);
 
+  // TODO: When the first release version (non pre-release) will be available change request url
+  // to `https://github.com/UnitTestBot/UTBotCpp/releases/latest`
   return (
     <Layout>
       <div className="pageFlexContainer">
@@ -67,93 +51,44 @@ const InstallPage = () => {
           title="Install UnitTestBot"
           mainBody={mainCardBodyElements}
         />
-
-        <ThirdCard
-          title={t("install.cpp")}
-          mainBody={cppLanguageCardMainElements}
-          footerBody={cppLanguageCardFooterElements}
-        />
-
         <div className="innerFlexContainer">
           <Card className="releaseCard" bg="info" text="white">
-            <Card.Header as="h5">{t("install.release")}</Card.Header>
+            <Card.Header as="h5">{t("install.utbotCpp")}</Card.Header>
             <Card.Body>
-              <Card.Subtitle>{t("install.cppReleaseVersion")}</Card.Subtitle>
+              <Card.Subtitle>{t("install.latestStable")}{": v1.0.167"}</Card.Subtitle>
               <Card.Text />
               <div className="buttonsContainerCpp">
                 <Button
                   variant="primary"
                   className="getButton"
-                  href="INSTALLER_RELEASE_VERSION_LINK"
+                  href={data.site.siteMetadata.utbot_cpp_releases_link}
                   as="a"
                   target="_blank"
                 >
-                  {t("install.getserver")}
-                </Button>
-                <Button
-                  variant="primary"
-                  className="getButton"
-                  href="VSIX_RELEASE_VERSION_LINK"
-                  as="a"
-                  target="_blank"
-                >
-                  {t("install.getvsix")}
+                  {t("install.get")}
                 </Button>
               </div>
             </Card.Body>
           </Card>
-          <Card className="nightlyCard" bg="dark" text="white">
-            <Card.Header as="h5">{t("install.nightly")}</Card.Header>
+          <Card className="releaseCard" bg="info" text="white">
+            <Card.Header as="h5">{t("install.utbotJava")}</Card.Header>
             <Card.Body>
-              <Card.Subtitle>{t("install.cppSnapshotVersion")}</Card.Subtitle>
+              <Card.Subtitle>{t("install.latestStable")}{": 2022.5-alpha"}</Card.Subtitle>
               <Card.Text />
               <div className="buttonsContainerCpp">
                 <Button
-                  variant="primary"
-                  className="getButton"
-                  href="INSTALLER_SNAPSHOT_VERSION_LINK"
-                  as="a"
-                  target="_blank"
+                    variant="primary"
+                    className="getButton"
+                    href={data.site.siteMetadata.utbot_java_releases_link}
+                    as="a"
+                    target="_blank"
                 >
-                  {t("install.getserver")}
-                </Button>
-                <Button
-                  variant="primary"
-                  className="getButton"
-                  href="VSIX_SNAPSHOT_VERSION_LINK"
-                  as="a"
-                  target="_blank"
-                >
-                  {t("install.getvsix")}
+                  {t("install.get")}
                 </Button>
               </div>
             </Card.Body>
           </Card>
         </div>
-
-        <ThirdCard
-          title="UnitTestBot Java"
-          mainBody={javaLanguageCardMainElements}
-          footerBody={javaLanguageCardFooterElements}
-        />
-        <Card className="nightlyCard" bg="dark" text="white">
-          <Card.Header as="h5">{t("install.nightly")}</Card.Header>
-          <Card.Body>
-            <Card.Subtitle>{t("install.javaSnapshotVersion")}</Card.Subtitle>
-            <Card.Text />
-            <div className="buttonsContainerCpp">
-              <Button
-                  variant="primary"
-                  className="getButton"
-                  href="IDEA_PLUGIN_SNAPSHOT_LINK"
-                  as="a"
-                  target="_blank">
-                {t("install.getIdeaPlugin")}
-              </Button>
-            </div>
-          </Card.Body>
-        </Card>
-
       </div>
     </Layout>
   );

@@ -8,7 +8,7 @@ import { IoLanguage } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
 import withTrans from "../i18n/withTrans";
 import logo from "../images/utbot-logo-5.svg";
-import codehub from "../images/codehub-small-icon.svg";
+import github from "../images/github.svg";
 import "./header.css";
 
 function Header(props) {
@@ -39,12 +39,14 @@ function Header(props) {
     query {
       site {
         siteMetadata {
-          codehub_host
+          github_utbot
+          discussions_utbot
         }
       }
     }
   `)
-  const codehubHost = data.site.siteMetadata.codehub_host;
+  const githubUtbot = data.site.siteMetadata.github_utbot;
+  const discussionsUtbot = data.site.siteMetadata.discussions_utbot;
 
   const [showLanguages, setShowLanguages] = useState(false);
   const showDropdownLanguages = e => {
@@ -100,9 +102,6 @@ function Header(props) {
                 <NavDropdown.Item onClick={() => navigate("/docs/cpp")}>
                   {t("header.cdocs")}
                 </NavDropdown.Item>
-                <NavDropdown.Item onClick={() => navigate("/docs/java")}>
-                  {t("header.javadocs")}
-                </NavDropdown.Item>
               </NavDropdown>
               <Nav.Item as="li">
                 <CustomLink to="/contact" className="nav-link">
@@ -113,7 +112,7 @@ function Header(props) {
 
             <Nav activeKey="false">
               <Nav.Item as="li" className="nav-item">
-                <Link to="/docs/cpp/faq/" className="nav-link">
+                <Link href={discussionsUtbot} className="nav-link">
                   <FaQuestion /> {t("header.faq")}
                 </Link>
               </Nav.Item>
@@ -121,15 +120,15 @@ function Header(props) {
               <Nav.Link
                 as="a"
                 target="_blank"
-                href={codehubHost}
+                href={githubUtbot}
               >
                 <img
                     alt="UnitTestBot"
-                    src={codehub}
+                    src={github}
                     width="17"
                     height="17"
                     className="d-inline-block align-center"
-                /> {t("header.codehub")}
+                /> {t("header.github")}
               </Nav.Link>
               <NavDropdown
                 title={
@@ -150,14 +149,6 @@ function Header(props) {
                   }}
                 >
                   {t("header.english")}
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  onClick={async () => {
-                    await i18n.changeLanguage("zh-Hant");
-                    reloadPage();
-                  }}
-                >
-                  {t("header.chinese")}
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>

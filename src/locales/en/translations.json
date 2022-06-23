@@ -22,7 +22,7 @@
         "javadocsLink": "Documentation for UnitTestBot Java",
         "javadocsMainTitle": "UnitTestBot Java Documentation",
         "progress": "In progress",
-        "goHome": "Go to the home page" 
+        "goHome": "Go to the home page"
     },
     "search": {
         "title": "Search",
@@ -30,37 +30,31 @@
 
     },
     "install": {
-        "mainPart1": "UnitTestBot can be used for C language and Java. In both cases, UnitTestBot is implemented as an extension for another Code Editor/IDE.",
-        "mainPart2": "If you use <b>C language</b>, then you need UnitTestBot C/C++ version, that works together with <b>Visual Studio Code</b>. <br/> In case of <b>Java</b>, you can use UnitTestBot as a plugin for <b>Intellij IDEA</b>.",
-        "cppAlert": "<b>UnitTestBot C/C++</b> supports only C language for now. C++ language support is coming in <b>December 2021</b>.",
-        "cppPart1": "UnitTestBot for C/C++ is delivered in two parts: server and client.",
-        "cppPart2": "Server is presented as a docker container. Server part of UnitTestBot C/C++ handles all the work in terms of tests generation.",
-        "cppPart3": "VS Code extension serves as a client. UTBot VS Code Plugin provides friendly and intuitive user interface. It interacts with server via gRPC channel.",
-        "cppGuide": "Installation Guide",
-        "javaAlert": "<b>UnitTestBot Java</b> is coming in <b>December 2021</b>.",
-        "javaPart1": "UnitTestBot for Java is delivered as a plugin for IntelliJ IDEA.",
-        "release": "Release",
-        "nightly": "Nightly",
+        "mainPart1": "<b>UnitTestBot</b> project includes 2 engines generating tests:<ul><li>UnitTestBot C/C++ <i>(requires Ubuntu 18.04 or higher)</i></li><li>UnitTestBot Java <i>(tested on Win64, Linux 64)</i></li><ul>",
+        "mainPart2": "UnitTestBot C/C++ provides <b>Visual Studio Code</b> plugin.<br>UnitTestBot Java provides <b>IntelliJ IDEA</b> plugin.",
+        "alert": "<b>UnitTestBot C/C++</b> supports only <b>small subset</b> of <b>C++</b> for now",
+        "utbotCpp": "UnitTestBot C/C++",
+        "utbotJava": "UnitTestBot Java",
+        "latestStable": "Latest stable",
         "cpp": "UnitTestBot C/C++",
-        "cppReleaseVersion": "UTBOT_CPP_RELEASE_VERSION",
-        "cppSnapshotVersion": "UTBOT_CPP_SNAPSHOT_VERSION",
         "java": "UnitTestBot Java",
-        "javaSnapshotVersion": "UTBOT_JAVA_SNAPSHOT_VERSION",
-        "getvsix": "Get VSCode Plugin",
-        "getserver": "Get Server Installer",
+        "get": "Get",
         "getIdeaPlugin" : "Get IntelliJ IDEA Plugin",
         "javaGuide": "Installation Guide"
+    },
+    "utbot": {
+        "alert": "<small>Only small subset of C++ is supported</small>"
     },
     "contacts": {
         "contactTitle": "Contact Us",
         "description": "In case you have any questions or would like to share your feedback, do not hesitate to contact us via e-mail:",
-        "ivanov": "<b>Dmitry Ivanov</b>: Software Analysis Team Leader, Saint Petersburg RRI. <a href = 'mailto: dmitry.ivanov@huawei.com'>Send email</a>",
-        "qianxiang": "<b>Qianxiang Wang</b>: Professor, Saint Petersburg RRI. <a href = 'mailto: wangqianxiang@huawei.com'>Send email</a>",
-        "stromov": "<b>Gleb Stromov</b>: Senior Software Engineer, Saint Petersburg RRI. <a href = 'mailto: stromov.gleb1@huawei.com'>Send email</a>",
-
-        "issueTracker": "CodeHub Issue Tracker",
-        "submitProblem": "Submit your problem via"
-        },
+        "email": "<a href = 'mailto: support@utbot.org'>Send email</a>",
+        "issues": "GitHub Issues",
+        "discussions": "GitHub Discussions",
+        "submitProblem": "Submit your problem via",
+        "doInDiscussions": "Ask questions you’re wondering about, share ideas via",
+        "or": "or"
+    },
     "header": {
         "docs": "Docs",
         "cdocs": "UTBot C/C++",
@@ -73,7 +67,6 @@
         "chinese": "Chinese",
         "searchPlaceholder": "Type to search...",
         "search": "Search",
-        "gitlab": "Gitlab",
-        "codehub": "CodeHub"
+        "github": "GitHub"
     }
 }

@@ -12,23 +12,26 @@ const Layout = ({ isMainPage, children }) => {
       site {
         siteMetadata {
           title
+          build_number
+          build_date
         }
       }
     }
   `);
 
   return (
-    <>
-      <div className="site">
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`}  style={{top: 0, zIndex: "99", width: "100%", position: 'sticky'}}/>
-        <main className="siteContent">{children}</main>
-        <footer className="footer mt-auto py-3 bg-dark text-white">
-          <div style={{
-            float: `right`
-          }}>UnitTestBot © {new Date().getFullYear()} (Build#SITE_BUILD_NUMBER_PLACEHOLDER) </div>
-        </footer>
-      </div>
-    </>
+      <>
+        <div className="site">
+          <Header siteTitle={data.site.siteMetadata?.title || `Title`}  style={{top: 0, zIndex: "99", width: "100%", position: 'sticky'}}/>
+          <main className="siteContent">{children}</main>
+          <footer className="footer mt-auto py-3 bg-dark text-white">
+            <div style={{
+              float: `right`
+            }}>UnitTestBot © {new Date().getFullYear()} (Build#{data.site.siteMetadata?.build_number},
+                built on {data.site.siteMetadata?.build_date})</div>
+          </footer>
+        </div>
+      </>
   );
 };
 
