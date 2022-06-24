@@ -30,8 +30,8 @@
 
     },
     "install": {
-        "mainPart1": "<b>UnitTestBot</b> project includes 2 engines generating tests:<ul><li>UnitTestBot C/C++ <i>(requires Ubuntu 18.04 or higher)</i></li><li>UnitTestBot Java <i>(tested on Win64, Linux 64)</i></li><ul>",
-        "mainPart2": "UnitTestBot C/C++ provides <b>Visual Studio Code</b> plugin.<br>UnitTestBot Java provides <b>IntelliJ IDEA</b> plugin.",
+        "mainPart1": "<b>UnitTestBot</b> project provides users with 2 engines generating tests:<ul><li>UnitTestBot C/C++ <i>(requires Ubuntu 18.04 or higher)</i></li><li>UnitTestBot Java <i>(tested on Win64, Linux 64)</i></li><ul>",
+        "mainPart2": "UTBot offers convenient ways to interact with its functionality. Users can install and use corresponding plugins:<br><ul><b><li>Visual Studio Code</b> plugin for <b>C/C++</b> languages (see <a href=\"https://github.com/UnitTestBot/UTBotCpp/wiki/install-vscode-plugin\">installation guide</a>)</li><li><b>IntelliJ IDEA</b> plugin for <b>Java</b> language (see <a href=\"https://github.com/UnitTestBot/UTBotJava/wiki/intellij-idea-plugin\">installation guide</a>)</li></ul>",
         "alert": "<b>UnitTestBot C/C++</b> supports only <b>small subset</b> of <b>C++</b> for now",
         "utbotCpp": "UnitTestBot C/C++",
         "utbotJava": "UnitTestBot Java",
