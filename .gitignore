@@ -2,11 +2,10 @@ node_modules
 public/
 .cache/
 .idea/
-.yarn/cache/
-.docz
-/yarn-error.log
-yarn.lock
-package-lock.json
-.docz/app/db.json
 .yarn/
 !.yarn/releases/
+.yarn/cache/
+/yarn-error.log
+.docz
+.docz/app/db.json
+package-lock.json
