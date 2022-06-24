@@ -28,7 +28,7 @@ const ResponseType = { run: "RUN", generation: "GENERATION" };
 
 const snippetC = dedent`#include <stdio.h>\n#include <string.h>\n#include <math.h>\n#include <stdlib.h>\n\nint foo() \n{\n  // TODO: write your code here\n  return 0;\n}`;
 
-const snippetCpp = dedent`#include <iostream>\n#include <cmath>\n#include <cstring>\n\nusing namespace std;\n\nint foo() \n{\n  // TODO: write your code here\n  return 0;\n}`;
+const snippetCpp = dedent`#include <cmath>\n#include <cstring>\n\nusing namespace std;\n\nint foo() \n{\n  // TODO: write your code here\n  return 0;\n}`;
 
 const snippetJava = dedent`import java.util.*;\n\npublic class Solution {\n  // TODO: write your code here\n}`;
 
