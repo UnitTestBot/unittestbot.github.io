@@ -26,7 +26,7 @@ require("prismjs/components/prism-cpp");
 const SurveyPage = () => {
 
     // this page isn't connected with the survey server, so it is rendering from a local json
-    const survey = require("src/examples_json/survey.json");
+    const survey = require("../examples_json/survey.json");
 
     const [answers, setAnswersState] = useState(new Map());
     const updateAnswersMap = (k, v) => {

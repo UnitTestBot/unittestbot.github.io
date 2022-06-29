@@ -68,5 +68,8 @@
         "searchPlaceholder": "Type to search...",
         "search": "Search",
         "github": "GitHub"
+    },
+    "navtree": {
+        "docs": "Documentation"
     }
 }

@@ -1,0 +1,24 @@
+.nav-link {
+    color: #007bff;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-directory {
+    color: #2D3747;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.nav-link:hover {
+    background-color: #ededed;
+}
+
+.nav-link:focus {
+    color: inherit;
+}
+
+.nav {
+    padding: 6px 2px;
+}
