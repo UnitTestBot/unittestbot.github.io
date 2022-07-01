@@ -34,6 +34,7 @@ const snippetJava = dedent`import java.util.*;\n\npublic class Solution {\n  // 
 
 const UTBotOnlinePage = () => {
 
+    const [href, setHref] = useState("");
     const [sourceCode, setSourceCode] = React.useState(snippetC);
     const [testCode, setTestCode] = React.useState("");
     const [showExamples, setShowExamples] = useState(false);
@@ -63,16 +64,19 @@ const UTBotOnlinePage = () => {
 
     React.useEffect(() => {
         const queryString = window.location.search;
+        setHref(window.location.origin + window.location.pathname);
         const urlParams = new URLSearchParams(queryString);
         if (urlParams.has("source")) {
             setSourceCode(urlParams.get("source"));
             setTestCode("");
             //setIsSurveyActive(false);
             //setSourceForSurvey("");
-            //setIsSubmitted(false);
         }
         if (!urlParams.has("language")) {
             return;
+        }
+        if (urlParams.get("language") === "c") {
+            setLanguage(1);
         }
         if (urlParams.get("language") === "cpp") {
             setLanguage(2);
@@ -81,6 +85,15 @@ const UTBotOnlinePage = () => {
             setLanguage(3);
         }
     }, []);
+
+    const url = `${href}?language=${language === 1 ? "c" : language === 2 ? "cpp" : "java"}&source=${encodeURIComponent(sourceCode)}`;
+
+    function copyLink() {
+        if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(url);
+        }
+    }
+
 
     const getDetailsOfSubResponse = (responseType, response) => {
         if (response?.statusCode?.localeCompare("SUCCEEDED") === 0) {
@@ -228,12 +241,6 @@ const UTBotOnlinePage = () => {
     const editorWillMountTemp = monaco => {
         defineMonacoThemes(monaco);
     };
-
-    function copyLink() {
-        if (typeof window !== 'undefined') {
-            navigator.clipboard.writeText(window.location.href)
-        }
-    }
 
     const renderTooltip = (props) => (
         <Tooltip id="button-tooltip" {...props}>
