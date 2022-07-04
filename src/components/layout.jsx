@@ -25,7 +25,9 @@ const Layout = ({ isMainPage, children }) => {
         <div className="site">
           <Header siteTitle={data.site.siteMetadata?.title || `Title`}  style={{top: 0, zIndex: "99", width: "100%", position: 'sticky'}}/>
             <div className="container-flex">
-                <Sidebar className="sidebar-flex" />
+                {
+                    docsPage() && <Sidebar className="sidebar-flex" />
+                }
                 <div className="content-flex">
                     <main className="siteContent">{children}</main>
                 </div>
@@ -40,6 +42,11 @@ const Layout = ({ isMainPage, children }) => {
       </>
   );
 };
+
+const docsPage = () => {
+    const url = typeof window !== 'undefined' ? window.location.href : '';
+    return url.includes("docs/cpp") || url.includes("docs/java")
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

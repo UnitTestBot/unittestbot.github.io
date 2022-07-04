@@ -168,15 +168,19 @@ class NavTree extends Component {
                 <h4
                     style={{
                         marginLeft: '1.45rem',
+                        marginBottom: '2.5rem',
+                        marginTop: '1rem'
                     }}
                 >
+                    Docs
                 </h4>
                 <TreeView
                     data={tree}
                     textField="text"
                     expandField="opened"
-                    item={NavItem}
-                    expandIcons="item"
+                    itemRender={NavItem}
+                    i
+                    expandIcons={true}
                     onExpandChange={this.toggleItemExpansion}
                     onItemClick={this.toggleItemExpansion}
                 />

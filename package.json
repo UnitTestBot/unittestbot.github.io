@@ -7,9 +7,9 @@
   "dependencies": {
     "@emotion/react": "11.1.5",
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "3.0.2",
-    "@progress/kendo-licensing": "1.2.2",
-    "@progress/kendo-react-animation": "5.4.0",
-    "@progress/kendo-react-treeview": "5.4.0",
+    "@progress/kendo-react-animation": "^2.6.1",
+    "@progress/kendo-react-treeview": "^2.6.1",
+    "@progress/kendo-theme-default": "^3.2.0",
     "bootstrap": "4.6.0",
     "dedent": "0.7.0",
     "dedent-js": "1.0.1",

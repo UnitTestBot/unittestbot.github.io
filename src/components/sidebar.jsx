@@ -62,39 +62,6 @@ const data = [
                         ]
                     },
                 ]
-            },
-            {
-                directory: 'UTBot Python',
-                links: [
-                    {
-                        directory: 'General',
-                        links: [
-                            {
-
-                                path: '/docs/cpp/general/introduction',
-                                title: 'Introduction'
-                            },
-                            {
-                                path: '/docs/cpp/general/system-requirements',
-                                title: 'System Requirements'
-                            }
-                        ]
-                    },
-                    {
-                        directory: 'Installation',
-                        links: [
-                            {
-
-                                path: '/docs/cpp/general/introduction',
-                                title: 'Introduction'
-                            },
-                            {
-                                path: '/docs/cpp/general/system-requirements',
-                                title: 'System Requirements'
-                            }
-                        ]
-                    },
-                ]
             }
         ]
     }
