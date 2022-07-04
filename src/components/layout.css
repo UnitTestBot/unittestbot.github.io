@@ -22,42 +22,33 @@
 }
 
 .sidebar-flex {
-  position: sticky;
   top: 0;
   bottom: 0;
+  position: sticky;
   overflow-x: scroll;
   overflow-y: scroll;
   height: 100vh;
-  min-width: 225px;
-  max-width: 300px;
-  max-height: 100vh;
+  width: 260px;
+  max-width: 260px;
+  min-width: 200px;
 }
 
 .content-flex {
   flex-grow: 3;
   margin: 0 auto;
   max-width: 960px;
-  padding: 0px 1.0875rem 1.45rem;
-  padding-top: 0;
+  padding: 0 1.0875rem 1.45rem;
   flex-grow: 1;
 }
 
 ul {
-  margin-left: 1.45rem;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  list-style-position: outside;
-  list-style-image: none;
-  list-style: none;
+  padding: 0;
+  margin: 0 0 1.45rem 1.45rem;
+  list-style: none outside none;
 }
 
 li {
-  margin-bottom: calc(1.45rem / 2);
+  margin-bottom: calc(1.4rem / 2);
 }
 
 ul li {
@@ -65,9 +56,9 @@ ul li {
 }
 
 li > ul {
-  margin-left: 1.45rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
+  margin-left: 1.2rem;
+  margin-bottom: calc(1rem / 2);
+  margin-top: calc(1rem / 2);
 }
 
 li *:last-child {
@@ -75,7 +66,7 @@ li *:last-child {
 }
 
 li > p {
-  margin-bottom: calc(1.45rem / 2);
+  margin-bottom: calc(1.3rem / 2);
 }
 
 /* Kendo Treeview Overrides */

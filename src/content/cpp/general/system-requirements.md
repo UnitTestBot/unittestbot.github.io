@@ -1,6 +1,6 @@
 ---
-title: System Requirements
-path: '/docs/cpp/general/system-requirements'
+name: System Requirements
+path: /docs/cpp/general/sys-requirements
 ---
 
 # System Requirements and Supported Systems

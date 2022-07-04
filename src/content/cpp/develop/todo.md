@@ -1,6 +1,6 @@
 ---
-title: ToDo
-path: '/docs/cpp/develop/todo'
+name: ToDo
+path: /docs/cpp/develop/todo
 ---
 
 # ToDo list

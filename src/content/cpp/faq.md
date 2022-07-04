@@ -1,5 +1,5 @@
 ---
-title: Faq
+name: FAQ
 path: /docs/cpp/faq
 ---
 

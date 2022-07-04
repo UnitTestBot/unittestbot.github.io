@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {graphql, Link, useStaticQuery} from 'gatsby';
+import { Link } from 'gatsby';
 import { TreeView } from '@progress/kendo-react-treeview';
 import "./sidebar.css";
 
@@ -13,13 +13,13 @@ const ITEMS_IN_STORAGE = ['expandedItems'];
 const NavItem = ({ item }) => {
     if (!item.directory) {
         return (
-            <Link className="nav nav-link" to={item.path}>
+            <Link className="navig navig-link" to={item.path}>
                 {item.title}
             </Link>
         );
     }
 
-    return <p className="nav nav-directory">{item.directory}</p>;
+    return <p className="navig navig-directory">{item.directory}</p>;
 };
 
 

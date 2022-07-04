@@ -1,6 +1,6 @@
 ---
-title: Troubleshooting
-path: '/docs/cpp/develop/troubleshooting'
+name: Troubleshooting
+path: /docs/cpp/develop/troubleshooting
 ---
 
 ## Troubleshooting the build

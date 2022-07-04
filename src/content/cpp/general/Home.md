@@ -1,6 +1,6 @@
 ---
-title: Introduction
-path: '/docs/cpp/general/introduction'
+name: Home
+path: /docs/cpp/general/home
 ---
 
 # Introduction
