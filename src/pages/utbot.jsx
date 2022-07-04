@@ -46,9 +46,9 @@ const UTBotOnlinePage = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isGeneratingAndRunning, setIsGeneratingAndRunning] = useState(false);
 
-    const examplesC = require("src/examples_json/examples_c.json");
-    const examplesCpp = require("src/examples_json/examples_cpp.json");
-    const examplesJava = require("src/examples_json/examples_java.json");
+    const examplesC = require("../examples_json/examples_c.json");
+    const examplesCpp = require("../examples_json/examples_cpp.json");
+    const examplesJava = require("../examples_json/examples_java.json");
 
     const data = useStaticQuery(graphql`
     query {

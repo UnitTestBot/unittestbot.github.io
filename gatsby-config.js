@@ -21,7 +21,7 @@ module.exports = {
 
   plugins: [
     `gatsby-plugin-preact`,
-    "gatsby-theme-docz",
+    // "gatsby-theme-docz",
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
@@ -46,7 +46,7 @@ module.exports = {
         icon: `src/images/utbot-logo-5.svg`, // This path is relative to the root of the site.
       },
     },
-    {
+    /* {
       resolve: "gatsby-plugin-alias-imports",
       options: {
         alias: {
@@ -54,7 +54,7 @@ module.exports = {
           "@docz": require.resolve("docz"),
         },
       },
-    },
+    }, */
     {
       resolve: "gatsby-plugin-lunr",
       options: {
@@ -69,7 +69,7 @@ module.exports = {
           { name: "name", store: true, attributes: { boost: 20 } },
           { name: "description", store: true, attributes: { boost: 10 } },
           { name: "content", store: true, attributes: { boost: 15 } },
-          { name: "route", store: true },
+          { name: "path", store: true },
         ],
         // A function for filtering nodes. () => true by default
         filterNodes: node =>
@@ -81,7 +81,7 @@ module.exports = {
             name: node => node.frontmatter.name,
             description: node => node.frontmatter.description,
             content: node => node.rawMarkdownBody,
-            route: node => node.frontmatter.route,
+            path: node => node.frontmatter.path,
           },
         },
       },
@@ -90,7 +90,7 @@ module.exports = {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
         // Fields to index
-        fields: [`name`, `dscription`, `content`, `route`],
+        fields: [`name`, `description`, `content`, `path`],
         // How to resolve each field`s value for a supported node type
         resolvers: {
           // For any node of type MarkdownRemark, list how to resolve the fields` values
@@ -98,7 +98,7 @@ module.exports = {
             name: node => node.frontmatter.name,
             description: node => node.frontmatter.description,
             content: node => node.rawMarkdownBody,
-            route: node => node.frontmatter.route,
+            path: node => node.frontmatter.path,
           },
         },
         // Optional filter to limit indexed nodes
@@ -106,10 +106,10 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "documentation",
-        path: `${__dirname}/src/docs/`,
+        name: `markdown`,
+        path: `${__dirname}/src/content/`,
       },
     },
     `gatsby-plugin-gatsby-cloud`,
