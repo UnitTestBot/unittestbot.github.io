@@ -10,6 +10,13 @@
 }
 
 .thirdCard.contactsCard {
-    margin: 20px;
+    margin: 35px 20px;
     width: 60%;
+}
+
+@media screen and (max-width: 650px) {
+    .thirdCard.contactsCard {
+        margin: 20px;
+        width: 95%;
+    }
 }
