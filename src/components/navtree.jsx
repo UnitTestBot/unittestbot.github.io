@@ -179,7 +179,6 @@ class NavTree extends Component {
                     textField="text"
                     expandField="opened"
                     itemRender={NavItem}
-                    i
                     expandIcons={true}
                     onExpandChange={this.toggleItemExpansion}
                     onItemClick={this.toggleItemExpansion}

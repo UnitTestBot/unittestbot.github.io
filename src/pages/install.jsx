@@ -55,7 +55,7 @@ const InstallPage = () => {
           <Card className="releaseCard" bg="info" text="white">
             <Card.Header as="h5">{t("install.utbotCpp")}</Card.Header>
             <Card.Body>
-              <Card.Subtitle>{t("install.latestStable")}{": v1.0.167"}</Card.Subtitle>
+              <Card.Subtitle>{t("install.latestStable")}{": 2022.7.0"}</Card.Subtitle>
               <Card.Text />
               <div className="buttonsContainerCpp">
                 <Button
