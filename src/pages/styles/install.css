@@ -9,16 +9,38 @@
     margin-right: auto;
 }
 
+@media screen and (max-width: 650px) {
+    .pageFlexContainer {
+        padding: 3px;
+    }
+}
+
 .primaryCard,
 .thirdCard {
     margin: 20px;
     width: 70%;
 }
 
+@media screen and (max-width: 650px) {
+    .thirdCard,
+    .primaryCard {
+        margin: 3px;
+        width: 100%;
+    }
+}
+
 .innerFlexContainer {
     width: 70%;
     margin-bottom: 20px;
 }
+
+@media screen and (max-width: 650px) {
+    .innerFlexContainer {
+        margin: 3px;
+        width: 100%;
+    }
+}
+
 
 .innerFlexContainer {
     max-width: 1280px;
@@ -31,6 +53,14 @@
 .releaseCard,
 .nightlyCard {
     width: 48%;
+}
+
+@media screen and (max-width: 650px) {
+    .releaseCard,
+    .nightlyCard {
+        margin: 3px;
+        width: 100%;
+    }
 }
 
 .buttonsContainerCpp,

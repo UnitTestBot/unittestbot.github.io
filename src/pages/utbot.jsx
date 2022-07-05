@@ -251,7 +251,7 @@ const UTBotOnlinePage = () => {
     return (
         <Layout>
             <SEO title="UTBot Online"/>
-            <div>
+            <div style={{ overflowX: "auto", overflowY: "auto" }}>
                 <div style={{
                     display: "flex",
                     flexDirection: "column",

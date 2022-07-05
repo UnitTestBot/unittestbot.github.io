@@ -19,6 +19,7 @@
 .container-flex {
   display: flex;
   flex-direction: row;
+  overflow-x: auto;
 }
 
 .sidebar-flex {
@@ -32,6 +33,15 @@
   max-width: 300px;
   min-width: 300px;
   border-right: 1.5px solid #3b3b3b !important;
+  border-bottom: 1.5px solid #3b3b3b !important;
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar-flex {
+    width: 170px;
+    max-width: 170px;
+    min-width: 170px;
+  }
 }
 
 .content-flex {
