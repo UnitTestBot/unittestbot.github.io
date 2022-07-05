@@ -23,7 +23,7 @@ const DocsPage = () => {
             <Card.Text>
               <p>{t("docs.cdocsText")}</p>
             </Card.Text>
-            <Card.Link as={Link} href="/docs/cpp/">
+            <Card.Link as={Link} href="/docs/cpp/general/home">
               {t("docs.cdocsLink")}
             </Card.Link>
           </Card.Body>
@@ -35,7 +35,7 @@ const DocsPage = () => {
             <Card.Text>
               <p>{t("docs.javadocsText")}</p>
             </Card.Text>
-            <Card.Link as={Link} href="/docs/java/">
+            <Card.Link as={Link} href="/docs/java/general/home">
               {t("docs.javadocsLink")}
             </Card.Link>
           </Card.Body>

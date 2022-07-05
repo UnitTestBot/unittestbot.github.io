@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Sidebar from "./sidebar";
+import "./sidebar.css";
 import Header from "./header";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './layout.css';
@@ -24,12 +25,18 @@ const Layout = ({ isMainPage, children }) => {
       <>
         <div className="site">
           <Header siteTitle={data.site.siteMetadata?.title || `Title`}  style={{top: 0, zIndex: "99", width: "100%", position: 'sticky'}}/>
-            <div className="container-flex">
-                <Sidebar className="sidebar-flex" />
-                <div className="content-flex">
-                    <main className="siteContent">{children}</main>
-                </div>
-            </div>
+            {
+                !docsPage() && <main className="siteContent">{children}</main>
+            }
+            {
+                docsPage() &&
+                    <div className="container-flex">
+                        <Sidebar className="sidebar-flex" />
+                        <div className="content-flex">
+                            <main className="siteContent">{children}</main>
+                        </div>
+                    </div>
+            }
           <footer className="footer mt-auto py-3 bg-dark text-white">
               <div style={{
                   float: `right`
@@ -40,6 +47,11 @@ const Layout = ({ isMainPage, children }) => {
       </>
   );
 };
+
+const docsPage = () => {
+    const url = typeof window !== 'undefined' ? window.location.href : '';
+    return url.includes("docs/cpp") || url.includes("docs/java")
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

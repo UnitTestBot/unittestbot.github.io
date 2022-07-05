@@ -99,8 +99,11 @@ function Header(props) {
                 onMouseEnter={showDropdownDocs}
                 onMouseLeave={hideDropdownDocs}
               >
-                <NavDropdown.Item onClick={() => navigate("/docs/cpp")}>
+                <NavDropdown.Item onClick={() => navigate("/docs/cpp/general/home")}>
                   {t("header.cdocs")}
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => navigate("/docs/java/general/home")}>
+                  {t("header.javadocs")}
                 </NavDropdown.Item>
               </NavDropdown>
               <Nav.Item as="li">

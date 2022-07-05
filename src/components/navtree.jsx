@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {graphql, Link, useStaticQuery} from 'gatsby';
+import { Link } from 'gatsby';
 import { TreeView } from '@progress/kendo-react-treeview';
 import "./sidebar.css";
 
@@ -13,13 +13,13 @@ const ITEMS_IN_STORAGE = ['expandedItems'];
 const NavItem = ({ item }) => {
     if (!item.directory) {
         return (
-            <Link className="nav nav-link" to={item.path}>
+            <Link className="navig navig-link" to={item.path}>
                 {item.title}
             </Link>
         );
     }
 
-    return <p className="nav nav-directory">{item.directory}</p>;
+    return <p className="navig navig-directory">{item.directory}</p>;
 };
 
 
@@ -168,15 +168,18 @@ class NavTree extends Component {
                 <h4
                     style={{
                         marginLeft: '1.45rem',
+                        marginBottom: '2.5rem',
+                        marginTop: '1rem'
                     }}
                 >
+                    Docs
                 </h4>
                 <TreeView
                     data={tree}
                     textField="text"
                     expandField="opened"
-                    item={NavItem}
-                    expandIcons="item"
+                    itemRender={NavItem}
+                    expandIcons={true}
                     onExpandChange={this.toggleItemExpansion}
                     onItemClick={this.toggleItemExpansion}
                 />

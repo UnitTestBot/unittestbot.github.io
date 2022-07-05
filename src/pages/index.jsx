@@ -43,7 +43,7 @@ const MainPage = () => {
                   {t("home.tryOnline")}
                 </Button>{" "}
               </Link>
-              <Link to="/docs/cpp/">
+              <Link to="/docs">
                 <Button variant="outline-info" size="lg">
                   {t("home.more")}
                 </Button>{" "}
