@@ -1,6 +1,6 @@
 ---
 name: Docker-free UTBot in WSL2
-path: docs/cpp/usage/docker-free-utbot-in-wsl2
+path: /docs/cpp/usage/docker-free-utbot-in-wsl2
 ---
 
 # Docker-free UTBot in WSL2
