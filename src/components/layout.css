@@ -6,6 +6,7 @@
 
 .site-content {
   flex-grow: 1;
+  overflow-x: auto;
 }
 
 .footer {
@@ -29,11 +30,10 @@
   overflow-x: auto;
   overflow-y: auto;
   height: 100vh;
-  width: 300px;
-  max-width: 300px;
-  min-width: 300px;
+  width: 280px;
+  max-width: 280px;
+  min-width: 280px;
   border-right: 1.5px solid #3b3b3b !important;
-  border-bottom: 1.5px solid #3b3b3b !important;
 }
 
 @media screen and (max-width: 600px) {
@@ -42,7 +42,6 @@
     max-width: 170px;
     min-width: 170px;
   }
-
 }
 
 .content-flex {

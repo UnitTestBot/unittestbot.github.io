@@ -172,7 +172,7 @@ class NavTree extends Component {
                         marginTop: '1rem'
                     }}
                 >
-                    Docs
+                    {this.props.docsType}
                 </h4>
                 <TreeView
                     data={tree}
