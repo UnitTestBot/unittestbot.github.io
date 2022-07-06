@@ -16,7 +16,7 @@
 
 @media screen and (max-width: 650px) {
     .thirdCard.contactsCard {
-        margin: 20px;
-        width: 95%;
+        margin: 10px;
+        width: 100%;
     }
 }

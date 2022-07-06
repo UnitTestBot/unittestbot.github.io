@@ -73,7 +73,7 @@ const InstallPage = () => {
           <Card className="releaseCard" bg="info" text="white">
             <Card.Header as="h5">{t("install.utbotJava")}</Card.Header>
             <Card.Body>
-              <Card.Subtitle>{t("install.latestStable")}{": 2022.5-alpha"}</Card.Subtitle>
+              <Card.Subtitle>{t("install.latestStable")}{": 2022.7-beta"}</Card.Subtitle>
               <Card.Text />
               <div className="buttonsContainerCpp">
                 <Button
