@@ -81,6 +81,12 @@
     height: 80%;
 }
 
+.actions button {
+    width: 130px !important;
+    display: inline-block;
+    margin: 5px;
+}
+
 @media screen and (max-height: 770px) {
     .columnsWrapper {
         margin-top: 15px;
@@ -105,16 +111,15 @@
         justify-content: flex-start;
         width: 100%
     }
-}
 
-.actions button {
-    width: 130px !important;
-    display: inline-block;
-    margin: 5px;
-}
-
-@media screen and (max-width: 600px) {
     .actions button {
         font-size: larger;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .actions {
+        display: flex;
+        flex-direction: column;
     }
 }
