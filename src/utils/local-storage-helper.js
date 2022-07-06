@@ -1,4 +1,3 @@
-
 const hasStorage = () => {
   try {
     localStorage.setItem('test_storage::internal', 'test');

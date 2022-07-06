@@ -8,6 +8,10 @@ import Header from "./header";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './layout.css';
 
+import {
+    DocsType
+} from '../utils/constants';
+
 const Layout = ({ isMainPage, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -32,7 +36,7 @@ const Layout = ({ isMainPage, children }) => {
             {
                 docsPage() &&
                     <div className="container-flex">
-                        <Sidebar className="sidebar-flex" />
+                        <Sidebar className="sidebar-flex" docsType={docsType()} />
                         <div className="content-flex">
                             <main className="siteContent">{children}</main>
                         </div>
@@ -52,6 +56,18 @@ const Layout = ({ isMainPage, children }) => {
 const docsPage = () => {
     const url = typeof window !== 'undefined' ? window.location.href : '';
     return url.includes("docs/cpp") || url.includes("docs/java")
+}
+
+const docsType = () => {
+    const url = typeof window !== 'undefined' ? window.location.href : '';
+
+    if (url.includes("docs/cpp"))
+        return DocsType.cFamily
+
+    if (url.includes("docs/java"))
+        return DocsType.java
+
+    return null;
 }
 
 Layout.propTypes = {
