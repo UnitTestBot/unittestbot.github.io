@@ -20,6 +20,7 @@
 .container-flex {
   display: flex;
   flex-direction: row;
+  overflow-x: auto;
 }
 
 .sidebar-flex {
