@@ -28,7 +28,7 @@ const Layout = ({ isMainPage, children }) => {
   return (
       <>
         <div className="site">
-          <Header siteTitle={data.site.siteMetadata?.title || `Title`}  style={{top: 0, zIndex: "99", width: "100%", position: 'sticky'}}/>
+          <Header siteTitle={data.site.siteMetadata?.title || `Title`}  style={{top: 0, zIndex: "999999", width: "100%", position: 'sticky'}}/>
             {
                 !docsPage() &&
                     <main className="siteContent">{children}</main>
