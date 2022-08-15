@@ -358,9 +358,6 @@ const UTBotOnlinePage = () => {
                                 <Editor
                                     theme="my-light"
                                     language={langHighlight}
-                                    onChange={(value) => {
-                                        setSourceCode(value.slice(0, 5000));
-                                    }}
                                     value={sourceCode}
                                     beforeMount={editorWillMountTemp.bind(this)}
                                     options={{
