@@ -359,6 +359,7 @@ const UTBotOnlinePage = () => {
                                     theme="my-light"
                                     language={langHighlight}
                                     value={sourceCode}
+                                    onChange={setSourceCode}
                                     beforeMount={editorWillMountTemp.bind(this)}
                                     options={{
                                         tabSize: 4,
