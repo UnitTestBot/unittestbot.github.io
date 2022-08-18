@@ -3,6 +3,7 @@ public/
 .cache/
 .idea/
 .yarn/
+.DS_Store
 !.yarn/releases/
 .yarn/cache/
 /yarn-error.log
