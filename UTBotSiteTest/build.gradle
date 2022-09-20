@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'com.codeborne', name: 'selenide', version:'6.7.4'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+
+    // Logging of 3-rd party libraries
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version:'2.0.0'
+    testImplementation group: 'ch.qos.logback', name: 'logback-classic', version:'1.2.3'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(Test) {
+    // for using properties from gradle.properties
+    systemProperties = System.properties
+
+    // verbose logging in console
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "full"
+        }
+    }
+
+    // start tests every time, even when code not changed
+    outputs.upToDateWhen { false }
+}
