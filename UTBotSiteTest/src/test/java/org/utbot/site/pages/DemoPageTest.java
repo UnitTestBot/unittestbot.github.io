@@ -18,7 +18,8 @@ public class DemoPageTest extends UTBotSiteTest {
         demoPage.open();
         languageDropdown.select(language.getName());
         examplesDropdown.field.hover();
-        examplesDropdown.items.shouldHave(sizeGreaterThanOrEqual(minimalNumberOfExamples));
+        examplesDropdown.items.shouldHave(
+                sizeGreaterThanOrEqual(minimalNumberOfExamples));
     }
 
     @ParameterizedTest
@@ -31,7 +32,8 @@ public class DemoPageTest extends UTBotSiteTest {
         generateAndRunTestsBtn.click();
         waitSpinnerDisappears();
         generatedTest.shouldHave(text("Test"));
-        testGenerationResult.shouldNotHave(text("ERROR"));
-        testGenerationResult.shouldHave(text("SUCCEEDED"));
+        testGenerationResult
+                .shouldNotHave(text("ERROR"))
+                .shouldHave(text("SUCCEEDED"));
     }
 }

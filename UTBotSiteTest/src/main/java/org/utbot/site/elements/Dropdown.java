@@ -13,9 +13,9 @@ import static org.utbot.site.UTBotSite.random;
 
 public class Dropdown {
 
-    public String name;
-    public SelenideElement field;
-    public ElementsCollection items;
+    public final String name;
+    public final SelenideElement field;
+    public final ElementsCollection items;
 
     public Dropdown(String name, By fieldLocator, By itemLocator) {
         field = $(fieldLocator);
