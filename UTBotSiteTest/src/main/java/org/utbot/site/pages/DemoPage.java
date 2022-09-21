@@ -2,10 +2,13 @@ package org.utbot.site.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.logevents.SelenideLog;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import org.utbot.site.enums.Language;
 
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.logevents.LogEvent.EventStatus.PASS;
 import static org.utbot.site.UTBotSite.demoPage;
 import static org.utbot.site.UTBotSite.random;
 
@@ -32,13 +35,17 @@ public class DemoPage extends UTBotPage{
 
     public DemoPage selectLanguage(Language language) {
         languageDropdown.hover();
+        SelenideLog log = SelenideLogger.beginStep(String.join(" ",language.getName(), "language"), "selected");
         languageDropdown.$(byText(language.getName())).click();
+        SelenideLogger.commitStep(log, PASS);
         return this;
     }
 
     public DemoPage selectExamplesItem(int index) {
         examplesDropdown.hover();
+        SelenideLog log = SelenideLogger.beginStep(String.join("","\"", examplesItems.get(index).getText(), "\"", " example"), "selected");
         examplesItems.get(index).click();
+        SelenideLogger.commitStep(log, PASS);
         return this;
     }
 
