@@ -8,6 +8,7 @@ import org.utbot.site.enums.Language;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThanOrEqual;
 import static com.codeborne.selenide.Condition.*;
 import static org.utbot.site.UTBotSite.*;
+import static org.utbot.site.pages.DemoPage.*;
 
 public class DemoPageTest extends UTBotSiteTest {
 
@@ -15,22 +16,22 @@ public class DemoPageTest extends UTBotSiteTest {
     @CsvSource({  "C, 20",   "CPP, 4",   "JAVA, 7"  })
     public void checkExamplesArePresent(Language language, int minimalNumberOfExamples) {
         demoPage.open();
-        demoPage.selectLanguage(language);
-        demoPage.examplesDropdown.hover();
-        demoPage.examplesItems.shouldHave(sizeGreaterThanOrEqual(minimalNumberOfExamples));
+        languageDropdown.select(language.getName());
+        examplesDropdown.field.hover();
+        examplesDropdown.items.shouldHave(sizeGreaterThanOrEqual(minimalNumberOfExamples));
     }
 
     @ParameterizedTest
     @EnumSource
     public void checkSuccessfulTestGenerationForRandomExampleForLanguage(Language language) {
         demoPage.open();
-        demoPage.selectLanguage(language)
-                .selectRandomExamplesItem();
-        demoPage.userCode.shouldNotBe(empty);
-        demoPage.generateAndRunTestsBtn.click();
+        languageDropdown.select(language.getName());
+        examplesDropdown.selectRandomItem();
+        userCode.shouldNotBe(empty);
+        generateAndRunTestsBtn.click();
         waitSpinnerDisappears();
-        demoPage.generatedTest.shouldHave(partialText("Test"));
-        demoPage.testGenerationResult.shouldNot(matchText("ERROR"));
-        demoPage.testGenerationResult.shouldHave(text("SUCCEEDED"));
+        generatedTest.shouldHave(text("Test"));
+        testGenerationResult.shouldNotHave(text("ERROR"));
+        testGenerationResult.shouldHave(text("SUCCEEDED"));
     }
 }

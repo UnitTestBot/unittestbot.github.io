@@ -14,7 +14,6 @@ public abstract class UTBotSiteTest {
         Configuration.baseUrl = UTBotSite.SITE_URL;
         Configuration.browserSize = "1920x1080";
         Configuration.headless = true;
-        //Configuration.reportsFolder = "build/reports/tests";
     }
 
 }
