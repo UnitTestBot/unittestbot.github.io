@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.logevents.LogEvent.EventStatus.PASS;
+import static com.codeborne.selenide.logevents.LogEvent.EventStatus.IN_PROGRESS;
 import static org.utbot.site.UTBotSite.random;
 
 public class Dropdown {
@@ -24,20 +24,24 @@ public class Dropdown {
     }
 
     public void select(String text) {
-        field.hover();
+        field.hover();  //so that list is expanded
+        SelenideLog log = SelenideLogger.beginStep(
+                "dropdown " + name, String.join("", "select ", "\"", text, "\""));
+        SelenideLogger.commitStep(log, IN_PROGRESS);
         items.filterBy(text(text)).first().click();
     }
 
     public void selectByIndex(int index) {
-        field.hover();
+        field.hover(); //so that list is expanded
         var itemToSelect = items.get(index);
-        SelenideLog log = SelenideLogger.beginStep(String.join("","\"", itemToSelect.getText(), "\"", " example"), "selected");
+        SelenideLog log = SelenideLogger.beginStep(
+                "dropdown " + name, String.join("", "select ", "\"", itemToSelect.getText(), "\""));
+        SelenideLogger.commitStep(log, IN_PROGRESS);
         itemToSelect.click();
-        SelenideLogger.commitStep(log, PASS);
     }
 
     public void selectRandomItem() {
-        field.hover();
+        field.hover(); //so that items are loaded on UI
         int numberOfExamples = items.size();
         int index = random.nextInt(numberOfExamples);
         selectByIndex(index);
