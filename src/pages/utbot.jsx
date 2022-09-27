@@ -1,6 +1,5 @@
 import * as React from "react";
 import {useState} from "react";
-import Survey from "../components/survey/survey.jsx";
 import {graphql, useStaticQuery} from 'gatsby';
 
 import Layout from "../components/layout";
@@ -17,9 +16,9 @@ import SEO from "../components/seo";
 import withTrans from "../i18n/withTrans";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-python";
 import "prismjs/components/prism-markup";
 import "prismjs/themes/prism.css";
-import examplesJavaScript from "../examples_json/examples_js.json";
 
 
 require("prismjs/components/prism-c");
@@ -111,12 +110,20 @@ const UTBotOnlinePage = () => {
     function getLanguage(index) {
         switch(index) {
             case 1: return "C"
-            case 2: return "C++"
+            case 2: return "Cpp"
             case 3: return "Java"
             case 4: return "Python"
             case 5: return "JavaScript"
             case 6: return "Go"
         }
+    }
+
+    function getLanguageName(index) {
+        if (index === 2) {
+            return "C++"
+        }
+
+        return getLanguage(index)
     }
 
     const url = `${href}?language=${getLanguage(language)}&source=${encodeURIComponent(sourceCode)}`;
@@ -278,18 +285,7 @@ const UTBotOnlinePage = () => {
         });
     }
 
-    function getPrintedLanguage(index) {
-        switch(index) {
-            case 1: return "C"
-            case 2: return "C++"
-            case 3: return "Java"
-            case 4: return "Python"
-            case 5: return "JavaScript"
-            case 6: return "Go"
-        }
-    }
-
-    const langName = getLanguage(language);
+    const langName = getLanguageName(language)
 
     const langHighlight = language === 3 ? "java" : language === 4 ? "python" : language === 5 ? "javascript" : language === 6 ? "go" : "cpp";
 
@@ -491,12 +487,12 @@ const UTBotOnlinePage = () => {
                                 {language === 2 && <Alert
                                     style={{marginTop: "5px", marginBottom: "5px", display: "inline-block"}}
                                     variant="warning"
-                                    dangerouslySetInnerHTML={{ __html: t("utbot.alert_cpp") }}
+                                    dangerouslySetInnerHTML={{ __html: t("utbot.alertCpp") }}
                                 />}
                                 {(language === 4 || language === 5 || language === 6) && <Alert
                                     style={{marginTop: "5px", marginBottom: "5px", display: "inline-block"}}
                                     variant="warning"
-                                    dangerouslySetInnerHTML={{ __html: t("utbot.alert_new") }}
+                                    dangerouslySetInnerHTML={{ __html: t("utbot.alertNew") }}
                                 />}
                             </div>
                             <div style={{
