@@ -1,6 +1,5 @@
 import * as React from "react";
 import {useState} from "react";
-import Survey from "../components/survey/survey.jsx";
 import {graphql, useStaticQuery} from 'gatsby';
 
 import Layout from "../components/layout";
@@ -17,12 +16,16 @@ import SEO from "../components/seo";
 import withTrans from "../i18n/withTrans";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-python";
 import "prismjs/components/prism-markup";
 import "prismjs/themes/prism.css";
 
 
 require("prismjs/components/prism-c");
 require("prismjs/components/prism-cpp");
+require("prismjs/components/prism-python");
+require("prismjs/components/prism-javascript");
+require("prismjs/components/prism-go");
 
 const ResponseType = { run: "RUN", generation: "GENERATION" };
 
@@ -31,6 +34,12 @@ const snippetC = dedent`#include <stdio.h>\n#include <string.h>\n#include <math.
 const snippetCpp = dedent`#include <cmath>\n#include <cstring>\n\nusing namespace std;\n\nint foo() \n{\n  // TODO: write your code here\n  return 0;\n}`;
 
 const snippetJava = dedent`import java.util.*;\n\npublic class Solution {\n  // TODO: write your code here\n}`;
+
+const snippetPython = dedent`# Write your code here`;
+
+const snippetJavaScript = dedent`// Write your code here`;
+
+const snippetGo = dedent`package simple\n\nfunc example() {\n  // Write your code here\n}`;
 
 const UTBotOnlinePage = () => {
 
@@ -49,6 +58,9 @@ const UTBotOnlinePage = () => {
     const examplesC = require("../examples_json/examples_c.json");
     const examplesCpp = require("../examples_json/examples_cpp.json");
     const examplesJava = require("../examples_json/examples_java.json");
+    const examplesPython = require("../examples_json/examples_python.json");
+    const examplesJavaScript = require("../examples_json/examples_js.json");
+    const examplesGo = require("../examples_json/examples_go.json");
 
     const data = useStaticQuery(graphql`
     query {
@@ -84,9 +96,37 @@ const UTBotOnlinePage = () => {
         if (urlParams.get("language") === "java") {
             setLanguage(3);
         }
+        if (urlParams.get("language") === "python") {
+            setLanguage(4);
+        }
+        if (urlParams.get("language") === "javascript") {
+            setLanguage(5);
+        }
+        if (urlParams.get("language") === "go") {
+            setLanguage(6);
+        }
     }, []);
 
-    const url = `${href}?language=${language === 1 ? "c" : language === 2 ? "cpp" : "java"}&source=${encodeURIComponent(sourceCode)}`;
+    function getLanguage(index) {
+        switch(index) {
+            case 1: return "C"
+            case 2: return "Cpp"
+            case 3: return "Java"
+            case 4: return "Python"
+            case 5: return "JavaScript"
+            case 6: return "Go"
+        }
+    }
+
+    function getLanguageName(index) {
+        if (index === 2) {
+            return "C++"
+        }
+
+        return getLanguage(index)
+    }
+
+    const url = `${href}?language=${getLanguage(language)}&source=${encodeURIComponent(sourceCode)}`;
 
     function copyLink() {
         if (navigator.clipboard && window.isSecureContext) {
@@ -120,7 +160,7 @@ const UTBotOnlinePage = () => {
         //setIsSubmitted(false);
 
         const host = backendHost;
-        let lang = language === 1 ? "C" : language === 2 ? "Cpp" : "Java";
+        let lang = getLanguage(language);
         const req = `${host}/utbot-online/${lang}-playground/tests/`;
         const isInternetConnected = navigator.onLine;
         if (isInternetConnected) {
@@ -217,10 +257,37 @@ const UTBotOnlinePage = () => {
                     }}> {exampleCode.name} </NavDropdown.Item>);
         });
     }
+    else if (language === 4) {
+        dropdownItems = examplesPython.examples.map(exampleCode => {
+            return (
+                <NavDropdown.Item
+                    onClick={() => {
+                        setSourceCode(exampleCode.code);
+                    }}> {exampleCode.name} </NavDropdown.Item>);
+        });
+    }
+    else if (language === 5) {
+        dropdownItems = examplesJavaScript.examples.map(exampleCode => {
+            return (
+                <NavDropdown.Item
+                    onClick={() => {
+                        setSourceCode(exampleCode.code);
+                    }}> {exampleCode.name} </NavDropdown.Item>);
+        });
+    }
+    else if (language === 6) {
+        dropdownItems = examplesGo.examples.map(exampleCode => {
+            return (
+                <NavDropdown.Item
+                    onClick={() => {
+                        setSourceCode(exampleCode.code);
+                    }}> {exampleCode.name} </NavDropdown.Item>);
+        });
+    }
 
-    const langName = language === 1 ? "C" : language === 2 ? "C++" : "Java";
+    const langName = getLanguageName(language)
 
-    const langHighlight = language === 3 ? "java" : "cpp";
+    const langHighlight = language === 3 ? "java" : language === 4 ? "python" : language === 5 ? "javascript" : language === 6 ? "go" : "cpp";
 
     let monacoThemesDefined = false;
     const defineMonacoThemes = monaco => {
@@ -311,7 +378,7 @@ const UTBotOnlinePage = () => {
                                         onClick={() => { }}
                                         onMouseEnter={showDropdownLanguages}
                                         onMouseLeave={hideDropdownLanguages}
-                                        style={{marginTop: "5px", width: "50px"}}
+                                        style={{marginTop: "5px", width: "fit-content"}}
                                     >
                                         <NavDropdown.Item onClick={() => {
                                             setLanguage(1);
@@ -328,12 +395,33 @@ const UTBotOnlinePage = () => {
                                         }}
                                         > C++ </NavDropdown.Item>
                                         <NavDropdown.Item onClick={() => {
+                                            setLanguage(6);
+                                            if (language !== 6) {
+                                                setSourceCode(snippetGo)
+                                            }
+                                        }}
+                                        > Go </NavDropdown.Item>
+                                        <NavDropdown.Item onClick={() => {
                                             setLanguage(3);
                                             if (language !== 3) {
                                                 setSourceCode(snippetJava)
                                             }
                                         }}
                                         > Java </NavDropdown.Item>
+                                        <NavDropdown.Item onClick={() => {
+                                            setLanguage(5);
+                                            if (language !== 5) {
+                                                setSourceCode(snippetJavaScript)
+                                            }
+                                        }}
+                                        > JavaScript </NavDropdown.Item>
+                                        <NavDropdown.Item onClick={() => {
+                                            setLanguage(4);
+                                            if (language !== 4) {
+                                                setSourceCode(snippetPython)
+                                            }
+                                        }}
+                                        > Python </NavDropdown.Item>
                                     </NavDropdown>
 
                                     <NavDropdown
@@ -342,7 +430,7 @@ const UTBotOnlinePage = () => {
                                         onClick={() => { }}
                                         onMouseEnter={showDropdownExamples}
                                         onMouseLeave={hideDropdownExamples}
-                                        style={{marginTop: "5px"}}
+                                        style={{marginTop: "5px" }}
                                     >
                                         {dropdownItems}
                                     </NavDropdown>
@@ -399,7 +487,12 @@ const UTBotOnlinePage = () => {
                                 {language === 2 && <Alert
                                     style={{marginTop: "5px", marginBottom: "5px", display: "inline-block"}}
                                     variant="warning"
-                                    dangerouslySetInnerHTML={{ __html: t("utbot.alert") }}
+                                    dangerouslySetInnerHTML={{ __html: t("utbot.alertCpp") }}
+                                />}
+                                {(language === 4 || language === 5 || language === 6) && <Alert
+                                    style={{marginTop: "5px", marginBottom: "5px", display: "inline-block"}}
+                                    variant="warning"
+                                    dangerouslySetInnerHTML={{ __html: t("utbot.alertNew") }}
                                 />}
                             </div>
                             <div style={{
