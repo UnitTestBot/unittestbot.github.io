@@ -4,7 +4,11 @@ public enum Language {
 
     C("C"),
     CPP("C++"),
-    JAVA("Java");
+    JAVA("Java"),
+    GO("Go"),
+    JAVASCRIPT("JavaScript"),
+    PYTHON("Python"),
+    KOTLIN("Kotlin");
 
     private final String language;
     Language(String language) {

@@ -33,7 +33,7 @@ public class Dropdown {
 
     public void selectByIndex(int index) {
         field.hover(); //so that list is expanded
-        var itemToSelect = items.get(index);
+        SelenideElement itemToSelect = items.get(index);
         SelenideLog log = SelenideLogger.beginStep(
                 "dropdown " + name, String.join("", "select ", "\"", itemToSelect.getText(), "\""));
         SelenideLogger.commitStep(log, IN_PROGRESS);
