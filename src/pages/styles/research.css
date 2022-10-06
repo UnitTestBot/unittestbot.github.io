@@ -1,0 +1,25 @@
+@import "../../utils/colors.css";
+
+.pageFlexContainer {
+    /*padding: 10px !important;*/
+    padding-top: 15vh !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    max-width: 650px !important;
+    justify-content: center;
+}
+
+.pageFlexContainer p {
+    margin-left: 0;
+}
+
+p {
+    font-size: var(--single-content-page-text-font-size);
+    font-weight: var(--single-content-page-text-font-weight);
+}
+
+ul {
+    font-size: var(--single-content-page-text-font-size);
+    font-weight: var(--single-content-page-text-font-weight);
+}

@@ -6,7 +6,7 @@ import Layout from "../components/layout";
 import {useTranslation} from "react-i18next";
 import {Alert, Button, NavDropdown, OverlayTrigger, Spinner, Tooltip} from "react-bootstrap";
 import "./styles/page.css";
-import "./styles/contact.css";
+import "./styles/about.css";
 import "./styles/utbot.css";
 import dedent from "dedent";
 import Editor from "@monaco-editor/react";
@@ -296,12 +296,12 @@ const UTBotOnlinePage = () => {
         }
         monacoThemesDefined = true;
         monaco.editor.defineTheme("my-light", {
-            base: "vs",
+            base: "vs-dark",
             inherit: true,
             rules: [],
             colors: {
-                "editor.background": "#f6f6f6",
-                "minimap.background": "#f9f9f9"
+                "editor.background": "#1f1f1f",
+                "minimap.background": "#2c2b2b"
             }
         });
     };
@@ -360,9 +360,11 @@ const UTBotOnlinePage = () => {
                                     >
                                         <Button
                                             variant="light"
-                                            style={{marginTop: "5px", marginBottom: "5px", width: "125px"}}
+                                            className="flatButton copyLinkButton"
                                             onClick={copyLink}
-                                        >Copy Link</Button>
+                                        >
+                                          Copy Link
+                                        </Button>
                                     </OverlayTrigger>
                                 </div>
                                 <div
@@ -385,6 +387,7 @@ const UTBotOnlinePage = () => {
                                             if (language !== 1) {
                                                 setSourceCode(snippetC);
                                             }
+
                                         }}
                                         > C </NavDropdown.Item>
                                         <NavDropdown.Item onClick={() => {
@@ -472,17 +475,22 @@ const UTBotOnlinePage = () => {
                                     flexDirection: "row",
                                     justifyContent: "flex-start"
                                 }}>
-                                <Button variant="info" style={{marginTop: "5px", marginBottom: "5px", display: "inline-block"}}
-                                        onClick={queryGenerateAndRunTests} disabled={isGeneratingAndRunning}>
+                                <Button
+                                    onClick={queryGenerateAndRunTests}
+                                    disabled={isGeneratingAndRunning}
+                                    className="flatButton generateAndRunTestsButton"
+                                >
                                     {isGeneratingAndRunning && <span>Generating and Running</span>}
                                     {!isGeneratingAndRunning && <span>Generate and Run Tests</span>}
-                                    {isGeneratingAndRunning && <Spinner
+                                    {isGeneratingAndRunning &&
+                                    <Spinner
                                         as="span"
                                         animation="border"
                                         size="sm"
                                         role="status"
                                         aria-hidden="true"
-                                    />}
+                                    />
+                                    }
                                 </Button>
                                 {language === 2 && <Alert
                                     style={{marginTop: "5px", marginBottom: "5px", display: "inline-block"}}
@@ -559,8 +567,6 @@ const UTBotOnlinePage = () => {
                                 }}
                             />
                         </div>}
-                        {isSurveyActive && <Survey sourceCode={sourceForSurvey} testCode={testCode}
-                                                   backendSurveyHost={backendSurveyHost}/>}
                     </div>
                 </div>
             </div>

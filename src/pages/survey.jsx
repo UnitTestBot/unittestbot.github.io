@@ -2,7 +2,7 @@ import * as React from "react";
 
 import Layout from "../components/layout";
 import "./styles/page.css";
-import "./styles/contact.css";
+import "./styles/about.css";
 import Editor from "@monaco-editor/react";
 import {highlight, languages} from "prismjs/components/prism-core";
 import SEO from "../components/seo";

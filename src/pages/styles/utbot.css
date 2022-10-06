@@ -1,9 +1,42 @@
+@import "../../utils/colors.css";
+@import "../../utils/fonts.css";
+
 .alert {
     margin-bottom: 1px;
-    margin-left: 4px;
     height: 35px;
     line-height: 20px;
     padding: 10px;
     margin-left: auto;
     margin-right: 0;
+}
+
+.flatButton {
+    background-color: transparent;
+    color: var(--full-white);
+    border-color: var(--full-white) 1px;
+    border-radius: 30px;
+}
+
+.copyLinkButton {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 125px;
+}
+
+.generateAndRunTestsButton {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.nav-item .dropdown-menu {
+    background: var(--demo-pg-dropdown-menu-bg);
+}
+
+.nav-item .dropdown-item {
+    color: var(--demo-pg-dropdown-menu-item);
+}
+
+.nav-item .dropdown-item:hover {
+    background: var(--demo-pg-dropdown-menu-item-hover);
 }
