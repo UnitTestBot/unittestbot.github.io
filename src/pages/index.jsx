@@ -175,6 +175,59 @@ const MainPage = () => {
             >
             </img>
           </div>
+          <div className="gifWrapper">
+            <img
+              src={falsePositiveGif}
+              alt="No false positives"
+            >
+            </img>
+          </div>
+        </div>
+        <div className="snakeElementsWrapper">
+          <div className="gifWrapper rightMargin">
+            <img
+              src={mocksGif}
+              alt="Mocks example"
+            >
+            </img>
+          </div>
+          <div>
+            <h3 className="title">{t("javaHome.mocksTitlePart1")}</h3>
+            <h3 style={{marginBottom: "1.2rem"}} className="title">{t("javaHome.mocksTitlePart2")}</h3>
+            {mocksBlock}
+            <Link to="/docs/java/tune-test-generation-plugin#mocking-settings">
+              <button>
+                {t("javaHome.mockingSettingsText")}
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="snakeElementsWrapper">
+          <div className="rightMargin">
+            <h3 style={{marginBottom: "1.2rem"}} className="title">{t("javaHome.humanReadableTitle")}</h3>
+            {humanReadableBlock}
+            <Link to="/docs/java/tune-test-generation-plugin#read-test-description">
+              <button>
+                {t("javaHome.getBetterTestDescriptionText")}
+              </button>
+            </Link>
+          </div>
+          <div className="gifWrapper">
+            <img
+              src={commentsGif}
+              alt="Human readable tests example"
+            >
+            </img>
+          </div>
+        </div>
+        <div className="leftContentWrapper">
+          <h3 style={{marginBottom: "1.2rem"}}>{t("javaHome.capableForYourNeedText")}</h3>
+          {capableForEveryBlock}
+          <Link to="/docs/java/check-requirements">
+            <button>
+              {t("javaHome.supportedTechnologiesText")}
+            </button>
+          </Link>
         </div>
         <div className="snakeElementsWrapper">
           <div className="gifWrapper rightMargin">
