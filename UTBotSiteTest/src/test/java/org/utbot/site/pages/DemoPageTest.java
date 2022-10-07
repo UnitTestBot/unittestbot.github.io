@@ -13,7 +13,7 @@ import static org.utbot.site.pages.DemoPage.*;
 public class DemoPageTest extends UTBotSiteTest {
 
     @ParameterizedTest
-    @CsvSource({ "C, 20", "CPP, 4", "JAVA, 7", "GO, 7", "JAVASCRIPT, 8", "PYTHON, 8", "KOTLIN, 1" })
+    @CsvSource({ "C, 20", "CPP, 4", "JAVA, 13", "GO, 7", "JAVASCRIPT, 6", "PYTHON, 7", "KOTLIN, 1" })
     public void checkExamplesArePresent(Language language, int minimalNumberOfExamples) {
         demoPage.open();
         languageDropdown.select(language.getName());
@@ -34,5 +34,23 @@ public class DemoPageTest extends UTBotSiteTest {
         generatedTest.shouldHave(text("Test"));
         testGenerationResult
                 .shouldHave(text("SUCCEEDED"));
+    }
+
+    @ParameterizedTest
+    @EnumSource
+    public void checkSuccessfulTestGenerationForAllExamplesForLanguage(Language language) {
+        demoPage.open();
+        languageDropdown.select(language.getName());
+        examplesDropdown.field.click();
+        int size = examplesDropdown.items.size();
+        for (int i = 0; i < size; i++) {
+            examplesDropdown.selectByIndex(i);
+            userCode.shouldNotBe(empty);
+            generateAndRunTestsBtn.click();
+            waitSpinnerDisappears();
+            generatedTest.shouldHave(text("Test"));
+            testGenerationResult
+                    .shouldHave(text("TEST GENERATION: SUCCEEDED"));
+        }
     }
 }
