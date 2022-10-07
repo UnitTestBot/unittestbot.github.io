@@ -22,6 +22,7 @@
 }
 
 .mainHeaderWrapper {
+    max-width: 1000px;
     height: 96vh;
     width: 100%;
     display: flex;
@@ -197,8 +198,8 @@
 }
 
 .containerOfFourTexts {
-    width: 90vw;
+    max-width: 700px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }

@@ -1,7 +1,7 @@
 {
     "javaHome": {
         "imagineTitle": "Imagine you don't have to write tests.",
-        "tryOnlineText": "Try UnitTestBot Online demo",
+        "tryOnlineText": "Try UnitTestBot online demo",
         "watchHowWorksText": "Watch how it works",
         "testsGenText": "But you still have a perfect bug detector for your code.<br>And no false positives among bugs.<br>Tests are generated automagically — with the highest code coverage,<br>fine-tuned mocking, and human-readable test descriptions.<br>Sounds fantastic? No more.",
         "testsGenAdvantagesTitlePart1": "Yet another test template tool?",
@@ -13,17 +13,17 @@
         "learnMoreText": "Learn more about UnitTestBot coverage",
         "findBugsNooneCanTitle": "Find bugs no one can catch.",
         "eliminateFalsePositivesTitle": "Eliminate false positives.",
-        "findBugsNooneCanText": "UnitTestBot can uncover bugs hidden deeply in an <span style=\"color:#F7931E;\">interprocedural control flow graph.</span> All the found bugs are indeed real — zero false positive rate is guaranteed.",
+        "findBugsNooneCanText": "UnitTestBot can uncover bugs hidden deeply in an interprocedural control flow graph. All the found bugs are indeed real — zero false positive rate is guaranteed.",
         "howToUseResultText": "Learn how to get use of UnitTestBot results",
         "mocksTitlePart1": "Mock properly.",
         "mocksTitlePart2": "Static methods as well.",
         "mocksText": "Want to mock I/O operations, random number generator or other modules? UnitTestBot provides you with both default and fine adjustment options for your mocks.",
         "mockingSettingsText": "Get to know mocking settings in UnitTestBot",
         "humanReadableTitle": "UnitTestBot stands for \"human-readable\".",
-        "humanReadableText": "UnitTestBot represents all the test descriptions in a <span style=\"color:#F7931E;\">human-readable format.</span> The intelligible test method names and comments help you to control the whole testing process. Test failed? The description refers you to points of interest in execution paths.",
+        "humanReadableText": "UnitTestBot represents all the test descriptions in a human-readable format. The intelligible test method names and comments help you to control the whole testing process. Test failed? The description refers you to points of interest in execution paths.",
         "getBetterTestDescriptionText": "See how to get the most out of test descriptions",
         "capableForYourNeedText": "Capable for every tech you need.",
-        "capableForEveryText": "UnitTestBot for Java and Kotlin supports the latest JDKs, JUnit 4, JUnit 5, TestNG, Mockito and works with all popular operational systems.<br>You can also try <a href=\"https://www.utbot.org/cpp\">UnitTestBot for C/C++</a>. <a href=\"https://www.utbot.org/python\">UnitTestBot for Python</a>, <a href=\"https://www.utbot.org/go\">Go</a>, and <a href=\"https://www.utbot.org/js\">JavaScript</a> <span style=\"color:red;\">are under development</span>. Stay tuned!",
+        "capableForEveryText": "UnitTestBot for Java and Kotlin supports the latest JDKs, JUnit 4, JUnit 5, TestNG, Mockito and works with all popular operational systems.<br>You can also try <a href=\"https://www.utbot.org/cpp\">UnitTestBot for C/C++</a>. <a href=\"https://www.utbot.org/python\">UnitTestBot for Python</a>, <a href=\"https://www.utbot.org/go\">Go</a>, and <a href=\"https://www.utbot.org/js\">JavaScript</a> are under development. Stay tuned!",
         "supportedTechnologiesText": "Check supported technologies"
     },
     "cppHome": {

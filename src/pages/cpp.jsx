@@ -119,14 +119,12 @@ const CppPage = () => {
         </Container>
       </header>
       <Container className="snakeContainer">
-        <div style={{display: "flex", flexDirection: "column"}}>
-          <div style={{marginBottom: "7rem", maxWidth: "450px"}}>
-            <h3 style={{marginBottom: "1.2rem"}} className="title">{t("cppHome.perfectTestingTitle")}</h3>
-            {whyUtbotIsCapableBlock}
-          </div>
-        </div>
         <div className="snakeElementsWrapper">
           <div className="rightMargin" style={{display: "flex", flexDirection: "column"}}>
+            <div style={{display: "flex", flexDirection: "column"}}>
+              <h3 style={{marginBottom: "1.2rem"}} className="title">{t("cppHome.perfectTestingTitle")}</h3>
+              {whyUtbotIsCapableBlock}
+            </div>
             <div style={{display: "flex", flexDirection: "column"}}>
               <h3 style={{marginBottom: "1.2rem"}} className="title">{t("cppHome.checkForBugsTitle")}</h3>
               {fixateCurrentBehaviorBlock}

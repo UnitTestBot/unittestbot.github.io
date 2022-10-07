@@ -116,6 +116,7 @@
 }
 
 .snakeElementsWrapper {
+    max-width: 1000px;
     width: 90vw !important;
     display: flex;
     align-items: center;

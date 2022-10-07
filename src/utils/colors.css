@@ -1,5 +1,5 @@
 :root {
-    --header-footer-bg: rgba(1, 14, 1, 0.85);
+    --header-footer-bg: rgb(1, 14, 1);
     --full-white: #FFFFFF;
     --white-color-text: #FFFFFF;
     --editor-bg:#2a2929;
