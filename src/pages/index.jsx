@@ -98,7 +98,7 @@ const MainPage = () => {
                 {t("javaHome.tryOnlineText")}
               </button>
             </Link>
-            <Link to="/docs">
+            <Link to="https://youtu.be/p6GtTqc599Q">
               <button className="howWorksButton">
                 <img
                   src={watchDemoIcon}
