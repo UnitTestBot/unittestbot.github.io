@@ -89,7 +89,6 @@ const MainPage = () => {
 
       <header className="mainHeader">
         <Container className="mainHeaderWrapper">
-
           <h1 className="title contentTitle">{t("javaHome.imagineTitle")}</h1>
           {testsGenerationBlock}
           <span className="actions">
@@ -200,7 +199,7 @@ const MainPage = () => {
           <div className="rightMargin">
             <h3 style={{marginBottom: "1.2rem"}} className="title">{t("javaHome.humanReadableTitle")}</h3>
             {humanReadableBlock}
-            <Link to="/docs/java/tune-test-generation-plugin#read-test-description">
+            <Link to="/docs/java/test-results-plugin">
               <button>
                 {t("javaHome.getBetterTestDescriptionText")}
               </button>
@@ -214,7 +213,7 @@ const MainPage = () => {
             </img>
           </div>
         </div>
-        <div className="leftContentWrapper">
+        <div className="leftContentWrapper" style={{maxWidth: "450px"}}>
           <h3 style={{marginBottom: "1.2rem"}}>{t("javaHome.capableForYourNeedText")}</h3>
           {capableForEveryBlock}
           <Link to="/docs/java/check-requirements">
