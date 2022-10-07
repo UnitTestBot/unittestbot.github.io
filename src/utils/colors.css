@@ -1,0 +1,17 @@
+:root {
+    --header-footer-bg: rgba(1, 14, 1, 0.85);
+    --full-white: #FFFFFF;
+    --white-color-text: #FFFFFF;
+    --editor-bg:#2a2929;
+    --editor-minimap-bg: #232323;
+    --dark-green-bg: rgb(1, 14, 1);
+    --light-gree-bg: rgb(2, 45, 16);
+    --demo-pg-dropdown-menu-bg: rgb(1, 14, 1);
+    --demo-pg-dropdown-menu-item: rgba(255, 255, 255, 0.73);
+    --demo-pg-dropdown-menu-item-hover: rgb(6, 49, 8);
+}
+
+body {
+    color: #FFFFFF !important;
+    background-color: #010e01 !important;
+}

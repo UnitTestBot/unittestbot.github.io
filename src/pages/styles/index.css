@@ -1,125 +1,184 @@
-.mainHeader { 
-    text-align:left;
-    font-weight:bold;
-    background:#282c34;
-    margin-bottom: 60px;
-    width: 100%;
+@import "../../utils/colors.css";
+@import "../../utils/fonts.css";
+
+.ulButtons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none
 }
 
-.headerContainer {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 60px;
-    padding-bottom: 60px;
+@media screen and (max-width: 750px) {
+    .ulButtons {
+        flex-direction: column;
+    }
+
+}
+
+.roundActionButton {
+    width: 45px;
+    height: 45px;
+}
+
+.mainHeader {
+    text-align: left;
+    font-weight: bold;
+    background-image: radial-gradient(circle, var(--light-gree-bg) -20%, var(--dark-green-bg) 80%);
 }
 
 .mainHeaderWrapper {
-    width: 50%;
+    height: 96vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.imageWrapper {
-    height: 100%;
-    width: 50%;
+.rightMargin {
+    margin-right: 1.5rem;
+}
+
+@media screen and (max-width: 770px) {
+    .snakeElementsWrapper img {
+        width: 400px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .rightMargin {
+        margin-right: 0;
+    }
+}
+
+.actions {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.wide > * {
-    margin-top: 5px;
-}
-
-.contentTitle {
-    margin-top: 0;
-    color: white;
-}
-
-.slogan {
-    color: white;
-}
-
-.whatisContainer {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.columnsWrapper {
-    display: flex;
-    margin-top: 25px;
     flex-direction: row;
     justify-content: center;
-}
-
-.columnsWrapper .column {
-    margin: 35px;
-    text-align: justify;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
-    box-sizing: border-box;
-}
-
-.columnHeader {
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.divider {
-    border-left: 1px solid #38546d;
-    background: #16222c;
-    width: 1px;
-    height: 80%;
+    align-items: center;
 }
 
 .actions button {
-    width: 130px !important;
+    width: fit-content !important;
     display: inline-block;
-    margin: 5px;
+    border: none;
+    margin: 10px;
 }
 
-@media screen and (max-height: 770px) {
-    .columnsWrapper {
-        margin-top: 15px;
-        flex-direction: column;
-    }
+.githubButton {
+    background-color: transparent;
+}
 
-    .columnsWrapper .column {
-        margin: 10px;
-    }
+.mainHeaderWrapper > .title {
+    color: var(--white-color-text);
+    margin-bottom: 5px;
+    text-align: center;
+}
 
-    .columnHeader {
-        margin-bottom: 15px;
-    }
+.contentTitle {
+    font-weight: var(--main-pg-content-title-font-weight);
+    font-size: var(--main-pg-content-title-font-size);
+}
+
+.contentText {
+    max-width: 85vh;
+    margin-top: 1em;
+    color: var(--main-pg-content-font-size);
+    font-size: var(--main-pg-content-font-size) !important;
+    font-weight: var(--main-pg-content-font-weight) !important;
+    text-align: center;
+    width: fit-content;
+}
+
+.demoButton {
+    background-color: var(--white-color-text);
+    border-radius: 30px;
+    padding: 0.7rem 1.5rem;
+    font-size: var(--button-font-size);
+    font-weight: var(--demo-btn-font-weight);
+}
+
+.howWorksButton {
+    background-color: transparent;
+    color: var(--white-color-text);
+    font-weight: var(--how-works-btn-font-weight);
+}
+
+.snakeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95vw !important;
+    margin-top: 3rem;
+}
+
+.snakeElementsWrapper {
+    width: 90vw !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-bottom: 10rem;
 }
 
 @media screen and (max-width: 600px) {
-    span.imageWrapper {
-        display: none;
-    }
-
-    .mainHeaderWrapper {
-        justify-content: flex-start;
-        width: 100%
-    }
-
-    .actions button {
-        font-size: larger;
+    .centeredContentWrapper p,
+    .centeredContentWrapper h3 {
+        text-align: left !important;
+        width: fit-content;
     }
 }
 
-@media screen and (max-width: 991px) {
-    .actions {
-        display: flex;
+@media screen and (max-width: 1050px) {
+    .snakeElementsWrapper {
         flex-direction: column;
     }
+
+    .snakeElementsWrapper p {
+        min-width: 70vw;
+        max-width: 95vw;
+    }
+
+    .snakeElementsWrapper button {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.snakeElementsWrapper p,
+.leftContentWrapper p {
+    font-size: var(--main-pg-snake-text-font-size) !important;
+    font-weight: var(--main-pg-snake-text-font-weight) !important;
+    text-align: left !important;
+    margin-bottom: 2.3rem;
+}
+
+.leftContentWrapper p {
+    max-width: 90vw;
+}
+
+.snakeElementsWrapper button,
+.leftContentWrapper button {
+    background-color: var(--white-color-text);
+    border-radius: 30px;
+    padding: 0.7rem 1.3rem;
+    font-size: var(--button-font-size);
+    font-weight: var(--snake-btn-font-weight);
+}
+
+.snakeElementsWrapper {
+    overflow-x: auto;
+}
+
+.snakeElementsWrapper img {
+    width: 550px;
+}
+
+.leftContentWrapper {
+    max-width: 850px;
+    align-items: normal;
+    display: flex;
+    flex-direction: column;
 }

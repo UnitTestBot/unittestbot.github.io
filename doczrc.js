@@ -1,68 +1,35 @@
 export default {
+  themeConfig: {
+    initialColorMode: 'dark',
+    colors: {
+      header: {
+        bg: "rgba(21,20,31,0.91)",
+      }
+    },
+  },
   title: "UnitTestBot",
-  base: "docs/cpp/",
+  base: "docs/",
   public: "./resources",
   ignore: ["**/blog/**", "readme.md", "README.md"],
   menu: [
     {
-      name: "General",
+      name: "UnitTestBot Java/Kotlin",
       menu: [
-        "Introduction",
-        "System Requirements",
+        "Install or update plugin",
+        "Check system requirements",
+        "Generate tests with default configuration",
+        "Fine-tune test generation",
+        "Get use of test results",
       ],
     },
     {
-      name: "Installation",
+      name: "UnitTestBot C/C++",
       menu: [
-        "Installing and Setting Up the UTBot Server",
-        "Installing the VS Code Plugin",
-        "UTBot Use Cases",
-      ],
-    },
-    {
-      name: "Usage",
-      menu: [
-        "Step by step",
-        "Quickstart with UTBot Wizard",
-        "Statusbar Icons",
+        "User guide",
         "VS Code plugin",
-        "VS Code Extension Settings",
-        "Configuring Project",
-        "Generating Tests",
-        "Formatting Tests",
-        "Run Generated Tests",
-        "Stubs",
-        "Command Line Interface",
-        "Docker-free-wsl2",
+        "CLion plugin",
+        "Stubs"
       ],
-    },
-    {
-      name: "Advanced",
-      menu: [
-        "How UTBot Works",
-        "Makefiles",
-        "Symbolic Stdin",
-        "UTBot Logging Principles",
-        "Targets",
-        "Compile database",
-        "Coverage",
-        "Generating and running tests",
-        "Incrementality",
-        "Linking bitcode",
-        "Preparing sources for KLEE",
-        "Stubs inside",
-        "KLEE patches",
-        "Supported C Syntax",
-        "Supported C++ Syntax",
-      ],
-    },
-    {
-      name: "Develop",
-      menu: [
-        "ToDo",
-        "Troubleshooting",
-      ],
-    },
-    "FAQ",
+    }
   ],
 };
