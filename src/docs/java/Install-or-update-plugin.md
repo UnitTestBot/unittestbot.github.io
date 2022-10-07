@@ -26,8 +26,8 @@ To check if UnitTestBot is enabled go to **File** > **Settings...** > **Plugins*
 ## Install from downloaded archive
 
 1. To get the latest stable build of UnitTestBot, go to [GitHub](https://github.com/UnitTestBot/UTBotJava/releases),
-   scroll through the release notes and click **Assets**.<br>
-   Download the zip-archive named like **utbot-intellij-VERSION**.<br>
+   scroll through the release notes and click **Assets**.<br></br>
+   Download the zip-archive named like **utbot-intellij-VERSION**.<br></br>
    The builds are also available at [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/19445-unittestbot/versions).
 2. In your IntelliJ IDEA go to **File** > **Settings...**.
 3. Select **Plugins**, click the gear icon and then **Install Plugin from Disk**.
@@ -40,11 +40,11 @@ To check if UnitTestBot is enabled go to **File** > **Settings...** > **Plugins*
 
 ## How to update plugin
 
-* To _simply get the latest version_ you can update plugin in your IntelliJ IDEA.<br>
-  Go to **File** > **Settings...** > **Plugins**, choose **Installed** and update UnitTestBot if available.<br>
+* To _simply get the latest version_ you can update plugin in your IntelliJ IDEA.<br></br>
+  Go to **File** > **Settings...** > **Plugins**, choose **Installed** and update UnitTestBot if available.<br></br>
   _Note:_ the unused libraries will be removed automatically, there is no need to uninstall the previous version of the plugin.
 
-* To _choose the version_ you can manually download the archived build and install it as described in [Install from downloaded archive](#Install from downloaded archive).<br>
+* To _choose the version_ you can manually download the archived build and install it as described in [Install from downloaded archive](#Install from downloaded archive).<br></br>
   Note: before updating, please remove the previous version of the plugin. See [How to uninstall plugin](#How to uninstall plugin).
 
 ***
