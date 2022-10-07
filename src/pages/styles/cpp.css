@@ -27,6 +27,7 @@
     text-align: left;
     font-weight: bold;
     background-image: radial-gradient(circle, var(--light-gree-bg) -20%, var(--dark-green-bg) 80%);
+    margin-bottom: 3rem;
 }
 
 .mainHeaderWrapper {
