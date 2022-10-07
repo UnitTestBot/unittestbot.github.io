@@ -109,7 +109,7 @@ const CppPage = () => {
             </li>
             <li>
               <Link to="https://github.com/UnitTestBot/UTBotCpp/releases">
-                <button className="subheaderButton">
+                <button style={{marginBottom: "3rem"}} className="subheaderButton">
                   {"Install from GitHub"}
                 </button>
               </Link>

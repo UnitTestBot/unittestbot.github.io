@@ -108,7 +108,7 @@ const MainPage = () => {
             </li>
             <li>
               <Link to="https://plugins.jetbrains.com/plugin/19445-unittestbot">
-                <button className="subheaderButton">
+                <button style={{marginBottom: "3rem"}} className="subheaderButton">
                   {"Install from JetBrains Marketplace"}
                 </button>
               </Link>
