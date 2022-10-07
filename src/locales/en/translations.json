@@ -43,7 +43,8 @@
         "javaGuide": "Installation Guide"
     },
     "utbot": {
-        "alert": "<small>Only small subset of C++ is supported</small>"
+        "alertCpp": "<small>Only small subset of C++ is supported</small>",
+        "alertNew": "<small>New!</small>"
     },
     "contacts": {
         "contactTitle": "Contact Us",

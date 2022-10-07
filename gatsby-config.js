@@ -15,8 +15,8 @@ module.exports = {
     utbot_cpp_releases_info: `https://api.github.com/repos/UnitTestBot/UTBotCpp/releases`,
     utbot_java_releases_link: `https://github.com/UnitTestBot/UTBotJava/releases`,
     utbot_java_releases_info: `https://api.github.com/repos/UnitTestBot/UTBotJava/releases`,
-    build_number: `27`,
-    build_date: `2022-8-15`,
+    build_number: `41`,
+    build_date: `2022-9-26`,
   },
 
   plugins: [
