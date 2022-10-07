@@ -16,12 +16,29 @@
     flex-direction: column;
 }
 
-@media screen and (min-width: 770px) {
-    .actions {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+.rightMargin {
+    margin-right: 1.5rem;
+}
+
+@media screen and (max-width: 770px) {
+    .snakeElementsWrapper img {
+        width: 400px;
     }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .rightMargin {
+        margin-right: 0;
+    }
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .actions button {
@@ -53,6 +70,7 @@
     font-size: var(--main-pg-content-font-size) !important;
     font-weight: var(--main-pg-content-font-weight) !important;
     text-align: center;
+    width: fit-content;
 }
 
 .demoButton {
@@ -82,12 +100,36 @@
     width: 90vw !important;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
     margin-bottom: 10rem;
 }
 
-p {
+@media screen and (max-width: 600px) {
+    .centeredContentWrapper p,
+    .centeredContentWrapper h3 {
+        text-align: left;
+        width: fit-content;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .snakeElementsWrapper {
+        flex-direction: column;
+    }
+
+    .snakeElementsWrapper p {
+        min-width: 70vw;
+        max-width: 95vw;
+    }
+
+    .snakeElementsWrapper button {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.snakeElementsWrapper p,
+.leftContentWrapper p {
     font-size: var(--main-pg-snake-text-font-size);
     font-weight: var(--main-pg-snake-text-font-weight);
     text-align: left;
@@ -95,12 +137,12 @@ p {
     max-width: 45vw;
 }
 
-.centeredContentWrapper p {
-    max-width: 90vw !important;
+.leftContentWrapper p {
+    max-width: 90vw;
 }
 
 .snakeElementsWrapper button,
-.centeredContentWrapper button {
+.leftContentWrapper button {
     background-color: var(--white-color-text);
     border-radius: 30px;
     padding: 0.7rem 1.3rem;
@@ -108,14 +150,17 @@ p {
     font-weight: var(--snake-btn-font-weight);
 }
 
-.snakeElementsWrapper img {
+.snakeElementsWrapper {
     overflow-x: auto;
-    width: 500px;
 }
 
-.centeredContentWrapper {
+.snakeElementsWrapper img {
+    width: 550px;
+}
+
+.leftContentWrapper {
     max-width: 850px;
-    align-items: center;
+    align-items: normal;
     display: flex;
     flex-direction: column;
 }

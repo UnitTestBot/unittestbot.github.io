@@ -2,8 +2,7 @@
 @import "../../utils/fonts.css";
 
 .pageFlexContainer {
-    padding-top: 0 !important;
-    width: 100vw;
+    width: 1000% !important;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -18,6 +17,7 @@
 }
 
 .pageFlexContainer p {
+    width: 100%;
     text-align: center;
     font-size: var(--single-content-page-text-font-size);
     font-weight: var(--single-content-page-text-font-weight);

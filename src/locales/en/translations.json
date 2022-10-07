@@ -27,7 +27,27 @@
         "supportedTechnologiesText": "Check supported technologies"
     },
     "cppHome": {
-
+        "utbotCppTitle": "UnitTestBot for C/C++.",
+        "changesExperienceTitle": "Changes your experience of unit testing.",
+        "utbotCppDescriptionText": "Powered by the <a href=\"https://github.com/UnitTestBot/klee\">enhanced KLEE symbolic execution engine</a>, UnitTestBot for C/C++ is here to overcome the expectations for unit testing: automatically generated <i>ready-to-use</i> tests with inputs and method bodies, error and regression suites with maximum coverage, testing code containing almost any C feature, auto-generated stubs — all wrapped in a user-friendly interface.",
+        "perfectTestingTitle": "Make testing fast, reliable and effortless",
+        "whyUtbotIsCapableText": "Get the most out of UnitTestBot for C/C++ with the detailed <a href=\"https://www.utbot.org/docs/cpp/\">user guide</a>.<br><a href=\"https://www.utbot.org/research\">Read</a> why UnitTestBot for C/C++ is capable of supporting the most advanced testing features.",
+        "checkForBugsTitle": "Check for bugs, commit successful tests",
+        "fixateCurrentBehaviorText": "UnitTestBot for C/C++ provides you both with the error and the regression suite.<br>Find invalid code fragments, fixate current behavior, detect the regressions or update tests if needed.",
+        "specifyTestingAreaTitle": "Create tests for a specific line, a file, a function or a project",
+        "testsForAssertionsText": "It's even possible to generate a test for the assertion — the test that fails the selected assertion.<br>Ask for a test with a prompted result: generate a test that forces the selected function to return a specific value (if possible).",
+        "easilyConfigureTitle": "Easily configure",
+        "easilyConfigureText": "UnitTestBot for C/C++ makes generating tests straightforward and intuitive. It can automatically configure your project and get all the necessary information — you just need a CMakeLists.txt file or a build script.",
+        "findUtbotForCppTitle": "Find your UnitTestBot for C/C++",
+        "findUtbotForCppText": "UnitTestBot for C/C++ is based on client-server architecture. Run server on Ubuntu and connect to it using <a href=\"https://www.utbot.org/docs/cpp/vscode-plugin\">VS Code extension</a> or <a href=\"https://www.utbot.org/docs/cpp/clion-plugin\">CLion plugin</a> for Windows/Linux, or try <a href=\"https://www.utbot.org/docs/cpp/cli\">command-line interface</a> (available for Ubuntu only).",
+        "stubsTitle": "Get use of auto-generated stubs",
+        "stubsText": "UnitTestBot for C/C++ detects whether the function is called from the other module and can automatically <a href=\"https://www.utbot.org/docs/cpp/stubs\">stub</a> it. These stubs are customizable, and you can turn them off if needed.",
+        "supportedSyntaxTitle": "Test the code with the language feature you need",
+        "supportedSyntaxText": "Check <a href=\"https://github.com/UnitTestBot/UTBotCpp/wiki/c-syntax#basic-structs\">supported C</a> and <a href=\"https://github.com/UnitTestBot/UTBotCpp/wiki/cpp-syntax\">C++ syntax</a> with generated test examples.",
+        "useBuildSystemTitle": "Use CMake or Make",
+        "useBuildSystemText": "Choose the build system suitable for your project.",
+        "googleTestFormatTitle": "Get tests in Google Test format",
+        "googleTestFormatText": "One of the most popular test formats fits to both C and C++ code."
     },
     "pythonHome": {
         "utbotPythonTitle": "UnitTestBot for Python.",
@@ -55,10 +75,18 @@
         "progress": "In progress",
         "goHome": "Go to the home page"
     },
+    "research": {
+        "conferencesAndCompetitionsTitle": "Conferences and competitions",
+        "utbotJavaTitle": "UnitTestBot for Java",
+        "sbst2022Title": "<b>Competition</b> | <a href=\"https://sbst22.github.io/\">IEEE/ACM International Workshop on Search-Based Software Testing (SBST)</a> | 2022 | <b>En</b>",
+        "sbst2022ArticleTitle": "<a href=\"https://ieeexplore.ieee.org/document/9810769/\">UTBot Java at the SBST2022 Tool Competition</a>",
+        "sbst2022ArticlesAuthors": "Dmitry Ivanov, Alexey Menshutin, Denis Fokin, Yury Kamenev, Sergey Pospelov, Egor Kulikov, Nikita Stroganov",
+        "sbst2022ToolCompetitionTitle": "<a href=\"https://ieeexplore.ieee.org/document/9810771>SBST Tool Competition 2022</a>",
+        "generalOverview": "General overview"
+    },
     "search": {
         "title": "Search",
         "placeholder": "Type to search..."
-
     },
     "install": {
         "mainPart1": "<b>UnitTestBot</b> project provides users with 2 engines generating tests:<ul><li>UnitTestBot C/C++ <i>(requires Ubuntu 18.04 or higher)</i></li><li>UnitTestBot Java <i>(tested on Win64, Linux 64)</i></li><ul>",
@@ -75,7 +103,7 @@
     },
     "utbot": {
         "alertCpp": "<small>Only small subset of C++ is supported</small>",
-        "alertNew": "<small>New!</small>"
+        "alertNew": "<small>Experimental feature</small>"
     },
     "aboutUs": {
         "whoWeAreText": "We are a team of researchers from Saint Petersburg.<br><br>We are crazy about mathematics and programming. We love taking part in software testing competitions. We describe our achievements in <a href=\"https://www.utbot.org/research\">research articles</a>. To be in touch with the high-end science we collaborate with the universities:",

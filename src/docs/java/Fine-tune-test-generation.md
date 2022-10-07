@@ -1,30 +1,9 @@
 ---
 name: Fine-tune test generation
 route: /docs/java/tune-test-generation-plugin
+menu: UnitTestBot Java/Kotlin
 parent: Documentation
 ---
-****
-* [Сonfigure test generation according to your testing purposes](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#%D1%81onfigure-test-generation-according-to-your-testing-purposes)
-   * [Mocking settings](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#mocking-settings)
-      * [Mocking strategy](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#mocking-strategy)
-      * [Mock static methods](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#mock-static-methods)
-      * [Force mocking static methods](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#force-mocking-static-methods)
-      * [Classes to be forcedly mocked](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#classes-to-be-forcedly-mocked)
-   * [Parameterized tests](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#parameterized-tests)
-   * [Testing framework](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#testing-framework)
-   * [Generated test language](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#generated-test-language)
-   * [Test sources root](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#test-sources-root)
-   * [Generate tests for](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#generate-tests-for)
-  
-* [Experiment with test generation to reach higher coverage](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#experiment-with-test-generation-to-reach-higher-coverage)
-   * [Hanging test timeout (milliseconds per method)](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#hanging-test-timeout-milliseconds-per-method)
-   * [Test generation timeout (seconds per class)](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#test-generation-timeout-seconds-per-class)
-   * [Test generation method](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#test-generation-method)
-   
-* [Configure test behavior and appearance](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#configure-test-behavior-and-appearance)
-   * [Tests with exceptions](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#tests-with-exceptions)
-   * [Overflow detection](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#overflow-detection)
-   * [Javadoc comment style](https://github.com/UnitTestBot/UTBotJava/wiki/Fine-tune-test-generation#javadoc-comment-style)
 
 ## Сonfigure test generation according to your testing purposes
 

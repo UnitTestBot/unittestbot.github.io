@@ -1,20 +1,9 @@
 ---
 name: Get use of test results
 route: /docs/java/test-results-plugin
+menu: UnitTestBot Java/Kotlin
 parent: Documentation
 ---
-
-* [Explore test suites](https://github.com/UnitTestBot/UTBotJava/wiki/Get-use-of-test-results#explore-test-suites)
-   * [View clustered tests](https://github.com/UnitTestBot/UTBotJava/wiki/Get-use-of-test-results#view-clustered-tests)
-   * [Read test descriptions](https://github.com/UnitTestBot/UTBotJava/wiki/Get-use-of-test-results#read-test-descriptions)
-      * [Javadoc comment](https://github.com/UnitTestBot/UTBotJava/wiki/Get-use-of-test-results#javadoc-comment)
-      * [Testing framework annotations](https://github.com/UnitTestBot/UTBotJava/wiki/Get-use-of-test-results#testing-framework-annotations)
-      * [Test method name](https://github.com/UnitTestBot/UTBotJava/wiki/Get-use-of-test-results#test-method-name)
-      * [Test method body](https://github.com/UnitTestBot/UTBotJava/wiki/Get-use-of-test-results#test-method-body)
-* [Run tests and view coverage](https://github.com/UnitTestBot/UTBotJava/wiki/Get-use-of-test-results#run-tests-and-view-coverage)
-* [Get SARIF reports](https://github.com/UnitTestBot/UTBotJava/wiki/Get-use-of-test-results#get-sarif-reports)
-   * [What is SARIF?](https://github.com/UnitTestBot/UTBotJava/wiki/Get-use-of-test-results#what-is-sarif)
-   * [How to get SARIF report in UnitTestBot](https://github.com/UnitTestBot/UTBotJava/wiki/Get-use-of-test-results#how-to-get-sarif-report-in-unittestbot)
 
 ## Explore test suites
 

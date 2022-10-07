@@ -1,6 +1,11 @@
 export default {
   themeConfig: {
     initialColorMode: 'dark',
+    /*colors: {
+      header: {
+        bg: "#010e01",
+      },
+    }*/
   },
   title: "UnitTestBot",
   base: "docs/",
@@ -10,7 +15,6 @@ export default {
     {
       name: "UnitTestBot Java/Kotlin",
       menu: [
-        "Welcome to UTBot plugin user guide",
         "Install or update plugin",
         "Check system requirements",
         "Generate tests with default configuration",
@@ -21,9 +25,10 @@ export default {
     {
       name: "UnitTestBot C/C++",
       menu: [
-        "Install CLion plugin for UTBot",
-        "Generating tests in CLion",
-        "Step by step with CLion plugin",
+        "User guide",
+        "VS Code plugin",
+        "CLion plugin",
+        "Stubs"
       ],
     }
   ],

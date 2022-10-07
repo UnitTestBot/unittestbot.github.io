@@ -1,6 +1,7 @@
 ---
 name: Generate tests with default configuration
 route: /docs/java/test-with-default-configuration-plugin
+menu: UnitTestBot Java/Kotlin
 parent: Documentation
 ---
 

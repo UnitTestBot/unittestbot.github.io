@@ -1,10 +1,9 @@
-<!---
-name: Introduction
-route: /docs/cpp
+---
+name: User guide
+route: /docs/cpp/
+menu: UnitTestBot C/C++
 parent: Documentation
-menu: General
-description: UnitTestBot (aka UTBot) tool provides engineers with a simple 1-mouse-click way to automatically generate unit tests and visualize coverage for projects written in C and C++ Programming Languages. It is an IDE extension (the client) paired with server application.
---->
+---
 
 # Introduction
 

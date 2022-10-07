@@ -1,4 +1,5 @@
 @import "../utils/colors.css";
+@import "../utils/fonts.css";
 
 .header {
   top: 0;
@@ -24,4 +25,9 @@
   justify-content: center;
   background-color: var(--header-footer-bg);
   height: 70px;
+}
+
+.footer div {
+  font-size: var(--footer-text-font-size);
+  font-weight: var(--footer-text-font-weight);
 }

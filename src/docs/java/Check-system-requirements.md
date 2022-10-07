@@ -1,6 +1,7 @@
 ---
 name: Check system requirements
 route: /docs/java/check-requirements
+menu: UnitTestBot Java/Kotlin
 parent: Documentation
 ---
 

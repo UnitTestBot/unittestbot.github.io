@@ -5,10 +5,14 @@
     --main-pg-content-title-font-size: 30px;
     --main-pg-snake-title-font-size: 30px;
     --main-pg-snake-text-font-size: 20px;
+    --main-pg-snake-cpp-text-font-size: 20px;
+    --main-pg-snake-cpp-small-text-font-size: 14px;
+    --main-pg-snake-cpp-small-title-font-size: 19px;
     --single-content-page-text-font-size: 20px;
     --single-content-page-title-font-size: 30px;
     --language-anounce-text-font-size: 26px;
     --language-anounce-title-font-size: 30px;
+    --footer-text-font-size: 18px;
 
     /* Font families */
 
@@ -21,8 +25,11 @@
     --main-pg-content-title-font-weight: 500;
     --main-pg-snake-title-font-weight: 400;
     --main-pg-snake-text-font-weight: 100;
+    --main-pg-snake-cpp-small-text-font-weight: 80;
+    --main-pg-snake-cpp-small-title-font-weight: 450;
     --single-content-page-text-font-weight: 150;
     --single-content-page-title-font-weight: 300;
     --language-anounce-text-font-weight: 300;
     --language-anounce-title-font-weight: 500;
+    --footer-text-font-weight: 300;
 }

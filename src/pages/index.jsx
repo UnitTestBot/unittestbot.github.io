@@ -55,7 +55,7 @@ const MainPage = () => {
         <Container className="mainHeaderWrapper">
           <h1 className="title contentTitle">{t("javaHome.imagineTitle")}</h1>
           {testsGenerationBlock}
-          <span className="mainPageButtons actions">
+          <span className="actions">
             <Link to="/utbot">
               <button className="demoButton">
                 {t("javaHome.tryOnlineText")}
@@ -85,13 +85,15 @@ const MainPage = () => {
       </header>
       <Container className="snakeContainer">
         <div className="snakeElementsWrapper">
-          <div style={{marginRight: "1.2rem"}}>
+          <div className="rightMargin">
             <h3 className="title">{t("javaHome.testsGenAdvantagesTitlePart1")}</h3>
             <h3 style={{marginBottom: "1.2rem"}} className="title">{t("javaHome.testsGenAdvantagesTitlePart2")}</h3>
             {testsGenerationAdvantagesBlock}
-            <button>
-              {t("javaHome.checkGuideText")}
-            </button>
+            <Link to="/docs/java/test-with-default-configuration-plugin">
+              <button>
+                {t("javaHome.checkGuideText")}
+              </button>
+            </Link>
           </div>
           <div className="gifWrapper">
             <img
@@ -102,7 +104,7 @@ const MainPage = () => {
           </div>
         </div>
         <div className="snakeElementsWrapper">
-          <div className="gifWrapper" style={{marginRight: "1.2rem"}}>
+          <div className="gifWrapper rightMargin">
             <img
               src={fullClassGif}
               alt="Full class example"
@@ -112,19 +114,23 @@ const MainPage = () => {
           <div>
             <h3 style={{marginBottom: "1.2rem"}} className="title">{t("javaHome.utbotAdvantagesTitle")}</h3>
             {testsGenerationAdvantagesBlock}
-            <button>
-              {t("javaHome.learnMoreText")}
-            </button>
+            <Link to="/docs/java/test-results-plugin#run-tests-and-view-coverage">
+              <button>
+                {t("javaHome.learnMoreText")}
+              </button>
+            </Link>
           </div>
         </div>
         <div className="snakeElementsWrapper">
-          <div style={{marginRight: "1.2rem"}}>
+          <div className="rightMargin">
             <h3 className="title">{t("javaHome.findBugsNooneCanTitle")}</h3>
             <h3 style={{marginBottom: "1.2rem"}} className="title">{t("javaHome.eliminateFalsePositivesTitle")}</h3>
             {findBugsNooneCanTextBlock}
-            <button>
-              {t("javaHome.howToUseResultText")}
-            </button>
+            <Link to="/docs/java/test-results-plugin">
+              <button>
+                {t("javaHome.howToUseResultText")}
+              </button>
+            </Link>
           </div>
           <div className="gifWrapper">
             <img
@@ -135,7 +141,7 @@ const MainPage = () => {
           </div>
         </div>
         <div className="snakeElementsWrapper">
-          <div className="gifWrapper" style={{marginRight: "1.2rem"}}>
+          <div className="gifWrapper rightMargin">
             <img
               src={mocksGif}
               alt="Mocks example"
@@ -146,18 +152,22 @@ const MainPage = () => {
             <h3 className="title">{t("javaHome.mocksTitlePart1")}</h3>
             <h3 style={{marginBottom: "1.2rem"}} className="title">{t("javaHome.mocksTitlePart2")}</h3>
             {mocksBlock}
-            <button>
-              {t("javaHome.mockingSettingsText")}
-            </button>
+            <Link to="/docs/java/tune-test-generation-plugin#mocking-settings">
+              <button>
+                {t("javaHome.mockingSettingsText")}
+              </button>
+            </Link>
           </div>
         </div>
         <div className="snakeElementsWrapper">
-          <div style={{marginRight: "1.2rem"}}>
+          <div className="rightMargin">
             <h3 style={{marginBottom: "1.2rem"}} className="title">{t("javaHome.humanReadableTitle")}</h3>
             {humanReadableBlock}
-            <button>
-              {t("javaHome.getBetterTestDescriptionText")}
-            </button>
+            <Link to="/docs/java/tune-test-generation-plugin#read-test-description">
+              <button>
+                {t("javaHome.getBetterTestDescriptionText")}
+              </button>
+            </Link>
           </div>
           <div className="gifWrapper">
             <img
@@ -167,12 +177,14 @@ const MainPage = () => {
             </img>
           </div>
         </div>
-        <div className="centeredContentWrapper">
+        <div className="leftContentWrapper">
           <h3 style={{marginBottom: "1.2rem"}} className="title">{t("javaHome.capableForYourNeedText")}</h3>
           {capableForEveryBlock}
-          <button>
-            {t("javaHome.supportedTechnologiesText")}
-          </button>
+          <Link to="/docs/java/check-requirements">
+            <button>
+              {t("javaHome.supportedTechnologiesText")}
+            </button>
+          </Link>
         </div>
       </Container>
     </Layout>

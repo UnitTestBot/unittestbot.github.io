@@ -1,13 +1,9 @@
 ---
 name: Install or update plugin
 route: /docs/java/install-or-update-plugin
+menu: UnitTestBot Java/Kotlin
 parent: Documentation
 ---
-
-* [Install from Marketplace in IntelliJ IDEA](https://github.com/UnitTestBot/UTBotJava/wiki/Install-or-update-plugin#install-from-marketplace-in-intellij-idea)
-* [Install from downloaded archive](https://github.com/UnitTestBot/UTBotJava/wiki/Install-or-update-plugin#install-from-downloaded-archive)
-* [How to update plugin](https://github.com/UnitTestBot/UTBotJava/wiki/Install-or-update-plugin#how-to-update-plugin)
-* [How to uninstall plugin](https://github.com/UnitTestBot/UTBotJava/wiki/Install-or-update-plugin#how-to-update-plugin)
 
 Is it OK for you to **simply get the latest version** of UnitTestBot? Install it from [Marketplace in IntelliJ IDEA]
 (#Install from Marketplace in IntelliJ IDEA).
