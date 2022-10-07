@@ -1,6 +1,14 @@
 @import "../../utils/colors.css";
 @import "../../utils/fonts.css";
 
+.subheaderButton {
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border-radius: 30px;
+}
+
 .ulButtons {
     display: flex;
     justify-content: center;
@@ -107,7 +115,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 95vw !important;
+    /*width: 95vw !important;*/
     margin-top: 3rem;
 }
 
@@ -148,7 +156,7 @@
 
     .snakeElementsWrapper p {
         min-width: 70vw;
-        max-width: 95vw;
+        /*max-width: 95vw;*/
     }
 
     .snakeElementsWrapper button {

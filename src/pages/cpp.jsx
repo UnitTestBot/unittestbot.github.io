@@ -18,7 +18,7 @@ const CppPage = () => {
 
   const utbotCppDescriptionText = t("cppHome.utbotCppDescriptionText");
   const utbotCppDescriptionBlock = (
-    <p className="contentText" dangerouslySetInnerHTML={{ __html: utbotCppDescriptionText }} />
+    <p style={{margin: 0}} className="contentText" dangerouslySetInnerHTML={{ __html: utbotCppDescriptionText }} />
   );
 
   const whyUtbotIsCapableText = t("cppHome.whyUtbotIsCapableText");
@@ -68,29 +68,12 @@ const CppPage = () => {
 
   return (
     <Layout>
-      <ul role={'list'} className="ulButtons">
-        <li>
-          <Link to="/docs/cpp">
-            <button style={{backgroundColor: "transparent", color: "#FFFFFF", border: "none"}} className="demoButton">
-              {"User guide"}
-            </button>
-          </Link>
-        </li>
-        <li>
-          <Link to="https://github.com/UnitTestBot/UTBotCpp/releases">
-            <button style={{backgroundColor: "transparent", color: "#FFFFFF", border: "none"}} className="demoButton">
-              {"Install from GitHub"}
-            </button>
-          </Link>
-        </li>
-      </ul>
-
       <header className="mainHeader">
-        <Container className="mainHeaderWrapper">
-          <h1 className="title contentTitle">{t("cppHome.utbotCppTitle")}</h1>
-          <h1 className="title contentTitle">{t("cppHome.changesExperienceTitle")}</h1>
+        <Container className="mainHeaderWrapper" style={{gap: "1.5rem"}}>
+          <h1 style={{margin: 0}} className="title contentTitle">{t("cppHome.utbotCppTitle")}</h1>
+          <h1 style={{margin: 0}} className="title contentTitle">{t("cppHome.changesExperienceTitle")}</h1>
           {utbotCppDescriptionBlock}
-          <span className="actions">
+          <span className="actions" style={{margin: 0}}>
             <Link to="/utbot">
               <button className="demoButton">
                 {t("javaHome.tryOnlineText")}
@@ -116,6 +99,22 @@ const CppPage = () => {
               </button>
             </Link>
           </span>
+          <ul role={'list'} className="ulButtons" style={{display: "flex", alignItems: "center", justifyContent: "center", padding: 0, margin: 0}}>
+            <li>
+              <Link to="/docs/cpp">
+                <button className="subheaderButton">
+                  {"User guide"}
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link to="https://github.com/UnitTestBot/UTBotCpp/releases">
+                <button className="subheaderButton">
+                  {"Install from GitHub"}
+                </button>
+              </Link>
+            </li>
+          </ul>
         </Container>
       </header>
       <Container className="snakeContainer">

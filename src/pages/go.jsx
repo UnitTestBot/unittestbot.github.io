@@ -18,6 +18,7 @@ const GoPage = () => {
         <h2>{t("goHome.utbotGoTitle")}</h2>
         <h2 style={{marginBottom: "2.5rem"}}>{t("goHome.almostReady")}</h2>
         <p
+          style={{textAlign: "center"}}
           dangerouslySetInnerHTML={{
             __html: `${t("goHome.utbotGoText")}`,
           }}

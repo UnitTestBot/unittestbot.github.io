@@ -3,7 +3,7 @@ export default {
     initialColorMode: 'dark',
     colors: {
       header: {
-        bg: "rgba(21,20,31,0.91)",
+        bg: "rgb(21,20,31)",
       }
     },
   },

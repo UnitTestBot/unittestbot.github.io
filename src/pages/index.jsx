@@ -31,7 +31,7 @@ const MainPage = () => {
 
   const testsGenerationText = t("javaHome.testsGenText");
   const testsGenerationBlock = (
-    <p className="contentText" dangerouslySetInnerHTML={{ __html: testsGenerationText }} />
+    <p className="contentText" style={{margin: 0}} dangerouslySetInnerHTML={{ __html: testsGenerationText }} />
   );
 
   const testsGenerationAdvantagesText = t("javaHome.testsGenAdvantagesText");
@@ -61,37 +61,11 @@ const MainPage = () => {
 
   return (
     <Layout isMainPage>
-
-      <ul role={'list'} className="ulButtons">
-        <li>
-          <Link to="/docs/java/install-or-update-plugin">
-            <button style={{backgroundColor: "transparent", color: "#FFFFFF", border: "none"}} className="demoButton">
-              {"User guide"}
-            </button>
-          </Link>
-        </li>
-        <li>
-          <Link to="https://github.com/UnitTestBot/UTBotJava/releases">
-            <button style={{backgroundColor: "transparent", color: "#FFFFFF", border: "none"}} className="demoButton">
-              {"Install from GitHub"}
-            </button>
-          </Link>
-        </li>
-        <li>
-          <Link to="https://plugins.jetbrains.com/plugin/19445-unittestbot">
-            <button style={{backgroundColor: "transparent", color: "#FFFFFF", border: "none"}} className="demoButton">
-              {"Install from JetBrains Marketplace"}
-            </button>
-          </Link>
-        </li>
-      </ul>
-
-
       <header className="mainHeader">
-        <Container className="mainHeaderWrapper">
-          <h1 className="title contentTitle">{t("javaHome.imagineTitle")}</h1>
+        <Container className="mainHeaderWrapper" style={{gap: "1.5rem"}}>
+          <h1 className="title contentTitle" style={{ margin: 0 }}>{t("javaHome.imagineTitle")}</h1>
           {testsGenerationBlock}
-          <span className="actions">
+          <span className="actions" style={{marginTop: 0}}>
             <Link to="/utbot">
               <button className="demoButton">
                 {t("javaHome.tryOnlineText")}
@@ -117,6 +91,29 @@ const MainPage = () => {
               </button>
             </Link>
           </span>
+          <ul role={'list'} className="ulButtons" style={{display: "flex", alignItems: "center", justifyContent: "center", padding: 0, margin: 0}}>
+            <li>
+              <Link to="/docs/java/install-or-update-plugin">
+                <button className="subheaderButton">
+                  {"User guide"}
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link to="https://github.com/UnitTestBot/UTBotJava/releases">
+                <button className="subheaderButton">
+                  {"Install from GitHub"}
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link to="https://plugins.jetbrains.com/plugin/19445-unittestbot">
+                <button className="subheaderButton">
+                  {"Install from JetBrains Marketplace"}
+                </button>
+              </Link>
+            </li>
+          </ul>
         </Container>
       </header>
       <Container className="snakeContainer">
@@ -139,7 +136,7 @@ const MainPage = () => {
             </img>
           </div>
         </div>
-        <div className="snakeElementsWrapper">
+        <div className="snakeElementsReverseWrapper">
           <div className="gifWrapper rightMargin">
             <img
               src={fullClassGif}
@@ -175,15 +172,8 @@ const MainPage = () => {
             >
             </img>
           </div>
-          <div className="gifWrapper">
-            <img
-              src={falsePositiveGif}
-              alt="No false positives"
-            >
-            </img>
-          </div>
         </div>
-        <div className="snakeElementsWrapper">
+        <div className="snakeElementsReverseWrapper">
           <div className="gifWrapper rightMargin">
             <img
               src={mocksGif}
@@ -220,53 +210,7 @@ const MainPage = () => {
             </img>
           </div>
         </div>
-        <div className="leftContentWrapper">
-          <h3 style={{marginBottom: "1.2rem"}}>{t("javaHome.capableForYourNeedText")}</h3>
-          {capableForEveryBlock}
-          <Link to="/docs/java/check-requirements">
-            <button>
-              {t("javaHome.supportedTechnologiesText")}
-            </button>
-          </Link>
-        </div>
-        <div className="snakeElementsWrapper">
-          <div className="gifWrapper rightMargin">
-            <img
-              src={mocksGif}
-              alt="Mocks example"
-            >
-            </img>
-          </div>
-          <div>
-            <h3 className="title">{t("javaHome.mocksTitlePart1")}</h3>
-            <h3 style={{marginBottom: "1.2rem"}} className="title">{t("javaHome.mocksTitlePart2")}</h3>
-            {mocksBlock}
-            <Link to="/docs/java/tune-test-generation-plugin#mocking-settings">
-              <button>
-                {t("javaHome.mockingSettingsText")}
-              </button>
-            </Link>
-          </div>
-        </div>
-        <div className="snakeElementsWrapper">
-          <div className="rightMargin">
-            <h3 style={{marginBottom: "1.2rem"}} className="title">{t("javaHome.humanReadableTitle")}</h3>
-            {humanReadableBlock}
-            <Link to="/docs/java/test-results-plugin">
-              <button>
-                {t("javaHome.getBetterTestDescriptionText")}
-              </button>
-            </Link>
-          </div>
-          <div className="gifWrapper">
-            <img
-              src={commentsGif}
-              alt="Human readable tests example"
-            >
-            </img>
-          </div>
-        </div>
-        <div className="leftContentWrapper" style={{maxWidth: "450px"}}>
+        <div className="leftContentWrapper" style={{maxWidth: "400px", marginBottom: "30px"}}>
           <h3 style={{marginBottom: "1.2rem"}}>{t("javaHome.capableForYourNeedText")}</h3>
           {capableForEveryBlock}
           <Link to="/docs/java/check-requirements">

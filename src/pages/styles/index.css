@@ -1,6 +1,14 @@
 @import "../../utils/colors.css";
 @import "../../utils/fonts.css";
 
+.subheaderButton {
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border-radius: 30px;
+}
+
 .ulButtons {
     display: flex;
     justify-content: center;
@@ -40,7 +48,8 @@
 }
 
 @media screen and (max-width: 770px) {
-    .snakeElementsWrapper img {
+    .snakeElementsWrapper img,
+    .snakeElementsReverseWrapper img {
         width: 400px;
     }
 
@@ -111,11 +120,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 95vw !important;
+    /*width: 95vw !important;*/
     margin-top: 3rem;
 }
 
-.snakeElementsWrapper {
+.snakeElementsWrapper,
+.snakeElementsReverseWrapper {
     max-width: 1000px;
     width: 90vw !important;
     display: flex;
@@ -138,17 +148,24 @@
         flex-direction: column;
     }
 
-    .snakeElementsWrapper p {
+    .snakeElementsReverseWrapper {
+        flex-direction: column-reverse;
+    }
+
+    .snakeElementsWrapper p,
+    .snakeElementsReverseWrapper {
         min-width: 70vw;
         max-width: 95vw;
     }
 
-    .snakeElementsWrapper button {
+    .snakeElementsWrapper button,
+    .snakeElementsReverseWrapper button {
         margin-bottom: 1.5rem;
     }
 }
 
 .snakeElementsWrapper p,
+.snakeElementsReverseWrapper p,
 .leftContentWrapper p {
     font-size: var(--main-pg-snake-text-font-size) !important;
     font-weight: var(--main-pg-snake-text-font-weight) !important;
@@ -161,6 +178,7 @@
 }
 
 .snakeElementsWrapper button,
+.snakeElementsReverseWrapper button,
 .leftContentWrapper button {
     background-color: var(--white-color-text);
     border-radius: 30px;
@@ -169,11 +187,13 @@
     font-weight: var(--snake-btn-font-weight);
 }
 
-.snakeElementsWrapper {
+.snakeElementsWrapper,
+.snakeElementsReverseWrapper {
     overflow-x: auto;
 }
 
-.snakeElementsWrapper img {
+.snakeElementsWrapper img,
+.snakeElementsReverseWrapper img {
     width: 550px;
 }
 
