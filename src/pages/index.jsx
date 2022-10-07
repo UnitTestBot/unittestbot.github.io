@@ -31,7 +31,7 @@ const MainPage = () => {
 
   const testsGenerationText = t("javaHome.testsGenText");
   const testsGenerationBlock = (
-    <p className="contentText" style={{margin: 0}} dangerouslySetInnerHTML={{ __html: testsGenerationText }} />
+    <p className="contentText" style={{ margin: '0 auto', textAlign: 'center' }} dangerouslySetInnerHTML={{ __html: testsGenerationText }} />
   );
 
   const testsGenerationAdvantagesText = t("javaHome.testsGenAdvantagesText");
@@ -62,8 +62,8 @@ const MainPage = () => {
   return (
     <Layout isMainPage>
       <header className="mainHeader" style={{marginTop: "4.5rem"}}>
-        <Container className="mainHeaderWrapper" style={{gap: "1.5rem"}}>
-          <h1 className="title contentTitle" style={{ margin: 0 }}>{t("javaHome.imagineTitle")}</h1>
+        <Container style={{gap: "1.5rem", display: 'flex', flexDirection: 'column', }}>
+          <h1 className="title contentTitle" style={{ margin: 0, textAlign: 'center' }}>{t("javaHome.imagineTitle")}</h1>
           {testsGenerationBlock}
           <span className="actions" style={{marginTop: 0}}>
             <Link to="/utbot">

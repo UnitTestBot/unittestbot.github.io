@@ -21,7 +21,7 @@ const Layout = ({ isMainPage, children }) => {
       <>
         <div className="site">
           <Header siteTitle={data.site.siteMetadata?.title || `Title`}  style={{top: 0, zIndex: "99", width: "100%", position: 'sticky'}} />
-          <main className="siteContent" style={{ marginTop: 'auto' }}>{children}</main>
+          <main style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '2rem' }}>{children}</main>
           <footer className="footer mt-auto text-white">
             <div style={{float: `right`}}>
               UnitTestBot © 2022
