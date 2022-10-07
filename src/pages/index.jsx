@@ -61,7 +61,7 @@ const MainPage = () => {
 
   return (
     <Layout isMainPage>
-      <header className="mainHeader">
+      <header className="mainHeader" style={{marginTop: "4.5rem"}}>
         <Container className="mainHeaderWrapper" style={{gap: "1.5rem"}}>
           <h1 className="title contentTitle" style={{ margin: 0 }}>{t("javaHome.imagineTitle")}</h1>
           {testsGenerationBlock}
@@ -91,7 +91,7 @@ const MainPage = () => {
               </button>
             </Link>
           </span>
-          <ul role={'list'} className="ulButtons" style={{display: "flex", alignItems: "center", justifyContent: "center", padding: 0, margin: 0}}>
+          <ul role={'list'} className="ulButtons" style={{marginBottom: "2rem", display: "flex", alignItems: "center", justifyContent: "center", padding: 0, margin: 0}}>
             <li>
               <Link to="/docs/java/install-or-update-plugin">
                 <button className="subheaderButton">

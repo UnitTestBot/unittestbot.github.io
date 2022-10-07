@@ -68,7 +68,7 @@ const CppPage = () => {
 
   return (
     <Layout>
-      <header className="mainHeader">
+      <header className="mainHeader" style={{marginTop: "4.5rem"}}>
         <Container className="mainHeaderWrapper" style={{gap: "1.5rem"}}>
           <h1 style={{margin: 0}} className="title contentTitle">{t("cppHome.utbotCppTitle")}</h1>
           <h1 style={{margin: 0}} className="title contentTitle">{t("cppHome.changesExperienceTitle")}</h1>
@@ -99,7 +99,7 @@ const CppPage = () => {
               </button>
             </Link>
           </span>
-          <ul role={'list'} className="ulButtons" style={{display: "flex", alignItems: "center", justifyContent: "center", padding: 0, margin: 0}}>
+          <ul role={'list'} className="ulButtons" style={{marginBottom: "2rem", display: "flex", alignItems: "center", justifyContent: "center", padding: 0, margin: 0}}>
             <li>
               <Link to="/docs/cpp">
                 <button className="subheaderButton">
