@@ -35,6 +35,7 @@
 }
 
 .mainHeaderWrapper {
+    margin-top: 3rem;
     height: 96vh;
     width: 100%;
     display: flex;
