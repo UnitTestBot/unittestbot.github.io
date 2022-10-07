@@ -121,7 +121,7 @@ const CppPage = () => {
         <div className="snakeElementsWrapper">
           <div className="rightMargin" style={{display: "flex", flexDirection: "column"}}>
             <div style={{display: "flex", flexDirection: "column"}}>
-              <h3 style={{marginBottom: "1.2rem"}} className="title">{t("cppHome.perfectTestingTitle")}</h3>
+              <h3 style={{marginBottom: "1.2rem", marginTop: '2rem' }} className="title">{t("cppHome.perfectTestingTitle")}</h3>
               {whyUtbotIsCapableBlock}
             </div>
             <div style={{display: "flex", flexDirection: "column"}}>
