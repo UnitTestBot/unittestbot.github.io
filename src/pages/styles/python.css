@@ -2,12 +2,12 @@
 @import "../../utils/fonts.css";
 
 .pageFlexContainer {
-    padding-top: 15vw !important;
+    /*padding-top: 15vw !important;*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 95vw !important;
+    /*width: 95vw !important;*/
 }
 
 h2 {
@@ -16,7 +16,7 @@ h2 {
 }
 
 p {
-    text-align: center !important;
+    /*text-align: center !important;*/
     font-size: var(--language-anounce-text-font-size) !important;
     font-weight: var(--language-anounce-text-font-weight) !important;
 }
@@ -24,7 +24,7 @@ p {
 @media screen and (max-width: 440px) {
     h2 {
         text-align: left !important;
-        padding-top: 25vw !important;
+        /*padding-top: 25vw !important;*/
     }
 
     p {

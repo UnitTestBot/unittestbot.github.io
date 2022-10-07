@@ -14,21 +14,24 @@ const AboutPage = () => {
       <SEO title="About Us"/>
       <div className="pageFlexContainer">
         <p
+          style={{textAlign: "left"}}
           dangerouslySetInnerHTML={{
             __html: `${t("aboutUs.whoWeAreText")}`,
           }}
         />
-        <ul>
+        <ul style={{padding: 0}}>
           <li>{t("aboutUs.spbu")}</li>
           <li>{t("aboutUs.hse")}</li>
           <li>{t("aboutUs.itmo")}</li>
         </ul>
         <p
+          style={{textAlign: "left"}}
           dangerouslySetInnerHTML={{
             __html: `${t("aboutUs.whatWeDevelopText")}`,
           }}
         />
         <p
+          style={{textAlign: "left"}}
           dangerouslySetInnerHTML={{
             __html: `${t("aboutUs.visitGitHubText")}`,
           }}

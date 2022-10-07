@@ -18,6 +18,7 @@ const PythonPage = () => {
         <h2>{t("pythonHome.utbotPythonTitle")}</h2>
         <h2 style={{marginBottom: "2.5rem"}}>{t("pythonHome.almostReady")}</h2>
         <p
+          style={{textAlign: "center"}}
           dangerouslySetInnerHTML={{
             __html: `${t("pythonHome.utbotPythonText")}`,
           }}

@@ -18,6 +18,7 @@ const JsPage = () => {
         <h2>{t("jsHome.utbotJsTitle")}</h2>
         <h2 style={{marginBottom: "2.5rem"}}>{t("jsHome.almostReady")}</h2>
         <p
+          style={{textAlign: "center"}}
           dangerouslySetInnerHTML={{
             __html: `${t("jsHome.utbotJsText")}`,
           }}
