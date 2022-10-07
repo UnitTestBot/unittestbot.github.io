@@ -16,7 +16,7 @@ h2 {
 }
 
 p {
-    text-align: center !important;
+    text-align: center;
     font-size: var(--language-anounce-text-font-size) !important;
     font-weight: var(--language-anounce-text-font-weight) !important;
 }
@@ -24,7 +24,6 @@ p {
 @media screen and (max-width: 440px) {
     h2 {
         text-align: left !important;
-        padding-top: 25vw !important;
     }
 
     p {

@@ -1,6 +1,20 @@
 @import "../../utils/colors.css";
 @import "../../utils/fonts.css";
 
+.ulButtons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none
+}
+
+@media screen and (max-width: 750px) {
+    .ulButtons {
+        flex-direction: column;
+    }
+
+}
+
 .mainHeader {
     text-align: left;
     font-weight: bold;
@@ -110,7 +124,6 @@
     font-weight: var(--main-pg-snake-text-font-weight) !important;
     text-align: left;
     margin-bottom: 2.3rem;
-    max-width: 45vw;
 }
 
 @media screen and (max-width: 600px) {
@@ -145,6 +158,7 @@
 .containerOfFourTexts p {
     font-size: var(--main-pg-snake-cpp-small-text-font-size) !important;
     font-weight: var(--main-pg-snake-cpp-small-text-font-weight) !important;
+    text-align: left !important;
 }
 
 .containerOfFourTexts h3 {
@@ -152,9 +166,6 @@
     font-weight: var(--main-pg-snake-cpp-small-title-font-weight) !important;
 }
 
-.snakeElementsWrapper h3 {
-    max-width: 45vw;
-}
 
 .centeredContentWrapper p {
     max-width: 90vw;

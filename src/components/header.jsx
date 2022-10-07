@@ -23,13 +23,11 @@ function Header(props) {
     </Link>
   );
 
-  const [searchValue, setSearchValue] = useState("");
-
   return (
     <header className="header-position" style={props.style}>
       <Container id="container">
-        <Navbar className="headerNavBar" expand="lg" variant="dark">
-          <Link to="/">
+        <Navbar className="headerNavBar" style={{padding: "1rem"}} expand="lg" variant="dark">
+          <Link style={{position: "absolute"}} to="/">
             <Navbar.Brand>
               <img
                 alt="UnitTestBot"
@@ -40,51 +38,46 @@ function Header(props) {
               />{" "}
             </Navbar.Brand>
           </Link>
-          <Navbar.Toggle aria-controls="navbarResponsive" />
-          <Navbar.Collapse id="navbarResponsive">
-            <Nav as="ul" className="mr-auto">
-              <Nav.Item as="li">
-                <CustomLink to="/" className="nav-link">
-                  {t("header.javaArea")}
-                </CustomLink>
-              </Nav.Item>
-              <Nav.Item as="li">
-                <CustomLink to="/cpp" className="nav-link">
-                  {t("header.cppArea")}
-                </CustomLink>
-              </Nav.Item>
-              <Nav.Item as="li">
-                <CustomLink to="/python" className="nav-link">
-                  {t("header.pythonArea")}
-                </CustomLink>
-              </Nav.Item>
-              <Nav.Item as="li">
-                <CustomLink to="/javascript" className="nav-link">
-                  {t("header.javaScriptArea")}
-                </CustomLink>
-              </Nav.Item>
-              <Nav.Item as="li">
-                <CustomLink to="/go" className="nav-link">
-                  {t("header.goArea")}
-                </CustomLink>
-              </Nav.Item>
-              <Nav.Item as="li">
-                <CustomLink to="/utbot" className="nav-link">
-                  {t("header.demo")}
-                </CustomLink>
-              </Nav.Item>
-              <Nav.Item as="li">
-                <CustomLink to="/research" className="nav-link">
-                  {t("header.research")}
-                </CustomLink>
-              </Nav.Item>
-              <Nav.Item as="li">
-                <CustomLink to="/about" className="nav-link">
-                  {t("header.aboutUs")}
-                </CustomLink>
-              </Nav.Item>
-            </Nav>
-            <input
+          <Navbar.Toggle aria-controls="navbarResponsive" style={{ marginLeft: 'auto' }} />
+          <Navbar.Collapse id="navbarResponsive" style={{ justifyContent: 'center' }}>
+              <Nav as="ul" style={{justifyContent: "center"}}>
+                <Nav.Item as="li">
+                  <CustomLink to="/" className="nav-link">
+                    {t("header.javaArea")}
+                  </CustomLink>
+                </Nav.Item>
+                <Nav.Item as="li">
+                  <CustomLink to="/cpp" className="nav-link">
+                    {t("header.cppArea")}
+                  </CustomLink>
+                </Nav.Item>
+                <Nav.Item as="li">
+                  <CustomLink to="/python" className="nav-link">
+                    {t("header.pythonArea")}
+                  </CustomLink>
+                </Nav.Item>
+                <Nav.Item as="li">
+                  <CustomLink to="/js" className="nav-link">
+                    {t("header.javaScriptArea")}
+                  </CustomLink>
+                </Nav.Item>
+                <Nav.Item as="li">
+                  <CustomLink to="/go" className="nav-link">
+                    {t("header.goArea")}
+                  </CustomLink>
+                </Nav.Item>
+                <Nav.Item as="li">
+                  <CustomLink to="/utbot" className="nav-link">
+                    {t("header.demo")}
+                  </CustomLink>
+                </Nav.Item>
+                <Nav.Item as="li">
+                  <CustomLink to="/about" className="nav-link">
+                    {t("header.aboutUs")}
+                  </CustomLink>
+                </Nav.Item>
+              </Nav>
+            {/*<input
               type="text"
               placeholder={t("header.searchPlaceholder")}
               className="oneLineSearch"
@@ -99,7 +92,7 @@ function Header(props) {
                 }
               }}
               onChange={e => setSearchValue(e.target.value)}
-            />
+            />*/}
           </Navbar.Collapse>
         </Navbar>
       </Container>

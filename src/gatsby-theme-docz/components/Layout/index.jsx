@@ -18,7 +18,7 @@ export const Layout = ({ children }) => {
       <Global styles={global} />
       <Main sx={styles.main}>
         <Header onOpen={() => setOpen(s => !s)} />
-        <div sx={styles.wrapper}>
+        <div sx={styles.wrapper} style={{paddingTop: "15px"}}>
           <Sidebar
             ref={nav}
             open={open}

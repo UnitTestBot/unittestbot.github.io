@@ -492,13 +492,15 @@ const UTBotOnlinePage = () => {
                                     />
                                     }
                                 </Button>
-                                {language === 2 && <Alert
-                                    style={{marginTop: "5px", marginBottom: "5px", display: "inline-block"}}
-                                    variant="warning"
-                                    dangerouslySetInnerHTML={{ __html: t("utbot.alertCpp") }}
-                                />}
-                                {(language === 4 || language === 5 || language === 6) && <Alert
-                                    style={{marginTop: "5px", marginBottom: "5px", display: "inline-block"}}
+                                {(language == 2 || language === 4 || language === 5 || language === 6) && <Alert
+                                    style={{
+                                        marginTop: "5px",
+                                        marginBottom: "5px",
+                                        display: "inline-block",
+                                        color: "#FFFFFF",
+                                        border: "none",
+                                        backgroundColor: "transparent"
+                                    }}
                                     variant="warning"
                                     dangerouslySetInnerHTML={{ __html: t("utbot.alertNew") }}
                                 />}

@@ -23,7 +23,7 @@ const CppPage = () => {
 
   const whyUtbotIsCapableText = t("cppHome.whyUtbotIsCapableText");
   const whyUtbotIsCapableBlock = (
-    <p style={{textAlign: "left"}} className="contentText" dangerouslySetInnerHTML={{ __html: whyUtbotIsCapableText }} />
+    <p style={{textAlign: "left !important"}} className="contentText" dangerouslySetInnerHTML={{ __html: whyUtbotIsCapableText }} />
   );
 
   const fixateCurrentBehaviorText = t("cppHome.fixateCurrentBehaviorText");
@@ -68,6 +68,23 @@ const CppPage = () => {
 
   return (
     <Layout>
+      <ul role={'list'} className="ulButtons">
+        <li>
+          <Link to="/docs/cpp">
+            <button style={{backgroundColor: "transparent", color: "#FFFFFF", border: "none"}} className="demoButton">
+              {"User guide"}
+            </button>
+          </Link>
+        </li>
+        <li>
+          <Link to="https://github.com/UnitTestBot/UTBotCpp/releases">
+            <button style={{backgroundColor: "transparent", color: "#FFFFFF", border: "none"}} className="demoButton">
+              {"Install from GitHub"}
+            </button>
+          </Link>
+        </li>
+      </ul>
+
       <header className="mainHeader">
         <Container className="mainHeaderWrapper">
           <h1 className="title contentTitle">{t("cppHome.utbotCppTitle")}</h1>

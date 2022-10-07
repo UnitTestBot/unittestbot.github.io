@@ -6,20 +6,20 @@ import { useTranslation } from "react-i18next";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import withTrans from "../i18n/withTrans";
-import "./styles/python.css";
+import "./styles/js.css";
 
-const PythonPage = () => {
+const JsPage = () => {
   const { t, i18n } = useTranslation();
 
   return (
     <Layout>
       <SEO title="About Us"/>
       <div className="pageFlexContainer">
-        <h2>{t("pythonHome.utbotPythonTitle")}</h2>
-        <h2 style={{marginBottom: "2.5rem"}}>{t("pythonHome.almostReady")}</h2>
+        <h2>{t("jsHome.utbotJsTitle")}</h2>
+        <h2 style={{marginBottom: "2.5rem"}}>{t("jsHome.almostReady")}</h2>
         <p
           dangerouslySetInnerHTML={{
-            __html: `${t("pythonHome.utbotPythonText")}`,
+            __html: `${t("jsHome.utbotJsText")}`,
           }}
         />
       </div>
@@ -27,4 +27,4 @@ const PythonPage = () => {
   );
 };
 
-export default withTrans(PythonPage);
+export default withTrans(JsPage);

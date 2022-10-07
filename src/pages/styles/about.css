@@ -2,7 +2,8 @@
 @import "../../utils/fonts.css";
 
 .pageFlexContainer {
-    width: 1000% !important;
+    max-width: 900px !important;
+    width: 100vw !important;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -17,8 +18,14 @@
 }
 
 .pageFlexContainer p {
-    width: 100%;
-    text-align: center;
-    font-size: var(--single-content-page-text-font-size);
-    font-weight: var(--single-content-page-text-font-weight);
+    width: fit-content;
+    text-align: left;
+    font-size: var(--single-content-page-text-font-size) !important;
+    font-weight: var(--single-content-page-text-font-weight) !important;
+}
+
+@media screen and (max-width: 1000px) {
+    .pageFlexContainer {
+        padding-top: 40px !important;
+    }
 }

@@ -6,22 +6,26 @@
     --main-pg-snake-title-font-size: 30px;
     --main-pg-snake-text-font-size: 20px;
     --main-pg-snake-cpp-text-font-size: 20px;
-    --main-pg-snake-cpp-small-text-font-size: 14px;
+    --main-pg-snake-cpp-small-text-font-size: 15px;
     --main-pg-snake-cpp-small-title-font-size: 19px;
     --single-content-page-text-font-size: 20px;
     --single-content-page-title-font-size: 30px;
-    --language-anounce-text-font-size: 26px;
+    --language-anounce-text-font-size: 22px;
     --language-anounce-title-font-size: 30px;
     --footer-text-font-size: 18px;
+    --header-nav-link-font-size: 17px;
+
 
     /* Font families */
+
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 
     /* Font weights */
     --demo-btn-font-weight: 600;
     --snake-btn-font-weight: 600;
     --how-works-btn-font-weight: 500;
     --main-pg-content-font-weight: 100;
-    --header-nav-link-font-weight: 400;
+    --header-nav-link-font-weight: 500;
     --main-pg-content-title-font-weight: 500;
     --main-pg-snake-title-font-weight: 400;
     --main-pg-snake-text-font-weight: 100;
@@ -30,6 +34,6 @@
     --single-content-page-text-font-weight: 150;
     --single-content-page-title-font-weight: 300;
     --language-anounce-text-font-weight: 300;
-    --language-anounce-title-font-weight: 500;
-    --footer-text-font-weight: 300;
+    --language-anounce-title-font-weight: 400;
+    --footer-text-font-weight: 400;
 }

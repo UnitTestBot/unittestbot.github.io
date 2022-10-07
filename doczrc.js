@@ -1,11 +1,11 @@
 export default {
   themeConfig: {
     initialColorMode: 'dark',
-    /*colors: {
+    colors: {
       header: {
-        bg: "#010e01",
-      },
-    }*/
+        bg: "rgba(21,20,31,0.91)",
+      }
+    },
   },
   title: "UnitTestBot",
   base: "docs/",

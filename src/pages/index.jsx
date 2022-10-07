@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Container, } from "react-bootstrap";
+import {Container, Nav} from "react-bootstrap";
 import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
 import Layout from "../components/layout";
@@ -14,6 +14,17 @@ import fullClassGif from "../gifs/java/Full-Class.gif"
 import commentsGif from "../gifs/java/Comments.png"
 import mocksGif from "../gifs/java/Mocks.gif"
 import falsePositiveGif from "../gifs/java/False-Positive.gif"
+
+const isActive = className => ({ isPartiallyCurrent }) => ({
+  className: className + (isPartiallyCurrent ? " active" : ""),
+});
+
+const CustomLink = ({ className, children, ...propsCustomLink }) => (
+  /* eslint-disable-next-line react/jsx-props-no-spreading */
+  <Link getProps={isActive(className)} {...propsCustomLink}>
+    {children}
+  </Link>
+);
 
 const MainPage = () => {
   const { t, i18n } = useTranslation();
@@ -48,11 +59,37 @@ const MainPage = () => {
     <p dangerouslySetInnerHTML={{ __html: capableForEveryText }} />
   );
 
-
   return (
     <Layout isMainPage>
+
+      <ul role={'list'} className="ulButtons">
+        <li>
+          <Link to="/docs/java/install-or-update-plugin">
+            <button style={{backgroundColor: "transparent", color: "#FFFFFF", border: "none"}} className="demoButton">
+              {"User guide"}
+            </button>
+          </Link>
+        </li>
+        <li>
+          <Link to="https://github.com/UnitTestBot/UTBotJava/releases">
+            <button style={{backgroundColor: "transparent", color: "#FFFFFF", border: "none"}} className="demoButton">
+              {"Install from GitHub"}
+            </button>
+          </Link>
+        </li>
+        <li>
+          <Link to="https://plugins.jetbrains.com/plugin/19445-unittestbot">
+            <button style={{backgroundColor: "transparent", color: "#FFFFFF", border: "none"}} className="demoButton">
+              {"Install from JetBrains Marketplace"}
+            </button>
+          </Link>
+        </li>
+      </ul>
+
+
       <header className="mainHeader">
         <Container className="mainHeaderWrapper">
+
           <h1 className="title contentTitle">{t("javaHome.imagineTitle")}</h1>
           {testsGenerationBlock}
           <span className="actions">
@@ -85,7 +122,7 @@ const MainPage = () => {
       </header>
       <Container className="snakeContainer">
         <div className="snakeElementsWrapper">
-          <div className="rightMargin">
+          <div className="rightMargin" style={{maxWidth: "30rem", margin: "0 auto"}}>
             <h3 className="title">{t("javaHome.testsGenAdvantagesTitlePart1")}</h3>
             <h3 style={{marginBottom: "1.2rem"}} className="title">{t("javaHome.testsGenAdvantagesTitlePart2")}</h3>
             {testsGenerationAdvantagesBlock}
@@ -178,7 +215,7 @@ const MainPage = () => {
           </div>
         </div>
         <div className="leftContentWrapper">
-          <h3 style={{marginBottom: "1.2rem"}} className="title">{t("javaHome.capableForYourNeedText")}</h3>
+          <h3 style={{marginBottom: "1.2rem"}}>{t("javaHome.capableForYourNeedText")}</h3>
           {capableForEveryBlock}
           <Link to="/docs/java/check-requirements">
             <button>

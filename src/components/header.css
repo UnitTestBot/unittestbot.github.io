@@ -1,4 +1,5 @@
 @import "../utils/colors.css";
+@import "../utils/fonts.css";
 
 #container {
   max-width: 2000px;
@@ -28,12 +29,17 @@
 
 .headerNavBar {
   background-color: var(--header-footer-bg);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center !important;
 }
 
 /* Links on the header */
-.navbar-dark .navbar-nav .nav-link {
-  color: var(--full-white) !important;
+a.nav-link {
   font-weight: var(--header-nav-link-font-weight);
+  font-size: var(--header-nav-link-font-size) !important;
+  font-family: var(--font-family-sans-serif);
 }
 
 .searchForm {

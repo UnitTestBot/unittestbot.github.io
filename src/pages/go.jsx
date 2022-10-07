@@ -5,30 +5,26 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import { useTranslation } from "react-i18next";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import ThirdCard from "../components/cards/ThirdCard";
 import withTrans from "../i18n/withTrans";
-import "./styles/research.css";
+import "./styles/go.css";
 
-const AboutPage = () => {
+const GoPage = () => {
   const { t, i18n } = useTranslation();
 
   return (
     <Layout>
-      <SEO title="Research"/>
+      <SEO title="About Us"/>
       <div className="pageFlexContainer">
+        <h2>{t("goHome.utbotGoTitle")}</h2>
+        <h2 style={{marginBottom: "2.5rem"}}>{t("goHome.almostReady")}</h2>
         <p
           dangerouslySetInnerHTML={{
-            __html: `${t("aboutUs.whoWeAreText")}`,
+            __html: `${t("goHome.utbotGoText")}`,
           }}
         />
-        <ul>
-          <li>{t("aboutUs.spbu")}</li>
-          <li>{t("aboutUs.hse")}</li>
-          <li>{t("aboutUs.itmo")}</li>
-        </ul>
       </div>
     </Layout>
   );
 };
 
-export default withTrans(AboutPage);
+export default withTrans(GoPage);

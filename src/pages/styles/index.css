@@ -1,6 +1,25 @@
 @import "../../utils/colors.css";
 @import "../../utils/fonts.css";
 
+.ulButtons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none
+}
+
+@media screen and (max-width: 750px) {
+    .ulButtons {
+        flex-direction: column;
+    }
+
+}
+
+.roundActionButton {
+    width: 45px;
+    height: 45px;
+}
+
 .mainHeader {
     text-align: left;
     font-weight: bold;
@@ -108,7 +127,7 @@
 @media screen and (max-width: 600px) {
     .centeredContentWrapper p,
     .centeredContentWrapper h3 {
-        text-align: left;
+        text-align: left !important;
         width: fit-content;
     }
 }
@@ -130,11 +149,10 @@
 
 .snakeElementsWrapper p,
 .leftContentWrapper p {
-    font-size: var(--main-pg-snake-text-font-size);
-    font-weight: var(--main-pg-snake-text-font-weight);
-    text-align: left;
+    font-size: var(--main-pg-snake-text-font-size) !important;
+    font-weight: var(--main-pg-snake-text-font-weight) !important;
+    text-align: left !important;
     margin-bottom: 2.3rem;
-    max-width: 45vw;
 }
 
 .leftContentWrapper p {
