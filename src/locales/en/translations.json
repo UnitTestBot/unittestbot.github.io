@@ -110,6 +110,7 @@
         "spbu": "Saint Petersburg State University",
         "hse": "HSE University",
         "itmo": "ITMO University",
+        "spbpu": "Saint Petersburg Polytechnic University",
         "whatWeDevelopText": "Though all these things may sound nerdy, we believe we develop a useful tool for real-life programmers. We try to make UnitTestBot effective and user-friendly — so that we are happy with it when we use it ourselves. And we welcome you to join us in developing UnitTestBot!<br><br><a href = 'mailto: support@utbot.org'>Contact us</a> directly to ask a question, share your ideas or give us feedback — we will be glad to hear from you!",
         "visitGitHubText": "Visit our <a href=\"https://github.com/UnitTestBot/\">GitHub</a> page and feel free to contribute!",
         "email": "<a href = 'mailto: support@utbot.org'>Send email</a>"

@@ -23,6 +23,7 @@ const AboutPage = () => {
           <li>{t("aboutUs.spbu")}</li>
           <li>{t("aboutUs.hse")}</li>
           <li>{t("aboutUs.itmo")}</li>
+          <li>{t("aboutUs.spbpu")}</li>
         </ul>
         <p
           style={{textAlign: "left"}}
