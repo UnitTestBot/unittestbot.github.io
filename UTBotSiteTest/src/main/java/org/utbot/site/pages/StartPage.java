@@ -10,8 +10,8 @@ public class StartPage extends UTBotPage{
         super(url);
     }
 
-    public static final String TRY_ONLINE_BTN_TEXT = "Try online";
+    public static final String DEMO_BTN_TEXT = "Try UnitTestBot online demo";
 
-    public final SelenideElement tryOnlineBtn = $x("//a[@href='/utbot/']");
+    public final SelenideElement demoBtn = $x("//a[@href='/utbot']//button");
 
 }

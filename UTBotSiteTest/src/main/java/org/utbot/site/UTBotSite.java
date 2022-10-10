@@ -19,7 +19,7 @@ public class UTBotSite {
     public static final String SITE_URL = "https://www.utbot.org";
 
     public static StartPage startPage = new StartPage("");
-    public static DemoPage demoPage = new DemoPage("/utbot/");
+    public static DemoPage demoPage = new DemoPage("/utbot");
 
     public static SelenideElement spinner = $(".spinner-border");
 
