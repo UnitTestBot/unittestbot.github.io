@@ -125,6 +125,10 @@
         "research": "Research",
         "aboutUs": "About us",
         "contact": "Contact Us",
-        "searchPlaceholder": "Search..."
+        "download": "Download",
+        "searchPlaceholder": "Search...",
+        "fromGitHub": "From GitHub",
+        "fromJetBrainsMarkerplace": "From JetBrains Marketplace",
+        "userGuide": "User Guide"
     }
 }

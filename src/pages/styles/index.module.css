@@ -1,0 +1,76 @@
+@import "../../utils/colors.css";
+@import "../../utils/fonts.css";
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 770px) {
+  .actions {
+    flex-direction: column;
+  }
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: calc(100vh - 172px);
+  justify-content: center;
+}
+
+@media screen and (max-width: 991px) {
+  .topContainer {
+    min-height: calc(100vh - 72px);
+  }
+}
+
+.topText {
+  line-height: 2.5rem;
+  letter-spacing: 0.15rem;
+  padding-bottom: 4rem;
+}
+
+@media screen and (max-width: 700px) {
+  .topText {
+    padding-bottom: 1rem;
+  }
+}
+
+.howWorksLink {
+  color: var(--white-color-text);
+  font-weight: var(--how-works-btn-font-weight);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin-bottom: 2rem;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .buttons {
+    flex-direction: column;
+  }
+}
+
+.examples {
+  padding-top: 0.5rem;
+  display: grid;
+  gap: 6rem;
+  place-items: center;
+}
+
+@media screen and (min-width: 1100px) {
+  .examples {
+    gap: 12rem;
+  }
+}

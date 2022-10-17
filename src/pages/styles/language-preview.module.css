@@ -1,0 +1,10 @@
+@import "../../utils/colors.css";
+@import "../../utils/fonts.css";
+
+.pageFlexContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}

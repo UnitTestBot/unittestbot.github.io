@@ -1,193 +1,141 @@
 import * as React from "react";
-import { Container, } from "react-bootstrap";
+import cn from "classnames";
+import { Container } from "react-bootstrap";
 import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
 import Layout from "../components/layout";
 import withTrans from "../i18n/withTrans";
-import "./styles/cpp.css";
+import * as styles from "./styles/index.module.css";
+import * as stylesCpp from "./styles/cpp.module.css";
+
+import Button from "../components/button";
+import Heading from "../components/heading";
+import Text from "../components/text";
+import ExampleCard from "../components/example-card";
+import InfoCard from "../components/info-card";
 
 import watchDemoIcon from "../images/watch-demo-icon.png";
-import githubIcon from "../images/github-trasparent.png";
+import githubIcon from "../images/github-transparent.png";
 
-import testsGenerationExample from "../gifs/cpp/test-generation-example.gif"
-import configurationGif from "../gifs/cpp/configuration-example.gif"
-import vsCodeClionImage from "../images/cpp/vs-code-clion.png"
+import testsGenerationExample from "../gifs/cpp/test-generation-example.gif";
+import configurationGif from "../gifs/cpp/configuration-example.gif";
+import vsCodeClionImage from "../images/cpp/vs-code-clion.png";
 
-const CppPage = () => {
+const CppPage = ({ location }) => {
   const { t, i18n } = useTranslation();
 
-  const utbotCppDescriptionText = t("cppHome.utbotCppDescriptionText");
-  const utbotCppDescriptionBlock = (
-    <p style={{margin: 0}} className="contentText" dangerouslySetInnerHTML={{ __html: utbotCppDescriptionText }} />
-  );
-
-  const whyUtbotIsCapableText = t("cppHome.whyUtbotIsCapableText");
-  const whyUtbotIsCapableBlock = (
-    <p style={{textAlign: "left !important"}} className="contentText" dangerouslySetInnerHTML={{ __html: whyUtbotIsCapableText }} />
-  );
-
-  const fixateCurrentBehaviorText = t("cppHome.fixateCurrentBehaviorText");
-  const fixateCurrentBehaviorBlock = (
-    <p dangerouslySetInnerHTML={{ __html: fixateCurrentBehaviorText }} />
-  );
-
-  const testsForAssertionsText = t("cppHome.testsForAssertionsText");
-  const testsForAssertionsBlock = (
-    <p dangerouslySetInnerHTML={{ __html: testsForAssertionsText }} />
-  );
-
-  const easilyConfigureText = t("cppHome.easilyConfigureText");
-  const easilyConfigureBlock = (
-    <p dangerouslySetInnerHTML={{ __html: easilyConfigureText }} />
-  );
-
-  const findUtbotForCppText = t("cppHome.findUtbotForCppText");
-  const findUtbotForCppBlock = (
-    <p dangerouslySetInnerHTML={{ __html: findUtbotForCppText }} />
-  );
-
-  const stubsText = t("cppHome.stubsText");
-  const stubsBlock = (
-    <p style={{textAlign: "left"}} dangerouslySetInnerHTML={{ __html: stubsText }} />
-  );
-
-  const supportedSyntaxText = t("cppHome.supportedSyntaxText");
-  const supportedSyntaxBlock = (
-    <p style={{textAlign: "left"}} dangerouslySetInnerHTML={{ __html: supportedSyntaxText }} />
-  );
-
-  const useBuildSystemText = t("cppHome.useBuildSystemText");
-  const useBuildSystemBlock = (
-    <p style={{textAlign: "left"}} dangerouslySetInnerHTML={{ __html: useBuildSystemText }} />
-  );
-
-  const googleTestFormatText = t("cppHome.googleTestFormatText");
-  const googleTestFormatBlock = (
-    <p style={{textAlign: "left"}} dangerouslySetInnerHTML={{ __html: googleTestFormatText }} />
-  );
-
   return (
-    <Layout>
-      <header className="mainHeader" style={{marginTop: "4.5rem"}}>
-        <Container className="mainHeaderWrapper" style={{gap: "1.5rem"}}>
-          <h1 style={{margin: 0}} className="title contentTitle">{t("cppHome.utbotCppTitle")}</h1>
-          <h1 style={{margin: 0}} className="title contentTitle">{t("cppHome.changesExperienceTitle")}</h1>
-          {utbotCppDescriptionBlock}
-          <span className="actions" style={{margin: 0}}>
+    <Layout location={location}>
+      <div className={styles.gradient}>
+        <Container className={styles.topContainer}>
+          <Heading>
+            {t("cppHome.utbotCppTitle")} <br />
+            {t("cppHome.changesExperienceTitle")}
+          </Heading>
+
+          <Text
+            className={cn("text-center", styles.topText, stylesCpp.info)}
+            dangerouslySetInnerHTML={{ __html: t("cppHome.utbotCppDescriptionText") }}
+          />
+
+          <div className={styles.actions}>
             <Link to="/utbot">
-              <button className="demoButton">
-                {t("javaHome.tryOnlineText")}
-              </button>
+              <Button>{t("javaHome.tryOnlineText")}</Button>
             </Link>
-            <Link to="https://www.youtube.com/watch?v=bDJyWEeYhvks">
-              <button className="howWorksButton">
-                <img
-                  src={watchDemoIcon}
-                  width="32"
-                  height="30"
-                />
-                {t("javaHome.watchHowWorksText")}
-              </button>
+
+            <Link
+              to="https://www.youtube.com/watch?v=bDJyWEeYhvks"
+              className={styles.howWorksLink}
+            >
+              <img
+                src={watchDemoIcon}
+                width="32"
+                height="30"
+                alt="Youtube Logo"
+              />
+              {t("javaHome.watchHowWorksText")}
             </Link>
+
             <Link to="https://github.com/UnitTestBot">
-              <button className="githubButton">
-                <img
-                  src={githubIcon}
-                  width="50"
-                  height="50"
-                />
-              </button>
+              <img src={githubIcon} width="50" height="50" alt="Github Logo" />
             </Link>
-          </span>
-          <ul role={'list'} className="ulButtons" style={{marginBottom: "2rem", display: "flex", alignItems: "center", justifyContent: "center", padding: 0, margin: 0}}>
+          </div>
+
+          {/* <ul role="list" className={styles.buttons}>
             <li>
               <Link to="/docs/cpp">
-                <button className="subheaderButton">
-                  {"User guide"}
-                </button>
+                <Button variant="outline">User guide</Button>
               </Link>
             </li>
             <li>
               <Link to="https://github.com/UnitTestBot/UTBotCpp/releases">
-                <button className="subheaderButton">
-                  {"Install from GitHub"}
-                </button>
+                <Button variant="outline">Install from GitHub</Button>
               </Link>
             </li>
-          </ul>
+          </ul> */}
         </Container>
-      </header>
-      <Container className="snakeContainer">
-        <div className="snakeElementsWrapper">
-          <div className="rightMargin" style={{display: "flex", flexDirection: "column"}}>
-            <div style={{display: "flex", flexDirection: "column"}}>
-              <h3 style={{marginBottom: "1.2rem", marginTop: '2rem' }} className="title">{t("cppHome.perfectTestingTitle")}</h3>
-              {whyUtbotIsCapableBlock}
-            </div>
-            <div style={{display: "flex", flexDirection: "column"}}>
-              <h3 style={{marginBottom: "1.2rem"}} className="title">{t("cppHome.checkForBugsTitle")}</h3>
-              {fixateCurrentBehaviorBlock}
-            </div>
-            <div style={{display: "flex", flexDirection: "column"}}>
-              <h3 style={{marginBottom: "1.2rem"}} className="title">{t("cppHome.specifyTestingAreaTitle")}</h3>
-              {testsForAssertionsBlock}
-            </div>
-          </div>
-          <div className="gifWrapper" style={{marginRight: "1.2rem"}}>
-            <img
-              src={testsGenerationExample}
-              alt="Tests generation example"
-            >
-            </img>
-          </div>
+      </div>
+
+      <Container className={styles.examples}>
+        <div className={stylesCpp.info}>
+          <InfoCard
+            heading={t("cppHome.perfectTestingTitle")}
+            text={t("cppHome.whyUtbotIsCapableText")}
+          />
+
+          <InfoCard
+            heading={t("cppHome.checkForBugsTitle")}
+            text={t("cppHome.fixateCurrentBehaviorText")}
+          />
         </div>
-        <div className="snakeElementsWrapper">
-          <div className="gifWrapper rightMargin">
-            <img
-              src={configurationGif}
-              alt="Configuration example"
-            >
-            </img>
-          </div>
-          <div>
-            <h3 style={{marginBottom: "1.2rem"}} className="title">{t("cppHome.easilyConfigureTitle")}</h3>
-            {easilyConfigureBlock}
-          </div>
-        </div>
-        <div className="snakeElementsWrapper">
-          <div className="rightMargin">
-            <h3 style={{marginBottom: "1.2rem"}} className="title">{t("cppHome.findUtbotForCppTitle")}</h3>
-            {findUtbotForCppBlock}
-          </div>
-          <div className="gifWrapper">
-            <img
-              src={vsCodeClionImage}
-              alt="UnitTestBot VS Code and CLion plugin example"
-            >
-            </img>
-          </div>
-        </div>
-        <div className="containerOfFourTexts">
-          <div style={{display: "flex", flexDirection: "column", maxWidth: "50vh"}}>
-            <div style={{marginBottom: "0.5rem"}}>
-              <h3 style={{marginBottom: "0.6rem"}}>{t("cppHome.stubsTitle")}</h3>
-              {stubsBlock}
-            </div>
-            <div style={{marginBottom: "0.5rem"}}>
-              <h3 style={{marginBottom: "0.6rem"}}>{t("cppHome.useBuildSystemTitle")}</h3>
-              {useBuildSystemBlock}
-            </div>
-          </div>
-          <div style={{display: "flex", flexDirection: "column", maxWidth: "50vh"}}>
-            <div style={{marginBottom: "0.5rem"}}>
-              <h3 style={{marginBottom: "0.6rem"}}>{t("cppHome.supportedSyntaxTitle")}</h3>
-              {supportedSyntaxBlock}
-            </div>
-            <div style={{marginBottom: "0.5rem"}}>
-              <h3 style={{marginBottom: "0.6rem"}}>{t("cppHome.googleTestFormatTitle")}</h3>
-              {googleTestFormatBlock}
-            </div>
-          </div>
+
+        <ExampleCard
+          heading={t("cppHome.specifyTestingAreaTitle")}
+          text={t("cppHome.testsForAssertionsText")}
+          gifSrc={testsGenerationExample}
+          gifAlt="Tests generation example"
+          gifPlacement="right"
+        />
+
+        <ExampleCard
+          heading={t("cppHome.easilyConfigureTitle")}
+          text={t("cppHome.easilyConfigureText")}
+          gifSrc={configurationGif}
+          gifAlt="Configuration example"
+          gifPlacement="left"
+        />
+
+        <ExampleCard
+          heading={t("cppHome.findUtbotForCppTitle")}
+          text={t("cppHome.findUtbotForCppText")}
+          gifSrc={vsCodeClionImage}
+
+
+
+          gifAlt="UnitTestBot VS Code and CLion plugin example"
+          gifPlacement="right"
+        />
+
+        <div className={stylesCpp.info}>
+          <InfoCard
+            heading={t("cppHome.stubsTitle")}
+            text={t("cppHome.stubsText")}
+          />
+
+          <InfoCard
+            heading={t("cppHome.useBuildSystemTitle")}
+            text={t("cppHome.useBuildSystemText")}
+          />
+
+          <InfoCard
+            heading={t("cppHome.supportedSyntaxTitle")}
+            text={t("cppHome.supportedSyntaxText")}
+          />
+
+          <InfoCard
+            heading={t("cppHome.googleTestFormatTitle")}
+            text={t("cppHome.googleTestFormatText")}
+          />
         </div>
       </Container>
     </Layout>

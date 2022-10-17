@@ -10,12 +10,32 @@
 
 .site {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+}
+
+.gradient {
+  /* background-image: radial-gradient(
+    circle,
+    var(--light-gree-bg) -20%,
+    var(--dark-green-bg) 80%
+  ); */
+  background: rgb(16,40,33);
+  background: linear-gradient(90deg, rgba(16,40,33,1) 0%, rgba(0,14,11,1) 50%, rgba(16,40,33,1) 100%);
+  background-attachment: fixed;
 }
 
 .site-content {
   flex-grow: 1;
+}
+
+.main {
+  margin-top: auto;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .footer {
