@@ -43,7 +43,7 @@
         "stubsTitle": "Get use of auto-generated stubs",
         "stubsText": "UnitTestBot for C/C++ detects whether the function is called from the other module and can automatically <a href=\"https://www.utbot.org/docs/cpp/stubs\">stub</a> it. These stubs are customizable, and you can turn them off if needed.",
         "supportedSyntaxTitle": "Test the code with the language feature you need",
-        "supportedSyntaxText": "Check <a href=\"https://github.com/UnitTestBot/UTBotCpp/wiki/c-syntax#basic-structs\">supported C</a> and <a href=\"https://github.com/UnitTestBot/UTBotCpp/wiki/cpp-syntax\">C++ syntax</a> with generated test examples.",
+        "supportedSyntaxText": "Check <a href=\"https://github.com/UnitTestBot/UTBotCpp/wiki/c-syntax\">supported C</a> and <a href=\"https://github.com/UnitTestBot/UTBotCpp/wiki/cpp-syntax\">C++ syntax</a> with generated test examples.",
         "useBuildSystemTitle": "Use CMake or Make",
         "useBuildSystemText": "Choose the build system suitable for your project.",
         "googleTestFormatTitle": "Get tests in Google Test format",

@@ -4,16 +4,8 @@
   --white-color-text: #ffffff;
   --editor-bg: #2a2929;
   --editor-minimap-bg: #232323;
-  /* --dark-green-bg: rgb(1, 14, 1);
-  --light-gree-bg: rgb(2, 45, 16); */
-  /* --dark-green-bg: rgb(0, 10, 0);
-  --light-gree-bg: rgb(1, 27, 10); */
-  --dark-green-bg: rgb(3, 42, 3);
-  --light-gree-bg: rgb(0, 0, 0);
-  --nav-link-selected: #399D53;
-  --demo-pg-dropdown-menu-bg: rgb(1, 14, 1);
-  --demo-pg-dropdown-menu-item: rgba(255, 255, 255, 0.73);
-  --demo-pg-dropdown-menu-item-hover: rgb(6, 49, 8);
+  --dark-green-bg: rgb(1, 14, 1);
+  --light-gree-bg: rgb(2, 45, 16);
 }
 
 #___gatsby {
