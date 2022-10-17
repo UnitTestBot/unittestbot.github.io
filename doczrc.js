@@ -1,10 +1,10 @@
 export default {
   themeConfig: {
-    initialColorMode: 'dark',
+    initialColorMode: "dark",
     colors: {
       header: {
         bg: "rgb(21,20,31)",
-      }
+      },
     },
   },
   title: "UnitTestBot",
@@ -24,12 +24,7 @@ export default {
     },
     {
       name: "UnitTestBot C/C++",
-      menu: [
-        "User guide",
-        "VS Code plugin",
-        "CLion plugin",
-        "Stubs"
-      ],
-    }
+      menu: ["User guide", "VS Code plugin", "CLion plugin", "Stubs"],
+    },
   ],
 };

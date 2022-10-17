@@ -10,11 +10,11 @@ module.exports = {
     // backend_survey_host: `<backend-survey-host-url>`,
     github_utbot: `https://github.com/UnitTestBot`,
     discussions_utbot: `https://github.com/orgs/UnitTestBot/discussions`,
-    github_issues: `https://github.com/UnitTestBot/unittestbot.github.io/issues`,
-    utbot_cpp_releases_link: `https://github.com/UnitTestBot/UTBotCpp/releases`,
-    utbot_cpp_releases_info: `https://api.github.com/repos/UnitTestBot/UTBotCpp/releases`,
-    utbot_java_releases_link: `https://github.com/UnitTestBot/UTBotJava/releases`,
-    utbot_java_releases_info: `https://api.github.com/repos/UnitTestBot/UTBotJava/releases`,
+    download_java_from_github_link: "",
+    download_java_marketplace_link: "",
+    donwload_cpp_from_github_link: "",
+    demo_video_java_link: "",
+    demo_video_cpp_link: "",
   },
 
   plugins: [

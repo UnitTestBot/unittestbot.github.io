@@ -6,7 +6,6 @@ import Layout from "../components/layout";
 import {useTranslation} from "react-i18next";
 import {Alert, Button, NavDropdown, OverlayTrigger, Spinner, Tooltip} from "react-bootstrap";
 import "./styles/page.css";
-import "./styles/about.css";
 import "./styles/utbot.css";
 import dedent from "dedent";
 import Editor from "@monaco-editor/react";
@@ -20,6 +19,7 @@ import "prismjs/components/prism-python";
 import "prismjs/components/prism-markup";
 import "prismjs/themes/prism.css";
 
+import copyLinkIcon from "../images/copy-link-icon.png";
 
 require("prismjs/components/prism-c");
 require("prismjs/components/prism-cpp");
@@ -358,12 +358,19 @@ const UTBotOnlinePage = () => {
                                         delay={{show: 250, hide: 250}}
                                         overlay={renderTooltip}
                                     >
-                                        <Button
+                                        {/* <Button
                                             variant="light"
                                             className="flatButton copyLinkButton"
                                             onClick={copyLink}
                                         >
                                           Copy Link
+                                        </Button> */}
+                                        <Button
+                                            variant="light"
+                                            className="flatButton copyLinkButton"
+                                            onClick={copyLink}
+                                        >
+                                            <img src={copyLinkIcon} height="20" alt="Copy link icon" />
                                         </Button>
                                     </OverlayTrigger>
                                 </div>

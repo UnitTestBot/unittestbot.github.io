@@ -1,12 +1,12 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
+import cn from "classnames";
 
 import Header from "./header";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './layout.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import * as styles from "./layout.module.css";
 
-const Layout = ({ isMainPage, children }) => {
+const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -17,28 +17,21 @@ const Layout = ({ isMainPage, children }) => {
     }
   `);
 
+  const isJavaOrCppPage =
+    location && (location.pathname === "/" || location.pathname === "/cpp");
+
   return (
-      <>
-        <div className="site">
-          <Header siteTitle={data.site.siteMetadata?.title || `Title`}  style={{top: 0, zIndex: "99", width: "100%", position: 'sticky'}} />
-          <main style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '2rem' }}>{children}</main>
-          <footer className="footer mt-auto text-white">
-            <div style={{float: `right`}}>
-              UnitTestBot © 2022
-            </div>
-          </footer>
-        </div>
-      </>
+    <div className={cn(styles.site, isJavaOrCppPage && styles.gradient)}>
+      <Header
+        location={location}
+        siteTitle={data.site.siteMetadata?.title || `Title`}
+      />
+      <main className={cn(styles.main)}>{children}</main>
+      <footer className={cn(styles.footer, "mt-auto text-white")}>
+        <div style={{ float: `right` }}>UnitTestBot © 2022</div>
+      </footer>
+    </div>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-  isMainPage: PropTypes.bool
-};
-
-Layout.defaultProps = {
-  isMainPage: false
 };
 
 export default Layout;

@@ -11,6 +11,7 @@
     "@progress/kendo-react-treeview": "^2.6.1",
     "@progress/kendo-theme-default": "^3.2.0",
     "bootstrap": "4.6.0",
+    "classnames": "^2.3.2",
     "dedent": "0.7.0",
     "dedent-js": "1.0.1",
     "docz": "2.3.1",

@@ -20,7 +20,11 @@
 .copyLinkButton {
     margin-top: 5px;
     margin-bottom: 5px;
-    width: 125px;
+    padding: 0;
+    width: 75px;
+    height: 38px;
+    background-color: rgba(255, 253, 253, 0.849);
+    border: none;
 }
 
 .generateAndRunTestsButton {
@@ -38,5 +42,9 @@
 }
 
 .nav-item .dropdown-item:hover {
+    background: var(--demo-pg-dropdown-menu-item-hover);
+}
+
+.nav-item .dropdown-item::selection {
     background: var(--demo-pg-dropdown-menu-item-hover);
 }

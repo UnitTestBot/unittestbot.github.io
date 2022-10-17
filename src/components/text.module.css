@@ -1,0 +1,20 @@
+.text {
+  color: white;
+  line-height: 2rem;
+  letter-spacing: 0.05rem;
+}
+
+.sm {
+  font-size: var(--small-text-font-size);
+  font-weight: var(--small-text-font-weight);
+}
+
+.md {
+  font-size: var(--medium-text-font-size);
+  font-weight: var(--medium-text-font-weight);
+}
+
+.lg {
+  font-size: var(--large-text-font-size);
+  font-weight: var(--large-text-font-weight);
+}

@@ -1,0 +1,125 @@
+@import "../utils/colors.css";
+@import "../utils/fonts.css";
+
+.container, .container-lg, .container-md, .container-sm {
+  max-width: 100% !important;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: center;
+  top: -1px;
+  z-index: 99;
+  position: sticky;
+}
+
+.header.opaque {
+  background-color: var(--header-footer-bg);
+}
+
+.container {
+  max-width: 2000px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.brand {
+  position: absolute;
+  align-self: flex-start;
+  margin-top: 0.45rem;
+}
+
+@media screen and (max-width: 991px) {
+  .brand {
+    margin-top: inherit;
+    align-self: inherit;
+  }
+}
+
+
+.toggle {
+  margin-left: auto;
+}
+
+.collapse {
+  flex-direction: column;
+}
+
+.nav {
+  gap: 2rem;
+  justify-content: center;
+  padding-block: 1rem;
+}
+
+.myLink {
+  /* '!important' is used because of bootstrap specificity. */
+  color: #fff !important;
+  font-weight: var(--header-nav-link-font-weight);
+  font-size: var(--header-nav-link-font-size);
+  font-family: var(--font-family-sans-serif);
+}
+
+.myLink:active,
+.myLink:focus {
+  border: none;
+}
+
+.myLink.active {
+  /* '!important' is used because of bootstrap specificity. */
+  color: var(--nav-link-selected) !important;
+}
+
+.navDropdown {
+  font-size: 17px;
+  font-weight: 500;
+  margin-top: -0.46rem;
+  color: white !important;
+}
+
+li.dropdown-item {
+  color: white;
+}
+
+/* a.dropdown-toggle {
+  background-color: red;
+  color: yellow;
+  font-size: 30px;
+}
+
+a.dropdown-toggle.nav-link {
+  background-color: red !important;
+  color: yellow !important;
+  font-size: 30px !important;
+} */
+
+/* .oneLineSearch {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  border-bottom: solid white;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  padding: 10px 0;
+  color: var(--full-white);
+} */
+
+/* .searchForm {
+  border-radius: 30px;
+  max-width: 600px;
+} */
+
+/* .headerInput {
+  width: 60%;
+} */
