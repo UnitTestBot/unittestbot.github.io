@@ -54,7 +54,7 @@ const MainPage = ({ location }) => {
               {t("javaHome.watchHowWorksText")}
             </Link>
 
-            <Link to="https://github.com/UnitTestBot">
+            <Link to="https://github.com/UnitTestBot/UTBotJava">
               <img src={githubIcon} width="50" height="50" alt="Github Logo" />
             </Link>
           </div>

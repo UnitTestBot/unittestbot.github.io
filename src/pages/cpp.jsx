@@ -56,23 +56,10 @@ const CppPage = ({ location }) => {
               {t("javaHome.watchHowWorksText")}
             </Link>
 
-            <Link to="https://github.com/UnitTestBot">
+            <Link to="https://github.com/UnitTestBot/UTBotCpp">
               <img src={githubIcon} width="50" height="50" alt="Github Logo" />
             </Link>
           </div>
-
-          {/* <ul role="list" className={styles.buttons}>
-            <li>
-              <Link to="/docs/cpp">
-                <Button variant="outline">User guide</Button>
-              </Link>
-            </li>
-            <li>
-              <Link to="https://github.com/UnitTestBot/UTBotCpp/releases">
-                <Button variant="outline">Install from GitHub</Button>
-              </Link>
-            </li>
-          </ul> */}
         </Container>
       </div>
 
