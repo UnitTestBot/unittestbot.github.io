@@ -1,10 +1,10 @@
 package org.utbot.site.pages;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 
 import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.url;
-import static org.utbot.site.UTBotSite.SITE_URL;
 
 public abstract class UTBotPage {
 
@@ -20,6 +20,6 @@ public abstract class UTBotPage {
     }
 
     public void checkUrlMatches() {
-        webdriver().shouldHave(url(SITE_URL + this.url));
+        webdriver().shouldHave(url(Configuration.baseUrl + this.url));
     }
 }
