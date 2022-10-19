@@ -29,6 +29,10 @@ tasks.withType(Test) {
     // for using properties from gradle.properties
     systemProperties = System.properties
 
+    systemProperties['selenide.browser'] = 'chrome'
+    systemProperties['selenide.headless'] = 'true'
+    systemProperties['selenide.browserSize'] = '1920x1080'
+
     // verbose logging in console
     testLogging {
         lifecycle {
