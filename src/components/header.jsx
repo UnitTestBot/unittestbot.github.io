@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import withTrans from "../i18n/withTrans";
 
 import Heading from "../components/heading";
-import logo from "../images/utbot-logo.png";
+import logo from "../images/utbot-logo.svg";
 import * as styles from "./header.module.css";
 
 function Header({ location }) {
@@ -61,11 +61,13 @@ function Header({ location }) {
       <Container className={styles.container}>
         <Navbar className={styles.navbar} expand="lg" variant="dark">
           <Link className={styles.brand} to="/">
-            <Navbar.Brand>
-              <img // 115 * 50 or 80,5 * 
+            <Navbar.Brand
+              className={styles.navbarBrand}
+            >
+              <img
                 alt="UnitTestBot"
                 src={logo}
-                width="100"
+                width="125"
                 className="align-top"
               />
             </Navbar.Brand>
@@ -76,7 +78,7 @@ function Header({ location }) {
           <Navbar.Collapse id={navId} className={styles.collapse}>
             <Nav
               as="ul"
-              className={styles.nav}
+              className={cn(styles.nav, styles.navTop)}
               style={{
                 borderBottom: "1px solid",
                 borderBottomColor: isJavaOrCppPage ? "white" : "transparent",
@@ -106,7 +108,9 @@ function Header({ location }) {
             </Nav>
 
             {isJavaOrCppPage && (
-              <Nav as="ul" className={styles.nav}>
+              <Nav 
+                as="ul" 
+                className={cn(styles.nav, styles.navBottom)}>
                 {/* <Nav.Item as="li">
                   <CustomLink
                     to="/"
@@ -123,7 +127,6 @@ function Header({ location }) {
                     </Nav.Item>
                     <NavDropdown
                       title={ t("header.download") }
-                      class="text-white"
                       style={{ fontSize: "17px", fontWeight: "500", marginTop: "-0.46rem" }}
                       show={showDownloadFrom}
                       onClick={() => { }}

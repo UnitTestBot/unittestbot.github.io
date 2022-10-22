@@ -26,40 +26,38 @@ const MainPage = ({ location }) => {
 
   return (
     <Layout isMainPage location={location}>
-      {/* <div className={styles.gradient} /> */}
-      <header>
-        <Container className={styles.topContainer}>
-          <Heading>{t("javaHome.imagineTitle")}</Heading>
+      <div className={styles.gradient} />
+      <Container className={styles.topContainer}>
+        <Heading>{t("javaHome.imagineTitle")}</Heading>
 
-          <Text
-            className={cn("text-center", styles.topText)}
-            dangerouslySetInnerHTML={{ __html: t("javaHome.testsGenText") }}
-          />
+        <Text
+          className={cn("text-center", styles.topText)}
+          dangerouslySetInnerHTML={{ __html: t("javaHome.testsGenText") }}
+        />
 
-          <div className={styles.actions}>
-            <Link to="/utbot">
-              <Button>{t("javaHome.tryOnlineText")}</Button>
-            </Link>
+        <div className={styles.actions}>
+          <Link to="/utbot">
+            <Button>{t("javaHome.tryOnlineText")}</Button>
+          </Link>
 
-            <Link
-              to="https://youtu.be/p6GtTqc599Q"
-              className={styles.howWorksLink}
-            >
-              <img
-                src={watchDemoIcon}
-                width="32"
-                height="30"
-                alt="Video icon"
-              />
-              {t("javaHome.watchHowWorksText")}
-            </Link>
+          <Link
+            to="https://youtu.be/p6GtTqc599Q"
+            className={styles.howWorksLink}
+          >
+            <img
+              src={watchDemoIcon}
+              width="32"
+              height="30"
+              alt="Video icon"
+            />
+            {t("javaHome.watchHowWorksText")}
+          </Link>
 
-            <Link to="https://github.com/UnitTestBot/UTBotJava">
-              <img src={githubIcon} width="50" height="50" alt="Github Logo" />
-            </Link>
-          </div>
-        </Container>
-      </header>
+          <Link to="https://github.com/UnitTestBot/UTBotJava">
+            <img src={githubIcon} width="50" height="50" alt="Github Logo" />
+          </Link>
+        </div>
+      </Container>
 
       <Container className={styles.examples}>
         <ExampleCard

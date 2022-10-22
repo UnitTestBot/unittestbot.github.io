@@ -34,10 +34,13 @@
   text-align: center;
 }
 
+.navbarBrand {
+  padding: 0 !important;
+}
+
 .brand {
   position: absolute;
   align-self: flex-start;
-  margin-top: 0.45rem;
 }
 
 @media screen and (max-width: 991px) {
@@ -50,16 +53,28 @@
 
 .toggle {
   margin-left: auto;
+  padding: 0;
 }
 
 .collapse {
   flex-direction: column;
+  padding: 0;  
 }
 
 .nav {
   gap: 2rem;
   justify-content: center;
-  padding-block: 1rem;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.navTop {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.navBottom {
+  padding-top: 1rem;
 }
 
 .myLink {

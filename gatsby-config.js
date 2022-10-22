@@ -7,7 +7,6 @@ module.exports = {
     description: `Unit tests generation tool`,
     author: `UnitTestBot`,
     backend_host: `https://utbot.org`, // `http://127.0.0.1:10000`,
-    // backend_survey_host: `<backend-survey-host-url>`,
     github_utbot: `https://github.com/UnitTestBot`,
     discussions_utbot: `https://github.com/orgs/UnitTestBot/discussions`,
     download_java_from_github_link: "",
