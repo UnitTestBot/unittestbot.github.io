@@ -3,12 +3,12 @@ import {useState} from "react";
 import cn from "classnames";
 
 
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
 import withTrans from "../i18n/withTrans";
 
-import Heading from "../components/heading";
+import { NavDropdown } from "./nav-dropdown";
 import logo from "../images/utbot-logo.svg";
 import * as styles from "./header.module.css";
 
@@ -17,7 +17,7 @@ function Header({ location }) {
   const navId = "navbarResponsive";
 
   const isJavaOrCppPage =
-    location && (location.pathname === "/" || location.pathname === "/cpp");
+    location && (location.pathname === "/" || location.pathname === "/cpp" || location.pathname === "/cpp/");
 
   const headerRef = React.useRef(null);
   const [isPinned, setIsPinned] = React.useState(false);
@@ -47,8 +47,6 @@ function Header({ location }) {
       observer.unobserve(headerRef.current);
     };
   }, []);
-
-  console.log("isPinned?", isPinned);
 
   return (
     <header
@@ -111,50 +109,36 @@ function Header({ location }) {
               <Nav 
                 as="ul" 
                 className={cn(styles.nav, styles.navBottom)}>
-                {/* <Nav.Item as="li">
-                  <CustomLink
-                    to="/"
-                    style={{ color: "limegreen" }}
-                  >
-                    Overview
-                  </CustomLink>
-                </Nav.Item> */}
                 {
                   location.pathname == "/" &&
                   <>
                     <Nav.Item as="li">
+                      <CustomLink
+                        to="/"
+                      >
+                        Overview
+                      </CustomLink>
+                    </Nav.Item>
+                    <Nav.Item as="li">
                       <CustomLink to="/docs/java/test-with-default-configuration-plugin">{t("header.userGuide")}</CustomLink>
                     </Nav.Item>
                     <NavDropdown
-                      title={ t("header.download") }
-                      style={{ fontSize: "17px", fontWeight: "500", marginTop: "-0.46rem" }}
-                      show={showDownloadFrom}
-                      onClick={() => { }}
-                      onMouseEnter={showDropdownDownloadFrom}
-                      onMouseLeave={hideDropdownDownloadFrom}
-                    >
-                      <NavDropdown.Item as="li">
-                        <a 
-                          style={{ color: "white" }} 
-                          href="https://github.com/UnitTestBot/UTBotJava/releases"
-                        >
-                          {t("header.fromGitHub")}
-                        </a>
-                      </NavDropdown.Item>
-                      <NavDropdown.Item as="li">
-                        <a 
-                          style={{ color: "white" }} 
-                          href="https://plugins.jetbrains.com/plugin/19445-unittestbot"
-                        >
-                          {t("header.fromJetBrainsMarkerplace")}
-                        </a>
-                      </NavDropdown.Item>
-                    </NavDropdown>
+                      isShowDownloadFrom={ showDownloadFrom }
+                      onShowDropdownDownloadFrom={showDropdownDownloadFrom}
+                      onHideDropdownDownloadFrom={hideDropdownDownloadFrom}
+                    />
                   </>
                 }
                 {
-                  location.pathname == "/cpp" &&
+                  (location.pathname === "/cpp" || location.pathname === "/cpp/") &&
                   <>
+                    <Nav.Item as="li">
+                      <CustomLink
+                        to="/cpp"
+                      >
+                        Overview
+                      </CustomLink>
+                    </Nav.Item>
                     <Nav.Item as="li">
                       <CustomLink to="/docs/cpp/">{t("header.userGuide")}</CustomLink>
                     </Nav.Item>
@@ -194,13 +178,16 @@ function Header({ location }) {
   );
 }
 
-const isActive = className => ({ isCurrent }) => ({
-  className: cn(className, styles.myLink, isCurrent && styles.active),
-});
+// className: cn(className, styles.myLink, (to === "/" ? isCurrent : location.pathname.replace("/", "").includes(to.replace("/",""))) && styles.active),
+const isActive = (className, to) => ({ isCurrent, location }) => {
+  console.log("To: " + to + "Location.pathname: " + location.pathname + "IsCurrent: " + isCurrent)
+  return {
+  className: cn(className, styles.myLink, ((location.pathname.includes(to) && to !== "/" || isCurrent) && styles.active)),
+}}
 
-const CustomLink = ({ className, children, ...propsCustomLink }) => (
+const CustomLink = ({ className, children, to, ...propsCustomLink }) => (
   /* eslint-disable-next-line react/jsx-props-no-spreading */
-  <Link getProps={isActive(className)} {...propsCustomLink}>
+  <Link getProps={isActive(className, to)} to={to} {...propsCustomLink}>
     {children}
   </Link>
 );

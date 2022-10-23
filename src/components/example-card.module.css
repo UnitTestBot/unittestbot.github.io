@@ -5,6 +5,10 @@
   gap: 1.5rem;
 }
 
+.dropdownTest {
+  color: white;
+}
+
 .text {
   max-width: 30rem;
   display: grid;

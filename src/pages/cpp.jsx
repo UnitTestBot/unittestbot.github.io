@@ -26,42 +26,41 @@ const CppPage = ({ location }) => {
 
   return (
     <Layout location={location}>
-      <div className={styles.gradient}>
-        <Container className={styles.topContainer}>
-          <Heading>
-            {t("cppHome.utbotCppTitle")} <br />
-            {t("cppHome.changesExperienceTitle")}
-          </Heading>
+      <div className={styles.gradient} />
+      <Container className={styles.topContainer}>
+        <Heading>
+          {t("cppHome.utbotCppTitle")} <br />
+          {t("cppHome.changesExperienceTitle")}
+        </Heading>
 
-          <Text
-            className={cn("text-center", styles.topText, stylesCpp.info)}
-            dangerouslySetInnerHTML={{ __html: t("cppHome.utbotCppDescriptionText") }}
-          />
+        <Text
+          className={cn("text-center", styles.topText, stylesCpp.info)}
+          dangerouslySetInnerHTML={{ __html: t("cppHome.utbotCppDescriptionText") }}
+        />
 
-          <div className={styles.actions}>
-            <Link to="/utbot">
-              <Button>{t("javaHome.tryOnlineText")}</Button>
-            </Link>
+        <div className={styles.actions}>
+          <Link to="/utbot">
+            <Button>{t("javaHome.tryOnlineText")}</Button>
+          </Link>
 
-            <Link
-              to="https://www.youtube.com/watch?v=bDJyWEeYhvks"
-              className={styles.howWorksLink}
-            >
-              <img
-                src={watchDemoIcon}
-                width="32"
-                height="30"
-                alt="Youtube Logo"
-              />
-              {t("javaHome.watchHowWorksText")}
-            </Link>
+          <Link
+            to="https://www.youtube.com/watch?v=bDJyWEeYhvks"
+            className={styles.howWorksLink}
+          >
+            <img
+              src={watchDemoIcon}
+              width="32"
+              height="30"
+              alt="Youtube Logo"
+            />
+            {t("javaHome.watchHowWorksText")}
+          </Link>
 
-            <Link to="https://github.com/UnitTestBot/UTBotCpp">
-              <img src={githubIcon} width="50" height="50" alt="Github Logo" />
-            </Link>
-          </div>
-        </Container>
-      </div>
+          <Link to="https://github.com/UnitTestBot/UTBotCpp">
+            <img src={githubIcon} width="50" height="50" alt="Github Logo" />
+          </Link>
+        </div>
+      </Container>
 
       <Container className={styles.examples}>
         <div className={stylesCpp.info}>

@@ -75,6 +75,7 @@
 
 .navBottom {
   padding-top: 1rem;
+
 }
 
 .myLink {
@@ -95,30 +96,15 @@
   color: var(--nav-link-selected) !important;
 }
 
-.navDropdown {
-  font-size: 17px;
-  font-weight: 500;
-  margin-top: -0.46rem;
-  color: white !important;
-}
-
 li.dropdown-item {
   color: white;
 }
 
-/* a.dropdown-toggle {
-  background-color: red;
-  color: yellow;
-  font-size: 30px;
-}
+/* 
 
-a.dropdown-toggle.nav-link {
-  background-color: red !important;
-  color: yellow !important;
-  font-size: 30px !important;
-} */
+We will probably use these styles in case we decide to use search on the first page.
 
-/* .oneLineSearch {
+.oneLineSearch {
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
