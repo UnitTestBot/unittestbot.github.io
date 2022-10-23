@@ -62,11 +62,15 @@
 }
 
 .generateAndRunTestsButton {
-    margin-top: 20px;
+    padding-top: 0.08rem;
+}
+
+.toolbarContainer {
+    margin-bottom: 0.3rem;
     text-align: center;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .copyLinkButton {
@@ -75,20 +79,12 @@
     flex-direction: row;
 }
 
-.copyLinkButtonContainer {
-    margin-top: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
 .dropdownLanguages {
     margin-top: 5px;
     width: fit-content;
 }
 
-.dropdownLanguagesContainer {
+.dropdownContainer {
     text-align: center;
     display: flex;
     flex-direction: row;

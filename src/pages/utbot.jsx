@@ -218,7 +218,7 @@ const UTBotOnlinePage = () => {
                 <div className={stylesDesktop.main}>
                     <div className={stylesDesktop.codeEditorsContainer}>
                         <div className={cn(stylesDesktop.codeEditorContainer, stylesDesktop.sourceCodeEditorcontainer)}>
-                            <div className={stylesDesktop.copyLinkButtonContainer}>
+                            <div className={stylesDesktop.toolbarContainer}>
                                 <div className={stylesDesktop.copyLinkButton}>
                                         <OverlayTrigger
                                             placement="bottom"
@@ -229,11 +229,11 @@ const UTBotOnlinePage = () => {
                                             variant="outline"
                                             onClick={copyLink}
                                         >
-                                            <img src={copyLinkIcon} height="20" alt="Copy link icon" />
+                                            <img src={copyLinkIcon} height="18" alt="Copy link icon" />
                                         </Button>
                                     </OverlayTrigger>
                                 </div>
-                                <div className={stylesDesktop.dropdownLanguagesContainer}>
+                                <div className={stylesDesktop.dropdownContainer}>
                                     <NavDropdown
                                         className={stylesDesktop.dropdownLanguages}
                                         title={langName}
@@ -283,7 +283,7 @@ const UTBotOnlinePage = () => {
                             </div>
                         </div>
                         <div className={cn(stylesDesktop.codeEditorContainer, stylesDesktop.testsEditorContainer)}>
-                            <div className={stylesDesktop.generateAndRunTestsButton}>
+                            <div className={cn(stylesDesktop.toolbarContainer, stylesDesktop.generateAndRunTestsButton)}>
                                 <Button
                                     variant="outline"
                                     onClick={queryGenerateAndRunTests}
