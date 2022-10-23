@@ -182,7 +182,8 @@ function Header({ location }) {
 const isActive = (className, to) => ({ isCurrent, location }) => {
   console.log("To: " + to + "Location.pathname: " + location.pathname + "IsCurrent: " + isCurrent)
   return {
-  className: cn(className, styles.myLink, ((location.pathname.includes(to) && to !== "/" || isCurrent) && styles.active)),
+  className: cn(className, styles.myLink, ((location.pathname.includes(to) && to !== "/" && !location.pathname.includes("/docs") 
+      || isCurrent) && styles.active)),
 }}
 
 const CustomLink = ({ className, children, to, ...propsCustomLink }) => (
