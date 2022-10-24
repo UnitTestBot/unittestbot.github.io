@@ -21,8 +21,7 @@
     var(--light-gree-bg) -20%,
     var(--dark-green-bg) 80%
   ); */
-  background: rgb(16,40,33);
-  background: linear-gradient(90deg, rgba(16,40,33,1) 0%, rgba(0,14,11,1) 50%, rgba(16,40,33,1) 100%);
+  background: var(--dark-green-bg);
   background-attachment: fixed;
 }
 

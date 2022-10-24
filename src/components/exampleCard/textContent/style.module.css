@@ -1,0 +1,24 @@
+.text {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  width: auto;
+
+  margin-bottom: 3rem;
+}
+
+.onlyText {
+  width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+  .text {
+    width: calc(50% - 2rem);
+    margin-bottom: 0;
+  }
+
+  .onlyText {
+    width: calc(50% - 2rem);
+  }
+}

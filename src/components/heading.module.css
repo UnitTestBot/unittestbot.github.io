@@ -1,6 +1,6 @@
 .heading {
   color: white;
-  margin-bottom: 5px;
+  margin-bottom: 1rem;
   text-align: center;
   font-weight: var(--large-text-font-weight);
   font-size: var(--large-text-font-size);

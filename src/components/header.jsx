@@ -178,12 +178,9 @@ function Header({ location }) {
   );
 }
 
-// className: cn(className, styles.myLink, (to === "/" ? isCurrent : location.pathname.replace("/", "").includes(to.replace("/",""))) && styles.active),
 const isActive = (className, to) => ({ isCurrent, location }) => {
-  console.log("To: " + to + "Location.pathname: " + location.pathname + "IsCurrent: " + isCurrent)
   return {
-  className: cn(className, styles.myLink, ((location.pathname.includes(to) && to !== "/" && !location.pathname.includes("/docs") 
-      || isCurrent) && styles.active)),
+  className: cn(className, styles.myLink, (to == location.pathname || (to + "/") == location.pathname) && styles.active),
 }}
 
 const CustomLink = ({ className, children, to, ...propsCustomLink }) => (

@@ -11,7 +11,6 @@ import * as stylesCpp from "./styles/cpp.module.css";
 import Button from "../components/button";
 import Heading from "../components/heading";
 import Text from "../components/text";
-import ExampleCard from "../components/example-card";
 import InfoCard from "../components/info-card";
 
 import watchDemoIcon from "../images/watch-demo-icon.png";
@@ -20,6 +19,7 @@ import githubIcon from "../images/github-transparent.png";
 import testsGenerationExample from "../gifs/cpp/test-generation-example.gif";
 import configurationGif from "../gifs/cpp/configuration-example.gif";
 import vsCodeClionImage from "../images/cpp/vs-code-clion.png";
+import ExampleCard from "../components/exampleCard/ExampleCard";
 
 const CppPage = ({ location }) => {
   const { t, i18n } = useTranslation();
