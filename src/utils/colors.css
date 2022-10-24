@@ -8,10 +8,12 @@
   --light-gree-bg: rgb(2, 45, 16);
   --dark-green-bg: rgb(1, 14, 1);
   --light-gree-bg: rgb(2, 45, 16);
-  --nav-link-selected: #399D53;
+  --nav-link-selected: #399d53;
   --demo-pg-dropdown-menu-bg: rgb(1, 14, 1);
   --demo-pg-dropdown-menu-item: rgba(255, 255, 255, 0.73);
   --demo-pg-dropdown-menu-item-hover: rgb(6, 49, 8);
+  --editor-background: #1f1f1f;
+  --editor-minimap-background: #2c2b2b;
 }
 
 #___gatsby {
