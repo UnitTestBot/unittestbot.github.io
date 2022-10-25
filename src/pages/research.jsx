@@ -30,6 +30,8 @@ import sbst2022Pdf from "../pdf/java/SBST2022_Tool_Competition.pdf";
 // Cpp
 import kleeWorkshopPdf from "../pdf/cpp/KLEE_workshop2022_abstract.pdf";
 import kleeWorkshopOverviewPdf from "../pdf/cpp/KLEE_workshop2022_poster.pdf";
+// Program synthesis
+import layoutSynthesisPdf from "../pdf/program-synthesis/layoutSynthesis.pdf";
 
 const ResearchPage = () => {
   const { t, i18n } = useTranslation();
@@ -177,7 +179,24 @@ const ResearchPage = () => {
               authors={t("research.kleeWorkshop2022ArticleAuthors")}
               pdf={kleeWorkshopPdf}
             />
-            <PdfCard pdf={kleeWorkshopOverviewPdf} />
+            <PdfCard
+              articleTitle={t("research.kleeWorkshopPoster")}
+              pdf={kleeWorkshopOverviewPdf}
+            />
+          </div>
+        </div>
+
+        <div className={styles.categotyContainer}>
+          <Heading className={styles.categotyTitle}>
+            {t("research.programSynthesisTitle")}
+          </Heading>
+          <div className={styles.pdfContainer}>
+            <PdfCard
+              conferenceTitle={t("research.singplan2022")}
+              articleTitle={t("research.layoutSynthesisArticleTitle")}
+              authors={t("research.layoutSynthesisArticleAuthors")}
+              pdf={layoutSynthesisPdf}
+            />
           </div>
         </div>
       </div>
