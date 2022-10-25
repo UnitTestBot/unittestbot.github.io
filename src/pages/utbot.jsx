@@ -240,6 +240,9 @@ const UTBotOnlinePage = () => {
       <NavDropdown.Item
         onClick={() => {
           setSourceCode(example.code);
+          if (window.screen.width < minDesktopWidth) {
+            hideDropdownExamples();
+          }
         }}
       >
         {example.name}
@@ -303,6 +306,7 @@ const UTBotOnlinePage = () => {
                       if (language != lang) {
                         setSourceCode(languageToSnippet(lang));
                       }
+                      hideDropdownLanguages();
                     }}
                   >
                     {languageToString(lang)}
