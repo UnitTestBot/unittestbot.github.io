@@ -31,7 +31,7 @@ import "prismjs/components/prism-markup";
 import "prismjs/themes/prism.css";
 
 //import { LanguageDropdown } from "../components/languages-dropdown";
-import Button from "../components/button";
+// import Button from "../components/button";
 import {
   Language as LanguageEnum,
   languageIsExperimentalFeature,
@@ -329,7 +329,7 @@ const UTBotOnlinePage = () => {
               onClick={queryGenerateAndRunTests}
               disabled={isGeneratingAndRunning}
             >
-              {isGeneratingAndRunning && <span>Generating & Running</span>}
+              {isGeneratingAndRunning && <span>Generating & Running </span>}
               {!isGeneratingAndRunning && <span>Generate & Run Tests</span>}
               {isGeneratingAndRunning && (
                 <Spinner
@@ -452,19 +452,23 @@ const UTBotOnlinePage = () => {
                 )}
               >
                 <div className={stylesDesktop.toolbarContainer}>
-                  <div className={stylesDesktop.copyLinkButton}>
+                  <div>
                     <OverlayTrigger
                       placement="bottom"
                       delay={{ show: 250, hide: 250 }}
                       overlay={renderTooltip}
                     >
-                      <Button variant="outline" onClick={copyLink}>
+                      <Btn
+                        variant="dark"
+                        className={stylesDesktop.copyLinkButton}
+                        onClick={copyLink}
+                      >
                         <img
                           src={copyLinkIcon}
                           height="18"
                           alt="Copy link icon"
                         />
-                      </Button>
+                      </Btn>
                     </OverlayTrigger>
                   </div>
                   <div className={stylesDesktop.dropdownContainer}>
@@ -525,16 +529,16 @@ const UTBotOnlinePage = () => {
                 <div
                   className={cn(
                     stylesDesktop.toolbarContainer,
-                    stylesDesktop.generateAndRunTestsButton
+                    stylesDesktop.generateAndRunTestsButtonContainer
                   )}
                 >
-                  <Button
-                    variant="outline"
+                  <Btn
+                    className={stylesDesktop.generateAndRunTestsButton}
                     onClick={queryGenerateAndRunTests}
                     disabled={isGeneratingAndRunning}
                   >
                     {isGeneratingAndRunning && (
-                      <span>Generating & Running</span>
+                      <span>Generating & Running </span>
                     )}
                     {!isGeneratingAndRunning && (
                       <span>Generate & Run Tests</span>
@@ -548,13 +552,33 @@ const UTBotOnlinePage = () => {
                         aria-hidden="true"
                       />
                     )}
-                  </Button>
+                  </Btn>
+                  {/* <Btn
+                    classname={stylesDesktop.generateAndRunTestsBtn}
+                    onClick={queryGenerateAndRunTests}
+                    disabled={isGeneratingAndRunning}
+                  >
+                    {isGeneratingAndRunning && (
+                      <span>Generating & Running </span>
+                    )}
+                    {!isGeneratingAndRunning && (
+                      <span>Generate & Run Tests</span>
+                    )}
+                    {isGeneratingAndRunning && (
+                      <Spinner
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
+                      />
+                    )}
+                  </Btn> */}
                   {languageIsExperimentalFeature(language) && (
-                    <Alert
+                    <p
                       className={stylesDesktop.alert}
-                      variant="warning"
                       dangerouslySetInnerHTML={{ __html: t("utbot.alertNew") }}
-                    />
+                    ></p>
                   )}
                 </div>
                 <div className={stylesDesktop.codeEditor}>

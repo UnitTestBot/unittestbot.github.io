@@ -14,33 +14,33 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      <SEO title="About Us"/>
+      <SEO title="About us" />
       <div className={styles.pageFlexContainer}>
         <Text
           className="text-left"
-          dangerouslySetInnerHTML={{ __html: t("aboutUs.whoWeAreText") }}        
+          dangerouslySetInnerHTML={{ __html: t("aboutUs.whoWeAreText") }}
         />
         <ul className={styles.universities}>
           <li>
-            <Text dangerouslySetInnerHTML={{ __html: t("aboutUs.spbu") }}/>
+            <Text dangerouslySetInnerHTML={{ __html: t("aboutUs.spbu") }} />
           </li>
           <li>
-            <Text dangerouslySetInnerHTML={{ __html: t("aboutUs.hse") }}/>
+            <Text dangerouslySetInnerHTML={{ __html: t("aboutUs.hse") }} />
           </li>
           <li>
-            <Text dangerouslySetInnerHTML={{ __html: t("aboutUs.itmo") }}/>
+            <Text dangerouslySetInnerHTML={{ __html: t("aboutUs.itmo") }} />
           </li>
           <li>
-            <Text dangerouslySetInnerHTML={{ __html: t("aboutUs.spbpu") }}/>
+            <Text dangerouslySetInnerHTML={{ __html: t("aboutUs.spbpu") }} />
           </li>
         </ul>
         <Text
           className="text-left"
-          dangerouslySetInnerHTML={{ __html: t("aboutUs.whatWeDevelopText") }}        
+          dangerouslySetInnerHTML={{ __html: t("aboutUs.whatWeDevelopText") }}
         />
         <Text
           className="text-left"
-          dangerouslySetInnerHTML={{ __html: t("aboutUs.visitGitHubText") }}        
+          dangerouslySetInnerHTML={{ __html: t("aboutUs.visitGitHubText") }}
         />
       </div>
     </Layout>

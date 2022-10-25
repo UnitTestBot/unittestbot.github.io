@@ -36,7 +36,7 @@
 }
 
 .generateAndRunTestsButton {
-  background-color: rgba(31, 31, 31, 1);
+  background-color: var(--editor-background);
   font-size: 14px;
   height: 35px;
   padding: 0 6px;
@@ -44,8 +44,7 @@
 }
 
 .btnBg {
-  /*rgba(31, 31, 31, 1)*/
-  background-color: rgba(31, 31, 31, 1);
+  background-color: var(----editor-background);
   border: none;
   font-size: 14px;
 }

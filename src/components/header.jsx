@@ -101,6 +101,9 @@ function Header({ location }) {
                 <CustomLink to="/utbot">{t("header.demo")}</CustomLink>
               </Nav.Item>
               <Nav.Item as="li">
+                <CustomLink to="/research">{t("header.research")}</CustomLink>
+              </Nav.Item>
+              <Nav.Item as="li">
                 <CustomLink to="/about">{t("header.aboutUs")}</CustomLink>
               </Nav.Item>
             </Nav>
