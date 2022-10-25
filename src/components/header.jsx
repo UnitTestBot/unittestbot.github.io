@@ -78,7 +78,6 @@ function Header({ location }) {
               as="ul"
               className={cn(styles.nav, styles.navTop)}
               style={{
-                borderBottom: "1px solid",
                 borderBottomColor: isJavaOrCppPage ? "white" : "transparent",
               }}
             >
@@ -100,9 +99,9 @@ function Header({ location }) {
               <Nav.Item as="li">
                 <CustomLink to="/utbot">{t("header.demo")}</CustomLink>
               </Nav.Item>
-              {/* <Nav.Item as="li">
+              <Nav.Item as="li">
                 <CustomLink to="/research">{t("header.research")}</CustomLink>
-              </Nav.Item> */}
+              </Nav.Item>
               <Nav.Item as="li">
                 <CustomLink to="/about">{t("header.aboutUs")}</CustomLink>
               </Nav.Item>

@@ -81,8 +81,19 @@
     "sbst2022Title": "<b>Competition</b> | <a href=\"https://sbst22.github.io/\">IEEE/ACM International Workshop on Search-Based Software Testing (SBST)</a> | 2022 | <b>En</b>",
     "sbst2022ArticleTitle": "<a href=\"https://ieeexplore.ieee.org/document/9810769/\">UTBot Java at the SBST2022 Tool Competition</a>",
     "sbst2022ArticlesAuthors": "Dmitry Ivanov, Alexey Menshutin, Denis Fokin, Yury Kamenev, Sergey Pospelov, Egor Kulikov, Nikita Stroganov",
-    "sbst2022ToolCompetitionTitle": "<a href=\"https://ieeexplore.ieee.org/document/9810771>SBST Tool Competition 2022</a>",
-    "generalOverview": "General overview"
+    "sbst2022ToolCompetitionTitle": "<a href=\"https://ieeexplore.ieee.org/document/9810771\">SBST Tool Competition 2022</a>",
+    "generalOverview": "General overview",
+    "iccq2022Title": "<b>Paper</b> | <a href=\"https://www.iccq.ru/2022.html\">International Conference on Code Quality (ICCQ)</a> | 2022 | <b>En</b>",
+    "iccq2022ArticleTitle": "<a href=\"https://ieeexplore.ieee.org/document/9763112\">Method Name Prediction for Automatically Generated Unit Tests</a>",
+    "iccq2022ArticleAuthors": "Maxim Petukhov, Evelina Gudauskayte, Arman Kaliyev, Mikhail Oskin, Dmitry Ivanov, Qianxiang Wang",
+    "sbst2021Title": "<b>Competition</b> | <a href=\"https://sbst21.github.io/\">IEEE/ACM International Workshop on Search-Based Software Testing (SBST)</a> | 2021 | <b>En</b>",
+    "sbst2021ArticleTitle": "<a href=\"https://ieeexplore.ieee.org/document/9476232\">UtBot at the SBST2021 Tool Competition</a>",
+    "sbst2021ArticleAuthors": "Dmitry Ivanov, Nikolay Bukharev, Alexey Menshutin, Arsen Nagdalian, Gleb Stromov, Artem Ustinov",
+    "sbst2021ToolCompetitionTitle": "<a href=\"https://ieeexplore.ieee.org/document/9476243\">SBST Tool Competition 2021</a>",
+    "utbotCppTitle": "UnitTestBot for C/C++",
+    "kleeWorkshop2022Title": "<b>Poster</b> | <a href=\"https://srg.doc.ic.ac.uk/klee22/\">3rd International KLEE Workshop on Symbolic Execution</a> | 2022 | <b>En</b>",
+    "kleeWorkshop2022ArticleTitle": "<a href=\"https://srg.doc.ic.ac.uk/klee22/accepted_contributions.html\">UTBot Simplifies Auto Test Generation</a>",
+    "kleeWorkshop2022ArticleAuthors": "Vladislav Kalugin, Pavel Iatchenii, Samat Gaynutdinov, Saveliy Grigoryev, Svetlana Shmidt, Alexey Utkin, Dmitry Ivanov, Aleksei Pleshakov, Vadim Volodin, Elena Ilina, Pavel Ponomarev and Konstantin Rybkin"
   },
   "search": {
     "title": "Search",
