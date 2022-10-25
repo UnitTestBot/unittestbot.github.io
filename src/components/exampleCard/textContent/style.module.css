@@ -12,10 +12,6 @@
   width: 550px;
 }
 
-.onlyText a {
-  color: #f7931e;
-}
-
 @media screen and (min-width: 1200px) {
   .text {
     width: calc(50% - 2vw);
