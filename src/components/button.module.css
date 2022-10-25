@@ -1,16 +1,17 @@
 .button {
   border-radius: 30px;
-  padding: 0.7rem 1.5rem;
   font-size: var(--button-font-size);
   font-weight: var(--demo-btn-font-weight);
 }
 
 .fill {
+  padding: 0.7rem 1.5rem;
   background-color: var(--white-color-text);
   border: none;
 }
 
 .outline {
+  padding: 0.6rem 1.5rem;
   background-color: transparent;
   color: #ffffff;
   border: 1px solid #ffffff;

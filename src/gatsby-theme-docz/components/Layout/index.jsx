@@ -18,7 +18,7 @@ export const Layout = ({ children }) => {
       <Global styles={global} />
       <Main sx={styles.main}>
         <Header onOpen={() => setOpen(s => !s)} />
-        <div sx={styles.wrapper} style={{paddingTop: "15px"}}>
+        <div sx={styles.wrapper}>
           <Sidebar
             ref={nav}
             open={open}
@@ -31,7 +31,7 @@ export const Layout = ({ children }) => {
             style={{
               width: "100%",
               overflow: "auto",
-              height: "calc(100vh - 61px)",
+              height: "calc(100vh - 56px)",
             }}
           >
             <MainContainer data-testid="main-container">

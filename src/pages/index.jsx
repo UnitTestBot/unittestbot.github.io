@@ -10,7 +10,7 @@ import * as styles from "./styles/index.module.css";
 import Button from "../components/button";
 import Heading from "../components/heading";
 import Text from "../components/text";
-import ExampleCard from "../components/example-card";
+import ExampleCard from "../components/exampleCard/ExampleCard";
 
 import watchDemoIcon from "../images/watch-demo-icon.png";
 import githubIcon from "../images/github-transparent.png";
@@ -20,46 +20,40 @@ import fullClassGif from "../gifs/java/Full-Class.gif";
 import commentsGif from "../gifs/java/Comments.png";
 import mocksGif from "../gifs/java/Mocks.gif";
 import falsePositiveGif from "../gifs/java/False-Positive.gif";
+import TextContent from "../components/exampleCard/textContent/TextContent";
 
 const MainPage = ({ location }) => {
   const { t, i18n } = useTranslation();
 
   return (
     <Layout isMainPage location={location}>
-      {/* <div className={styles.gradient} /> */}
-      <header>
-        <Container className={styles.topContainer}>
-          <Heading>{t("javaHome.imagineTitle")}</Heading>
+      <div className={styles.gradient} />
+      <Container className={styles.topContainer}>
+        <Heading>{t("javaHome.imagineTitle")}</Heading>
 
-          <Text
-            className={cn("text-center", styles.topText)}
-            dangerouslySetInnerHTML={{ __html: t("javaHome.testsGenText") }}
-          />
+        <Text
+          className={cn("text-center", styles.topText)}
+          dangerouslySetInnerHTML={{ __html: t("javaHome.testsGenText") }}
+        />
 
-          <div className={styles.actions}>
-            <Link to="/utbot">
-              <Button>{t("javaHome.tryOnlineText")}</Button>
-            </Link>
+        <div className={styles.actions}>
+          <Link to="/utbot">
+            <Button>{t("javaHome.tryOnlineText")}</Button>
+          </Link>
 
-            <Link
-              to="https://youtu.be/p6GtTqc599Q"
-              className={styles.howWorksLink}
-            >
-              <img
-                src={watchDemoIcon}
-                width="32"
-                height="30"
-                alt="Video icon"
-              />
-              {t("javaHome.watchHowWorksText")}
-            </Link>
+          <Link
+            to="https://youtu.be/p6GtTqc599Q"
+            className={styles.howWorksLink}
+          >
+            <img src={watchDemoIcon} width="32" height="30" alt="Video icon" />
+            {t("javaHome.watchHowWorksText")}
+          </Link>
 
-            <Link to="https://github.com/UnitTestBot/UTBotJava">
-              <img src={githubIcon} width="50" height="50" alt="Github Logo" />
-            </Link>
-          </div>
-        </Container>
-      </header>
+          <Link to="https://github.com/UnitTestBot/UTBotJava">
+            <img src={githubIcon} width="50" height="50" alt="Github Logo" />
+          </Link>
+        </div>
+      </Container>
 
       <Container className={styles.examples}>
         <ExampleCard
@@ -126,12 +120,12 @@ const MainPage = ({ location }) => {
           gifAlt="Human readable tests example"
           gifPlacement="right"
         />
-
-        <ExampleCard
+        <TextContent
           heading={t("javaHome.capableForYourNeedText")}
           text={t("javaHome.capableForEveryText")}
           linkTo="/docs/java/check-requirements"
           linkText={t("javaHome.supportedTechnologiesText")}
+          containerClassName="onlyText"
         />
       </Container>
     </Layout>

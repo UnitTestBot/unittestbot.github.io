@@ -1,4 +1,5 @@
 @import "../../utils/colors.css";
+@import "../../utils/constants.css";
 @import "../../utils/fonts.css";
 
 .actions {
@@ -19,13 +20,15 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  min-height: calc(100vh - 172px);
+  min-height: calc(100vh - var(--header-desktop-height));
   justify-content: center;
+
+  z-index: 1;
 }
 
 @media screen and (max-width: 991px) {
   .topContainer {
-    min-height: calc(100vh - 72px);
+    min-height: calc(100vh - var(--header-mobile-height));
   }
 }
 
@@ -64,14 +67,30 @@
 }
 
 .examples {
-  padding-top: 0.5rem;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
   gap: 6rem;
-  place-items: center;
 }
 
 @media screen and (min-width: 1100px) {
   .examples {
     gap: 12rem;
   }
+}
+
+.gradient {
+  width: 100vw;
+  height: 103vh;
+  position: absolute;
+  top: 0;
+  background: radial-gradient(
+    circle,
+    rgba(43, 64, 40, 1) 0%,
+    rgba(3, 33, 3, 1) 40%,
+    rgba(1, 14, 1, 1) 100%
+  );
 }

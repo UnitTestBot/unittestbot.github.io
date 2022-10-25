@@ -1,5 +1,13 @@
 .container {
-  margin: 0 auto;
   overflow-x: auto;
   max-width: 90vw;
+
+  width: calc(50% - 2vw);
+  display: flex;
+}
+
+@media screen and (max-width: 1199px) {
+  .container {
+    width: auto;
+  }
 }

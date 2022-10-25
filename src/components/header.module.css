@@ -1,7 +1,10 @@
 @import "../utils/colors.css";
 @import "../utils/fonts.css";
 
-.container, .container-lg, .container-md, .container-sm {
+.container,
+.container-lg,
+.container-md,
+.container-sm {
   max-width: 100% !important;
 }
 
@@ -34,10 +37,12 @@
   text-align: center;
 }
 
+.navbarBrand {
+  padding: 0 !important;
+}
+
 .brand {
-  position: absolute;
   align-self: flex-start;
-  margin-top: 0.45rem;
 }
 
 @media screen and (max-width: 991px) {
@@ -47,19 +52,37 @@
   }
 }
 
-
 .toggle {
   margin-left: auto;
+  padding: 0;
 }
 
 .collapse {
   flex-direction: column;
+  padding: 0;
 }
 
 .nav {
-  gap: 2rem;
   justify-content: center;
-  padding-block: 1rem;
+  justify-content: space-between;
+}
+
+.navTop {
+  gap: 2.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.navBottom {
+  gap: 2rem;
+  padding-top: 0.5rem;
+  align-items: center;
+  font-weight: var(--header-nav-link-font-weight);
+}
+
+.navBottom a {
+  font-size: 15px;
+  padding: 0;
 }
 
 .myLink {
@@ -80,30 +103,15 @@
   color: var(--nav-link-selected) !important;
 }
 
-.navDropdown {
-  font-size: 17px;
-  font-weight: 500;
-  margin-top: -0.46rem;
-  color: white !important;
-}
-
 li.dropdown-item {
   color: white;
 }
 
-/* a.dropdown-toggle {
-  background-color: red;
-  color: yellow;
-  font-size: 30px;
-}
+/* 
 
-a.dropdown-toggle.nav-link {
-  background-color: red !important;
-  color: yellow !important;
-  font-size: 30px !important;
-} */
+We will probably use these styles in case we decide to use search on the first page.
 
-/* .oneLineSearch {
+.oneLineSearch {
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;

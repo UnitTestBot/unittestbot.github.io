@@ -29,12 +29,12 @@ export const wrapper = ({ open }) => ({
   top: 0,
   zIndex: 1,
   minWidth: 0,
-  maxHeight: "100vh",
+  maxHeight: "calc(100vh - 56px)",
   borderRight: t => `1px solid ${t.colors.border}`,
   WebkitOverflowScrolling: "touch",
   bg: "sidebar.bg",
   overflow: "auto",
-  height: "calc(100vh - 61px)",
+  height: "calc(100vh - 56px)",
 
   [media.tablet]: {
     zIndex: 9999,

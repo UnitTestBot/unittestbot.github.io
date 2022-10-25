@@ -2,10 +2,10 @@ node_modules
 public/
 .cache/
 .idea/
-.yarn/
 .DS_Store
 !.yarn/releases/
 .yarn/cache/
+.yarn/install-state.gz
 /yarn-error.log
 .docz
 .docz/app/db.json
