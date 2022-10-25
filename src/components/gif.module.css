@@ -2,7 +2,7 @@
   overflow-x: auto;
   max-width: 90vw;
 
-  width: calc(50% - 1rem);
+  width: calc(50% - 2vw);
   display: flex;
 }
 

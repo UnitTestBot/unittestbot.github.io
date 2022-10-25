@@ -9,16 +9,33 @@
 }
 
 .onlyText {
-  width: 100%;
+  width: 550px;
+}
+
+.onlyText a {
+  color: #f7931e;
 }
 
 @media screen and (min-width: 1200px) {
   .text {
-    width: calc(50% - 2rem);
+    width: calc(50% - 2vw);
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1501px) {
+  .text {
+    width: calc(50% - 2vw);
     margin-bottom: 0;
   }
 
   .onlyText {
-    width: calc(50% - 2rem);
+    width: calc(50% - 2vw);
+  }
+}
+
+@media (max-width: 650px) {
+  .onlyText {
+    width: 100%;
   }
 }

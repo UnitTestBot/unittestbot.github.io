@@ -5,6 +5,10 @@
   margin-bottom: 1rem;
 }
 
+.text a {
+  color: #f7931e;
+}
+
 .sm {
   font-size: var(--small-text-font-size);
   font-weight: var(--small-text-font-weight);

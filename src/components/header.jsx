@@ -1,7 +1,6 @@
 import React from "react";
-import {useState} from "react";
+import { useState } from "react";
 import cn from "classnames";
-
 
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "gatsby";
@@ -17,7 +16,10 @@ function Header({ location }) {
   const navId = "navbarResponsive";
 
   const isJavaOrCppPage =
-    location && (location.pathname === "/" || location.pathname === "/cpp" || location.pathname === "/cpp/");
+    location &&
+    (location.pathname === "/" ||
+      location.pathname === "/cpp" ||
+      location.pathname === "/cpp/");
 
   const headerRef = React.useRef(null);
   const [isPinned, setIsPinned] = React.useState(false);
@@ -28,7 +30,7 @@ function Header({ location }) {
   };
 
   const hideDropdownDownloadFrom = () => {
-      setShowDownloadFrom(false);
+    setShowDownloadFrom(false);
   };
 
   React.useEffect(() => {
@@ -59,9 +61,7 @@ function Header({ location }) {
       <Container className={styles.container}>
         <Navbar className={styles.navbar} expand="lg" variant="dark">
           <Link className={styles.brand} to="/">
-            <Navbar.Brand
-              className={styles.navbarBrand}
-            >
+            <Navbar.Brand className={styles.navbarBrand}>
               <img
                 alt="UnitTestBot"
                 src={logo}
@@ -106,55 +106,50 @@ function Header({ location }) {
             </Nav>
 
             {isJavaOrCppPage && (
-              <Nav 
-                as="ul" 
-                className={cn(styles.nav, styles.navBottom)}>
-                {
-                  location.pathname == "/" &&
+              <Nav as="ul" className={cn(styles.nav, styles.navBottom)}>
+                {location.pathname == "/" && (
                   <>
                     <Nav.Item as="li">
-                      <CustomLink
-                        to="/"
-                      >
-                        Overview
-                      </CustomLink>
+                      <CustomLink to="/">Overview</CustomLink>
                     </Nav.Item>
                     <Nav.Item as="li">
-                      <CustomLink to="/docs/java/test-with-default-configuration-plugin">{t("header.userGuide")}</CustomLink>
+                      <CustomLink to="/docs/java/test-with-default-configuration-plugin">
+                        {t("header.userGuide")}
+                      </CustomLink>
                     </Nav.Item>
                     <NavDropdown
-                      isShowDownloadFrom={ showDownloadFrom }
+                      isShowDownloadFrom={showDownloadFrom}
                       onShowDropdownDownloadFrom={showDropdownDownloadFrom}
                       onHideDropdownDownloadFrom={hideDropdownDownloadFrom}
                     />
                   </>
-                }
-                {
-                  (location.pathname === "/cpp" || location.pathname === "/cpp/") &&
+                )}
+                {(location.pathname === "/cpp" ||
+                  location.pathname === "/cpp/") && (
                   <>
                     <Nav.Item as="li">
-                      <CustomLink
-                        to="/cpp"
-                      >
-                        Overview
+                      <CustomLink to="/cpp">Overview</CustomLink>
+                    </Nav.Item>
+                    <Nav.Item as="li">
+                      <CustomLink to="/docs/cpp/">
+                        {t("header.userGuide")}
                       </CustomLink>
                     </Nav.Item>
                     <Nav.Item as="li">
-                      <CustomLink to="/docs/cpp/">{t("header.userGuide")}</CustomLink>
-                    </Nav.Item>
-                    <Nav.Item as="li">
                       <a
-                        style={{ color: "white", fontWeight: "500", fontSize: "17px" }}
+                        style={{
+                          color: "white",
+                        }}
                         href="https://github.com/UnitTestBot/UTBotCpp/releases"
                       >
                         {t("header.download")}
                       </a>
                     </Nav.Item>
                   </>
-                }             
+                )}
               </Nav>
             )}
-            { /* <CustomLink to="#">Download from...</CustomLink> */ }
+            {/* <CustomLink to="#">Download from...</CustomLink> */}
             {/* <input
               type="text"
               placeholder={t("header.searchPlaceholder")}
@@ -180,8 +175,14 @@ function Header({ location }) {
 
 const isActive = (className, to) => ({ isCurrent, location }) => {
   return {
-  className: cn(className, styles.myLink, (to == location.pathname || (to + "/") == location.pathname) && styles.active),
-}}
+    className: cn(
+      className,
+      styles.myLink,
+      (to == location.pathname || to + "/" == location.pathname) &&
+        styles.active
+    ),
+  };
+};
 
 const CustomLink = ({ className, children, to, ...propsCustomLink }) => (
   /* eslint-disable-next-line react/jsx-props-no-spreading */

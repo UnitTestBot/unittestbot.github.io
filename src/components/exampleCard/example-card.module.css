@@ -1,8 +1,10 @@
 .card {
-  max-width: 1100px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  width: min-content;
+  max-width: 1100px;
 }
 
 .dropdownTest {
