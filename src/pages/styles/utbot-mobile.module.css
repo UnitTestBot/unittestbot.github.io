@@ -24,7 +24,7 @@
 }
 
 .toolbar a {
-  padding: 12px;
+  padding: 7px;
 }
 
 .codeEditor {
@@ -52,12 +52,12 @@
 
 @media screen and (min-width: 291px) and (max-width: 330px) {
   .toolbar a {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
 @media screen and (max-width: 290px) {
   .toolbar a {
-    padding: 3px;
+    padding: 2px;
   }
 }
