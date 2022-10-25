@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.pdfCard {
+  max-width: 550px;
+  /* background: linear-gradient(
+    0deg,
+    rgba(5, 43, 5, 1) 0%,
+    rgba(13, 33, 57, 1) 100%
+  ); */
+  border: 2px solid rgba(255, 255, 255, 0.652);
+  border-radius: 30px;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.pdf {
+  max-width: 500px;
+}
