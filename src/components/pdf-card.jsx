@@ -5,6 +5,8 @@ import Text from "./text";
 
 import * as styles from "./pdf-card.module.css";
 
+import pdfIcon from "../images/pdf-icon.svg.webp";
+
 export default function PdfCard({
   conferenceTitle,
   articleTitle,
@@ -20,13 +22,16 @@ export default function PdfCard({
         <Text dangerouslySetInnerHTML={{ __html: articleTitle }} />
       )}
       {authors && <Text dangerouslySetInnerHTML={{ __html: authors }} />}
-      <embed
+      <a href={pdf} download={pdf.articleTitle}>
+        <img src={pdfIcon} width={60} alt="PDF icon"></img>
+      </a>
+      {/* <embed
         className={styles.pdf}
         src={pdf}
         width="240"
         height="340"
         type="application/pdf"
-      ></embed>
+      ></embed> */}
     </div>
   );
 }

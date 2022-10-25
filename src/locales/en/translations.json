@@ -119,7 +119,13 @@
     "utbotCppTitle": "UnitTestBot for C/C++",
     "kleeWorkshop2022Title": "<b>Poster</b> | <a href=\"https://srg.doc.ic.ac.uk/klee22/\">3rd International KLEE Workshop on Symbolic Execution</a> | 2022 | <b>En</b>",
     "kleeWorkshop2022ArticleTitle": "<a href=\"https://srg.doc.ic.ac.uk/klee22/accepted_contributions.html\">UTBot Simplifies Auto Test Generation</a>",
-    "kleeWorkshop2022ArticleAuthors": "Vladislav Kalugin, Pavel Iatchenii, Samat Gaynutdinov, Saveliy Grigoryev, Svetlana Shmidt, Alexey Utkin, Dmitry Ivanov, Aleksei Pleshakov, Vadim Volodin, Elena Ilina, Pavel Ponomarev and Konstantin Rybkin"
+    "kleeWorkshop2022ArticleAuthors": "Vladislav Kalugin, Pavel Iatchenii, Samat Gaynutdinov, Saveliy Grigoryev, Svetlana Shmidt, Alexey Utkin, Dmitry Ivanov, Aleksei Pleshakov, Vadim Volodin, Elena Ilina, Pavel Ponomarev and Konstantin Rybkin",
+    "kleeWorkshopPoster": "KLEE Workshop poster",
+
+    "programSynthesisTitle": "Program synthesis",
+    "singplan2022": "<b>Paper</b> | <a href=\"https://icfp22.sigplan.org/\">ACM SIGPLAN International Conference on Functional Programming</a> | 2022 | <b>En</b>",
+    "layoutSynthesisArticleTitle": "<a href=\"https://drive.google.com/file/d/1rPun1dtOkN0HNf46K_4cp-reZeQCJcSa/view\">On a Declarative Guideline-Directed UI Layout Synthesis</a>",
+    "layoutSynthesisArticleAuthors": "Dmitrii Kosarev, Petr Lozov, Denis Fokin, Dmitri Boulytchev"
   },
   "search": {
     "title": "Search",
@@ -143,11 +149,11 @@
     "alertNew": "<small>Experimental feature</small>"
   },
   "aboutUs": {
-    "whoWeAreText": "We are a team of researchers from Saint Petersburg.<br><br>We are crazy about mathematics and programming. We love taking part in software testing competitions. To be in touch with the high-end science we collaborate with the universities:",
+    "whoWeAreText": "We are a team of researchers and engineers from Saint Petersburg.<br><br>We are crazy about mathematics and programming. We love taking part in software testing competitions. We describe our achievements in <a href=\"https://www.utbot.org/research\">research articles</a>. We develop our flagship product — UnitTestBot for Java/Kotlin, C/C++, Python, JavaScript, and Go.<br>To be in touch with the high-end science we collaborate with the universities:",
     "spbu": "Saint Petersburg State University",
     "hse": "HSE University",
     "itmo": "ITMO University",
-    "spbpu": "Saint Petersburg Polytechnic University",
+    "spbpu": "Peter the Great St. Petersburg Polytechnic University",
     "whatWeDevelopText": "Though all these things may sound nerdy, we believe we develop a useful tool for real-life programmers. We try to make UnitTestBot effective and user-friendly — so that we are happy with it when we use it ourselves. And we welcome you to join us in developing UnitTestBot!<br><br><a href = 'mailto: support@utbot.org'>Contact us</a> directly to ask a question, share your ideas or give us feedback — we will be glad to hear from you!",
     "visitGitHubText": "Visit our <a href=\"https://github.com/UnitTestBot/\">GitHub</a> page and feel free to contribute!",
     "email": "<a href = 'mailto: support@utbot.org'>Send email</a>"
