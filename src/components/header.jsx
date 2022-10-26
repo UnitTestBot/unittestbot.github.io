@@ -1,188 +1,173 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { Container, Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
-import { Link, navigate, useStaticQuery, graphql } from "gatsby";
+import React from "react";
+import { useState } from "react";
+import cn from "classnames";
 
-import { FaGitlab, FaQuestion } from "react-icons/fa";
-import { IoLanguage } from "react-icons/io5";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
 import withTrans from "../i18n/withTrans";
-import logo from "../images/utbot-logo-5.svg";
-import github from "../images/github.svg";
-import "./header.css";
 
-function Header(props) {
-  const curLocation = "/";
+import { NavDropdown } from "./nav-dropdown";
+import logo from "../images/utbot-logo.svg";
+import * as styles from "./header.module.css";
 
+function Header({ location }) {
   const { t, i18n } = useTranslation();
+  const navId = "navbarResponsive";
 
-  const isActive = className => ({ isPartiallyCurrent }) => ({
-    className: className + (isPartiallyCurrent ? " active" : ""),
-  });
+  const isJavaOrCppPage =
+    location &&
+    (location.pathname === "/" ||
+      location.pathname === "/cpp" ||
+      location.pathname === "/cpp/");
 
-  const CustomLink = ({ className, children, ...propsCustomLink }) => (
-    /* eslint-disable-next-line react/jsx-props-no-spreading */
-    <Link getProps={isActive(className)} {...propsCustomLink}>
-      {children}
-    </Link>
-  );
+  const headerRef = React.useRef(null);
+  const [isPinned, setIsPinned] = React.useState(false);
+  const [showDownloadFrom, setShowDownloadFrom] = useState(false);
 
-  const [showDocs, setShowDocs] = useState(false);
-  const showDropdownDocs = e => {
-    setShowDocs(true);
-  };
-  const hideDropdownDocs = e => {
-    setShowDocs(false);
+  const showDropdownDownloadFrom = () => {
+    setShowDownloadFrom(true);
   };
 
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          github_utbot
-          discussions_utbot
-        }
-      }
-    }
-  `)
-  const githubUtbot = data.site.siteMetadata.github_utbot;
-  const discussionsUtbot = data.site.siteMetadata.discussions_utbot;
-
-  const [showLanguages, setShowLanguages] = useState(false);
-  const showDropdownLanguages = e => {
-    setShowLanguages(true);
-  };
-  const hideDropdownLanguages = e => {
-    setShowLanguages(false);
+  const hideDropdownDownloadFrom = () => {
+    setShowDownloadFrom(false);
   };
 
-  const [searchValue, setSearchValue] = useState("");
+  React.useEffect(() => {
+    if (!headerRef.current) return;
 
-  const reloadPage = () => {
-    if (typeof window !== "undefined") {
-      window.location.reload();
-    }
-  };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsPinned(entry.intersectionRatio < 1);
+      },
+      { threshold: [1] }
+    );
+
+    observer.observe(headerRef.current);
+    // eslint-disable-next-line consistent-return
+    return () => {
+      observer.unobserve(headerRef.current);
+    };
+  }, []);
 
   return (
-    <header className="navbar-dark bg-dark" style={props.style}>
-      <Container
-        style={{ maxWidth: 2000, paddingLeft: "2%", paddingRight: "2%" }}
-      >
-        <Navbar className="navbar-dark bg-dark" expand="lg" variant="dark">
-          <Link to="/">
-            <Navbar.Brand>
+    <header
+      ref={headerRef}
+      className={cn(
+        styles.header,
+        (!isJavaOrCppPage || isPinned) && styles.opaque
+      )}
+    >
+      <Container className={styles.container}>
+        <Navbar className={styles.navbar} expand="lg" variant="dark">
+          <Link className={styles.brand} to="/">
+            <Navbar.Brand className={styles.navbarBrand}>
               <img
                 alt="UnitTestBot"
                 src={logo}
-                width="35"
-                height="35"
-                className="d-inline-block align-top"
-              />{" "}
-              {props.siteTitle}
+                width="125"
+                className="align-top"
+              />
             </Navbar.Brand>
           </Link>
-          <Navbar.Toggle aria-controls="navbarResponsive" />
-          <Navbar.Collapse id="navbarResponsive">
-            <Nav as="ul" className="mr-auto">
+
+          <Navbar.Toggle aria-controls={navId} className={styles.toggle} />
+
+          <Navbar.Collapse id={navId} className={styles.collapse}>
+            <Nav
+              as="ul"
+              className={cn(styles.nav, styles.navTop)}
+              style={{
+                borderBottomColor: isJavaOrCppPage ? "white" : "transparent",
+              }}
+            >
               <Nav.Item as="li">
-                <CustomLink to="/install" className="nav-link">
-                  {t("header.install")}
-                </CustomLink>
+                <CustomLink to="/">{t("header.javaArea")}</CustomLink>
               </Nav.Item>
-              <NavDropdown
-                title={t("header.docs")}
-                as={CustomLink}
-                to="/docs"
-                show={showDocs}
-                onClick={e => {}}
-                onMouseEnter={showDropdownDocs}
-                onMouseLeave={hideDropdownDocs}
-              >
-                <NavDropdown.Item onClick={() => navigate("/docs/cpp/general/home")}>
-                  {t("header.cdocs")}
-                </NavDropdown.Item>
-                <NavDropdown.Item onClick={() => navigate("/docs/java/general/home")}>
-                  {t("header.javadocs")}
-                </NavDropdown.Item>
-              </NavDropdown>
               <Nav.Item as="li">
-                <CustomLink to="/contact" className="nav-link">
-                  {t("header.contact")}
-                </CustomLink>
+                <CustomLink to="/cpp">{t("header.cppArea")}</CustomLink>
+              </Nav.Item>
+              <Nav.Item as="li">
+                <CustomLink to="/python">{t("header.pythonArea")}</CustomLink>
+              </Nav.Item>
+              <Nav.Item as="li">
+                <CustomLink to="/js">{t("header.javaScriptArea")}</CustomLink>
+              </Nav.Item>
+              <Nav.Item as="li">
+                <CustomLink to="/go">{t("header.goArea")}</CustomLink>
+              </Nav.Item>
+              <Nav.Item as="li">
+                <CustomLink to="/utbot">{t("header.demo")}</CustomLink>
+              </Nav.Item>
+              <Nav.Item as="li">
+                <CustomLink to="/research">{t("header.research")}</CustomLink>
+              </Nav.Item>
+              <Nav.Item as="li">
+                <CustomLink to="/about">{t("header.aboutUs")}</CustomLink>
               </Nav.Item>
             </Nav>
 
-            <Nav activeKey="false">
-              <Nav.Item as="li" className="nav-item">
-                <Link href={discussionsUtbot} className="nav-link">
-                  <FaQuestion /> {t("header.faq")}
-                </Link>
-              </Nav.Item>
-
-              <Nav.Link
-                as="a"
-                target="_blank"
-                href={githubUtbot}
-              >
-                <img
-                    alt="UnitTestBot"
-                    src={github}
-                    width="17"
-                    height="17"
-                    className="d-inline-block align-center"
-                /> {t("header.github")}
-              </Nav.Link>
-              <NavDropdown
-                title={
+            {isJavaOrCppPage && (
+              <Nav as="ul" className={cn(styles.nav, styles.navBottom)}>
+                {location.pathname == "/" && (
                   <>
-                    {" "}
-                    <IoLanguage /> {t("header.lang")}{" "}
+                    <Nav.Item as="li">
+                      <CustomLink to="/">Overview</CustomLink>
+                    </Nav.Item>
+                    <Nav.Item as="li">
+                      <CustomLink to="/docs/java/test-with-default-configuration-plugin">
+                        {t("header.userGuide")}
+                      </CustomLink>
+                    </Nav.Item>
+                    <NavDropdown
+                      isShowDownloadFrom={showDownloadFrom}
+                      onShowDropdownDownloadFrom={showDropdownDownloadFrom}
+                      onHideDropdownDownloadFrom={hideDropdownDownloadFrom}
+                    />
                   </>
-                }
-                show={showLanguages}
-                onClick={e => {}}
-                onMouseEnter={showDropdownLanguages}
-                onMouseLeave={hideDropdownLanguages}
-              >
-                <NavDropdown.Item
-                  onClick={async () => {
-                    await i18n.changeLanguage("en");
-                    reloadPage();
-                  }}
-                >
-                  {t("header.english")}
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-
-            <span style={{ display: "flex", flexDirection: "row" }}>
-              <input
-                type="text"
-                placeholder={t("header.searchPlaceholder")}
-                className="form-control searchForm"
-                value={searchValue}
-                onKeyDown={e => {
-                  if (e.key === "Enter" && e.shiftKey === false) {
-                    if (searchValue === "") {
-                      return;
-                    }
-                    e.preventDefault();
-                    navigate(`/search?query=${encodeURIComponent(searchValue)}`);
+                )}
+                {(location.pathname === "/cpp" ||
+                  location.pathname === "/cpp/") && (
+                  <>
+                    <Nav.Item as="li">
+                      <CustomLink to="/cpp">Overview</CustomLink>
+                    </Nav.Item>
+                    <Nav.Item as="li">
+                      <CustomLink to="/docs/cpp/">
+                        {t("header.userGuide")}
+                      </CustomLink>
+                    </Nav.Item>
+                    <Nav.Item as="li">
+                      <a
+                        style={{
+                          color: "white",
+                        }}
+                        href="https://github.com/UnitTestBot/UTBotCpp/releases"
+                      >
+                        {t("header.download")}
+                      </a>
+                    </Nav.Item>
+                  </>
+                )}
+              </Nav>
+            )}
+            {/* <CustomLink to="#">Download from...</CustomLink> */}
+            {/* <input
+              type="text"
+              placeholder={t("header.searchPlaceholder")}
+              className="oneLineSearch"
+              value={searchValue}
+              onKeyDown={e => {
+                if (e.key === "Enter" && e.shiftKey === false) {
+                  if (searchValue === "") {
+                    return;
                   }
-                }}
-                onChange={e => setSearchValue(e.target.value)}
-              />
-              <Button
-                type="submit"
-                variant="outline-info"
-                onClick={() => {
-                  navigate(`/search?query=${searchValue}`);
-                }}
-              >
-                {t("header.search")}
-              </Button>
-            </span>
+                  e.preventDefault();
+                  navigate(`/search?query=${encodeURIComponent(searchValue)}`);
+                }
+              }}
+              onChange={e => setSearchValue(e.target.value)}
+            /> */}
           </Navbar.Collapse>
         </Navbar>
       </Container>
@@ -190,14 +175,22 @@ function Header(props) {
   );
 }
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-  style: PropTypes.object,
+const isActive = (className, to) => ({ isCurrent, location }) => {
+  return {
+    className: cn(
+      className,
+      styles.myLink,
+      (to == location.pathname || to + "/" == location.pathname) &&
+        styles.active
+    ),
+  };
 };
 
-Header.defaultProps = {
-  siteTitle: `UnitTestBot`,
-  style: {}
-};
+const CustomLink = ({ className, children, to, ...propsCustomLink }) => (
+  /* eslint-disable-next-line react/jsx-props-no-spreading */
+  <Link getProps={isActive(className, to)} to={to} {...propsCustomLink}>
+    {children}
+  </Link>
+);
 
 export default withTrans(Header);

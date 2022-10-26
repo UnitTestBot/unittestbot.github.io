@@ -1,0 +1,57 @@
+@import "../utils/colors.css";
+@import "../utils/fonts.css";
+
+.header {
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  position: sticky;
+}
+
+.site {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+}
+
+.aboutUs {
+  background-color: rgb(5, 61, 67);
+}
+
+.gradient {
+  /* background-image: radial-gradient(
+    circle,
+    var(--light-gree-bg) -20%,
+    var(--dark-green-bg) 80%
+  ); */
+  background: var(--dark-green-bg);
+  background-attachment: fixed;
+}
+
+.site-content {
+  flex-grow: 1;
+}
+
+.main {
+  margin-top: auto;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--header-footer-bg);
+  height: 70px;
+  font-family: var(--font-family-sans-serif);
+}
+
+.footer div {
+  font-size: var(--footer-text-font-size);
+  font-weight: var(--footer-text-font-weight);
+}

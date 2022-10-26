@@ -1,0 +1,96 @@
+@import "../../utils/colors.css";
+@import "../../utils/constants.css";
+@import "../../utils/fonts.css";
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 770px) {
+  .actions {
+    flex-direction: column;
+  }
+}
+
+.topContainer {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: calc(100vh - var(--header-desktop-height));
+  justify-content: center;
+
+  z-index: 1;
+}
+
+@media screen and (max-width: 991px) {
+  .topContainer {
+    min-height: calc(100vh - var(--header-mobile-height));
+  }
+}
+
+.topText {
+  line-height: 2.5rem;
+  letter-spacing: 0.15rem;
+  padding-bottom: 4rem;
+}
+
+@media screen and (max-width: 700px) {
+  .topText {
+    padding-bottom: 1rem;
+  }
+}
+
+.howWorksLink {
+  color: var(--white-color-text);
+  font-weight: var(--how-works-btn-font-weight);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin-bottom: 2rem;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .buttons {
+    flex-direction: column;
+  }
+}
+
+.examples {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  gap: 6rem;
+}
+
+@media screen and (min-width: 1100px) {
+  .examples {
+    gap: 12rem;
+  }
+}
+
+.gradient {
+  width: 100vw;
+  height: 103vh;
+  position: absolute;
+  top: 0;
+  background: radial-gradient(
+    circle,
+    rgba(43, 64, 40, 1) 0%,
+    rgba(3, 33, 3, 1) 40%,
+    rgba(1, 14, 1, 1) 100%
+  );
+}

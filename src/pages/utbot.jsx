@@ -1,17 +1,27 @@
-import * as React from "react";
-import {useState} from "react";
-import {graphql, useStaticQuery} from 'gatsby';
+import React, { useState, useEffect } from "react";
+import cn from "classnames";
+import { graphql, useStaticQuery } from "gatsby";
 
 import Layout from "../components/layout";
-import {useTranslation} from "react-i18next";
-import {Alert, Button, NavDropdown, OverlayTrigger, Spinner, Tooltip} from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import {
+  Alert,
+  Button as Btn,
+  ButtonGroup as BtnGroup,
+  NavDropdown,
+  OverlayTrigger,
+  Spinner,
+  ToggleButton,
+  ToggleButtonGroup,
+  Tooltip,
+} from "react-bootstrap";
 import "./styles/page.css";
-import "./styles/contact.css";
 import "./styles/utbot.css";
-import dedent from "dedent";
+import * as stylesDesktop from "./styles/utbot-desktop.module.css";
+import * as stylesMobile from "./styles/utbot-mobile.module.css";
 import Editor from "@monaco-editor/react";
 // Do not remove the import. It's used to render the page correctly.
-import {highlight, languages} from "prismjs/components/prism-core";
+import { highlight, languages } from "prismjs/components/prism-core";
 import SEO from "../components/seo";
 import withTrans from "../i18n/withTrans";
 import "prismjs/components/prism-clike";
@@ -20,6 +30,20 @@ import "prismjs/components/prism-python";
 import "prismjs/components/prism-markup";
 import "prismjs/themes/prism.css";
 
+//import { LanguageDropdown } from "../components/languages-dropdown";
+// import Button from "../components/button";
+import {
+  Language as LanguageEnum,
+  languageIsExperimentalFeature,
+  languageToHighlight,
+  languageToQuery,
+  languageToString,
+  languageToSnippet,
+  languageToExamples,
+} from "../utils/language";
+
+import copyLinkIcon from "../images/copy-link-icon.png";
+import codeIcon from "../images/code-icon.png";
 
 require("prismjs/components/prism-c");
 require("prismjs/components/prism-cpp");
@@ -29,40 +53,25 @@ require("prismjs/components/prism-go");
 
 const ResponseType = { run: "RUN", generation: "GENERATION" };
 
-const snippetC = dedent`#include <stdio.h>\n#include <string.h>\n#include <math.h>\n#include <stdlib.h>\n\nint foo() \n{\n  // TODO: write your code here\n  return 0;\n}`;
-
-const snippetCpp = dedent`#include <cmath>\n#include <cstring>\n\nusing namespace std;\n\nint foo() \n{\n  // TODO: write your code here\n  return 0;\n}`;
-
-const snippetJava = dedent`import java.util.*;\n\npublic class Solution {\n  // TODO: write your code here\n}`;
-
-const snippetPython = dedent`# Write your code here`;
-
-const snippetJavaScript = dedent`// Write your code here`;
-
-const snippetGo = dedent`package simple\n\nfunc example() {\n  // Write your code here\n}`;
-
 const UTBotOnlinePage = () => {
+  const [href, setHref] = useState("");
+  const [sourceCode, setSourceCode] = React.useState(
+    languageToSnippet(LanguageEnum.C)
+  );
+  const [testCode, setTestCode] = React.useState("");
+  const [showExamples, setShowExamples] = useState(false);
+  const [language, setLanguage] = useState(LanguageEnum.C);
+  const [showLanguages, setShowLanguages] = useState(false);
+  const [detailsText, setDetailsText] = useState("");
+  const [isGeneratingAndRunning, setIsGeneratingAndRunning] = useState(false);
 
-    const [href, setHref] = useState("");
-    const [sourceCode, setSourceCode] = React.useState(snippetC);
-    const [testCode, setTestCode] = React.useState("");
-    const [showExamples, setShowExamples] = useState(false);
-    const [language, setLanguage] = useState(1);
-    const [showLanguages, setShowLanguages] = useState(false);
-    const [detailsText, setDetailsText] = useState("");
-    const [isSurveyActive, setIsSurveyActive] = useState(false);
-    const [sourceForSurvey, setSourceForSurvey] = useState("");
-    const [isSubmitted, setIsSubmitted] = useState(false);
-    const [isGeneratingAndRunning, setIsGeneratingAndRunning] = useState(false);
+  // This is for mobile
+  const [showCode, setShowCode] = useState(true);
+  const [showTests, setShowTests] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
+  const minDesktopWidth = 800;
 
-    const examplesC = require("../examples_json/examples_c.json");
-    const examplesCpp = require("../examples_json/examples_cpp.json");
-    const examplesJava = require("../examples_json/examples_java.json");
-    const examplesPython = require("../examples_json/examples_python.json");
-    const examplesJavaScript = require("../examples_json/examples_js.json");
-    const examplesGo = require("../examples_json/examples_go.json");
-
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -71,501 +80,543 @@ const UTBotOnlinePage = () => {
       }
     }
   `);
-    const backendHost = data.site.siteMetadata.backend_host;
-    // const backendSurveyHost = data.site.siteMetadata.backend_survey_host;
+  const backendHost = data.site.siteMetadata.backend_host;
 
-    React.useEffect(() => {
-        const queryString = window.location.search;
-        setHref(window.location.origin + window.location.pathname);
-        const urlParams = new URLSearchParams(queryString);
-        if (urlParams.has("source")) {
-            setSourceCode(urlParams.get("source"));
-            setTestCode("");
-            //setIsSurveyActive(false);
-            //setSourceForSurvey("");
-        }
-        if (!urlParams.has("language")) {
-            return;
-        }
-        if (urlParams.get("language") === "c") {
-            setLanguage(1);
-        }
-        if (urlParams.get("language") === "cpp") {
-            setLanguage(2);
-        }
-        if (urlParams.get("language") === "java") {
-            setLanguage(3);
-        }
-        if (urlParams.get("language") === "python") {
-            setLanguage(4);
-        }
-        if (urlParams.get("language") === "javascript") {
-            setLanguage(5);
-        }
-        if (urlParams.get("language") === "go") {
-            setLanguage(6);
-        }
-    }, []);
-
-    function getLanguage(index) {
-        switch(index) {
-            case 1: return "C"
-            case 2: return "Cpp"
-            case 3: return "Java"
-            case 4: return "Python"
-            case 5: return "JavaScript"
-            case 6: return "Go"
-        }
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
     }
 
-    function getLanguageName(index) {
-        if (index === 2) {
-            return "C++"
-        }
+    window.addEventListener("resize", handleWindowResize);
 
-        return getLanguage(index)
-    }
-
-    const url = `${href}?language=${getLanguage(language)}&source=${encodeURIComponent(sourceCode)}`;
-
-    function copyLink() {
-        if (navigator.clipboard && window.isSecureContext) {
-            return navigator.clipboard.writeText(url);
-        }
-    }
-
-
-    const getDetailsOfSubResponse = (responseType, response) => {
-        if (response?.statusCode?.localeCompare("SUCCEEDED") === 0) {
-            return `TEST ${responseType}: SUCCEEDED\n` +
-                (response.statusDetails ? response.statusDetails.join("\n") + "\n\n" : `${ResponseType}: no details\n\n`)
-        }
-
-        if (response?.statusCode) {
-            return `TEST ${responseType}: ${response.statusCode}\n` +
-                (response.statusDetails ? response.statusDetails.join("\n") + "\n\n" : "no details\n\n")
-        }
-
-        return `TEST ${responseType}: ERROR OCCURRED\n` +
-            (response?.statusDetails ? response.statusDetails.join("\n") + "\n\n" : `${ResponseType}: no details\n\n`)
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
     };
+  }, []);
 
-    function queryGenerateAndRunTests() {
-        console.log("Run and generate tests!!!");
-        setIsGeneratingAndRunning(true);
-        setDetailsText("");
-        setTestCode("");
-        setIsSurveyActive(false);
-        setSourceForSurvey("");
-        //setIsSubmitted(false);
+  const url = `${href}?language=${languageToQuery(
+    language
+  )}&source=${encodeURIComponent(sourceCode)}`;
 
-        const host = backendHost;
-        let lang = getLanguage(language);
-        const req = `${host}/utbot-online/${lang}-playground/tests/`;
-        const isInternetConnected = navigator.onLine;
-        if (isInternetConnected) {
-            fetch(req, {
-                body: JSON.stringify({"snippet": sourceCode}),
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json"
-                },
-                method: "POST"
-            })
-                .then(response => response.json())
-                .then(response => JSON.stringify(response))
-                .then(response => {
-                    const obj = JSON.parse(response);
-                    if (obj.statusCode.localeCompare("SUCCEEDED") === 0) {
-                        setTestCode(obj.generationResponse.sourceFile);
-                        setDetailsText(getDetailsOfSubResponse(ResponseType.generation, obj.generationResponse) +
-                            getDetailsOfSubResponse(ResponseType.run, obj.runResponse))
-                        // setIsSubmitted(false);
-                        // setSourceForSurvey(sourceCode);
-                    } else if (obj.statusCode) {
-                        setTestCode("");
-                        if (obj.generationResponse.statusCode.localeCompare("SUCCEEDED") === 0) {
-                            setTestCode(obj.generationResponse.sourceFile);
-                        }
-                        setDetailsText(`Status Code: ${obj.statusCode}\n\n` +
-                            (obj.statusDetails ? "Status details:\n" + obj.statusDetails.join("\n") + "\n\n" : "" ) +
-                            getDetailsOfSubResponse(ResponseType.generation, obj.generationResponse) +
-                            getDetailsOfSubResponse(ResponseType.run, obj.runResponse))
-                        // setIsSubmitted(false);
-                        // setSourceForSurvey("");
-                    } else {
-                        setTestCode("");
-                        setDetailsText(obj)
-                        // setIsSubmitted(false);
-                        // setSourceForSurvey("");
-                    }
-                })
-                .catch(err => {
-                    setDetailsText(`Error message:\n${err.message}\n\nError stack:\n${err.stack}`);
-                })
-                .finally(function () {
-                    setIsGeneratingAndRunning(false);
-                });
-        } else {
-            setIsGeneratingAndRunning(false);
-            const details = "No internet connection";
-            setDetailsText(`ERROR: ${details}`);
-        }
+  function copyLink() {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(url);
+    }
+  }
+
+  const getDetailsOfSubResponse = (responseType, response) => {
+    if (response?.statusCode?.localeCompare("SUCCEEDED") === 0) {
+      return (
+        `TEST ${responseType}: SUCCEEDED\n` +
+        (response.statusDetails
+          ? response.statusDetails.join("\n") + "\n\n"
+          : `${ResponseType}: no details\n\n`)
+      );
     }
 
-    const showDropdownExamples = () => {
-        setShowExamples(true);
-    };
-    const hideDropdownExamples = () => {
-        setShowExamples(false);
-    };
-
-    const showDropdownLanguages = () => {
-        setShowLanguages(true);
-    };
-    const hideDropdownLanguages = () => {
-        setShowLanguages(false);
-    };
-
-    // TODO: move all string literals to locales/en/translations.json
-    const {t, i18n} = useTranslation();
-
-    let dropdownItems = null;
-    if (language === 1) {
-        dropdownItems = examplesC.examples.map(exampleCode => {
-            return (
-                <NavDropdown.Item
-                    onClick={() => {
-                        setSourceCode(exampleCode.code);
-                    }}> {exampleCode.name} </NavDropdown.Item>);
-        });
-    } else if (language === 2) {
-        dropdownItems = examplesCpp.examples.map(exampleCode => {
-            return (
-                <NavDropdown.Item
-                    onClick={() => {
-                        setSourceCode(exampleCode.code);
-                    }}> {exampleCode.name} </NavDropdown.Item>);
-        });
+    if (response?.statusCode) {
+      return (
+        `TEST ${responseType}: ${response.statusCode}\n` +
+        (response.statusDetails
+          ? response.statusDetails.join("\n") + "\n\n"
+          : "no details\n\n")
+      );
     }
-    else if (language === 3) {
-        dropdownItems = examplesJava.examples.map(exampleCode => {
-            return (
-                <NavDropdown.Item
-                    onClick={() => {
-                        setSourceCode(exampleCode.code);
-                    }}> {exampleCode.name} </NavDropdown.Item>);
-        });
-    }
-    else if (language === 4) {
-        dropdownItems = examplesPython.examples.map(exampleCode => {
-            return (
-                <NavDropdown.Item
-                    onClick={() => {
-                        setSourceCode(exampleCode.code);
-                    }}> {exampleCode.name} </NavDropdown.Item>);
-        });
-    }
-    else if (language === 5) {
-        dropdownItems = examplesJavaScript.examples.map(exampleCode => {
-            return (
-                <NavDropdown.Item
-                    onClick={() => {
-                        setSourceCode(exampleCode.code);
-                    }}> {exampleCode.name} </NavDropdown.Item>);
-        });
-    }
-    else if (language === 6) {
-        dropdownItems = examplesGo.examples.map(exampleCode => {
-            return (
-                <NavDropdown.Item
-                    onClick={() => {
-                        setSourceCode(exampleCode.code);
-                    }}> {exampleCode.name} </NavDropdown.Item>);
-        });
-    }
-
-    const langName = getLanguageName(language)
-
-    const langHighlight = language === 3 ? "java" : language === 4 ? "python" : language === 5 ? "javascript" : language === 6 ? "go" : "cpp";
-
-    let monacoThemesDefined = false;
-    const defineMonacoThemes = monaco => {
-        if (monacoThemesDefined) {
-            return;
-        }
-        monacoThemesDefined = true;
-        monaco.editor.defineTheme("my-light", {
-            base: "vs",
-            inherit: true,
-            rules: [],
-            colors: {
-                "editor.background": "#f6f6f6",
-                "minimap.background": "#f9f9f9"
-            }
-        });
-    };
-    const editorWillMountTemp = monaco => {
-        defineMonacoThemes(monaco);
-    };
-
-    const renderTooltip = (props) => (
-        <Tooltip id="button-tooltip" {...props}>
-            Share with friends!
-        </Tooltip>
-    );
 
     return (
-        <Layout>
-            <SEO title="UTBot Online"/>
-            <div style={{ overflowX: "auto", overflowY: "auto" }}>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "flex-start",
-                    marginLeft: "100px",
-                    marginRight: "100px",
-                    minWidth: "886px"
-                }}>
-                    <div style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "center"
-                    }}>
-                        <div style={{
-                            width: "100%",
-                            minWidth: "440px",
-                            marginRight: "3px",
-                            flexDirection: "column"
-                        }}>
-
-                            <div
-                                style={{
-                                    marginTop: "20px",
-                                    textAlign: "center",
-                                    display: "flex",
-                                    flexDirection: "row",
-                                    justifyContent: "space-between"
-                                }}>
-                                <div
-                                    style={{
-                                        textAlign: "center",
-                                        display: "flex",
-                                        flexDirection: "row"
-                                    }}>
-                                    <OverlayTrigger
-                                        placement="bottom"
-                                        delay={{show: 250, hide: 250}}
-                                        overlay={renderTooltip}
-                                    >
-                                        <Button
-                                            variant="light"
-                                            style={{marginTop: "5px", marginBottom: "5px", width: "125px"}}
-                                            onClick={copyLink}
-                                        >Copy Link</Button>
-                                    </OverlayTrigger>
-                                </div>
-                                <div
-                                    style={{
-                                        textAlign: "center",
-                                        display: "flex",
-                                        flexDirection: "row"
-                                    }}>
-
-                                    <NavDropdown
-                                        title={langName}
-                                        show={showLanguages}
-                                        onClick={() => { }}
-                                        onMouseEnter={showDropdownLanguages}
-                                        onMouseLeave={hideDropdownLanguages}
-                                        style={{marginTop: "5px", width: "fit-content"}}
-                                    >
-                                        <NavDropdown.Item onClick={() => {
-                                            setLanguage(1);
-                                            if (language !== 1) {
-                                                setSourceCode(snippetC);
-                                            }
-                                        }}
-                                        > C </NavDropdown.Item>
-                                        <NavDropdown.Item onClick={() => {
-                                            setLanguage(2);
-                                            if (language !== 2) {
-                                                setSourceCode(snippetCpp);
-                                            }
-                                        }}
-                                        > C++ </NavDropdown.Item>
-                                        <NavDropdown.Item onClick={() => {
-                                            setLanguage(6);
-                                            if (language !== 6) {
-                                                setSourceCode(snippetGo)
-                                            }
-                                        }}
-                                        > Go </NavDropdown.Item>
-                                        <NavDropdown.Item onClick={() => {
-                                            setLanguage(3);
-                                            if (language !== 3) {
-                                                setSourceCode(snippetJava)
-                                            }
-                                        }}
-                                        > Java </NavDropdown.Item>
-                                        <NavDropdown.Item onClick={() => {
-                                            setLanguage(5);
-                                            if (language !== 5) {
-                                                setSourceCode(snippetJavaScript)
-                                            }
-                                        }}
-                                        > JavaScript </NavDropdown.Item>
-                                        <NavDropdown.Item onClick={() => {
-                                            setLanguage(4);
-                                            if (language !== 4) {
-                                                setSourceCode(snippetPython)
-                                            }
-                                        }}
-                                        > Python </NavDropdown.Item>
-                                    </NavDropdown>
-
-                                    <NavDropdown
-                                        title="Examples"
-                                        show={showExamples}
-                                        onClick={() => { }}
-                                        onMouseEnter={showDropdownExamples}
-                                        onMouseLeave={hideDropdownExamples}
-                                        style={{marginTop: "5px" }}
-                                    >
-                                        {dropdownItems}
-                                    </NavDropdown>
-                                </div>
-                            </div>
-                            <div style={{
-                                height: "calc(70vh)",
-                                minHeight: "300px",
-                                // width: "45vw",
-                                minWidth: "440px"
-                            }}
-                            >
-                                <Editor
-                                    theme="my-light"
-                                    language={langHighlight}
-                                    value={sourceCode}
-                                    onChange={setSourceCode}
-                                    beforeMount={editorWillMountTemp.bind(this)}
-                                    options={{
-                                        tabSize: 4,
-                                        scrollBeyondLastLine: false,
-                                        wordWrap: "on"
-                                    }}
-                                />
-                            </div>
-                        </div>
-                        <div style={{
-                            width: "100%",
-                            marginLeft: "3px",
-                            flexDirection: "column",
-                            minWidth: "440px",
-                            height: "100%"
-                        }}>
-                            <div
-                                style={{
-                                    marginTop: "20px",
-                                    textAlign: "center",
-                                    display: "flex",
-                                    flexDirection: "row",
-                                    justifyContent: "flex-start"
-                                }}>
-                                <Button variant="info" style={{marginTop: "5px", marginBottom: "5px", display: "inline-block"}}
-                                        onClick={queryGenerateAndRunTests} disabled={isGeneratingAndRunning}>
-                                    {isGeneratingAndRunning && <span>Generating and Running</span>}
-                                    {!isGeneratingAndRunning && <span>Generate and Run Tests</span>}
-                                    {isGeneratingAndRunning && <Spinner
-                                        as="span"
-                                        animation="border"
-                                        size="sm"
-                                        role="status"
-                                        aria-hidden="true"
-                                    />}
-                                </Button>
-                                {language === 2 && <Alert
-                                    style={{marginTop: "5px", marginBottom: "5px", display: "inline-block"}}
-                                    variant="warning"
-                                    dangerouslySetInnerHTML={{ __html: t("utbot.alertCpp") }}
-                                />}
-                                {(language === 4 || language === 5 || language === 6) && <Alert
-                                    style={{marginTop: "5px", marginBottom: "5px", display: "inline-block"}}
-                                    variant="warning"
-                                    dangerouslySetInnerHTML={{ __html: t("utbot.alertNew") }}
-                                />}
-                            </div>
-                            <div style={{
-                                height: "calc(70vh)",
-                                minHeight: "300px",
-                                minWidth: "440px"
-                            }}
-                            >
-                                <Editor
-                                    theme="my-light"
-                                    language={langHighlight}
-                                    value={testCode}
-                                    beforeMount={editorWillMountTemp.bind(this)}
-                                    options={{
-                                        readOnly: true,
-                                        scrollBeyondLastLine: false,
-                                        wordWrap: "on"
-                                    }}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div style={{
-                        marginTop: "1vh",
-                        marginBottom: "1vh",
-                        display: "flex",
-                        minWidth: "886px",
-                    }}>
-                        {(isSurveyActive || isSubmitted) && <div style={{
-                            width: "50%",
-                            marginRight: "3px",
-                            marginBottom: "0",
-                            minWidth: "440px"
-                        }}>
-                            <Editor
-                                theme="my-light"
-                                language={langHighlight}
-                                value={detailsText}
-                                options={{
-                                    minimap: {enabled: false},
-                                    lineNumbers: "off",
-                                    readOnly: true,
-                                    scrollBeyondLastLine: false,
-                                    wordWrap: "on"
-                                }}
-                            />
-                        </div>}
-                        {!(isSurveyActive || isSubmitted) && <div style={{
-                            width: "100%",
-                            marginRight: "3px",
-                            minWidth: "440px",
-                            height: "30vh",
-                        }}>
-                            <Editor
-                                theme="my-light"
-                                language={langHighlight}
-                                value={detailsText}
-                                options={{
-                                    minimap: {enabled: false},
-                                    lineNumbers: "off",
-                                    readOnly: true,
-                                    scrollBeyondLastLine: false,
-                                    wordWrap: "on"
-                                }}
-                            />
-                        </div>}
-                        {isSurveyActive && <Survey sourceCode={sourceForSurvey} testCode={testCode}
-                                                   backendSurveyHost={backendSurveyHost}/>}
-                    </div>
-                </div>
-            </div>
-        </Layout>
+      `TEST ${responseType}: ERROR OCCURRED\n` +
+      (response?.statusDetails
+        ? response.statusDetails.join("\n") + "\n\n"
+        : `${ResponseType}: no details\n\n`)
     );
+  };
+
+  function queryGenerateAndRunTests() {
+    console.log("Run and generate tests!!!");
+    setIsGeneratingAndRunning(true);
+    setDetailsText("");
+    setTestCode("");
+
+    const host = backendHost;
+    let lang = languageToQuery(language);
+    const req = `${host}/utbot-online/${lang}-playground/tests/`;
+    const isInternetConnected = navigator.onLine;
+    if (isInternetConnected) {
+      fetch(req, {
+        body: JSON.stringify({ snippet: sourceCode }),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      })
+        .then(response => response.json())
+        .then(response => JSON.stringify(response))
+        .then(response => {
+          const obj = JSON.parse(response);
+          if (obj.statusCode.localeCompare("SUCCEEDED") === 0) {
+            if (window.screen.width < minDesktopWidth) {
+              document.getElementById("testsButton").click();
+            }
+            setTestCode(obj.generationResponse.sourceFile);
+            setDetailsText(
+              getDetailsOfSubResponse(
+                ResponseType.generation,
+                obj.generationResponse
+              ) + getDetailsOfSubResponse(ResponseType.run, obj.runResponse)
+            );
+          } else if (obj.statusCode) {
+            setTestCode("");
+            if (
+              obj.generationResponse.statusCode.localeCompare("SUCCEEDED") === 0
+            ) {
+              setTestCode(obj.generationResponse.sourceFile);
+              if (window.screen.width < minDesktopWidth) {
+                document.getElementById("testsButton").click();
+              }
+            } else {
+              if (window.screen.width < minDesktopWidth) {
+                document.getElementById("infoButton").click();
+              }
+            }
+            setDetailsText(
+              `Status Code: ${obj.statusCode}\n\n` +
+                (obj.statusDetails
+                  ? "Status details:\n" + obj.statusDetails.join("\n") + "\n\n"
+                  : "") +
+                getDetailsOfSubResponse(
+                  ResponseType.generation,
+                  obj.generationResponse
+                ) +
+                getDetailsOfSubResponse(ResponseType.run, obj.runResponse)
+            );
+          } else {
+            setTestCode("");
+            setDetailsText(obj);
+            if (window.screen.width < minDesktopWidth) {
+              document.getElementById("infoButton").click();
+            }
+          }
+        })
+        .catch(err => {
+          setDetailsText(
+            `Error message:\n${err.message}\n\nError stack:\n${err.stack}`
+          );
+          if (window.screen.width < minDesktopWidth) {
+            document.getElementById("infoButton").click();
+          }
+        })
+        .finally(function () {
+          setIsGeneratingAndRunning(false);
+        });
+    } else {
+      setIsGeneratingAndRunning(false);
+      const details = "No internet connection";
+      setDetailsText(`ERROR: ${details}`);
+      if (window.screen.width < minDesktopWidth) {
+        document.getElementById("infoButton").click();
+      }
+    }
+  }
+
+  const showDropdownExamples = () => {
+    setShowExamples(true);
+  };
+  const hideDropdownExamples = () => {
+    setShowExamples(false);
+  };
+
+  const showDropdownLanguages = () => {
+    setShowLanguages(true);
+  };
+  const hideDropdownLanguages = () => {
+    setShowLanguages(false);
+  };
+
+  const { t, i18n } = useTranslation();
+
+  let dropdownItems = languageToExamples(language).examples.map(example => {
+    return (
+      <NavDropdown.Item
+        onClick={() => {
+          setSourceCode(example.code);
+          if (window.screen.width < minDesktopWidth) {
+            hideDropdownExamples();
+          }
+        }}
+      >
+        {example.name}
+      </NavDropdown.Item>
+    );
+  });
+
+  const langName = languageToString(language);
+
+  const langHighlight = languageToHighlight(language);
+
+  let monacoThemesDefined = false;
+  const defineMonacoThemes = monaco => {
+    if (monacoThemesDefined) {
+      return;
+    }
+    monacoThemesDefined = true;
+    monaco.editor.defineTheme("my-light", {
+      base: "vs-dark",
+      inherit: true,
+      rules: [],
+      colors: {
+        "editor.background": "#1f1f1f",
+        "minimap.background": "#2c2b2b",
+      },
+    });
+  };
+  const editorWillMountTemp = monaco => {
+    defineMonacoThemes(monaco);
+  };
+
+  const renderTooltip = props => (
+    <Tooltip id="button-tooltip" {...props}>
+      Share with friends!
+    </Tooltip>
+  );
+
+  if (typeof window === `undefined`) {
+    return <></>;
+  }
+
+  return (
+    <Layout>
+      <SEO title="UTBot Online" />
+      {window.screen.width < minDesktopWidth && (
+        <div className={stylesMobile.main}>
+          <div className={cn(stylesMobile.toolbar, stylesMobile.topToolbar)}>
+            <div className={stylesMobile.navDropdownContainer}>
+              <NavDropdown
+                className={stylesDesktop.dropdownLanguages}
+                title={langName}
+                show={showLanguages}
+                onMouseEnter={showDropdownLanguages}
+                onMouseLeave={hideDropdownLanguages}
+              >
+                {Object.values(LanguageEnum).map(lang => (
+                  <NavDropdown.Item
+                    key={lang}
+                    onClick={() => {
+                      setLanguage(lang);
+                      if (language != lang) {
+                        setSourceCode(languageToSnippet(lang));
+                      }
+                      hideDropdownLanguages();
+                    }}
+                  >
+                    {languageToString(lang)}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
+              <NavDropdown
+                title="Examples"
+                show={showExamples}
+                onClick={() => {}}
+                onMouseEnter={showDropdownExamples}
+                onMouseLeave={hideDropdownExamples}
+                style={{ marginTop: "5px" }}
+              >
+                {dropdownItems}
+              </NavDropdown>
+            </div>
+            <Btn
+              className={stylesMobile.generateAndRunTestsButton}
+              onClick={queryGenerateAndRunTests}
+              disabled={isGeneratingAndRunning}
+            >
+              {isGeneratingAndRunning && <span>Generating & Running </span>}
+              {!isGeneratingAndRunning && <span>Generate & Run Tests</span>}
+              {isGeneratingAndRunning && (
+                <Spinner
+                  as="span"
+                  animation="border"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                />
+              )}
+            </Btn>
+          </div>
+          <div className={stylesMobile.toolbar}>
+            <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
+              <ToggleButton
+                id="codeButton"
+                className={stylesMobile.btnBg}
+                value={1}
+                onClick={() => {
+                  setShowCode(true);
+                  setShowTests(false);
+                  setShowInfo(false);
+                }}
+              >
+                <img src={codeIcon} height="18" alt="Code icon" />
+              </ToggleButton>
+              <ToggleButton
+                id="testsButton"
+                className={stylesMobile.btnBg}
+                value={2}
+                onClick={() => {
+                  setShowCode(false);
+                  setShowTests(true);
+                  setShowInfo(false);
+                }}
+              >
+                Tests
+              </ToggleButton>
+              <ToggleButton
+                id="infoButton"
+                className={stylesMobile.btnBg}
+                value={3}
+                onClick={() => {
+                  setShowCode(false);
+                  setShowTests(false);
+                  setShowInfo(true);
+                }}
+              >
+                Info
+              </ToggleButton>
+            </ToggleButtonGroup>
+            <OverlayTrigger
+              placement="bottom"
+              delay={{ show: 250, hide: 250 }}
+              overlay={renderTooltip}
+            >
+              <Btn className={stylesMobile.btnBg} onClick={copyLink}>
+                <img src={copyLinkIcon} height="17" alt="Copy link icon" />
+              </Btn>
+            </OverlayTrigger>
+          </div>
+          <div className={stylesMobile.codeEditor}>
+            {showCode && (
+              <Editor
+                theme="my-light"
+                language={langHighlight}
+                value={sourceCode}
+                onChange={setSourceCode}
+                beforeMount={editorWillMountTemp.bind(this)}
+                options={{
+                  fontSize: 12,
+                  minimap: { enabled: false },
+                  tabSize: 4,
+                  scrollBeyondLastLine: false,
+                  wordWrap: "on",
+                }}
+              />
+            )}
+            {showTests && (
+              <Editor
+                theme="my-light"
+                language={langHighlight}
+                value={testCode}
+                beforeMount={editorWillMountTemp.bind(this)}
+                options={{
+                  fontSize: 12,
+                  minimap: { enabled: false },
+                  readOnly: true,
+                  scrollBeyondLastLine: false,
+                  wordWrap: "on",
+                }}
+              />
+            )}
+            {showInfo && (
+              <Editor
+                theme="my-light"
+                language={langHighlight}
+                value={detailsText}
+                options={{
+                  fontSize: 12,
+                  minimap: { enabled: false },
+                  lineNumbers: "off",
+                  readOnly: true,
+                  scrollBeyondLastLine: false,
+                  wordWrap: "on",
+                }}
+              />
+            )}
+          </div>
+        </div>
+      )}
+      {window.screen.width >= minDesktopWidth && (
+        <div className={stylesDesktop.top}>
+          <div className={stylesDesktop.main}>
+            <div className={stylesDesktop.codeEditorsContainer}>
+              <div
+                className={cn(
+                  stylesDesktop.codeEditorContainer,
+                  stylesDesktop.sourceCodeEditorcontainer
+                )}
+              >
+                <div className={stylesDesktop.toolbarContainer}>
+                  <div>
+                    <OverlayTrigger
+                      placement="bottom"
+                      delay={{ show: 250, hide: 250 }}
+                      overlay={renderTooltip}
+                    >
+                      <Btn
+                        variant="dark"
+                        className={stylesDesktop.copyLinkButton}
+                        onClick={copyLink}
+                      >
+                        <img
+                          src={copyLinkIcon}
+                          height="18"
+                          alt="Copy link icon"
+                        />
+                      </Btn>
+                    </OverlayTrigger>
+                  </div>
+                  <div className={stylesDesktop.dropdownContainer}>
+                    <NavDropdown
+                      className={stylesDesktop.dropdownLanguages}
+                      title={langName}
+                      show={showLanguages}
+                      onMouseEnter={showDropdownLanguages}
+                      onMouseLeave={hideDropdownLanguages}
+                    >
+                      {Object.values(LanguageEnum).map(lang => (
+                        <NavDropdown.Item
+                          key={lang}
+                          onClick={() => {
+                            setLanguage(lang);
+                            if (language != lang) {
+                              setSourceCode(languageToSnippet(lang));
+                            }
+                          }}
+                        >
+                          {languageToString(lang)}
+                        </NavDropdown.Item>
+                      ))}
+                    </NavDropdown>
+                    <NavDropdown
+                      title="Examples"
+                      show={showExamples}
+                      onClick={() => {}}
+                      onMouseEnter={showDropdownExamples}
+                      onMouseLeave={hideDropdownExamples}
+                      style={{ marginTop: "5px" }}
+                    >
+                      {dropdownItems}
+                    </NavDropdown>
+                  </div>
+                </div>
+                <div className={stylesDesktop.codeEditor}>
+                  <Editor
+                    theme="my-light"
+                    language={langHighlight}
+                    value={sourceCode}
+                    onChange={setSourceCode}
+                    beforeMount={editorWillMountTemp.bind(this)}
+                    options={{
+                      tabSize: 4,
+                      scrollBeyondLastLine: false,
+                      wordWrap: "on",
+                    }}
+                  />
+                </div>
+              </div>
+              <div
+                className={cn(
+                  stylesDesktop.codeEditorContainer,
+                  stylesDesktop.testsEditorContainer
+                )}
+              >
+                <div
+                  className={cn(
+                    stylesDesktop.toolbarContainer,
+                    stylesDesktop.generateAndRunTestsButtonContainer
+                  )}
+                >
+                  <Btn
+                    className={stylesDesktop.generateAndRunTestsButton}
+                    onClick={queryGenerateAndRunTests}
+                    disabled={isGeneratingAndRunning}
+                  >
+                    {isGeneratingAndRunning && (
+                      <span>Generating & Running </span>
+                    )}
+                    {!isGeneratingAndRunning && (
+                      <span>Generate & Run Tests</span>
+                    )}
+                    {isGeneratingAndRunning && (
+                      <Spinner
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
+                      />
+                    )}
+                  </Btn>
+                  {/* <Btn
+                    classname={stylesDesktop.generateAndRunTestsBtn}
+                    onClick={queryGenerateAndRunTests}
+                    disabled={isGeneratingAndRunning}
+                  >
+                    {isGeneratingAndRunning && (
+                      <span>Generating & Running </span>
+                    )}
+                    {!isGeneratingAndRunning && (
+                      <span>Generate & Run Tests</span>
+                    )}
+                    {isGeneratingAndRunning && (
+                      <Spinner
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
+                      />
+                    )}
+                  </Btn> */}
+                  {languageIsExperimentalFeature(language) && (
+                    <p
+                      className={stylesDesktop.alert}
+                      dangerouslySetInnerHTML={{ __html: t("utbot.alertNew") }}
+                    ></p>
+                  )}
+                </div>
+                <div className={stylesDesktop.codeEditor}>
+                  <Editor
+                    theme="my-light"
+                    language={langHighlight}
+                    value={testCode}
+                    beforeMount={editorWillMountTemp.bind(this)}
+                    options={{
+                      readOnly: true,
+                      scrollBeyondLastLine: false,
+                      wordWrap: "on",
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className={stylesDesktop.detailsContainer}>
+              <div className={stylesDesktop.detailsEditor}>
+                <Editor
+                  theme="my-light"
+                  language={langHighlight}
+                  value={detailsText}
+                  options={{
+                    minimap: { enabled: false },
+                    lineNumbers: "off",
+                    readOnly: true,
+                    scrollBeyondLastLine: false,
+                    wordWrap: "on",
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </Layout>
+  );
 };
 
 export default withTrans(UTBotOnlinePage);

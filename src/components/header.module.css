@@ -1,0 +1,146 @@
+@import "../utils/colors.css";
+@import "../utils/fonts.css";
+
+.container,
+.container-lg,
+.container-md,
+.container-sm {
+  max-width: 100% !important;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: center;
+  top: -1px;
+  z-index: 99;
+  position: sticky;
+}
+
+.header.opaque {
+  background-color: var(--header-footer-bg);
+}
+
+.container {
+  max-width: 2000px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.navbarBrand {
+  padding: 0 !important;
+}
+
+.brand {
+  position: absolute;
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 991px) {
+  .brand {
+    margin-top: inherit;
+    align-self: inherit;
+  }
+}
+
+.toggle {
+  margin-left: auto;
+  padding: 0;
+}
+
+.collapse {
+  flex-direction: column;
+  padding: 0;
+}
+
+.nav {
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.navTop {
+  gap: 2.4rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.718) !important;
+}
+
+.navBottom {
+  gap: 1.8rem;
+  padding-top: 0.5rem;
+  align-items: center;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 992px) {
+  .navTop {
+    padding-top: 0;
+    gap: 1rem;
+  }
+
+  .navBottom {
+    gap: 0.8rem;
+  }
+}
+
+.navBottom a {
+  font-size: 15px;
+  padding: 0;
+}
+
+.myLink {
+  /* '!important' is used because of bootstrap specificity. */
+  color: #fff !important;
+  font-weight: var(--header-nav-link-font-weight);
+  font-size: var(--header-nav-link-font-size);
+  font-family: var(--font-family-sans-serif);
+}
+
+.myLink:active,
+.myLink:focus {
+  border: none;
+}
+
+.myLink.active {
+  /* '!important' is used because of bootstrap specificity. */
+  color: var(--nav-link-selected) !important;
+}
+
+li.dropdown-item {
+  color: white;
+}
+
+/* 
+
+We will probably use these styles in case we decide to use search on the first page.
+
+.oneLineSearch {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  border-bottom: solid white;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  padding: 10px 0;
+  color: var(--full-white);
+} */
+
+/* .searchForm {
+  border-radius: 30px;
+  max-width: 600px;
+} */
+
+/* .headerInput {
+  width: 60%;
+} */

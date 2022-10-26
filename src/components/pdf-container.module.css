@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  justify-content: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  max-width: 1200px;
+}

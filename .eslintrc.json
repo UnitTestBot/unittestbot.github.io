@@ -23,7 +23,12 @@
         "aspects": ["noHref", "invalidHref", "preferButton"]
       }
     ],
-    
+
+    "jsx-a11y/no-redundant-roles": [
+      "error",
+      { "ul": ["list"], "ol": ["list"] }
+    ],
+
     "semi": 2,
     "prettier/prettier": 0,
     "import/no-unresolved": 0,

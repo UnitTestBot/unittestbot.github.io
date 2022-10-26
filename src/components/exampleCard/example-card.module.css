@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: min-content;
+  max-width: 1100px;
+}
+
+.dropdownTest {
+  color: white;
+}
+
+.img {
+  min-width: 450px;
+  width: 550px;
+}
+
+@media screen and (min-width: 1200px) {
+  .card {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .left {
+    flex-direction: row-reverse;
+  }
+}
