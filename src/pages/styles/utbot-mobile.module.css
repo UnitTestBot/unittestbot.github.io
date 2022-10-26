@@ -44,7 +44,7 @@
 }
 
 .btnBg {
-  background-color: var(----editor-background);
+  background-color: var(--editor-background);
   border: none;
   font-size: 14px;
 }

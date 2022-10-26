@@ -2,17 +2,21 @@
 @import "../../utils/fonts.css";
 
 .pageFlexContainer {
-    align-self: center;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    max-width: 800px;
+  align-self: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
 }
 
-.universities {
-    padding-left: 1rem;
+/* .list {
+  padding-left: 1rem;
 }
 
-.universities > * > * {
-    margin-bottom: 0;
+.list > * > * {
+  margin-bottom: 0;
+} */
+
+.heading {
+  font-weight: 500;
 }
