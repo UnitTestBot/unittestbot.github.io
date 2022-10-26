@@ -12,7 +12,7 @@ public class DemoPage extends UTBotPage{
         super(url);
     }
 
-    public static final String GENERATE_AND_RUN_TESTS_BTN_TEXT = "Generate and Run Tests";
+    public static final String GENERATE_AND_RUN_TESTS_BTN_TEXT = "Generate & Run Tests";
 
     public static final Dropdown languageDropdown = new Dropdown("Language",
             byXpath("//main//div[contains(@class,'nav-item')][(.='C') or contains(.,'Java')]"),
