@@ -18,7 +18,10 @@ const Layout = ({ children, location }) => {
   `);
 
   const isJavaOrCppPage =
-    location && (location.pathname === "/" || location.pathname === "/cpp" || location.pathname === "/cpp/");
+    location &&
+    (location.pathname === "/" ||
+      location.pathname === "/cpp" ||
+      location.pathname === "/cpp/");
 
   return (
     <div className={cn(styles.site, isJavaOrCppPage && styles.gradient)}>
