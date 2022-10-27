@@ -40,163 +40,169 @@ const ResearchPage = () => {
     <Layout>
       <SEO title="Research" />
       <div className={styles.main}>
-        <div className={styles.categotyContainer}>
-          <Heading className={styles.categotyTitle}>
-            {t("research.satSolvingTechnologiesTitle")}
-          </Heading>
+        <div className={styles.mainContainer}>
+          <div className={styles.categotyContainer}>
+            <Heading className={styles.categotyTitle}>
+              {t("research.satSolvingTechnologiesTitle")}
+            </Heading>
 
-          <div>
+            <div>
+              <div className={styles.pdfContainer}>
+                <PdfCard
+                  conferenceTitle={t("research.preprint2022")}
+                  articleTitle={t("research.satEncodingsHardnessArticleTitle")}
+                  authors={t("research.satEncodingsHardnessAuthors")}
+                  pdf={satEncodingsHardness}
+                />
+                <PdfCard
+                  conferenceTitle={t("research.preprint2022")}
+                  articleTitle={t(
+                    "research.polynomialFormulationsArticleTitle"
+                  )}
+                  authors={t("research.polynomialFormulationsAuthors")}
+                  pdf={polynomialFormulations}
+                />
+              </div>
+              <div className={styles.pdfContainer}>
+                <PdfCard
+                  conferenceTitle={t("research.eccc2022")}
+                  articleTitle={t(
+                    "research.lowerBoundForKDnfResolutionArticleTitle"
+                  )}
+                  authors={t("research.lowerBoundForKDnfResolutionAuthors")}
+                  pdf={lowerBoundForKDnfResolutionPdf}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.categotyContainer}>
+            <Heading className={styles.categotyTitle}>
+              {t("research.symbolicExecutionTitle")}
+            </Heading>
+
             <div className={styles.pdfContainer}>
               <PdfCard
-                conferenceTitle={t("research.preprint2022")}
-                articleTitle={t("research.satEncodingsHardnessArticleTitle")}
-                authors={t("research.satEncodingsHardnessAuthors")}
-                pdf={satEncodingsHardness}
+                conferenceTitle={t("research.pldi2021")}
+                articleTitle={t("research.programInvariantsArticleTitle")}
+                authors={t("research.programInvariantsAuthors")}
+                pdf={programInvariants}
               />
               <PdfCard
-                conferenceTitle={t("research.preprint2022")}
-                articleTitle={t("research.polynomialFormulationsArticleTitle")}
-                authors={t("research.polynomialFormulationsAuthors")}
-                pdf={polynomialFormulations}
+                conferenceTitle={t("research.ecoop2019")}
+                articleTitle={t("research.nominalSubtypingArticleTitle")}
+                authors={t("research.nominalSubtypingAuthors")}
+                pdf={nominalSubtyping}
               />
             </div>
+
             <div className={styles.pdfContainer}>
               <PdfCard
-                conferenceTitle={t("research.eccc2022")}
-                articleTitle={t(
-                  "research.lowerBoundForKDnfResolutionArticleTitle"
-                )}
-                authors={t("research.lowerBoundForKDnfResolutionAuthors")}
-                pdf={lowerBoundForKDnfResolutionPdf}
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.categotyContainer}>
-          <Heading className={styles.categotyTitle}>
-            {t("research.symbolicExecutionTitle")}
-          </Heading>
-
-          <div className={styles.pdfContainer}>
-            <PdfCard
-              conferenceTitle={t("research.pldi2021")}
-              articleTitle={t("research.programInvariantsArticleTitle")}
-              authors={t("research.programInvariantsAuthors")}
-              pdf={programInvariants}
-            />
-            <PdfCard
-              conferenceTitle={t("research.ecoop2019")}
-              articleTitle={t("research.nominalSubtypingArticleTitle")}
-              authors={t("research.nominalSubtypingAuthors")}
-              pdf={nominalSubtyping}
-            />
-          </div>
-
-          <div className={styles.pdfContainer}>
-            <PdfCard
-              conferenceTitle={t("research.fmcad2019")}
-              articleTitle={t("research.relationalInvariantsArticleTitle")}
-              authors={t("research.relationalInvariantsAuthors")}
-              pdf={relationalInvariants}
-            />
-            <PdfCard
-              conferenceTitle={t("research.logicForProgrammingConference")}
-              articleTitle={t("research.hornClausesArticleTitle")}
-              authors={t("research.hornClausesArticle")}
-              pdf={relationalInvariants}
-            />
-          </div>
-        </div>
-
-        <div className={styles.categotyContainer}>
-          <Heading className={styles.categotyTitle}>
-            {t("research.utbotJavaTitle")}
-          </Heading>
-
-          <div>
-            <Text
-              dangerouslySetInnerHTML={{ __html: t("research.sbst2022Title") }}
-            />
-            <div className={styles.pdfContainer}>
-              <PdfCard
-                authors={t("research.sbst2022ArticlesAuthors")}
-                articleTitle={t("research.sbst2022ArticleTitle")}
-                pdf={sbst2022Pdf}
+                conferenceTitle={t("research.fmcad2019")}
+                articleTitle={t("research.relationalInvariantsArticleTitle")}
+                authors={t("research.relationalInvariantsAuthors")}
+                pdf={relationalInvariants}
               />
               <PdfCard
-                articleTitle={t("research.sbst2022ToolCompetitionTitle")}
-                authors={t("research.generalOverview")}
-                pdf={sbst2022OverviewPdf}
+                conferenceTitle={t("research.logicForProgrammingConference")}
+                articleTitle={t("research.hornClausesArticleTitle")}
+                authors={t("research.hornClausesArticle")}
+                pdf={relationalInvariants}
               />
             </div>
           </div>
 
-          <div>
-            <div className={styles.pdfContainer}>
-              <PdfCard
-                conferenceTitle={t("research.iccq2022Title")}
-                articleTitle={t("research.iccq2022ArticleTitle")}
-                authors={t("research.iccq2022ArticleAuthors")}
-                pdf={iccq2022Pdf}
+          <div className={styles.categotyContainer}>
+            <Heading className={styles.categotyTitle}>
+              {t("research.utbotJavaTitle")}
+            </Heading>
+
+            <div>
+              <Text
+                dangerouslySetInnerHTML={{
+                  __html: t("research.sbst2022Title"),
+                }}
               />
+              <div className={styles.pdfContainer}>
+                <PdfCard
+                  authors={t("research.sbst2022ArticlesAuthors")}
+                  articleTitle={t("research.sbst2022ArticleTitle")}
+                  pdf={sbst2022Pdf}
+                />
+                <PdfCard
+                  articleTitle={t("research.sbst2022ToolCompetitionTitle")}
+                  authors={t("research.generalOverview")}
+                  pdf={sbst2022OverviewPdf}
+                />
+              </div>
+            </div>
+
+            <div>
+              <div className={styles.pdfContainer}>
+                <PdfCard
+                  conferenceTitle={t("research.iccq2022Title")}
+                  articleTitle={t("research.iccq2022ArticleTitle")}
+                  authors={t("research.iccq2022ArticleAuthors")}
+                  pdf={iccq2022Pdf}
+                />
+              </div>
+            </div>
+
+            <div>
+              <Text
+                dangerouslySetInnerHTML={{
+                  __html: t("research.sbst2021Title"),
+                }}
+              />
+              <div className={styles.pdfContainer}>
+                <PdfCard
+                  articleTitle={t("research.sbst2021ArticleTitle")}
+                  authors={t("research.sbst2021ArticleAuthors")}
+                  pdf={sbst2021Pdf}
+                />
+                <PdfCard
+                  articleTitle={t("research.sbst2021ToolCompetitionTitle")}
+                  authors={t("research.generalOverview")}
+                  pdf={sbst2021OverviewPdf}
+                />
+              </div>
             </div>
           </div>
 
-          <div>
+          <div className={styles.categotyContainer}>
+            <Heading className={styles.categotyTitle}>
+              {t("research.utbotCppTitle")}
+            </Heading>
             <Text
               dangerouslySetInnerHTML={{
-                __html: t("research.sbst2021Title"),
+                __html: t("research.kleeWorkshop2022Title"),
               }}
             />
             <div className={styles.pdfContainer}>
               <PdfCard
-                articleTitle={t("research.sbst2021ArticleTitle")}
-                authors={t("research.sbst2021ArticleAuthors")}
-                pdf={sbst2021Pdf}
+                articleTitle={t("research.kleeWorkshop2022ArticleTitle")}
+                authors={t("research.kleeWorkshop2022ArticleAuthors")}
+                pdf={kleeWorkshopPdf}
               />
               <PdfCard
-                articleTitle={t("research.sbst2021ToolCompetitionTitle")}
-                authors={t("research.generalOverview")}
-                pdf={sbst2021OverviewPdf}
+                articleTitle={t("research.kleeWorkshopPoster")}
+                pdf={kleeWorkshopOverviewPdf}
               />
             </div>
           </div>
-        </div>
 
-        <div className={styles.categotyContainer}>
-          <Heading className={styles.categotyTitle}>
-            {t("research.utbotCppTitle")}
-          </Heading>
-          <Text
-            dangerouslySetInnerHTML={{
-              __html: t("research.kleeWorkshop2022Title"),
-            }}
-          />
-          <div className={styles.pdfContainer}>
-            <PdfCard
-              articleTitle={t("research.kleeWorkshop2022ArticleTitle")}
-              authors={t("research.kleeWorkshop2022ArticleAuthors")}
-              pdf={kleeWorkshopPdf}
-            />
-            <PdfCard
-              articleTitle={t("research.kleeWorkshopPoster")}
-              pdf={kleeWorkshopOverviewPdf}
-            />
-          </div>
-        </div>
-
-        <div className={styles.categotyContainer}>
-          <Heading className={styles.categotyTitle}>
-            {t("research.programSynthesisTitle")}
-          </Heading>
-          <div className={styles.pdfContainer}>
-            <PdfCard
-              conferenceTitle={t("research.singplan2022")}
-              articleTitle={t("research.layoutSynthesisArticleTitle")}
-              authors={t("research.layoutSynthesisArticleAuthors")}
-              pdf={layoutSynthesisPdf}
-            />
+          <div className={styles.categotyContainer}>
+            <Heading className={styles.categotyTitle}>
+              {t("research.programSynthesisTitle")}
+            </Heading>
+            <div className={styles.pdfContainer}>
+              <PdfCard
+                conferenceTitle={t("research.singplan2022")}
+                articleTitle={t("research.layoutSynthesisArticleTitle")}
+                authors={t("research.layoutSynthesisArticleAuthors")}
+                pdf={layoutSynthesisPdf}
+              />
+            </div>
           </div>
         </div>
       </div>

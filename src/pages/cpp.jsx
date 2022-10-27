@@ -28,14 +28,16 @@ const CppPage = ({ location }) => {
     <Layout location={location}>
       <div className={styles.gradient} />
       <Container className={styles.topContainer}>
-        <Heading>
+        <Heading className={styles.topHeading}>
           {t("cppHome.utbotCppTitle")} <br />
           {t("cppHome.changesExperienceTitle")}
         </Heading>
 
         <Text
           className={cn("text-center", styles.topText, stylesCpp.info)}
-          dangerouslySetInnerHTML={{ __html: t("cppHome.utbotCppDescriptionText") }}
+          dangerouslySetInnerHTML={{
+            __html: t("cppHome.utbotCppDescriptionText"),
+          }}
         />
 
         <div className={styles.actions}>
@@ -63,21 +65,9 @@ const CppPage = ({ location }) => {
       </Container>
 
       <Container className={styles.examples}>
-        <div className={stylesCpp.info}>
-          <InfoCard
-            heading={t("cppHome.perfectTestingTitle")}
-            text={t("cppHome.whyUtbotIsCapableText")}
-          />
-
-          <InfoCard
-            heading={t("cppHome.checkForBugsTitle")}
-            text={t("cppHome.fixateCurrentBehaviorText")}
-          />
-        </div>
-
         <ExampleCard
-          heading={t("cppHome.specifyTestingAreaTitle")}
-          text={t("cppHome.testsForAssertionsText")}
+          heading={t("cppHome.perfectTestingTitle")}
+          text={t("cppHome.whyUtbotIsCapableText")}
           gifSrc={testsGenerationExample}
           gifAlt="Tests generation example"
           gifPlacement="right"
@@ -95,27 +85,34 @@ const CppPage = ({ location }) => {
           heading={t("cppHome.findUtbotForCppTitle")}
           text={t("cppHome.findUtbotForCppText")}
           gifSrc={vsCodeClionImage}
-
-
-
           gifAlt="UnitTestBot VS Code and CLion plugin example"
           gifPlacement="right"
         />
 
-        <div className={stylesCpp.info}>
+        <div className={stylesCpp.infoContainer}>
+          <InfoCard
+            heading={t("cppHome.checkForBugsTitle")}
+            text={t("cppHome.fixateCurrentBehaviorText")}
+          />
+
+          <InfoCard
+            heading={t("cppHome.specifyTestingAreaTitle")}
+            text={t("cppHome.testsForAssertionsText")}
+          />
+
           <InfoCard
             heading={t("cppHome.stubsTitle")}
             text={t("cppHome.stubsText")}
           />
 
           <InfoCard
-            heading={t("cppHome.useBuildSystemTitle")}
-            text={t("cppHome.useBuildSystemText")}
+            heading={t("cppHome.supportedSyntaxTitle")}
+            text={t("cppHome.supportedSyntaxText")}
           />
 
           <InfoCard
-            heading={t("cppHome.supportedSyntaxTitle")}
-            text={t("cppHome.supportedSyntaxText")}
+            heading={t("cppHome.useBuildSystemTitle")}
+            text={t("cppHome.useBuildSystemText")}
           />
 
           <InfoCard

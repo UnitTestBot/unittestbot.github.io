@@ -22,16 +22,9 @@ export default function PdfCard({
         <Text dangerouslySetInnerHTML={{ __html: articleTitle }} />
       )}
       {authors && <Text dangerouslySetInnerHTML={{ __html: authors }} />}
-      <a href={pdf} download={pdf.articleTitle}>
+      <a className={styles.link} href={pdf} download={pdf.articleTitle}>
         <img src={pdfIcon} width={60} alt="PDF icon"></img>
       </a>
-      {/* <embed
-        className={styles.pdf}
-        src={pdf}
-        width="240"
-        height="340"
-        type="application/pdf"
-      ></embed> */}
     </div>
   );
 }

@@ -261,12 +261,12 @@ const UTBotOnlinePage = () => {
     }
     monacoThemesDefined = true;
     monaco.editor.defineTheme("my-light", {
-      base: "vs-dark",
+      base: "vs",
       inherit: true,
       rules: [],
       colors: {
-        "editor.background": "#1f1f1f",
-        "minimap.background": "#2c2b2b",
+        "editor.background": "#f6f6f6",
+        "minimap.background": "#f9f9f9",
       },
     });
   };
@@ -553,27 +553,6 @@ const UTBotOnlinePage = () => {
                       />
                     )}
                   </Btn>
-                  {/* <Btn
-                    classname={stylesDesktop.generateAndRunTestsBtn}
-                    onClick={queryGenerateAndRunTests}
-                    disabled={isGeneratingAndRunning}
-                  >
-                    {isGeneratingAndRunning && (
-                      <span>Generating & Running </span>
-                    )}
-                    {!isGeneratingAndRunning && (
-                      <span>Generate & Run Tests</span>
-                    )}
-                    {isGeneratingAndRunning && (
-                      <Spinner
-                        as="span"
-                        animation="border"
-                        size="sm"
-                        role="status"
-                        aria-hidden="true"
-                      />
-                    )}
-                  </Btn> */}
                   {languageIsExperimentalFeature(language) && (
                     <p
                       className={stylesDesktop.alert}

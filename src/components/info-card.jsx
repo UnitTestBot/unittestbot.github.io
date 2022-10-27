@@ -4,9 +4,11 @@ import cn from "classnames";
 import Heading from "./heading";
 import Text from "./text";
 
+import * as styles from "./info-card.module.css";
+
 export default function InfoCard({ heading, text }) {
   return (
-    <div>
+    <div style={styles.card}>
       <Heading as="h3" className="text-left">
         {heading}
       </Heading>

@@ -1,5 +1,8 @@
+@import "../utils/colors.css";
+@import "../utils/fonts.css";
+
 .heading {
-  color: white;
+  color: var(----text-color);
   margin-bottom: 1rem;
   text-align: center;
   font-weight: var(--large-text-font-weight);

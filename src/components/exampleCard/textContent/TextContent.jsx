@@ -21,9 +21,9 @@ export default function TextContent({
       <Text dangerouslySetInnerHTML={{ __html: text }} />
 
       {linkTo && linkText && (
-        <Link to={linkTo}>
-          <Button>{linkText}</Button>
-        </Link>
+        <a href={linkTo} className={styles.link}>
+          {linkText}
+        </a>
       )}
     </div>
   );

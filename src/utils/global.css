@@ -1,0 +1,7 @@
+html {
+  overflow-y: overlay;
+}
+
+details summary {
+  cursor: pointer;
+}

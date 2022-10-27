@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import withTrans from "../i18n/withTrans";
 
 import { NavDropdown } from "./nav-dropdown";
-import logo from "../images/utbot-logo.svg";
+import logo from "../images/utbot-logo-white-text.svg";
 import * as styles from "./header.module.css";
 
 function Header({ location }) {
@@ -35,7 +35,6 @@ function Header({ location }) {
 
   React.useEffect(() => {
     if (!headerRef.current) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsPinned(entry.intersectionRatio < 1);

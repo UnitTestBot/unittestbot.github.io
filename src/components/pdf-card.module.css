@@ -5,18 +5,28 @@
 }
 
 .pdfCard {
+  display: flex;
+  flex-direction: column;
   max-width: 550px;
   /* background: linear-gradient(
     0deg,
     rgba(5, 43, 5, 1) 0%,
     rgba(13, 33, 57, 1) 100%
   ); */
-  border: 2px solid rgba(255, 255, 255, 0.652);
+  border: 2px dotted #1f1f1f;
+  /* background-color: rgb(247, 244, 210); */
+  /* background: linear-gradient(
+    128deg,
+    rgba(191, 250, 230, 1) 0%,
+    rgba(227, 216, 216, 1) 50%,
+    rgba(181, 238, 247, 1) 100%
+  ); */
   border-radius: 30px;
   padding: 2rem;
-  gap: 2rem;
 }
 
-.pdf {
-  max-width: 500px;
+.link {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
 }

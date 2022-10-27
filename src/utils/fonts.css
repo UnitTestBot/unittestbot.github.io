@@ -42,7 +42,11 @@
   --language-anounce-title-font-weight: 400;
   --footer-text-font-weight: 400;
 
-  --small-text-font-weight: 80;
+  /* --small-text-font-weight: 80;
   --medium-text-font-weight: 150;
-  --large-text-font-weight: 490;
+  --large-text-font-weight: 490; */
+
+  --small-text-font-weight: 150;
+  --medium-text-font-weight: 350;
+  --large-text-font-weight: 600;
 }

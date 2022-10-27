@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import Layout from "../components/layout";
 import withTrans from "../i18n/withTrans";
 import * as styles from "./styles/index.module.css";
+import "../utils/global.css";
 
 import Button from "../components/button";
 import Heading from "../components/heading";
@@ -29,7 +30,9 @@ const MainPage = ({ location }) => {
     <Layout isMainPage location={location}>
       <div className={styles.gradient} />
       <Container className={styles.topContainer}>
-        <Heading>{t("javaHome.imagineTitle")}</Heading>
+        <Heading className={styles.topHeading}>
+          {t("javaHome.imagineTitle")}
+        </Heading>
 
         <Text
           className={cn("text-center", styles.topText)}
