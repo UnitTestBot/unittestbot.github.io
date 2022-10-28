@@ -19,3 +19,8 @@
   flex: 1;
   align-items: flex-end;
 }
+
+.authors {
+  font-size: var(--research-authors-font-size);
+  line-height: 1.5rem;
+}

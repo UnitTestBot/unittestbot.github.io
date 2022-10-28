@@ -69,6 +69,7 @@ const UTBotOnlinePage = () => {
   const [showTests, setShowTests] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const minDesktopWidth = 800;
+  const minWidthGenerateAndRunTestsFullText = 400;
 
   const data = useStaticQuery(graphql`
     query {
@@ -259,21 +260,6 @@ const UTBotOnlinePage = () => {
       return;
     }
 
-    /* Light editors 
-"editor.background": "#1f1f1f",
-        "minimap.background": "#2c2b2b",
-
-        colors: {
-          "editor.background": "#f6f6f6",
-          "minimap.background": "#f9f9f9",    gray: #d8d8d8
-        },
-
-              colors: {
-        "editor.background": "#1f1f1f",
-        "minimap.background": "#2c2b2b",
-      },
-    */
-
     monacoThemesDefined = true;
     monaco.editor.defineTheme("my-light", {
       base: "vs",
@@ -310,8 +296,9 @@ const UTBotOnlinePage = () => {
                 className={stylesDesktop.dropdownLanguages}
                 title={langName}
                 show={showLanguages}
-                onMouseEnter={showDropdownLanguages}
-                onMouseLeave={hideDropdownLanguages}
+                onClick={() => {
+                  setShowLanguages(!showLanguages);
+                }}
               >
                 {Object.values(LanguageEnum).map(lang => (
                   <NavDropdown.Item
@@ -331,9 +318,9 @@ const UTBotOnlinePage = () => {
               <NavDropdown
                 title="Examples"
                 show={showExamples}
-                onClick={() => {}}
-                onMouseEnter={showDropdownExamples}
-                onMouseLeave={hideDropdownExamples}
+                onClick={() => {
+                  setShowExamples(!showExamples);
+                }}
                 style={{ marginTop: "5px" }}
               >
                 {dropdownItems}
@@ -344,8 +331,22 @@ const UTBotOnlinePage = () => {
               onClick={queryGenerateAndRunTests}
               disabled={isGeneratingAndRunning}
             >
-              {isGeneratingAndRunning && <span>Generating & Running </span>}
-              {!isGeneratingAndRunning && <span>Generate & Run Tests</span>}
+              {isGeneratingAndRunning &&
+                window.screen.width > minWidthGenerateAndRunTestsFullText && (
+                  <span>{t("demo.generatingAndRunningTests")}</span>
+                )}
+              {!isGeneratingAndRunning &&
+                window.screen.width > minWidthGenerateAndRunTestsFullText && (
+                  <span>{t("demo.generateAndRunTests")}</span>
+                )}
+              {!isGeneratingAndRunning &&
+                window.screen.width <= minWidthGenerateAndRunTestsFullText && (
+                  <span>{t("demo.genAndRunTests")}</span>
+                )}
+              {isGeneratingAndRunning &&
+                window.screen.width <= minWidthGenerateAndRunTestsFullText && (
+                  <span>{t("demo.genAndRunningTests")}</span>
+                )}
               {isGeneratingAndRunning && (
                 <Spinner
                   as="span"
@@ -553,10 +554,10 @@ const UTBotOnlinePage = () => {
                     disabled={isGeneratingAndRunning}
                   >
                     {isGeneratingAndRunning && (
-                      <span>Generating & Running </span>
+                      <span>{t("demo.generatingAndRunningTests")}</span>
                     )}
                     {!isGeneratingAndRunning && (
-                      <span>Generate & Run Tests</span>
+                      <span>{t("demo.generateAndRunTests")}</span>
                     )}
                     {isGeneratingAndRunning && (
                       <Spinner

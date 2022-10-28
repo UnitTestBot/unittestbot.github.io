@@ -4,6 +4,10 @@
   color: var(--link-color);
 }
 
+.link:hover {
+  color: var(--link-color);
+}
+
 .text {
   display: flex;
   justify-content: space-between;

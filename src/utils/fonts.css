@@ -17,7 +17,11 @@
 
   --small-text-font-size: 15px;
   --medium-text-font-size: 20px;
+  --footer-font-weight: 25px;
   --large-text-font-size: 32px;
+
+  --research-authors-font-size: 17px;
+  --footer-font-size: 17px;
 
   /* Font families */
 

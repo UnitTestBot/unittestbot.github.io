@@ -41,7 +41,7 @@ details summary {
 }
 
 .nav-item .dropdown-item:hover {
-  background: var(--dropdown-menu-item-hover);
+  background: rgb(39, 92, 39);
 }
 
 .nav-item .dropdown-item::selection {
@@ -50,7 +50,7 @@ details summary {
 
 .dropdown-item:focus,
 .dropdown-item:hover {
-  background-color: rgb(39, 92, 39);
+  background-color: var(--dropdown-menu-item-hover);
 }
 
 a.dropdown-toggle.nav-link {

@@ -1,10 +1,4 @@
 .main {
-  /* background: linear-gradient(
-    180deg,
-    rgb(224, 252, 225) 0%,
-    rgb(254, 255, 241) 50%,
-    rgb(223, 248, 252) 100%
-  ); */
   background-color: #f1f0f0;
   padding: 3rem 1rem;
 }
@@ -14,18 +8,16 @@
   flex-direction: column;
   align-items: center;
 
-  gap: 6rem;
+  gap: 4rem;
 }
 
 .pdfContainer {
-  /* display: grid;
-  grid-auto-flow: column; */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 
-  margin-bottom: 4rem;
-  row-gap: 30px;
+  margin-bottom: 3rem;
+  row-gap: 2rem;
 }
 
 .pdfContainer > * {
@@ -44,10 +36,15 @@
 @media screen and (max-width: 800px) {
   .pdfContainer {
     justify-content: center;
+    margin-bottom: 2rem;
   }
 
   .pdfContainer > * {
     width: 75%;
+  }
+
+  .heading {
+    text-align: center;
   }
 }
 
@@ -69,5 +66,9 @@
   .categotyTitle {
     text-align: left;
     margin-bottom: 1rem;
+  }
+
+  .heading {
+    text-align: left;
   }
 }

@@ -3,11 +3,11 @@
     "imagineTitle": "Imagine you don't have to write tests.",
     "tryOnlineText": "Try UnitTestBot online demo",
     "watchHowWorksText": "Watch how it works",
-    "testsGenText": "But you still have a perfect bug detector for your code.<br>And no false positives among bugs.<br>Tests are generated automagically — with the highest code coverage,<br>fine-tuned mocking, and human-readable test descriptions.<br>Sounds fantastic? No more.",
+    "testsGenText": "But you still have a perfect bug detector for your code.<br>And no false positives among bugs.<br>Tests are generated auto<i>magically</i> — with the highest code coverage,<br>fine-tuned mocking, and human-readable test descriptions.<br>Sounds fantastic? No more.",
     "testsGenAdvantagesTitlePart1": "Yet another test template tool?",
     "testsGenAdvantagesTitlePart2": "Quite the opposite.",
     "testsGenAdvantagesText": "While a test template tool gives you just an outline,<br>UnitTestBot generates ready-to-use test cases —<br>with valid inputs, method bodies, assertions, and comments.",
-    "checkGuideText": "Install, generate, run: check the quick guide",
+    "checkGuideText": "Check the quick guide",
     "utbotAdvantagesTitle": "Test the code all over.",
     "utbotAdvantagesText": "UnitTestBot has <span style=\"color:#F7931E;\">a dynamic symbolic execution</span> engine in its core, complemented with a smart <span style=\"color:#F7931E;\">fuzzing</span> technique. Together they can explore program execution paths, covering as many of them as possible while keeping <span style=\"color:#F7931E;\">test suite minimized.</span>",
     "learnMoreText": "Learn more about UnitTestBot coverage",
@@ -52,7 +52,19 @@
   "pythonHome": {
     "utbotPythonTitle": "UnitTestBot Python.",
     "almostReady": "Almost ready.",
-    "utbotPythonText": "UnitTestBot for Python code is in development.<br>Wait a while for the next release."
+    "utbotPythonText": "UnitTestBot for Python code is in development.<br>Wait a while for the next release.",
+    "libraryYouMissedTitle": "It's like a Python library you always missed.",
+    "libraryYouMissedText": "Unit testing has never been easier.<br>With UnitTestBot Python you automate the whole testing process.<br>The comprehensive tests are synthesized without your assistance — from finding units to writing out method bodies to choosing proper inputs and asserting.",
+    "fuzzingTitle": "Smarter fuzzing for richer testing.",
+    "fuzzingText": "UnitTestBot Python is based on a smart fuzzing technique, that goes beyond generating random values. It involves heuristics to find more valid inputs faster. And you get more than just a bunch of inputs or templates. UnitTestBot Python provides you with ready-to-use tests — carefully selected to be the necessary and sufficient ones.",
+    "fitsWorkflowTitle": "Fits in with your workflow.",
+    "fitsWorkflowText": "UnitTestBot Python is available both as the plugin for IntelliJ IDEA or the command-line interface.<br>Choose the interface you need and integrate the tool into your working process.<br>Take advantage of the graphical UI and the related IDE features or get the most out of the minimalist textual mode perfect for scripting and automation.",
+    "noTypeAnnotationsTitle": "No type annotations? No problem.",
+    "noTypeAnnotationsText": "Dynamic type checking in Python is a challenge for automated test generation tools.<br>UnitTestBot Python met it with a custom type inference technique.<br>If there are no explicit type hints in the user code, UnitTestBot Python analyzes code usage, infers possible types with the help of <a href=\"https://github.com/python/typeshed\">Typeshed</a> and verifies them with <a href=\"https://github.com/python/mypy\">mypy</a>.<br>You won't get a test with <i>TypeError</i> unless you want to.",
+    "twoFrameworksSupportedTitle": "Two most popular frameworks supported.",
+    "twoFrameworksSupportedText": "UnitTestBot Python is able to generate test cases in a <i>unittest</i> or <i>pytest</i> format.<br>Continue using <i>pytest</i> as your favorite framework — combine the generated cases with the existing test suite and run them altogether. And if you stuck to built-in <i>unittest</i>, UnitTestBot Python is here to generate the corresponding output.",
+    "failureNotOptionTitle": "Failure is not an option.",
+    "failureNotOptionText": "Sometimes in Python one does not simply compare complex objects, and generating assertions becomes a non-trivial task. In this case, UnitTestBot Python won't leave you with always-failing assertions or no tests at all.<br>If something went wrong and you cannot compare the objects by value, UnitTestBot Python adds an assertion on the type of the object."
   },
   "jsHome": {
     "utbotJsTitle": "UnitTestBot JavaScript.",
@@ -80,9 +92,9 @@
 
     "satSolvingTechnologiesTitle": "SAT-solving technologies",
     "preprint2022": "<b>Paper</b> | Preprint | 2022 | <b>En</b>",
-    "satEncodingsHardnessArticleTitle": "<a href=\"https://arxiv.org/pdf/2210.01484.pdf\">Estimating the hardness of SAT encodings for Logical Equivalence Checking of Boolean circuits</a>",
+    "satEncodingsHardnessArticleTitle": "Estimating the hardness of SAT encodings for Logical Equivalence Checking of Boolean circuits",
     "satEncodingsHardnessAuthors": "Semenov, A., Chukharev, K., Tarasov, E., Chivilikhin, D., & Kondratiev, V.",
-    "polynomialFormulationsArticleTitle": "<a href=\"https://arxiv.org/pdf/2205.07709.pdf\">Polynomial formulations as a barrier for reduction-based hardness proofs</a>",
+    "polynomialFormulationsArticleTitle": "Polynomial formulations as a barrier for reduction-based hardness proofs",
     "polynomialFormulationsAuthors": "Kulikov, A. S., & Mihajlin, I.",
     "eccc2022": "<b>Paper</b> | <a href=\"https://eccc.weizmann.ac.il/\">Electronic Colloquium on Computational Complexity (ECCC)</a> | 2022 | <b>En</b>",
     "lowerBoundForKDnfResolutionArticleTitle": "<a href=\"https://eccc.weizmann.ac.il/report/2022/054/\">A Lower Bound for 𝑘-DNF Resolution on Random CNF Formulas via Expansion</a>",
@@ -90,16 +102,16 @@
 
     "symbolicExecutionTitle": "Symbolic execution",
     "pldi2021": "<b>Paper</b> | <a href=\"https://dl.acm.org/doi/proceedings/10.1145/3453483\">ACM SIGPLAN International Conference on Programming Language Design and Implementation (PLDI-2021)</a> | 2021 | <b>En</b>",
-    "programInvariantsArticleTitle": "<a href=\"https://arxiv.org/ftp/arxiv/papers/2104/2104.04463.pdf\">Beyond the elementary representations of program invariants over algebraic data types</a>",
+    "programInvariantsArticleTitle": "Beyond the elementary representations of program invariants over algebraic data types",
     "programInvariantsAuthors": "Kostyukov, Y., Mordvinov, D., & Fedyukovich, G.",
     "ecoop2019": "<b>Paper</b> | <a href=\"https://2019.ecoop.org/\">33rd European Conference on Object-Oriented Programming (ECOOP 2019)</a> | 2019 | <b>En</b>",
-    "nominalSubtypingArticleTitle": "<a href=\"https://drops.dagstuhl.de/opus/volltexte/2019/10799/pdf/LIPIcs-ECOOP-2019-7.pdf\">On Satisfiability of Nominal Subtyping with Variance</a>",
+    "nominalSubtypingArticleTitle": "On Satisfiability of Nominal Subtyping with Variance",
     "nominalSubtypingAuthors": "Misonizhnik, A., & Mordvinov, D.",
     "fmcad2019": "<b>Paper</b> | <a href=\"https://fmcad.forsyte.at/FMCAD19/\">2019 Formal Methods in Computer Aided Design (FMCAD-2019)</a> | 2019 | <b>En</b>",
-    "relationalInvariantsArticleTitle": "<a href=\"https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8894274&tag=1\">Property directed inference of relational invariants</a>",
+    "relationalInvariantsArticleTitle": "Property directed inference of relational invariants",
     "relationalInvariantsAuthors": "Mordvinov, D., & Fedyukovich, G.",
     "logicForProgrammingConference": "<b>Paper</b> | <a href=\"https://easychair.org/smart-program/LPAR-21/LPAR-index.html\">International Conference on Logic for Programming, Artificial Intelligence and Reasoning</a> | 2017 | <b>En</b>",
-    "hornClausesArticleTitle": "<a href=\"https://easychair.org/publications/open/LlxW\">Synchronizing Constrained Horn Clauses</a>",
+    "hornClausesArticleTitle": "Synchronizing Constrained Horn Clauses",
     "hornClausesArticle": "Mordvinov, D., & Fedyukovich, G.",
 
     "utbotJavaTitle": "UnitTestBot Java",
@@ -124,7 +136,7 @@
 
     "programSynthesisTitle": "Program synthesis",
     "singplan2022": "<b>Paper</b> | <a href=\"https://icfp22.sigplan.org/\">ACM SIGPLAN International Conference on Functional Programming</a> | 2022 | <b>En</b>",
-    "layoutSynthesisArticleTitle": "<a href=\"https://drive.google.com/file/d/1rPun1dtOkN0HNf46K_4cp-reZeQCJcSa/view\">On a Declarative Guideline-Directed UI Layout Synthesis</a>",
+    "layoutSynthesisArticleTitle": "On a Declarative Guideline-Directed UI Layout Synthesis",
     "layoutSynthesisArticleAuthors": "Dmitrii Kosarev, Petr Lozov, Denis Fokin, Dmitri Boulytchev"
   },
   "search": {
@@ -163,12 +175,12 @@
     "smt": "Satisfiability modulo theories (SMT) field of research relates to determining whether a mathematical formula is satisfiable.",
     "ksmt": "<a href=\"https://github.com/UnitTestBot/ksmt\">KSMT</a> is the Kotlin API for various SMT solvers. For now it supports Z3 and Bitwuzla SAT solvers.",
     "symbolicExecutionTitle": "Symbolic execution",
-    "symbolicExecutionArea": "We develop symbolic execution technology to provide our automated test generation tools with the effective engines. For now we have three main solutions in this research area.",
+    "symbolicExecutionArea": "We develop symbolic execution technology to provide our automated test generation tools with the effective engines. We have three main solutions in this research area.",
     "utbotJavaSymbolicEngine": "<a href=\"https://github.com/UnitTestBot/UTBotJava\">UnitTestBot Java</a> has its own dynamic symbolic execution engine that has already shown extremely good results at <a href=\"https://ieeexplore.ieee.org/document/9810769\">SBST competitions</a>.",
     "symbolicEngineKlee": "Our custom patch for KLEE is the core of UnitTestBot C/C++. KLEE is a symbolic virtual machine built on top of the LLVM compiler infrastructure.<br><a href=\"https://github.com/UnitTestBot/klee\">We contribute to KLEE</a> by implementing patches, which enhance the engine’s code coverage and speed. We offered <i>lazy initialization improvements</i> and committed the <i>undefined behavior detection patch</i> and the <i>patch for inline assembly support</i> to the main KLEE branch.<br>We converted KLEE into the <i>bidirectional property-directed symbolic execution</i> engine. Moreover, the patched KLEE engine is able to <i>automatically deduce method summaries</i>.<br>Symbolic execution is the main focus of our interest, so we conducted a series of research related to both applied and fundamental problems in this field.",
     "vSharp": "We also plan to support .NET infrastructure via <a href=\"https://github.com/VSharp-team/VSharp\">V#</a> — the symbolic execution engine performing completely automated test generation for .NET assemblies.",
     "fuzzingTitle": "Fuzzing",
-    "fuzzingWhatWeDo": "When working on a UnitTestBot product lineup, we are developing a <a href=\"https://github.com/UnitTestBot/UTBotJava/tree/pelevin/UnitTestBot_Family_Fuzzer_Platform/utbot-fuzzers\">fuzzing and dynamic program analysis techniques</a> suitable for all supported languages: Java/Kotlin, C/C++, Python. JavaScript, and Go.",
+    "fuzzingWhatWeDo": "When working on a UnitTestBot product lineup, we are developing <a href=\"https://github.com/UnitTestBot/UTBotJava/tree/pelevin/UnitTestBot_Family_Fuzzer_Platform/utbot-fuzzers\">fuzzing and dynamic program analysis techniques</a> suitable for all supported languages: Java/Kotlin, C/C++, Python. JavaScript, and Go.",
     "programAnalysisTitle": "Program analysis",
     "jcdb": "UnitTestBot with its symbolic execution engine and fuzzing techniques is the <a href=\"https://github.com/UnitTestBot/UTBotJava/wiki/Static-code-analysis-with-UTBotJava-action\">ready-to-use</a> tool for <a href=\"https://github.com/UnitTestBot/UTBotCpp/wiki/CodeAnalyzer\">code analysis</a>.  In addition to this end-to-end solution we implement a basic framework for developing custom static code analyzers.<br>Java Compilation Database <a href=\"https://github.com/UnitTestBot/jcdb\">(JCDB)</a> was inspired by the <a href=\"https://github.com/soot-oss/soot\">Soot</a> framework for analyzing and transforming Java code.<br>JCDB is a pure Java database which stores information about the compiled Java bytecode — classes, hierarchies, annotations, methods, fields, and their usages. With JCDB it is possible to analyze bytecode located outside the JVM process. It allows UnitTestBot to support the newest JDKs and to reuse data between restarts.",
     "programSynthesisTitle": "Program synthesis",
@@ -194,5 +206,11 @@
   },
   "footer": {
     "utbotCopyright": "UnitTestBot © 2022"
+  },
+  "demo": {
+    "generateAndRunTests": "Generate & Run Tests",
+    "genAndRunTests": "Gen. & Run Tests",
+    "generatingAndRunningTests": "Generating & Running ",
+    "genAndRunningTests": "Gen. & Run Tests "
   }
 }

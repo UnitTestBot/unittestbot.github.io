@@ -114,6 +114,7 @@ const ResearchPage = () => {
 
             <div>
               <Text
+                className={styles.heading}
                 dangerouslySetInnerHTML={{
                   __html: t("research.sbst2022Title"),
                 }}
@@ -141,6 +142,7 @@ const ResearchPage = () => {
 
             <div>
               <Text
+                className={styles.heading}
                 dangerouslySetInnerHTML={{
                   __html: t("research.sbst2021Title"),
                 }}
@@ -165,6 +167,7 @@ const ResearchPage = () => {
               {t("research.utbotCppTitle")}
             </Heading>
             <Text
+              className={styles.heading}
               dangerouslySetInnerHTML={{
                 __html: t("research.kleeWorkshop2022Title"),
               }}
