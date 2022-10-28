@@ -23,7 +23,7 @@
     "humanReadableText": "UnitTestBot represents all the test descriptions in a human-readable format. The intelligible test method names and comments help you to control the whole testing process. Test failed? The description refers you to points of interest in execution paths.",
     "getBetterTestDescriptionText": "See how to get the most out of test descriptions",
     "capableForYourNeedText": "Capable for every tech you need.",
-    "capableForEveryText": "UnitTestBot for Java and Kotlin supports the latest JDKs, JUnit 4, JUnit 5, TestNG, Mockito and works with all popular operational systems.<br>You can also try <a href=\"https://www.utbot.org/cpp\">UnitTestBot for C/C++</a>. <a href=\"https://www.utbot.org/python\">UnitTestBot for Python</a>, <a href=\"https://www.utbot.org/go\">Go</a>, and <a href=\"https://www.utbot.org/js\">JavaScript</a> are under development. Stay tuned!",
+    "capableForEveryText": "UnitTestBot Java/ Kotlin supports the latest JDKs, JUnit 4, JUnit 5, TestNG, Mockito and works with all popular operational systems.<br>You can also try <a href=\"https://www.utbot.org/cpp\">UnitTestBot C/C++</a>. <a href=\"https://www.utbot.org/python\">UnitTestBot for Python</a>, <a href=\"https://www.utbot.org/go\">Go</a>, and <a href=\"https://www.utbot.org/js\">JavaScript</a> are under development. Stay tuned!",
     "supportedTechnologiesText": "Check supported technologies"
   },
   "cppHome": {
@@ -55,7 +55,7 @@
     "utbotPythonText": "UnitTestBot for Python code is in development.<br>Wait a while for the next release."
   },
   "jsHome": {
-    "utbotJsTitle": "UnitTestBot for JavaScript.",
+    "utbotJsTitle": "UnitTestBot JavaScript.",
     "almostReady": "Almost ready.",
     "utbotJsText": "UnitTestBot for JavaScript code is in development.<br>Wait a while for the next release."
   },

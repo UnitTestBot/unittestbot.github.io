@@ -16,7 +16,6 @@ import {
   Tooltip,
 } from "react-bootstrap";
 import "./styles/page.css";
-import "./styles/utbot.css";
 import * as stylesDesktop from "./styles/utbot-desktop.module.css";
 import * as stylesMobile from "./styles/utbot-mobile.module.css";
 import Editor from "@monaco-editor/react";
@@ -259,6 +258,22 @@ const UTBotOnlinePage = () => {
     if (monacoThemesDefined) {
       return;
     }
+
+    /* Light editors 
+"editor.background": "#1f1f1f",
+        "minimap.background": "#2c2b2b",
+
+        colors: {
+          "editor.background": "#f6f6f6",
+          "minimap.background": "#f9f9f9",    gray: #d8d8d8
+        },
+
+              colors: {
+        "editor.background": "#1f1f1f",
+        "minimap.background": "#2c2b2b",
+      },
+    */
+
     monacoThemesDefined = true;
     monaco.editor.defineTheme("my-light", {
       base: "vs",

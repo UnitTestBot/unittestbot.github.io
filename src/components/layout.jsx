@@ -2,6 +2,7 @@ import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
+import { Link } from "gatsby";
 import withTrans from "../i18n/withTrans";
 import { useState } from "react";
 
@@ -37,9 +38,23 @@ const Layout = ({ children, location }) => {
       <main className={cn(styles.main)}>{children}</main>
       <footer className={cn(styles.footer, "mt-auto text-white")}>
         <div className={styles.footerContent}>
-          {/* <div className={styles.copyright}>{t("footer.utbotCopyright")}</div> */}
-          <img src={youtubeIcon} width="60px" alt="YouTube icon"></img>
-          {/* <img src={githubIcon} width="45px" alt="GitHub icon"></img> */}
+          <div className={styles.copyright}>{t("footer.utbotCopyright")}</div>
+          <div className={styles.buttons}>
+            <a href="https://www.youtube.com/channel/UCnvEzTrYfaLswAUDrPL-3uQ">
+              <img
+                className={styles.githubIcon}
+                src={youtubeIcon}
+                alt="YouTube icon"
+              />
+            </a>
+            <a href="https://github.com/UnitTestBot">
+              <img
+                className={styles.youtubeIcon}
+                src={githubIcon}
+                alt="GitHub icon"
+              />
+            </a>
+          </div>
         </div>
       </footer>
     </div>

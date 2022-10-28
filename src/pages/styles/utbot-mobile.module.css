@@ -33,6 +33,9 @@
   width: 100%;
   min-height: 300px;
   position: relative;
+  /* border: 1px dotted rgb(165, 165, 165); */
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
 
 .generateAndRunTestsButton {
@@ -41,6 +44,7 @@
   height: 35px;
   padding: 0 6px;
   align-self: center;
+  border: none;
 }
 
 .btnBg {

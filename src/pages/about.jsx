@@ -32,7 +32,7 @@ const AboutPage = () => {
           }}
         />
 
-        <ol className={cn(styles.list, styles.technologiesList)}>
+        <ol className={cn(styles.technologiesList)}>
           <li>
             <details>
               <summary className={styles.summary}>

@@ -62,8 +62,6 @@ const ResearchPage = () => {
                   authors={t("research.polynomialFormulationsAuthors")}
                   pdf={polynomialFormulations}
                 />
-              </div>
-              <div className={styles.pdfContainer}>
                 <PdfCard
                   conferenceTitle={t("research.eccc2022")}
                   articleTitle={t(
@@ -94,9 +92,6 @@ const ResearchPage = () => {
                 authors={t("research.nominalSubtypingAuthors")}
                 pdf={nominalSubtyping}
               />
-            </div>
-
-            <div className={styles.pdfContainer}>
               <PdfCard
                 conferenceTitle={t("research.fmcad2019")}
                 articleTitle={t("research.relationalInvariantsArticleTitle")}
@@ -134,11 +129,7 @@ const ResearchPage = () => {
                   authors={t("research.generalOverview")}
                   pdf={sbst2022OverviewPdf}
                 />
-              </div>
-            </div>
 
-            <div>
-              <div className={styles.pdfContainer}>
                 <PdfCard
                   conferenceTitle={t("research.iccq2022Title")}
                   articleTitle={t("research.iccq2022ArticleTitle")}

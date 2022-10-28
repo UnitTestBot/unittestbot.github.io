@@ -14,9 +14,9 @@
   --nav-link-selected: #399d53;
   --link-color: #de5b00;
   --text-color: black;
-  --demo-pg-dropdown-menu-bg: rgb(1, 14, 1);
-  --demo-pg-dropdown-menu-item: rgba(255, 255, 255, 0.73);
-  --demo-pg-dropdown-menu-item-hover: rgb(6, 49, 8);
+  --dropdown-menu-bg: rgb(1, 14, 1);
+  --dropdown-menu-item: whitesmoke;
+  --dropdown-menu-item-hover: rgb(6, 49, 8);
   --editor-background: #1f1f1f;
   --editor-minimap-background: #2c2b2b;
 }
