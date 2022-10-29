@@ -3,7 +3,7 @@ import cn from "classnames";
 import * as styles from "./button.module.css";
 
 export default function Button({
-  variant = "fill",
+  variant = "outline",
   children,
   className,
   ...rest

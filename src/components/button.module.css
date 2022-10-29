@@ -6,7 +6,6 @@
 
 .fill {
   padding: 0.7rem 1.5rem;
-  /* background-color: var(--white-color-text); */
   background-color: rgba(50, 110, 67, 1);
   color: whitesmoke;
   border: 1px solid whitesmoke;
