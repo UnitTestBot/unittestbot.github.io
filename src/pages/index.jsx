@@ -12,6 +12,8 @@ import Button from "../components/button";
 import Heading from "../components/heading";
 import Text from "../components/text";
 import ExampleCard from "../components/exampleCard/ExampleCard";
+import SEO from "../components/seo";
+import TextContent from "../components/exampleCard/textContent/TextContent";
 
 import watchDemoIcon from "../images/watch-demo-icon.png";
 import githubIcon from "../images/github-transparent.png";
@@ -21,13 +23,13 @@ import fullClassGif from "../gifs/java/Full-Class.gif";
 import commentsGif from "../gifs/java/Comments.png";
 import mocksGif from "../gifs/java/Mocks.gif";
 import falsePositiveGif from "../gifs/java/False-Positive.gif";
-import TextContent from "../components/exampleCard/textContent/TextContent";
 
 const MainPage = ({ location }) => {
   const { t, i18n } = useTranslation();
 
   return (
     <Layout isMainPage location={location}>
+      <SEO title="Java/Kotlin Page" />
       <div className={styles.gradient} />
       <Container className={styles.topContainer}>
         <Heading className={styles.topHeading}>
@@ -76,7 +78,7 @@ const MainPage = ({ location }) => {
 
         <ExampleCard
           heading={t("javaHome.utbotAdvantagesTitle")}
-          text={t("javaHome.testsGenAdvantagesText")}
+          text={t("javaHome.utbotAdvantagesText")}
           linkTo="/docs/java/test-results-plugin#run-tests-and-view-coverage"
           linkText={t("javaHome.learnMoreText")}
           gifSrc={fullClassGif}

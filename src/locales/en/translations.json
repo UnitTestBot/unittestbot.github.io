@@ -9,11 +9,11 @@
     "testsGenAdvantagesText": "While a test template tool gives you just an outline,<br>UnitTestBot generates ready-to-use test cases —<br>with valid inputs, method bodies, assertions, and comments.",
     "checkGuideText": "Check the quick guide",
     "utbotAdvantagesTitle": "Test the code all over.",
-    "utbotAdvantagesText": "UnitTestBot has <span style=\"color:#F7931E;\">a dynamic symbolic execution</span> engine in its core, complemented with a smart <span style=\"color:#F7931E;\">fuzzing</span> technique. Together they can explore program execution paths, covering as many of them as possible while keeping <span style=\"color:#F7931E;\">test suite minimized.</span>",
+    "utbotAdvantagesText": "UnitTestBot has <a href=\"https://en.wikipedia.org/wiki/Symbolic_execution\">a dynamic symbolic execution</a> engine in its core, complemented with a smart <a href=\"https://en.wikipedia.org/wiki/Fuzzing\">fuzzing</a> technique. Together they can explore program execution paths, covering as many of them as possible while keeping <a href=\"https://www.researchgate.net/publication/309802329_An_Analysis_Of_Test_Suite_Minimization_Techniques\">test suite minimized.</a>",
     "learnMoreText": "Learn more about UnitTestBot coverage",
     "findBugsNooneCanTitle": "Find bugs no one can catch.",
     "eliminateFalsePositivesTitle": "Eliminate false positives.",
-    "findBugsNooneCanText": "UnitTestBot can uncover bugs hidden deeply in an interprocedural control flow graph. All the found bugs are indeed real — zero false positive rate is guaranteed.",
+    "findBugsNooneCanText": "UnitTestBot can uncover bugs hidden deeply in an <a href=\"https://www.cs.cmu.edu/~aldrich/courses/15-819O-13sp/resources/interprocedural.pdf\">interprocedural control flow graph</a>. All the found bugs are indeed real — zero false positive rate is guaranteed.",
     "howToUseResultText": "Learn how to get use of UnitTestBot results",
     "mocksTitlePart1": "Mock properly.",
     "mocksTitlePart2": "Static methods as well.",
@@ -50,9 +50,7 @@
     "googleTestFormatText": "One of the most popular test formats fits to both C and C++ code."
   },
   "pythonHome": {
-    "utbotPythonTitle": "UnitTestBot Python.",
-    "almostReady": "Almost ready.",
-    "utbotPythonText": "UnitTestBot for Python code is in development.<br>Wait a while for the next release.",
+    "tryOnlineText": "Try UnitTestBot online demo",
     "libraryYouMissedTitle": "It's like a Python library you always missed.",
     "libraryYouMissedText": "Unit testing has never been easier.<br>With UnitTestBot Python you automate the whole testing process.<br>The comprehensive tests are synthesized without your assistance — from finding units to writing out method bodies to choosing proper inputs and asserting.",
     "fuzzingTitle": "Smarter fuzzing for richer testing.",
@@ -67,9 +65,17 @@
     "failureNotOptionText": "Sometimes in Python one does not simply compare complex objects, and generating assertions becomes a non-trivial task. In this case, UnitTestBot Python won't leave you with always-failing assertions or no tests at all.<br>If something went wrong and you cannot compare the objects by value, UnitTestBot Python adds an assertion on the type of the object."
   },
   "jsHome": {
-    "utbotJsTitle": "UnitTestBot JavaScript.",
-    "almostReady": "Almost ready.",
-    "utbotJsText": "UnitTestBot for JavaScript code is in development.<br>Wait a while for the next release."
+    "tryOnlineText": "Try UnitTestBot online demo",
+    "installGenerateAndRunTitle": "Install, generate, run!",
+    "installGenerateAndRunText": "Streamline unit testing with UnitTestBot JavaScript.<br>Proven for fully automated test generation with high coverage. Free and open-source like all UnitTestBot products. Tailored to IDE or command-line usage. Rendering tests with Mocha flavor.<br>Making development flexible and interactive — as JavaScript itself.",
+    "bestGuessOfTypeTitle": "The best guess for types.",
+    "bestGuessOfTypeText": "JavaScript has no type annotations. To generate test cases with the reasonable inputs, UnitTestBot JavaScript tries out primitives or guesses types from code usage.<br>It verifies the resulting list of candidates — with the help of fuzzer. As JavaScript is weakly typed, there still may be tests with the unintended type that pass — analyze them carefully to get insights on your code.",
+    "randomValuesGenerationTitle": "Random values generation — too important to be left to chance.",
+    "randomValuesGenerationText": "While fuzzing, UnitTestBot JavaScript gathers all <i>constant</i> values from the code: strings, numbers, arrays, objects. They serve as informative hints to generate valid inputs of the previously guessed types. UnitTestBot JavaScript checks if test cases increase coverage, leaving only those that really matter.<br>And if it is impossible to infer a type the fuzzer still provides you with tests.",
+    "twoKindsOfDevelopersTitle": "There are two kinds of developers.",
+    "twoKindsOfDevelopersText": "In love with rich IDE features? UnitTestBot JavaScript offers the plugin for IntelliJ IDEA Ultimate. Benefit from shortcuts and generate tests with a couple of clicks. View clustered test cases in the Structure tool window and view line-by-line coverage right in the Editor.<br>Adhered to CLI zen? UnitTestBot JavaScript is one your side. Automate the whole testing process and integrate the tool into your CI/CD solution.",
+    "viewCodeCoveredTitle": "View your code covered.",
+    "viewCodeCoveredText": "UnitTestBot JavaScript provides you not only with high test coverage but also with monitoring tools.<br>Visualize coverage in IntelliJ IDEA Ultimate with the bundled view options right where you need it.<br>Use a special flag for a command-line version to extract the Mocha coverage info into a visually clear JSON-file."
   },
   "goHome": {
     "utbotGoTitle": "UnitTestBot Go.",

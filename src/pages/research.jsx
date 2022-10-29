@@ -38,7 +38,7 @@ const ResearchPage = () => {
 
   return (
     <Layout>
-      <SEO title="Research" />
+      <SEO title="Research Page" />
       <div className={styles.main}>
         <div className={styles.mainContainer}>
           <div className={styles.categotyContainer}>

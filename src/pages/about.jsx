@@ -14,7 +14,7 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      <SEO title="About us" />
+      <SEO title="About us Page" />
       <div className={styles.pageFlexContainer}>
         <Text
           className="text-left"

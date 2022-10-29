@@ -287,7 +287,7 @@ const UTBotOnlinePage = () => {
 
   return (
     <Layout>
-      <SEO title="UTBot Online" />
+      <SEO title="Demo Page" />
       {window.screen.width < minDesktopWidth && (
         <div className={stylesMobile.main}>
           <div className={cn(stylesMobile.toolbar, stylesMobile.topToolbar)}>

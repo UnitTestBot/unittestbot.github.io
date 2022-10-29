@@ -12,6 +12,7 @@ import Button from "../components/button";
 import Heading from "../components/heading";
 import Text from "../components/text";
 import InfoCard from "../components/info-card";
+import SEO from "../components/seo";
 
 import watchDemoIcon from "../images/watch-demo-icon.png";
 import githubIcon from "../images/github-transparent.png";
@@ -26,6 +27,7 @@ const CppPage = ({ location }) => {
 
   return (
     <Layout location={location}>
+      <SEO title="C/C++ Page" />
       <div className={styles.gradient} />
       <Container className={styles.topContainer}>
         <Heading className={styles.topHeading}>
