@@ -1,0 +1,64 @@
+@import "./colors.css";
+@import "./fonts.css";
+
+html {
+  overflow-y: overlay;
+}
+
+details summary {
+  cursor: pointer;
+}
+
+.overflow-guard {
+  border-radius: 5px;
+  border: 1px dashed rgb(165, 165, 165);
+}
+
+.dropdown-menu.show {
+  max-height: 75vh;
+  overflow: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgb(234, 234, 234) var(--dropdown-menu-bg);
+}
+
+.dropdown-menu.show::-webkit-scrollbar {
+  background: var(--dropdown-menu-bg);
+}
+
+.dropdown-menu.show::-webkit-scrollbar-thumb {
+  background: rgb(234, 234, 234);
+  border-radius: 40px;
+  border: 6px solid var(--dropdown-menu-bg);
+}
+
+.nav-item .dropdown-menu {
+  background: var(--dropdown-menu-bg);
+}
+
+.nav-item .dropdown-item {
+  color: var(--dropdown-menu-item);
+}
+
+.nav-item .dropdown-item:hover {
+  background: rgb(39, 92, 39);
+}
+
+.nav-item .dropdown-item::selection {
+  background: var(--dropdown-menu-item-hover);
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+  background-color: var(--dropdown-menu-item-hover);
+}
+
+a.dropdown-toggle.nav-link {
+  color: #0000ff;
+}
+
+@media screen and (max-width: 799px) {
+  a.dropdown-toggle.nav-link {
+    color: #007bff;
+  }
+}

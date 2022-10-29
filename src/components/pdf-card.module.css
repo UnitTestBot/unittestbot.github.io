@@ -5,18 +5,22 @@
 }
 
 .pdfCard {
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
   max-width: 550px;
-  /* background: linear-gradient(
-    0deg,
-    rgba(5, 43, 5, 1) 0%,
-    rgba(13, 33, 57, 1) 100%
-  ); */
-  border: 2px solid rgba(255, 255, 255, 0.652);
+  border: 1px dashed #1f1f1f;
   border-radius: 30px;
   padding: 2rem;
-  gap: 2rem;
 }
 
-.pdf {
-  max-width: 500px;
+.link {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+}
+
+.authors {
+  font-size: var(--research-authors-font-size);
+  line-height: 1.5rem;
 }

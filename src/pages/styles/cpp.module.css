@@ -1,4 +1,11 @@
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+}
+
 .info {
-    max-width: 700px;
-    align-self: center;
+  max-width: 700px;
+  align-self: center;
 }

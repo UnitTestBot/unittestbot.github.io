@@ -1,22 +1,29 @@
 :root {
-  --header-footer-bg: rgb(1, 14, 1);
+  /* --header-footer-bg: #010e01; */
+  --header-footer-bg: #1f1f1f;
+  --header-link: whitesmoke;
   --full-white: #ffffff;
-  --white-color-text: #ffffff;
+  --white-color-text: whitesmoke;
   --editor-bg: #2a2929;
   --editor-minimap-bg: #232323;
-  --dark-green-bg: rgb(1, 14, 1);
+  /* --dark-green-bg: rgb(1, 14, 1); */
+  --dark-green-bg: rgb(180, 177, 177);
   --light-gree-bg: rgb(2, 45, 16);
   --dark-green-bg: rgb(1, 14, 1);
   --light-gree-bg: rgb(2, 45, 16);
   --nav-link-selected: #399d53;
-  --demo-pg-dropdown-menu-bg: rgb(1, 14, 1);
-  --demo-pg-dropdown-menu-item: rgba(255, 255, 255, 0.73);
-  --demo-pg-dropdown-menu-item-hover: rgb(6, 49, 8);
+  --link-color: #de5b00;
+  --text-color: black;
+  --dropdown-menu-bg: rgb(1, 14, 1);
+  --dropdown-menu-item: whitesmoke;
+  --dropdown-menu-item-hover: rgb(6, 49, 8);
   --editor-background: #1f1f1f;
   --editor-minimap-background: #2c2b2b;
 }
 
 #___gatsby {
-  color: #ffffff;
-  background-color: #010e01;
+  /* color: #ffffff; */
+  color: black;
+  /* background-color: #010e01; */
+  background-color: rgb(245, 245, 245);
 }

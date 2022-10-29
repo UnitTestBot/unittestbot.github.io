@@ -32,10 +32,15 @@
   }
 }
 
+.topHeading {
+  color: whitesmoke !important;
+}
+
 .topText {
   line-height: 2.5rem;
   letter-spacing: 0.15rem;
   padding-bottom: 4rem;
+  color: white !important;
 }
 
 @media screen and (max-width: 700px) {
@@ -71,6 +76,7 @@
   flex-direction: column;
   align-items: center;
 
+  z-index: 1;
   padding-top: 1.5rem;
   padding-bottom: 3rem;
   gap: 6rem;
@@ -84,13 +90,20 @@
 
 .gradient {
   width: 100vw;
-  height: 103vh;
+  height: 150vh;
   position: absolute;
   top: 0;
-  background: radial-gradient(
+  background: linear-gradient(
+    180deg,
+    rgba(6, 46, 4, 1) 0%,
+    rgba(50, 110, 67, 1) 50%,
+    rgba(245, 245, 245, 1) 100%
+  );
+  /* background: var(--dark-green-bg); */
+  /* background: radial-gradient(
     circle,
     rgba(43, 64, 40, 1) 0%,
     rgba(3, 33, 3, 1) 40%,
     rgba(1, 14, 1, 1) 100%
-  );
+  ); */
 }

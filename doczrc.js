@@ -1,12 +1,4 @@
 export default {
-  themeConfig: {
-    initialColorMode: "dark",
-    colors: {
-      header: {
-        bg: "rgb(21,20,31)",
-      },
-    },
-  },
   title: "UnitTestBot",
   base: "docs/",
   public: "./resources",

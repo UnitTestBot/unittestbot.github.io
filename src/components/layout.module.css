@@ -15,43 +15,72 @@
   min-height: 100vh;
 }
 
-.aboutUs {
-  background-color: rgb(5, 61, 67);
-}
-
-.gradient {
-  /* background-image: radial-gradient(
-    circle,
-    var(--light-gree-bg) -20%,
-    var(--dark-green-bg) 80%
-  ); */
-  background: var(--dark-green-bg);
-  background-attachment: fixed;
-}
-
 .site-content {
   flex-grow: 1;
 }
 
 .main {
   margin-top: auto;
-  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 .footer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   background-color: var(--header-footer-bg);
-  height: 70px;
   font-family: var(--font-family-sans-serif);
 }
 
-.footer div {
+.githubIcon {
+  width: 60px;
+}
+
+.youtubeIcon {
+  width: 45px;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  height: 70px;
+
   font-size: var(--footer-text-font-size);
   font-weight: var(--footer-text-font-weight);
+}
+
+.copyright {
+  font-size: var(--footer-font-size);
+  font-weight: var(--footer-font-weight);
+  color: whitesmoke;
+}
+
+@media screen and (max-width: 500px) {
+  .footerContent {
+    padding: 0 30px;
+  }
+
+  .copyright {
+    font-size: var(--small-text-font-size);
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .footerContent {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .footerContent {
+    padding: 0 10px;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+
+  gap: 0.7rem;
 }

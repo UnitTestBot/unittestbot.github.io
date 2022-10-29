@@ -3,20 +3,25 @@
 
 .pageFlexContainer {
   align-self: center;
-  padding: 1rem;
+  padding: 2rem 0.5rem;
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
+  max-width: 1100px;
 }
 
-/* .list {
-  padding-left: 1rem;
+.technologiesList {
+  list-style-type: none;
 }
 
-.list > * > * {
-  margin-bottom: 0;
-} */
+.summary {
+  font-size: var(--medium-text-font-size);
+  font-weight: var(--medium-text-font-weight);
+}
 
-.heading {
-  font-weight: 500;
+.list {
+  padding-left: 0;
+}
+
+.listDisc {
+  list-style-type: disc;
 }
