@@ -1,0 +1,126 @@
+.top {
+  overflow-x: auto;
+  overflow-y: auto;
+  background-color: #f1f0f0 !important;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 6vw;
+  margin-right: 6vw;
+  min-width: 886px;
+}
+
+.detailsEditor {
+  width: 100%;
+  min-width: 440px;
+  height: 30vh;
+}
+
+.detailsContainer {
+  margin-top: 6px;
+  margin-bottom: 1vh;
+  display: flex;
+  min-width: 886px;
+}
+
+.codeEditor {
+  height: 70vh;
+  min-height: 300px;
+  min-width: 440px;
+}
+
+.codeEditorContainer {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 440px;
+  height: 100%;
+  width: 100%;
+}
+
+.codeEditorsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.sourceCodeEditorcontainer {
+  margin-right: 3px;
+}
+
+.testsEditorContainer {
+  margin-left: 3px;
+}
+
+.alert {
+  /* display: inline-block; */
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  height: fit-content;
+  color: white;
+  border: none;
+  background-color: transparent;
+}
+
+.generateAndRunTestsButtonContainer {
+  margin-bottom: 0.2rem;
+}
+
+.generateAndRunTestsButton {
+  font-size: 15px;
+  height: 40px;
+  background-color: var(--editor-background);
+  border: none;
+}
+
+.generateAndRunTestsButton:hover {
+  background-color: #154681;
+}
+
+.generateAndRunTestsButton:active {
+  background-color: #154681 !important;
+}
+
+.generateAndRunTestsButton:focus {
+  background-color: #154681 !important;
+}
+
+.toolbarContainer {
+  margin-top: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.copyLinkButton {
+  display: flex;
+  flex-direction: row;
+
+  border: none;
+  align-items: center;
+  height: 40px !important;
+  text-align: center;
+  background-color: var(--editor-background);
+}
+
+.copyLinkButton:hover {
+  background-color: #383838;
+}
+
+.dropdownLanguages {
+  margin-top: 5px;
+  width: fit-content;
+}
+
+.dropdownContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
