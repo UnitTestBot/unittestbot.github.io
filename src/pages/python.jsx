@@ -4,8 +4,11 @@ import { Container } from "react-bootstrap";
 import { Link, useStaticQuery, graphql } from "gatsby";
 
 import Button from "../components/button";
+import Button from "../components/button";
 import Heading from "../components/heading";
 import Text from "../components/text";
+import ExampleCard from "../components/exampleCard/ExampleCard";
+import SEO from "../components/seo";
 import ExampleCard from "../components/exampleCard/ExampleCard";
 import SEO from "../components/seo";
 

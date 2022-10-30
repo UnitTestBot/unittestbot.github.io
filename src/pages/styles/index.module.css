@@ -36,10 +36,15 @@
   color: whitesmoke !important;
 }
 
+.topHeading {
+  color: whitesmoke !important;
+}
+
 .topText {
   line-height: 2.5rem;
   letter-spacing: 0.15rem;
   padding-bottom: 4rem;
+  color: white !important;
   color: white !important;
 }
 
