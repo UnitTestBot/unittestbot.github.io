@@ -43,7 +43,7 @@ const CppPage = ({ location }) => {
         />
 
         <div className={styles.actions}>
-          <Link to="/utbot">
+          <Link to="https://www.utbot.org/demo/?language=C&source=signed%20long%20long%20int%20max_long(long%20long%20a%2C%20signed%20long%20long%20b)%20%7B%0A%20%20if%20(a%20%3E%20b)%20%7B%0A%20%20%20%20return%20a%3B%0A%20%20%7D%0A%20%20return%20b%3B%0A%7D">
             <Button>{t("javaHome.tryOnlineText")}</Button>
           </Link>
 

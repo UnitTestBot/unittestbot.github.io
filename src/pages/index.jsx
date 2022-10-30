@@ -42,7 +42,7 @@ const MainPage = ({ location }) => {
         />
 
         <div className={styles.actions}>
-          <Link to="/utbot">
+          <Link to="https://www.utbot.org/demo/?language=Java&source=public%20class%20Recursion%20%7B%0A%20%20public%20int%20factorial(int%20n)%20%7B%0A%20%20%20%20if%20(n%20%3C%200)%20%7B%0A%20%20%20%20%20%20throw%20new%20IllegalArgumentException()%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20if%20(n%20%3D%3D%200)%20%7B%0A%20%20%20%20%20%20return%201%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20return%20n%20*%20factorial(n%20-%201)%3B%0A%20%20%7D%0A%7D%0A">
             <Button>{t("javaHome.tryOnlineText")}</Button>
           </Link>
 

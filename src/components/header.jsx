@@ -15,6 +15,16 @@ function Header({ location }) {
   const { t, i18n } = useTranslation();
   const navId = "navbarResponsive";
 
+  const isLanguagePage =
+    location &&
+    (location.pathname === "/" ||
+      location.pathname === "/cpp" ||
+      location.pathname === "/cpp/" ||
+      location.pathname === "/python" ||
+      location.pathname === "/python/" ||
+      location.pathname === "/js" ||
+      location.pathname === "/js/");
+
   const isJavaOrCppPage =
     location &&
     (location.pathname === "/" ||
@@ -54,7 +64,7 @@ function Header({ location }) {
       ref={headerRef}
       className={cn(
         styles.header,
-        (!isJavaOrCppPage || isPinned) && styles.opaque
+        (!isLanguagePage || isPinned) && styles.opaque
       )}
     >
       <Container className={styles.container}>
@@ -76,9 +86,9 @@ function Header({ location }) {
             <Nav
               as="ul"
               className={cn(styles.nav, styles.navTop)}
-              style={{
-                borderBottomColor: isJavaOrCppPage ? "white" : "transparent",
-              }}
+              /*style={{
+                borderBottomColor: isLanguagePage ? "white" : "transparent",
+              }}*/
             >
               <Nav.Item as="li">
                 <CustomLink to="/">{t("header.javaArea")}</CustomLink>
@@ -96,7 +106,7 @@ function Header({ location }) {
                 <CustomLink to="/go">{t("header.goArea")}</CustomLink>
               </Nav.Item>
               <Nav.Item as="li">
-                <CustomLink to="/utbot">{t("header.demo")}</CustomLink>
+                <CustomLink to="/demo">{t("header.demo")}</CustomLink>
               </Nav.Item>
               <Nav.Item as="li">
                 <CustomLink to="/research">{t("header.research")}</CustomLink>

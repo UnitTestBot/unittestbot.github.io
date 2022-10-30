@@ -99,11 +99,4 @@
     rgba(50, 110, 67, 1) 50%,
     rgba(245, 245, 245, 1) 100%
   );
-  /* background: var(--dark-green-bg); */
-  /* background: radial-gradient(
-    circle,
-    rgba(43, 64, 40, 1) 0%,
-    rgba(3, 33, 3, 1) 40%,
-    rgba(1, 14, 1, 1) 100%
-  ); */
 }
