@@ -61,7 +61,7 @@ const CppPage = ({ location }) => {
           </Link>
 
           <Link to="https://github.com/UnitTestBot/UTBotCpp">
-            <img src={githubIcon} width="50" height="50" alt="Github Logo" />
+            <img src={githubIcon} width="50" height="50" alt="GitHub Logo" />
           </Link>
         </div>
       </Container>
