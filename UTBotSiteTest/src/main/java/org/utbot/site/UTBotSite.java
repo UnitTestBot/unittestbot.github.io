@@ -17,7 +17,7 @@ public class UTBotSite {
     public static final Random random = new Random();
 
     public static StartPage startPage = new StartPage("");
-    public static DemoPage demoPage = new DemoPage("/utbot");
+    public static DemoPage demoPage = new DemoPage("/demo");
 
     public static SelenideElement spinner = $(".spinner-border");
 
