@@ -7,6 +7,10 @@
   max-width: 1100px;
 }
 
+.card a {
+  margin-top: 1rem;
+}
+
 .dropdownTest {
   color: white;
 }
@@ -24,5 +28,11 @@
 
   .left {
     flex-direction: row-reverse;
+  }
+}
+
+@media (max-width: 1199px) {
+  .card {
+    justify-content: flex-start;
   }
 }

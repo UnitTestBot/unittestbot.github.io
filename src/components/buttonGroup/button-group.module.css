@@ -1,0 +1,21 @@
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 770px) {
+  .actions {
+    flex-direction: column;
+  }
+}
+
+.howWorksLink {
+  color: var(--white-color-text);
+  font-weight: var(--how-works-btn-font-weight);
+}
+
+.howWorksLink:hover {
+  color: var(--link-color);
+}

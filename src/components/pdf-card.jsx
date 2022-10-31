@@ -1,4 +1,5 @@
 import * as React from "react";
+import cn from "classnames";
 
 import Heading from "./heading";
 import Text from "./text";
@@ -16,14 +17,20 @@ export default function PdfCard({
   return (
     <div className={styles.pdfCard}>
       {conferenceTitle && (
-        <Text dangerouslySetInnerHTML={{ __html: conferenceTitle }} />
+        <Text
+          className={styles.text}
+          dangerouslySetInnerHTML={{ __html: conferenceTitle }}
+        />
       )}
       {articleTitle && (
-        <Text dangerouslySetInnerHTML={{ __html: articleTitle }} />
+        <Text
+          className={styles.text}
+          dangerouslySetInnerHTML={{ __html: articleTitle }}
+        />
       )}
       {authors && (
         <Text
-          className={styles.authors}
+          className={cn(styles.authors, styles.text)}
           dangerouslySetInnerHTML={{ __html: authors }}
         />
       )}

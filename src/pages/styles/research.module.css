@@ -33,6 +33,10 @@
   margin-bottom: 3rem;
 }
 
+.conferenceTitle {
+  margin-bottom: 1rem;
+}
+
 @media screen and (max-width: 800px) {
   .pdfContainer {
     justify-content: center;
@@ -43,7 +47,7 @@
     width: 75%;
   }
 
-  .heading {
+  .conferenceTitle {
     text-align: center;
   }
 }
@@ -68,7 +72,7 @@
     margin-bottom: 1rem;
   }
 
-  .heading {
+  .conferenceTitle {
     text-align: left;
   }
 }

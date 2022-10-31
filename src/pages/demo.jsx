@@ -29,8 +29,6 @@ import "prismjs/components/prism-python";
 import "prismjs/components/prism-markup";
 import "prismjs/themes/prism.css";
 
-//import { LanguageDropdown } from "../components/languages-dropdown";
-// import Button from "../components/button";
 import {
   LanguageIndex,
   Language as LanguageEnum,
@@ -87,6 +85,32 @@ const UTBotOnlinePage = () => {
     const queryString = window.location.search;
     setHref(window.location.origin + window.location.pathname);
     const urlParams = new URLSearchParams(queryString);
+    if (!urlParams.has("language")) {
+      return;
+    }
+    if (urlParams.get("language").toLowerCase() === "c") {
+      setLanguage(0);
+    } else if (urlParams.get("language").toLowerCase() === "cpp") {
+      setLanguage(1);
+    } else if (urlParams.get("language").toLowerCase() === "java") {
+      setLanguage(2);
+    } else if (urlParams.get("language").toLowerCase() === "python") {
+      setLanguage(3);
+    } else if (urlParams.get("language").toLowerCase() === "javascript") {
+      setLanguage(4);
+    } else if (urlParams.get("language").toLowerCase() === "go") {
+      setLanguage(5);
+    } else {
+      return;
+    }
+
+    if (urlParams.has("source")) {
+      setSourceCode(urlParams.get("source"));
+      setTestCode("");
+    } else {
+      // For the case when the language is in URL but the source no
+      setSourceCode("");
+    }
   }, []);
 
   const url = `${href}?language=${languageToQuery(
@@ -235,9 +259,6 @@ const UTBotOnlinePage = () => {
       <NavDropdown.Item
         onClick={() => {
           setSourceCode(example.code);
-          if (window.screen.width < minDesktopWidth) {
-            hideDropdownExamples();
-          }
         }}
       >
         {example.name}
@@ -303,7 +324,6 @@ const UTBotOnlinePage = () => {
                       if (language != lang) {
                         setSourceCode(languageToSnippet(lang));
                       }
-                      hideDropdownLanguages();
                     }}
                   >
                     {languageToString(lang)}
