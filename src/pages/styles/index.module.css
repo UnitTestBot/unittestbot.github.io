@@ -2,19 +2,6 @@
 @import "../../utils/constants.css";
 @import "../../utils/fonts.css";
 
-.actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-@media screen and (max-width: 770px) {
-  .actions {
-    flex-direction: column;
-  }
-}
-
 .topContainer {
   padding-top: 0.5rem;
   display: flex;
@@ -36,43 +23,14 @@
   color: whitesmoke !important;
 }
 
-.topHeading {
-  color: whitesmoke !important;
-}
-
 .topText {
-  line-height: 2.5rem;
-  letter-spacing: 0.15rem;
   padding-bottom: 4rem;
-  color: white !important;
   color: white !important;
 }
 
 @media screen and (max-width: 700px) {
   .topText {
     padding-bottom: 1rem;
-  }
-}
-
-.howWorksLink {
-  color: var(--white-color-text);
-  font-weight: var(--how-works-btn-font-weight);
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
-  margin-bottom: 2rem;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-}
-
-@media screen and (max-width: 750px) {
-  .buttons {
-    flex-direction: column;
   }
 }
 
@@ -95,7 +53,7 @@
 
 .gradient {
   width: 100vw;
-  height: 150vh;
+  height: 160vh;
   position: absolute;
   top: 0;
   background: linear-gradient(

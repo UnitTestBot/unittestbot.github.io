@@ -5,7 +5,7 @@
   color: var(----text-color);
   line-height: 2rem;
   letter-spacing: 0.05rem;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 .text a {

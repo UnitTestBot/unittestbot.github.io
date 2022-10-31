@@ -21,7 +21,7 @@ const AboutPage = () => {
           dangerouslySetInnerHTML={{
             __html: `${t("aboutUs.whoWeAreText")} ${t("aboutUs.spbu")}, ${t(
               "aboutUs.hse"
-            )}, ${t("aboutUs.itmo")}, ${t("aboutUs.spbpu")}.`,
+            )}, ${t("aboutUs.itmo")}, ${t("aboutUs.spbpu")}.<br><br>`,
           }}
         />
 
@@ -52,6 +52,7 @@ const AboutPage = () => {
                 </li>
                 <li>
                   <Text
+                    className={styles.summaryLastText}
                     dangerouslySetInnerHTML={{ __html: t("aboutUs.moreSat") }}
                   />
                 </li>
@@ -66,7 +67,10 @@ const AboutPage = () => {
                 {t("aboutUs.smtlSolvingTitle")}
               </summary>
               <Text dangerouslySetInnerHTML={{ __html: t("aboutUs.smt") }} />
-              <Text dangerouslySetInnerHTML={{ __html: t("aboutUs.ksmt") }} />
+              <Text
+                className={styles.summaryLastText}
+                dangerouslySetInnerHTML={{ __html: t("aboutUs.ksmt") }}
+              />
             </details>
           </li>
 
@@ -98,6 +102,7 @@ const AboutPage = () => {
                 </li>
                 <li>
                   <Text
+                    className={styles.summaryLastText}
                     dangerouslySetInnerHTML={{ __html: t("aboutUs.vSharp") }}
                   />
                 </li>
@@ -112,6 +117,7 @@ const AboutPage = () => {
                 {t("aboutUs.fuzzingTitle")}
               </summary>
               <Text
+                className={styles.summaryLastText}
                 dangerouslySetInnerHTML={{
                   __html: t("aboutUs.fuzzingWhatWeDo"),
                 }}
@@ -125,7 +131,10 @@ const AboutPage = () => {
               <summary className={styles.summary}>
                 {t("aboutUs.programAnalysisTitle")}
               </summary>
-              <Text dangerouslySetInnerHTML={{ __html: t("aboutUs.jcdb") }} />
+              <Text
+                className={styles.summaryLastText}
+                dangerouslySetInnerHTML={{ __html: t("aboutUs.jcdb") }}
+              />
             </details>
           </li>
 
@@ -136,6 +145,7 @@ const AboutPage = () => {
                 {t("aboutUs.programSynthesisTitle")}
               </summary>
               <Text
+                className={styles.summaryLastText}
                 dangerouslySetInnerHTML={{
                   __html: t("aboutUs.programSynthesisDescription"),
                 }}

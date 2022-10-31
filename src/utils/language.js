@@ -9,15 +9,6 @@ export const Language = {
   GO: 5,
 };
 
-export const LanguageIndex = {
-  c: 0,
-  cpp: 1,
-  java: 2,
-  python: 3,
-  javascript: 4,
-  go: 5,
-};
-
 const langToQueryMap = {
   [Language.C]: "C",
   [Language.CPP]: "Cpp",

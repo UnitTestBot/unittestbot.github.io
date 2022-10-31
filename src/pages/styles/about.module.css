@@ -4,6 +4,7 @@
 .pageFlexContainer {
   align-self: center;
   padding: 2rem 0.5rem;
+  padding-bottom: 3rem;
   display: flex;
   flex-direction: column;
   max-width: 1100px;
@@ -11,11 +12,16 @@
 
 .technologiesList {
   list-style-type: none;
+  margin-top: 1rem;
 }
 
 .summary {
   font-size: var(--medium-text-font-size);
   font-weight: var(--medium-text-font-weight);
+}
+
+.summaryLastText {
+  margin-bottom: 2rem;
 }
 
 .list {

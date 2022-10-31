@@ -16,14 +16,11 @@
   top: -1px;
   z-index: 99;
   position: sticky;
-  /* position: absolute; */
   width: 100%;
-  /* background: transparent; */
 }
 
 .header.opaque {
   background-color: var(--header-footer-bg);
-  /* position: sticky; */
 }
 
 .container {

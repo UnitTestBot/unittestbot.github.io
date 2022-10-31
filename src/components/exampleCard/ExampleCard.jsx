@@ -13,20 +13,19 @@ export default function ExampleCard({
   gifSrc,
   gifAlt,
   gifPlacement = "right",
+  textWrapperClassName,
 }) {
   return (
     <div className={cn(styles.card, styles[gifPlacement])}>
-
-      <TextContent heading={heading}
+      <TextContent
+        heading={heading}
         text={text}
         linkTo={linkTo}
-        linkText={linkText} 
-        containerClassName='text'
-        />
+        linkText={linkText}
+        containerClassName={textWrapperClassName}
+      />
 
-      {gifSrc && (
-        <Gif src={gifSrc} alt={gifAlt} className={styles.img} />
-      )}
+      {gifSrc && <Gif src={gifSrc} alt={gifAlt} className={styles.img} />}
     </div>
   );
 }

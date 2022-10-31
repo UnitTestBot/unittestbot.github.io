@@ -1,3 +1,5 @@
+import cn from "classnames";
+
 import { Link } from "gatsby";
 import Button from "../../button";
 import Heading from "../../heading";
@@ -13,7 +15,7 @@ export default function TextContent({
   containerClassName,
 }) {
   return (
-    <div className={styles[containerClassName]}>
+    <div className={cn(styles.text, styles[containerClassName])}>
       <Heading as="h3" className="text-left">
         {heading}
       </Heading>

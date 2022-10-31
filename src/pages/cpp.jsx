@@ -5,6 +5,7 @@ import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
 import Layout from "../components/layout";
 import withTrans from "../i18n/withTrans";
+
 import * as styles from "./styles/index.module.css";
 import * as stylesCpp from "./styles/cpp.module.css";
 
@@ -13,6 +14,7 @@ import Heading from "../components/heading";
 import Text from "../components/text";
 import InfoCard from "../components/info-card";
 import SEO from "../components/seo";
+import ButtonGroup from "../components/buttonGroup/buttonGroup";
 
 import watchDemoIcon from "../images/watch-demo-icon.png";
 import githubIcon from "../images/github-transparent.png";
@@ -42,28 +44,11 @@ const CppPage = ({ location }) => {
           }}
         />
 
-        <div className={styles.actions}>
-          <Link to="https://www.utbot.org/demo/?language=C&source=signed%20long%20long%20int%20max_long(long%20long%20a%2C%20signed%20long%20long%20b)%20%7B%0A%20%20if%20(a%20%3E%20b)%20%7B%0A%20%20%20%20return%20a%3B%0A%20%20%7D%0A%20%20return%20b%3B%0A%7D">
-            <Button>{t("javaHome.tryOnlineText")}</Button>
-          </Link>
-
-          <Link
-            to="https://www.youtube.com/watch?v=bDJyWEeYhvks"
-            className={styles.howWorksLink}
-          >
-            <img
-              src={watchDemoIcon}
-              width="32"
-              height="30"
-              alt="Youtube Logo"
-            />
-            {t("javaHome.watchHowWorksText")}
-          </Link>
-
-          <Link to="https://github.com/UnitTestBot/UTBotCpp">
-            <img src={githubIcon} width="50" height="50" alt="GitHub Logo" />
-          </Link>
-        </div>
+        <ButtonGroup
+          tryOnlineLink="/demo/?language=C&source=signed%20long%20long%20int%20max_long(long%20long%20a%2C%20signed%20long%20long%20b)%20%7B%0A%20%20if%20(a%20%3E%20b)%20%7B%0A%20%20%20%20return%20a%3B%0A%20%20%7D%0A%20%20return%20b%3B%0A%7D"
+          demoVideoLink="https://www.youtube.com/watch?v=bDJyWEeYhvks"
+          gitHubLink="https://github.com/UnitTestBot/UTBotCpp"
+        />
       </Container>
 
       <Container className={styles.examples}>
@@ -81,6 +66,7 @@ const CppPage = ({ location }) => {
           gifSrc={configurationGif}
           gifAlt="Configuration example"
           gifPlacement="left"
+          textWrapperClassName="cardFlexStart5rem"
         />
 
         <ExampleCard
