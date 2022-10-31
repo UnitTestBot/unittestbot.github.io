@@ -12,6 +12,6 @@ public class StartPage extends UTBotPage{
 
     public static final String DEMO_BTN_TEXT = "Try UnitTestBot online demo";
 
-    public final SelenideElement demoBtn = $x("//a[@href='/utbot']//button");
+    public final SelenideElement demoBtn = $x("//button[contains(.,'demo')]");
 
 }
