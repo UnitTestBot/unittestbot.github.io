@@ -8,8 +8,6 @@ import Heading from "../components/heading";
 import Text from "../components/text";
 import ExampleCard from "../components/exampleCard/ExampleCard";
 import SEO from "../components/seo";
-import ExampleCard from "../components/exampleCard/ExampleCard";
-import SEO from "../components/seo";
 
 import { useTranslation } from "react-i18next";
 import Layout from "../components/layout";
