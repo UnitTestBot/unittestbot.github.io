@@ -26,14 +26,8 @@ const Layout = ({ children, location }) => {
     }
   `);
 
-  const isJavaOrCppPage =
-    location &&
-    (location.pathname === "/" ||
-      location.pathname === "/cpp" ||
-      location.pathname === "/cpp/");
-
   return (
-    <div className={cn(styles.site, isJavaOrCppPage && styles.gradient)}>
+    <div className={styles.site}>
       <Header location={location} />
       <main className={cn(styles.main)}>{children}</main>
       <footer className={cn(styles.footer, "mt-auto text-white")}>

@@ -3,7 +3,7 @@
     "imagineTitle": "Imagine you don't have to write tests.",
     "tryOnlineText": "Try UnitTestBot online demo",
     "watchHowWorksText": "Watch how it works",
-    "testsGenText": "But you still have a perfect bug detector for your code.<br>And no false positives among bugs.<br>Tests are generated auto<i>magically</i> — with the highest code coverage,<br>fine-tuned mocking, and human-readable test descriptions.<br>Sounds fantastic? No more.",
+    "testsGenText": "But you still have a perfect bug detector for your code.<br>And no false positives among bugs.<br>Tests are generated auto<i><i>magically</i></i> — with the highest code coverage,<br>fine-tuned mocking, and human-readable test descriptions.<br>Sounds fantastic? No more.",
     "testsGenAdvantagesTitlePart1": "Yet another test template tool?",
     "testsGenAdvantagesTitlePart2": "Quite the opposite.",
     "testsGenAdvantagesText": "While a test template tool gives you just an outline,<br>UnitTestBot generates ready-to-use test cases —<br>with valid inputs, method bodies, assertions, and comments.",
@@ -13,7 +13,7 @@
     "learnMoreText": "Learn more about UnitTestBot coverage",
     "findBugsNooneCanTitle": "Find bugs no one can catch.",
     "eliminateFalsePositivesTitle": "Eliminate false positives.",
-    "findBugsNooneCanText": "UnitTestBot can uncover bugs hidden deeply in an <a href=\"https://www.cs.cmu.edu/~aldrich/courses/15-819O-13sp/resources/interprocedural.pdf\">interprocedural control flow graph</a>. All the found bugs are indeed real — zero false positive rate is guaranteed.",
+    "findBugsNooneCanText": "UnitTestBot can uncover bugs hidden deeply in an <a href=\"https://www.cs.cmu.edu/~aldrich/courses/15-819O-13sp/resources/interprocedural.pdf\"><a href=\"https://www.cs.cmu.edu/~aldrich/courses/15-819O-13sp/resources/interprocedural.pdf\">interprocedural control flow graph</a></a>. All the found bugs are indeed real — zero false positive rate is guaranteed.",
     "howToUseResultText": "Learn how to get use of UnitTestBot results",
     "mocksTitlePart1": "Mock properly.",
     "mocksTitlePart2": "Static methods as well.",
@@ -23,7 +23,7 @@
     "humanReadableText": "UnitTestBot represents all the test descriptions in a human-readable format. The intelligible test method names and comments help you to control the whole testing process. Test failed? The description refers you to points of interest in execution paths.",
     "getBetterTestDescriptionText": "See how to get the most out of test descriptions",
     "capableForYourNeedText": "Capable for every tech you need.",
-    "capableForEveryText": "UnitTestBot Java/ Kotlin supports the latest JDKs, JUnit 4, JUnit 5, TestNG, Mockito and works with all popular operational systems.<br>You can also try <a href=\"https://www.utbot.org/cpp\">UnitTestBot C/C++</a>. <a href=\"https://www.utbot.org/python\">UnitTestBot for Python</a>, <a href=\"https://www.utbot.org/go\">Go</a>, and <a href=\"https://www.utbot.org/js\">JavaScript</a> are under development. Stay tuned!",
+    "capableForEveryText": "UnitTestBot Java/Kotlin supports the latest JDKs, JUnit 4, JUnit 5, TestNG, Mockito and works with all popular operational systems.<br>You can also try <a href=\"https://www.utbot.org/cpp\">UnitTestBot C/C++</a>, <a href=\"https://www.utbot.org/python\">Python</a> and <a href=\"https://www.utbot.org/js\">JavaScript</a>. <a href=\"https://www.utbot.org/go\">UnitTestBot Go</a> is under development. Stay tuned!",
     "supportedTechnologiesText": "Check supported technologies"
   },
   "cppHome": {
@@ -167,11 +167,30 @@
     "alertNew": "<small>Experimental feature</small>"
   },
   "aboutUs": {
-    "whoWeAreText": "We are a team of researchers and engineers from Saint Petersburg.<br><br>We are crazy about mathematics and programming. We love taking part in software testing competitions. We describe our achievements in <a href=\"https://www.utbot.org/research\">research articles</a>. We develop our flagship product — UnitTestBot for Java/Kotlin, C/C++, Python, JavaScript, and Go.<br><br>To be in touch with the high-end science we collaborate with the universities:",
+    "whoWeAreText": "We are a team of researchers and engineers from Saint Petersburg.<br><br>We are crazy about mathematics and programming. We love taking part in software testing competitions. We describe our achievements in <a href=\"https://www.utbot.org/research\">research articles</a>. We develop our flagship product — UnitTestBot for Java/Kotlin, C/C++, Python, JavaScript, and Go.<br><br><br>To be in touch with the high-end science we collaborate with the universities:",
     "spbu": "Saint Petersburg State University",
     "hse": "HSE University",
     "itmo": "ITMO University",
     "spbpu": "Peter the Great St. Petersburg Polytechnic University",
+    "whatWeDevelopCategoriesText": "As a part of this intercollegiate team we develop root technologies to empower UnitTestBot as well as the whole lineup of other software products. Here are some of them:",
+    "satSolvingTitle": "SAT solving technology",
+    "satSolvingText": "SAT solver is a computer program which asks whether the variables of a given Boolean formula can be consistently replaced by <i>True</i> or <i>False</i> in such a way that the formula evaluates to <i>True</i>. SAT solvers are frequently used as the “engine” for the program verification applications.",
+    "kosat": "<a href=\"https://github.com/UnitTestBot/kosat\">KoSAT</a> is a pure Kotlin CDCL SAT solver based on MiniSat core. It solves Boolean satisfiability problems given in DIMACS format and supports incremental solving.",
+    "moreSat": "We also investigate <a href=\"https://www.utbot.org/research\">broader theoretical questions</a> related to SAT solving, e.g. evaluating the computational hardness of a given SAT problem.",
+    "smtlSolvingTitle": "SMT solving technology",
+    "smt": "Satisfiability modulo theories (SMT) field of research relates to determining whether a mathematical formula is satisfiable.",
+    "ksmt": "<a href=\"https://github.com/UnitTestBot/ksmt\">KSMT</a> is the Kotlin API for various SMT solvers. For now it supports Z3 and Bitwuzla SAT solvers.",
+    "symbolicExecutionTitle": "Symbolic execution",
+    "symbolicExecutionArea": "We develop symbolic execution technology to provide our automated test generation tools with the effective engines. We have three main solutions in this research area.",
+    "utbotJavaSymbolicEngine": "<a href=\"https://github.com/UnitTestBot/UTBotJava\">UnitTestBot Java</a> has its own dynamic symbolic execution engine that has already shown extremely good results at <a href=\"https://ieeexplore.ieee.org/document/9810769\">SBST competitions</a>.",
+    "symbolicEngineKlee": "Our custom patch for KLEE is the core of UnitTestBot C/C++. KLEE is a symbolic virtual machine built on top of the LLVM compiler infrastructure.<br><a href=\"https://github.com/UnitTestBot/klee\">We contribute to KLEE</a> by implementing patches, which enhance the engine’s code coverage and speed. We offered <i>lazy initialization improvements</i> and committed the <i>undefined behavior detection patch</i> and the <i>patch for inline assembly support</i> to the main KLEE branch.<br>We converted KLEE into the <i>bidirectional property-directed symbolic execution</i> engine. Moreover, the patched KLEE engine is able to <i>automatically deduce method summaries</i>.<br>Symbolic execution is the main focus of our interest, so we conducted a series of research related to both applied and fundamental problems in this field.",
+    "vSharp": "We also plan to support .NET infrastructure via <a href=\"https://github.com/VSharp-team/VSharp\">V#</a> — the symbolic execution engine performing completely automated test generation for .NET assemblies.",
+    "fuzzingTitle": "Fuzzing",
+    "fuzzingWhatWeDo": "When working on a UnitTestBot product lineup, we are developing <a href=\"https://github.com/UnitTestBot/UTBotJava/tree/pelevin/UnitTestBot_Family_Fuzzer_Platform/utbot-fuzzers\">fuzzing and dynamic program analysis techniques</a> suitable for all supported languages: Java/Kotlin, C/C++, Python. JavaScript, and Go.",
+    "programAnalysisTitle": "Program analysis",
+    "jcdb": "UnitTestBot with its symbolic execution engine and fuzzing techniques is the <a href=\"https://github.com/UnitTestBot/UTBotJava/wiki/Static-code-analysis-with-UTBotJava-action\">ready-to-use</a> tool for <a href=\"https://github.com/UnitTestBot/UTBotCpp/wiki/CodeAnalyzer\">code analysis</a>.  In addition to this end-to-end solution we implement a basic framework for developing custom static code analyzers.<br>Java Compilation Database <a href=\"https://github.com/UnitTestBot/jcdb\">(JCDB)</a> was inspired by the <a href=\"https://github.com/soot-oss/soot\">Soot</a> framework for analyzing and transforming Java code.<br>JCDB is a pure Java database which stores information about the compiled Java bytecode — classes, hierarchies, annotations, methods, fields, and their usages. With JCDB it is possible to analyze bytecode located outside the JVM process. It allows UnitTestBot to support the newest JDKs and to reuse data between restarts.",
+    "programSynthesisTitle": "Program synthesis",
+    "programSynthesisDescription": "We investigate approaches to synthesizing code for solving practical problems.<br>For example, UnitTestBot is capable of <a href=\"https://github.com/UnitTestBot/UTBotJava/pull/1030\">generating human-readable test method bodies</a> based on public API rather than Reflection.<br>We also develop the <a href=\"https://github.com/UnitTestBot/genui\">genui</a> project — a tool for automatic UI generation. In our research we <a href=\"https://icfp22.sigplan.org/details/minikanren-2022-papers/3/On-a-Declarative-Guideline-Directed-UI-Layout-Synthesis\">elaborate</a> ways to automatically arrange the elements of a user interface in accordance with the specified design guidelines. The next step is to synthesize the code which is capable to implement this layout.",
     "whatWeDevelopCategoriesText": "As a part of this intercollegiate team we develop root technologies to empower UnitTestBot as well as the whole lineup of other software products. Here are some of them:",
     "satSolvingTitle": "SAT solving technology",
     "satSolvingText": "SAT solver is a computer program which asks whether the variables of a given Boolean formula can be consistently replaced by <i>True</i> or <i>False</i> in such a way that the formula evaluates to <i>True</i>. SAT solvers are frequently used as the “engine” for the program verification applications.",
@@ -209,6 +228,15 @@
     "fromGitHub": "From GitHub",
     "fromJetBrainsMarkerplace": "From JetBrains Marketplace",
     "userGuide": "User guide"
+  },
+  "footer": {
+    "utbotCopyright": "UnitTestBot © 2022"
+  },
+  "demo": {
+    "generateAndRunTests": "Generate & Run Tests",
+    "genAndRunTests": "Gen. & Run Tests",
+    "generatingAndRunningTests": "Generating & Running ",
+    "genAndRunningTests": "Gen. & Run Tests "
   },
   "footer": {
     "utbotCopyright": "UnitTestBot © 2022"
