@@ -15,7 +15,9 @@ import githubIcon from "../images/github-transparent.png";
 const Layout = ({ children, location }) => {
   const { t, i18n } = useTranslation();
 
-  const isDemoPage = window && window.location?.pathname.startsWith("/demo");
+  const isDemoPage =
+    typeof window !== "undefined" &&
+    window.location?.pathname.startsWith("/demo");
 
   return (
     <div className={cn(styles.site, isDemoPage && styles.demoBg)}>
