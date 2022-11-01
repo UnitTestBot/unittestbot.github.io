@@ -15,6 +15,10 @@
   min-height: 100vh;
 }
 
+.demoBg {
+  background-color: #f1f0f0;
+}
+
 .site-content {
   flex-grow: 1;
 }
