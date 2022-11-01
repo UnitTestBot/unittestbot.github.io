@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
 import { Link } from "gatsby";
@@ -16,18 +15,10 @@ import githubIcon from "../images/github-transparent.png";
 const Layout = ({ children, location }) => {
   const { t, i18n } = useTranslation();
 
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+  const isDemoPage = window && window.location?.pathname.startsWith("/demo");
 
   return (
-    <div className={styles.site}>
+    <div className={cn(styles.site, isDemoPage && styles.demoBg)}>
       <Header location={location} />
       <main className={cn(styles.main)}>{children}</main>
       <footer className={cn(styles.footer, "mt-auto text-white")}>

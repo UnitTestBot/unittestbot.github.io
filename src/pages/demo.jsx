@@ -476,12 +476,7 @@ const UTBotOnlinePage = () => {
         <div className={stylesDesktop.top}>
           <div className={stylesDesktop.main}>
             <div className={stylesDesktop.codeEditorsContainer}>
-              <div
-                className={cn(
-                  stylesDesktop.codeEditorContainer,
-                  stylesDesktop.sourceCodeEditorcontainer
-                )}
-              >
+              <div className={stylesDesktop.codeEditorContainer}>
                 <div className={stylesDesktop.toolbarContainer}>
                   <div>
                     <OverlayTrigger
@@ -551,18 +546,8 @@ const UTBotOnlinePage = () => {
                   />
                 </div>
               </div>
-              <div
-                className={cn(
-                  stylesDesktop.codeEditorContainer,
-                  stylesDesktop.testsEditorContainer
-                )}
-              >
-                <div
-                  className={cn(
-                    stylesDesktop.toolbarContainer,
-                    stylesDesktop.generateAndRunTestsButtonContainer
-                  )}
-                >
+              <div className={stylesDesktop.codeEditorContainer}>
+                <div className={stylesDesktop.toolbarContainer}>
                   <Btn
                     className={stylesDesktop.generateAndRunTestsButton}
                     onClick={queryGenerateAndRunTests}
@@ -606,21 +591,19 @@ const UTBotOnlinePage = () => {
                 </div>
               </div>
             </div>
-            <div className={stylesDesktop.detailsContainer}>
-              <div className={stylesDesktop.detailsEditor}>
-                <Editor
-                  theme="my-light"
-                  language={langHighlight}
-                  value={detailsText}
-                  options={{
-                    minimap: { enabled: false },
-                    lineNumbers: "off",
-                    readOnly: true,
-                    scrollBeyondLastLine: false,
-                    wordWrap: "on",
-                  }}
-                />
-              </div>
+            <div className={stylesDesktop.detailsEditor}>
+              <Editor
+                theme="my-light"
+                language={langHighlight}
+                value={detailsText}
+                options={{
+                  minimap: { enabled: false },
+                  lineNumbers: "off",
+                  readOnly: true,
+                  scrollBeyondLastLine: false,
+                  wordWrap: "on",
+                }}
+              />
             </div>
           </div>
         </div>
