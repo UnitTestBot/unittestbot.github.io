@@ -32,6 +32,7 @@ tasks.withType(Test) {
     systemProperties['selenide.browser'] = 'chrome'
     systemProperties['selenide.headless'] = 'true'
     systemProperties['selenide.browserSize'] = '1920x1080'
+    systemProperties['selenide.baseUrl'] = 'https://www.utbot.org'
 
     // verbose logging in console
     testLogging {

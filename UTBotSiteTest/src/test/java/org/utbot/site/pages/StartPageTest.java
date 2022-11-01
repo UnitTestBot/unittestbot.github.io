@@ -18,6 +18,6 @@ class StartPageTest extends UTBotSiteTest {
                 .shouldBe(enabled)
                 .shouldHave(exactText(DEMO_BTN_TEXT))
                 .click();
-        demoPage.checkUrlMatches();
+        demoPage.checkUrlStartsWith();
     }
 }
