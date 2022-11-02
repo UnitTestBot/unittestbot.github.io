@@ -8,7 +8,7 @@ import Button from "../button";
 import * as styles from "./button-group.module.css";
 
 import watchDemoIcon from "../../images/watch-demo-icon.png";
-import githubIcon from "../../images/github-transparent.png";
+import githubIcon from "../../images/github.svg";
 
 export default function ButtonGroup({
   tryOnlineLink,
@@ -37,7 +37,7 @@ export default function ButtonGroup({
 
       {gitHubLink && (
         <a href={gitHubLink} target="_blank" rel="noopener noreferrer">
-          <img src={githubIcon} width="50" height="50" alt="GitHub Logo" />
+          <img src={githubIcon} width="45" alt="GitHub Logo" />
         </a>
       )}
     </div>

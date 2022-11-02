@@ -9,8 +9,8 @@ import Header from "./header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as styles from "./layout.module.css";
 
-import youtubeIcon from "../images/youtube-icon.png";
-import githubIcon from "../images/github-transparent.png";
+import youtubeIcon from "../images/youtube-icon.svg";
+import githubIcon from "../images/github.svg";
 
 const Layout = ({ children, location }) => {
   const { t, i18n } = useTranslation();
@@ -29,14 +29,14 @@ const Layout = ({ children, location }) => {
           <div className={styles.buttons}>
             <a href="https://www.youtube.com/channel/UCnvEzTrYfaLswAUDrPL-3uQ">
               <img
-                className={styles.githubIcon}
+                className={styles.youtubeIcon}
                 src={youtubeIcon}
                 alt="YouTube icon"
               />
             </a>
             <a href="https://github.com/UnitTestBot">
               <img
-                className={styles.youtubeIcon}
+                className={styles.githubIcon}
                 src={githubIcon}
                 alt="GitHub icon"
               />
