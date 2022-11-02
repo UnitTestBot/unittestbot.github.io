@@ -309,6 +309,7 @@ const UTBotOnlinePage = () => {
           <div className={cn(stylesMobile.toolbar, stylesMobile.topToolbar)}>
             <div className={stylesMobile.navDropdownContainer}>
               <NavDropdown
+                testId="languages"
                 className={stylesDesktop.dropdownLanguages}
                 title={langName}
                 show={showLanguages}
@@ -331,6 +332,7 @@ const UTBotOnlinePage = () => {
                 ))}
               </NavDropdown>
               <NavDropdown
+                testId="examples"
                 title="Examples"
                 show={showExamples}
                 onClick={() => {

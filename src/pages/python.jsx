@@ -18,8 +18,8 @@ import * as styles from "./styles/index.module.css";
 import * as stylesPython from "./styles/python.module.css";
 
 import fuzzingImg from "../images/python/fuzzing.png";
-import pluginCliImg from "../images/python/plugin-cli.jpg";
-import pytestUnittestImg from "../images/python/pytest-unittest.jpg";
+import pluginAndCliImg from "../images/python/plugin-and-cli.png";
+import pytestUnittestImg from "../images/python/pytest-unittest.png";
 import typeInferenceImg from "../images/python/type-inference.png";
 
 import assertionsGif from "../gifs/python/assertions.gif";
@@ -59,10 +59,9 @@ const PythonPage = ({ location }) => {
         <ExampleCard
           heading={<>{t("pythonHome.fitsWorkflowTitle")}</>}
           text={t("pythonHome.fitsWorkflowText")}
-          gifSrc={pluginCliImg}
-          gifAlt="Plugin and CLI example"
+          gifSrc={pluginAndCliImg}
+          gifAlt="Plugin and CLI usage examples"
           gifPlacement="left"
-          textWrapperClassName="cardFlexStart1rem"
         />
 
         <ExampleCard
