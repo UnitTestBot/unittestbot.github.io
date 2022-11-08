@@ -28,7 +28,7 @@
     {
       "id": "6",
       "name": "Bit Operators: xor, and, not",
-      "code": "public class BitOperators {\n  public boolean xor(int x, int y) {\n    return (x ^ y) == 0;\n  }\n\n  public boolean and(int x) {\n    return (x & (x - 1)) == 0;\n  }\n\n  public int booleanNot(boolean a, boolean b) {\n    boolean d = a && b;\n    boolean e = !a || b;\n    return d && e ? 100 : 200;\n  }"
+      "code": "public class BitOperators {\n  public boolean xor(int x, int y) {\n    return (x ^ y) == 0;\n  }\n\n  public boolean and(int x) {\n    return (x & (x - 1)) == 0;\n  }\n\n  public int booleanNot(boolean a, boolean b) {\n    boolean d = a && b;\n    boolean e = !a || b;\n    return d && e ? 100 : 200;\n  }\n}"
     },
     {
       "id": "7",
