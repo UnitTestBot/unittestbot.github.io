@@ -3,4 +3,5 @@
   --header-desktop-height: 99px;
   --header-mobile-height: 56px;
   --footer-height: 70px;
+  --max-screen-collapsed-header: 991px;
 }
