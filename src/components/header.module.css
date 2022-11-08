@@ -83,7 +83,7 @@
   font-weight: 500;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
   .navTop {
     padding-top: 0;
     gap: 1rem;
@@ -98,7 +98,7 @@
   font-size: 15px;
   padding: 0 !important;
   color: whitesmoke;
-  margin-top: 1.5px;
+  margin-top: 2px;
 }
 
 .myLink {
