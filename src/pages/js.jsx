@@ -21,7 +21,7 @@ import noAnnotationsImg from "../images/javascript/no-annotations.svg";
 
 import coverageGif from "../gifs/javascript/coverage.gif";
 import typeInferenceGif from "../gifs/javascript/type-inference.gif";
-import pluginGif from "../gifs/javascript/plugin.gif";
+import pluginAndCliGif from "../gifs/javascript/plugin-and-cli.gif";
 import fuzzingHeuristicGif from "../gifs/javascript/fuzzing-heuristic.gif";
 
 const JsPage = ({ location }) => {
@@ -66,8 +66,8 @@ const JsPage = ({ location }) => {
         <ExampleCard
           heading={<>{t("jsHome.twoKindsOfDevelopersTitle")}</>}
           text={t("jsHome.twoKindsOfDevelopersText")}
-          gifSrc={pluginGif}
-          gifAlt="Plugin usage example"
+          gifSrc={pluginAndCliGif}
+          gifAlt="Plugin and CLI usage examples"
           gifPlacement="right"
         />
 
