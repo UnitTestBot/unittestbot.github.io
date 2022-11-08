@@ -9,15 +9,11 @@ import withTrans from "../i18n/withTrans";
 import * as styles from "./styles/index.module.css";
 import * as stylesCpp from "./styles/cpp.module.css";
 
-import Button from "../components/button";
 import Heading from "../components/heading";
 import Text from "../components/text";
 import InfoCard from "../components/info-card";
 import SEO from "../components/seo";
 import ButtonGroup from "../components/buttonGroup/buttonGroup";
-
-import watchDemoIcon from "../images/watch-demo-icon.png";
-import githubIcon from "../images/github-transparent.png";
 
 import testsGenerationExample from "../gifs/cpp/test-generation-example.gif";
 import configurationGif from "../gifs/cpp/configuration-example.gif";
