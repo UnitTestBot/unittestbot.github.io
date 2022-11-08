@@ -1,7 +1,6 @@
 import * as React from "react";
 import cn from "classnames";
 import { Container } from "react-bootstrap";
-import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
 import Layout from "../components/layout";
 import withTrans from "../i18n/withTrans";

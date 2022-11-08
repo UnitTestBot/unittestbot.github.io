@@ -97,7 +97,7 @@
 .navBottom a {
   font-size: 15px;
   padding: 0 !important;
-  color: whitesmoke !important;
+  color: whitesmoke;
   margin-top: 2px;
 }
 
