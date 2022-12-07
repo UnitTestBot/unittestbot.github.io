@@ -167,12 +167,8 @@
     "alertNew": "<small>Experimental feature</small>"
   },
   "aboutUs": {
-    "whoWeAreText": "We are a distributed team of researchers and engineers.<br><br>We are crazy about mathematics and programming. We love taking part in software testing competitions. We describe our achievements in <a href=\"https://www.utbot.org/research\">research articles</a>. We develop our flagship product — UnitTestBot for Java/Kotlin, C/C++, Python, JavaScript, and Go.<br><br>To be in touch with the high-end science we collaborate with the universities:",
-    "spbu": "Saint Petersburg State University",
-    "hse": "HSE University",
-    "itmo": "ITMO University",
-    "spbpu": "Peter the Great St. Petersburg Polytechnic University",
-    "whatWeDevelopCategoriesText": "As a part of this intercollegiate team we develop root technologies to empower UnitTestBot as well as the whole lineup of other software products. Here are some of them:<br>",
+    "whoWeAreText": "We are a distributed team of researchers and engineers.<br><br>We are crazy about mathematics and programming. We love taking part in software testing competitions. We describe our achievements in <a href=\"https://www.utbot.org/research\">research articles</a>. We develop our flagship product — UnitTestBot for Java/Kotlin, C/C++, Python, JavaScript, and Go.<br><br>To be in touch with the high-end science, we collaborate with the top-rated universities.",
+    "whatWeDevelopCategoriesText": "As a part of the intercollegiate team, we develop root technologies to empower UnitTestBot as well as the whole lineup of other software products. Here are some of them:<br>",
     "satSolvingTitle": "SAT solving technology",
     "satSolvingText": "SAT solver is a computer program which asks whether the variables of a given Boolean formula can be consistently replaced by <i>True</i> or <i>False</i> in such a way that the formula evaluates to <i>True</i>. SAT solvers are frequently used as the “engine” for the program verification applications.",
     "kosat": "<a href=\"https://github.com/UnitTestBot/kosat\">KoSAT</a> is a pure Kotlin CDCL SAT solver based on MiniSat core. It solves Boolean satisfiability problems given in DIMACS format and supports incremental solving.",
