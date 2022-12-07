@@ -167,7 +167,7 @@
     "alertNew": "<small>Experimental feature</small>"
   },
   "aboutUs": {
-    "whoWeAreText": "We are a team of researchers and engineers from Saint Petersburg.<br><br>We are crazy about mathematics and programming. We love taking part in software testing competitions. We describe our achievements in <a href=\"https://www.utbot.org/research\">research articles</a>. We develop our flagship product — UnitTestBot for Java/Kotlin, C/C++, Python, JavaScript, and Go.<br><br>To be in touch with the high-end science we collaborate with the universities:",
+    "whoWeAreText": "We are a distributed team of researchers and engineers.<br><br>We are crazy about mathematics and programming. We love taking part in software testing competitions. We describe our achievements in <a href=\"https://www.utbot.org/research\">research articles</a>. We develop our flagship product — UnitTestBot for Java/Kotlin, C/C++, Python, JavaScript, and Go.<br><br>To be in touch with the high-end science we collaborate with the universities:",
     "spbu": "Saint Petersburg State University",
     "hse": "HSE University",
     "itmo": "ITMO University",
