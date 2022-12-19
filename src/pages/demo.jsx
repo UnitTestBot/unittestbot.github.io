@@ -100,6 +100,8 @@ const UTBotOnlinePage = () => {
       setLanguage(4);
     } else if (urlParams.get("language").toLowerCase() === "go") {
       setLanguage(5);
+    } else if (urlParams.get("language").toLowerCase() === "charp") {
+      setLanguage(6);
     } else {
       return;
     }

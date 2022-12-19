@@ -23,7 +23,9 @@ function Header({ location }) {
       location.pathname === "/python" ||
       location.pathname === "/python/" ||
       location.pathname === "/js" ||
-      location.pathname === "/js/");
+      location.pathname === "/js/" ||
+      location.pathname === "/dotnet" ||
+      location.pathname === "/dotnet/");
 
   const isJavaOrCppPage =
     location &&
@@ -104,6 +106,9 @@ function Header({ location }) {
               </Nav.Item>
               <Nav.Item as="li">
                 <CustomLink to="/go">{t("header.goArea")}</CustomLink>
+              </Nav.Item>
+              <Nav.Item as="li">
+                <CustomLink to="/dotnet">{t("header.dotNetArea")}</CustomLink>
               </Nav.Item>
               <Nav.Item as="li">
                 <CustomLink to="/demo">{t("header.demo")}</CustomLink>
