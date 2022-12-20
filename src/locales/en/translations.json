@@ -82,6 +82,19 @@
     "almostReady": "Almost ready.",
     "utbotGoText": "UnitTestBot for Go code is in development.<br>Wait a while for the next release."
   },
+  "dotnetHome": {
+    "unitTestingAutomatedTitle": "Unit testing automated. Yes, completely automated.",
+    "unitTestingAutomatedText": "UnitTestBot now supports .NET infrastructure via <a href=\"https://github.com/VSharp-team/VSharp\">V#</a> — our custom symbolic execution engine. It automatically generates tests for .NET assemblies — the real test cases with method bodies and inputs.",
+    "minimizationTitle": "Sharp as Occam's razor.",
+    "minimizationText": "UnitTestBot .NET executes all the program instructions with the symbolic values, scanning each and every path. It explores a program's computation tree with as much coverage as possible — you can monitor it right in your IDE. But it never goes the same way: due to minimization procedures, it does not multiply the tests beyond necessity.",
+    "guaranteedByMathTitle": "Unit testing guaranteed by math.",
+    "guaranteedByMathText": "Symbolic execution technique in UnitTestBot .NET reduces the rate of false positives among bugs to a bare minimum. And it is not the question of luck: we develop algorithms to cope with path explosion, recursion, and false positives to",
+    "supportsDotNetTitle": "Keeping pace with .NET platform.",
+    "supportsDotNetText": "UnitTestBot .NET generates NUnit tests in C#. It helps to keep the test suite exhaustive and up to date even when you develop a high-load, complex, cross-platform app — just the kind of .NET projects. UnitTestBot .NET plugin is available for JetBrains Rider* providing you with support for .NET Framework, .NET Core, .NET 5, and .NET 6.",
+    "mockingTitle": "Generate tests for any program you write.",
+    "mockingText": "UnitTestBot .NET applies to code that uses LINQ syntax — so popular among C# developers. What about code containing complex generics? <a href=\"https://drops.dagstuhl.de/opus/volltexte/2019/10799/\">They say</a>, it's impossible to use symbolic execution in such cases, but UnitTestBot .NET deals with it. What if you need mocking? UnitTestBot .NET has the custom mocking framework. And more features are coming.",
+    "needDotNet6Installed": "* To launch UnitTestBot .NET, you need .NET 6 installed."
+  },
   "docs": {
     "cdocsTitle": "UnitTestBot C/C++",
     "javadocsTitle": "UnitTestBot Java",
@@ -167,12 +180,8 @@
     "alertNew": "<small>Experimental feature</small>"
   },
   "aboutUs": {
-    "whoWeAreText": "We are a team of researchers and engineers from Saint Petersburg.<br><br>All of us are crazy about mathematics and programming. We love taking part in software testing competitions and describe our achievements in <a href=\"https://www.utbot.org/research\">research articles</a>.<br><br>The main project we share is our flagship product — UnitTestBot for Java/Kotlin, C/C++, Python, JavaScript, and Go.<br><br>To be in touch with the high-end science we collaborate with the universities:",
-    "spbu": "Saint Petersburg State University",
-    "hse": "HSE University",
-    "itmo": "ITMO University",
-    "spbpu": "Peter the Great St. Petersburg Polytechnic University",
-    "whatWeDevelopCategoriesText": "As a part of this intercollegiate team we develop root technologies to empower UnitTestBot as well as the whole lineup of other software products. Here are some of them:<br>",
+    "whoWeAreText": "We are a distributed team of researchers and engineers.<br><br>We are crazy about mathematics and programming. We love taking part in software testing competitions. We describe our achievements in <a href=\"https://www.utbot.org/research\">research articles</a>. We develop our flagship product — UnitTestBot for Java/Kotlin, C/C++, Python, JavaScript, and Go.<br><br>To be in touch with the high-end science, we collaborate with the top-rated universities.",
+    "whatWeDevelopCategoriesText": "As a part of the intercollegiate team, we develop root technologies to empower UnitTestBot as well as the whole lineup of other software products. Here are some of them:<br>",
     "satSolvingTitle": "SAT solving technology",
     "satSolvingText": "SAT solver is a computer program asking whether the variables of a given Boolean formula can be consistently replaced by <i>True</i> or <i>False</i> in such a way that the formula evaluates to <i>True</i>. SAT solvers are frequently used as the “engine” for the program verification applications.",
     "kosat": "<a href=\"https://github.com/UnitTestBot/kosat\">KoSAT</a> is a pure Kotlin CDCL SAT solver based on MiniSat core. It solves Boolean satisfiability problems given in DIMACS format and supports incremental solving.",
@@ -201,6 +210,7 @@
     "pythonArea": "Python",
     "goArea": "Go",
     "javaScriptArea": "JavaScript",
+    "dotNetArea": ".NET",
     "demo": "Demo",
     "research": "Research",
     "aboutUs": "About us",
