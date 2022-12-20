@@ -1,0 +1,15 @@
+.info {
+  max-width: 900px;
+  align-self: center;
+}
+
+.note {
+  text-align: left;
+  padding-bottom: 3rem;
+}
+
+@media screen and (max-width: 1199px) {
+  .notes {
+    max-width: 450px;
+  }
+}

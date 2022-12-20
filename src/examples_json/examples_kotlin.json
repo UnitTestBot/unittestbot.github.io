@@ -1,0 +1,34 @@
+{
+  "examples": [
+    {
+      "id": "1",
+      "name": "Checked addition",
+      "code": "class CheckedAddition(var x: Int) {\n\tfun addWithCheck(y: Int): Int? {\n\t\tval res = x.toLong() + y.toLong()\n\n\t\tif (res >= Int.MIN_VALUE && res <= Int.MAX_VALUE) {\n\t\t\tthis.x = res.toInt()\n\t\t\treturn res.toInt()\n\t\t}\n\n\t\treturn null\n\t}\n}"
+    },
+    {
+      "id": "2",
+      "name": "Bit Operators: xor, and, not, or",
+      "code": "fun xor(x: Int, y: Int): Boolean {\n\treturn x xor y == 0\n}\n\nfun and(x: Int): Boolean {\n\treturn x and x - 1 == 0\n}\n\nfun booleanNot(a: Boolean, b: Boolean): Int {\n\tval d = a && b\n\tval e = !a || b\n\treturn if (d && e) 100 else 200\n}"
+    },
+    {
+      "id": "3",
+      "name": "Bit Operators: complement, bitwise shift",
+      "code": "fun shl(x: Int): Boolean {\n\treturn x shl 1 == 2\n}\n\nfun complement(x: Int): Boolean {\n\treturn x.inv() == 1\n}\n\nfun shlWithBigLongShift(shift: Long): Int {\n\tif (shift < 40) {\n\t\treturn 1\n\t}\n\treturn if (0x77777777 shl shift.toInt() == 0x77777770) 2 else 3\n}"
+    },
+    {
+      "id": "4",
+      "name": "Enum Switch",
+      "code": "import java.math.RoundingMode\nimport java.math.RoundingMode.*\n\nfun enumSwitch(m: RoundingMode?) =\n\twhen (m) {\n\t\tHALF_DOWN, HALF_EVEN, HALF_UP -> 1\n\t\tDOWN -> 2\n\t\tCEILING -> 3\n\t\telse -> -1;\n\t}"
+    },
+    {
+      "id": "5",
+      "name": "Lookup Switch",
+      "code": "fun lookupSwitch(x: Int): Int {\n\treturn when (x) {\n\t\t0 -> 0\n\t\t10, 20 -> 20\n\t\t30 -> 30\n\t\telse -> -1\n\t}\n}"
+    },
+    {
+      "id": "6",
+      "name": "While Loop",
+      "code": "fun whileLoop(k: Int): Int {\n\tvar i = 0\n\tvar sum = 0\n\n\twhile (i < k) {\n\t\tsum += i\n\t\ti += 1\n\t}\n\n\treturn sum\n}"
+    }
+  ]
+}

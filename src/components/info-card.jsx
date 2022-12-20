@@ -13,7 +13,10 @@ export default function InfoCard({ heading, text }) {
         {heading}
       </Heading>
 
-      <Text dangerouslySetInnerHTML={{ __html: text }} />
+      <Text
+        className={styles.text}
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
     </div>
   );
 }

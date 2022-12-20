@@ -102,7 +102,7 @@ const ResearchPage = () => {
                 conferenceTitle={t("research.logicForProgrammingConference")}
                 articleTitle={t("research.hornClausesArticleTitle")}
                 authors={t("research.hornClausesArticle")}
-                pdf={relationalInvariants}
+                pdf={hornClauses}
               />
             </div>
           </div>
@@ -114,7 +114,7 @@ const ResearchPage = () => {
 
             <div>
               <Text
-                className={styles.heading}
+                className={styles.conferenceTitle}
                 dangerouslySetInnerHTML={{
                   __html: t("research.sbst2022Title"),
                 }}
@@ -142,7 +142,7 @@ const ResearchPage = () => {
 
             <div>
               <Text
-                className={styles.heading}
+                className={styles.conferenceTitle}
                 dangerouslySetInnerHTML={{
                   __html: t("research.sbst2021Title"),
                 }}
@@ -167,7 +167,7 @@ const ResearchPage = () => {
               {t("research.utbotCppTitle")}
             </Heading>
             <Text
-              className={styles.heading}
+              className={styles.conferenceTitle}
               dangerouslySetInnerHTML={{
                 __html: t("research.kleeWorkshop2022Title"),
               }}

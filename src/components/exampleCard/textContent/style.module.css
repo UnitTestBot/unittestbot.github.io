@@ -22,10 +22,22 @@
   width: 550px;
 }
 
+.onlyText a {
+  margin-top: 1rem;
+}
+
 @media screen and (min-width: 1200px) {
   .text {
     width: calc(50% - 2vw);
     margin-bottom: 0;
+  }
+
+  .cardFlexStart5rem {
+    justify-content: flex-start;
+  }
+
+  .cardFlexStart5rem p {
+    margin-top: 5rem;
   }
 }
 
@@ -37,6 +49,14 @@
 
   .onlyText {
     width: calc(50% - 2vw);
+  }
+
+  .cardFlexStart5rem {
+    justify-content: flex-start;
+  }
+
+  .cardFlexStart5rem p {
+    margin-top: 5rem;
   }
 }
 

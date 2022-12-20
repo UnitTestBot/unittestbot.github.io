@@ -24,3 +24,7 @@
   font-size: var(--research-authors-font-size);
   line-height: 1.5rem;
 }
+
+.text {
+  margin-bottom: 1rem;
+}

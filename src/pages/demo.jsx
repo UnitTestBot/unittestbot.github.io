@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Layout from "../components/layout";
 import { useTranslation } from "react-i18next";
 import {
-  Alert,
   Button as Btn,
-  ButtonGroup as BtnGroup,
   NavDropdown,
   OverlayTrigger,
   Spinner,
@@ -29,10 +27,7 @@ import "prismjs/components/prism-python";
 import "prismjs/components/prism-markup";
 import "prismjs/themes/prism.css";
 
-//import { LanguageDropdown } from "../components/languages-dropdown";
-// import Button from "../components/button";
 import {
-  LanguageIndex,
   Language as LanguageEnum,
   languageIsExperimentalFeature,
   languageToHighlight,
@@ -87,6 +82,34 @@ const UTBotOnlinePage = () => {
     const queryString = window.location.search;
     setHref(window.location.origin + window.location.pathname);
     const urlParams = new URLSearchParams(queryString);
+    if (!urlParams.has("language")) {
+      return;
+    }
+    if (urlParams.get("language").toLowerCase() === "c") {
+      setLanguage(0);
+    } else if (urlParams.get("language").toLowerCase() === "cpp") {
+      setLanguage(1);
+    } else if (urlParams.get("language").toLowerCase() === "java") {
+      setLanguage(2);
+    } else if (urlParams.get("language").toLowerCase() === "python") {
+      setLanguage(3);
+    } else if (urlParams.get("language").toLowerCase() === "javascript") {
+      setLanguage(4);
+    } else if (urlParams.get("language").toLowerCase() === "go") {
+      setLanguage(5);
+    } else if (urlParams.get("language").toLowerCase() === "csharp") {
+      setLanguage(6);
+    } else {
+      return;
+    }
+
+    if (urlParams.has("source")) {
+      setSourceCode(urlParams.get("source"));
+      setTestCode("");
+    } else {
+      // For the case when the language is in URL but the source no
+      setSourceCode("");
+    }
   }, []);
 
   const url = `${href}?language=${languageToQuery(
@@ -235,9 +258,6 @@ const UTBotOnlinePage = () => {
       <NavDropdown.Item
         onClick={() => {
           setSourceCode(example.code);
-          if (window.screen.width < minDesktopWidth) {
-            hideDropdownExamples();
-          }
         }}
       >
         {example.name}
@@ -288,6 +308,7 @@ const UTBotOnlinePage = () => {
           <div className={cn(stylesMobile.toolbar, stylesMobile.topToolbar)}>
             <div className={stylesMobile.navDropdownContainer}>
               <NavDropdown
+                testId="languages"
                 className={stylesDesktop.dropdownLanguages}
                 title={langName}
                 show={showLanguages}
@@ -303,7 +324,6 @@ const UTBotOnlinePage = () => {
                       if (language != lang) {
                         setSourceCode(languageToSnippet(lang));
                       }
-                      hideDropdownLanguages();
                     }}
                   >
                     {languageToString(lang)}
@@ -311,6 +331,7 @@ const UTBotOnlinePage = () => {
                 ))}
               </NavDropdown>
               <NavDropdown
+                testId="examples"
                 title="Examples"
                 show={showExamples}
                 onClick={() => {
@@ -456,12 +477,7 @@ const UTBotOnlinePage = () => {
         <div className={stylesDesktop.top}>
           <div className={stylesDesktop.main}>
             <div className={stylesDesktop.codeEditorsContainer}>
-              <div
-                className={cn(
-                  stylesDesktop.codeEditorContainer,
-                  stylesDesktop.sourceCodeEditorcontainer
-                )}
-              >
+              <div className={stylesDesktop.codeEditorContainer}>
                 <div className={stylesDesktop.toolbarContainer}>
                   <div>
                     <OverlayTrigger
@@ -484,6 +500,7 @@ const UTBotOnlinePage = () => {
                   </div>
                   <div className={stylesDesktop.dropdownContainer}>
                     <NavDropdown
+                      testId="languages"
                       className={stylesDesktop.dropdownLanguages}
                       title={langName}
                       show={showLanguages}
@@ -505,6 +522,7 @@ const UTBotOnlinePage = () => {
                       ))}
                     </NavDropdown>
                     <NavDropdown
+                      testId="examples"
                       title="Examples"
                       show={showExamples}
                       onClick={() => {}}
@@ -531,18 +549,8 @@ const UTBotOnlinePage = () => {
                   />
                 </div>
               </div>
-              <div
-                className={cn(
-                  stylesDesktop.codeEditorContainer,
-                  stylesDesktop.testsEditorContainer
-                )}
-              >
-                <div
-                  className={cn(
-                    stylesDesktop.toolbarContainer,
-                    stylesDesktop.generateAndRunTestsButtonContainer
-                  )}
-                >
+              <div className={stylesDesktop.codeEditorContainer}>
+                <div className={stylesDesktop.toolbarContainer}>
                   <Btn
                     className={stylesDesktop.generateAndRunTestsButton}
                     onClick={queryGenerateAndRunTests}
@@ -586,21 +594,19 @@ const UTBotOnlinePage = () => {
                 </div>
               </div>
             </div>
-            <div className={stylesDesktop.detailsContainer}>
-              <div className={stylesDesktop.detailsEditor}>
-                <Editor
-                  theme="my-light"
-                  language={langHighlight}
-                  value={detailsText}
-                  options={{
-                    minimap: { enabled: false },
-                    lineNumbers: "off",
-                    readOnly: true,
-                    scrollBeyondLastLine: false,
-                    wordWrap: "on",
-                  }}
-                />
-              </div>
+            <div className={stylesDesktop.detailsEditor}>
+              <Editor
+                theme="my-light"
+                language={langHighlight}
+                value={detailsText}
+                options={{
+                  minimap: { enabled: false },
+                  lineNumbers: "off",
+                  readOnly: true,
+                  scrollBeyondLastLine: false,
+                  wordWrap: "on",
+                }}
+              />
             </div>
           </div>
         </div>

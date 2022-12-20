@@ -1,0 +1,29 @@
+{
+  "examples": [
+    {
+      "id": "1",
+      "name": "Binary search",
+      "code": "public static class Algorithms {\n\tpublic static int BinarySearch(int value, int[] a)\n\t{\n\t\tvar l = a.GetLowerBound(0);\n\t\tvar r = a.GetLength(0);\n\t\twhile (l < r)\n\t\t{\n\t\t\tvar mid = (l + r) / 2;\n\t\t\tint element = a[mid];\n\t\t\tif (element == value)\n\t\t\t\treturn mid;\n\t\t\tif (element < value)\n\t\t\t\tr = mid - 1;\n\t\t\tl = mid + 1;\n\t\t}\n\t\treturn -1;\n\t}\n}"
+    },
+    {
+      "id": "2",
+      "name": "Recursion",
+      "code": "public sealed class NotPositive : Exception { } \n\npublic class Recursion {\n\tprivate int Fact(int n)\n\t{\n\t\tif (n <= 0)\n\t\t\tthrow new NotPositive();\n\t\ttry\n\t\t{\n\t\t\treturn n * Fact(n - 1);\n\t\t}\n\t\tcatch (NotPositive)\n\t\t{\n\t\t\treturn 1;\n\t\t}\n\t}\n\n\tpublic int FactResult(int n)\n\t{\n\t\ttry\n\t\t{\n\t\t\treturn Fact(n);\n\t\t}\n\t\tcatch (NotPositive)\n\t\t{\n\t\t\treturn 0;\n\t\t}\n\t}\n}"
+    },
+    {
+      "id": "3",
+      "name": "LINQ",
+      "code": "public class Customer\n{\n\tpublic int Id { get; set; }\n\tpublic long Money { get; set; }\n\tpublic int OrderId { get; set; }\n}\n\npublic class Order\n{\n\tpublic int Id { get; set; }\n\tpublic int Cost { get; set; }\n}\n\npublic static class OrdersUtil {\n\tpublic static long CountOfPossibleOrders(int m1, int m2, int id1, int id2, int c1, int c2)\n\t{\n\t\tif (m1 <= 0 | m2 <= 0 | c1 <= 0 | c2 <= 0)\n\t\t\tthrow new ArgumentException(\"wrong arguments\");\n\n\t\tvar customers = new List<Customer>\n\t\t{\n\t\t\tnew Customer {Id = 1, Money = m1, OrderId = 1},\n\t\t\tnew Customer {Id = 2, Money = m2, OrderId = 2},\n\t\t};\n\t\tvar orders = new List<Order>\n\t\t{\n\t\t\tnew Order {Id = id1, Cost = c1},\n\t\t\tnew Order {Id = id2, Cost = c2},\n\t\t};\n\t\tvar innerJoinQuery =\n\t\tfrom c in customers\n\t\tjoin o in orders on c.OrderId equals o.Id\n\t\tselect c.Money / o.Cost;\n\n\t\tvar validOrdersCount = innerJoinQuery.Count(x => x > 0);\n\t\tif (validOrdersCount > 0)\n\t\t\treturn innerJoinQuery.Sum();\n\n\t\treturn 0;\n\t}\n}"
+    },
+    {
+      "id": "4",
+      "name": "Trees",
+      "code": "public class Trees { \n\tprivate class Tree\n\t{\n\t\tpublic int Key { get; set; }\n\t\tpublic Tree Left { get; set; }\n\t\tpublic Tree Right { get; set; }\n\n\t\tpublic static Tree Generate(int depth)\n\t\t{\n\t\t\treturn depth == 0 ? null : new Tree {Key = 0, Left = Generate(depth - 1), Right = Generate(depth - 1)};\n\t\t}\n\n\t\tpublic int Size => 1 + (Left?.Size ?? 0) + (Left?.Size ?? 0);\n\n\t\tpublic int Depth => 1 + Math.Max(Left?.Depth ?? 0, Right?.Depth ?? 0);\n\t}\n\n\tpublic static bool CheckGeneratedDepth(int d, int s)\n\t{\n\t\tif (d < 0 | d > 10)\n\t\t\tthrow new ArgumentException(\"wrong tree depth\");\n\n\t\tTree t = Tree.Generate(d);\n\n\t\tif (t.Depth != d || t.Size != s)\n\t\t\treturn false;\n\n\t\treturn true;\n\t}\n}"
+    },
+    {
+      "id": "5",
+      "name": "Regexp",
+      "code": "public static class RegexpUtil \n{\n\tprivate static bool MatchStar(char c, string re, int repos, string text, int textpos)\n\t{\n\t\tdo\n\t\t{\n\t\t\tif (MatchHere(re, repos, text, textpos))\n\t\t\t{\n\t\t\t\treturn true;\n\t\t\t}\n\t\t} while (textpos < text.Length && (text[textpos++] == c || c == '.'));\n\t\treturn false;\n\t}\n\n\tprivate static bool MatchHere(string re, int repos, string text, int textpos)\n\t{\n\t\tif (repos >= re.Length)\n\t\t\treturn textpos >= text.Length;\n\t\tif (repos + 1 < re.Length && re[repos + 1] == '*')\n\t\t\treturn MatchStar(re[repos], re, repos + 2, text, textpos);\n\t\tif (re[repos] == '$' && repos + 1 >= re.Length)\n\t\t\treturn textpos >= text.Length;\n\t\tif (textpos < text.Length && (re[repos] == '.' || re[repos] == text[textpos]))\n\t\t\treturn MatchHere(re, repos + 1, text, textpos + 1);\n\t\treturn false;\n\t}\n\n\tprivate static bool Match(string re, string text)\n\t{\n\t\tif (re[0] == '^')\n\t\t\treturn MatchHere(re, 1, text, 0);\n\t\tint textpos = 0;\n\t\tdo\n\t\t{\n\t\t\tif (MatchHere(re, 0, text, textpos))\n\t\t\t\treturn true;\n\t\t} while (textpos++ < text.Length);\n\n\t\treturn false;\n\t}\n\n\tpublic static bool RegexpMatch(string pattern)\n\t{\n\t\treturn Match(pattern, \"Hello\");\n\t}\n}"
+    }
+  ]
+}

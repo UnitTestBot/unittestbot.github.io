@@ -14,9 +14,7 @@ import Text from "../components/text";
 import ExampleCard from "../components/exampleCard/ExampleCard";
 import SEO from "../components/seo";
 import TextContent from "../components/exampleCard/textContent/TextContent";
-
-import watchDemoIcon from "../images/watch-demo-icon.png";
-import githubIcon from "../images/github-transparent.png";
+import ButtonGroup from "../components/buttonGroup/buttonGroup";
 
 import simpleGif from "../gifs/java/Simple.gif";
 import fullClassGif from "../gifs/java/Full-Class.gif";
@@ -41,23 +39,11 @@ const MainPage = ({ location }) => {
           dangerouslySetInnerHTML={{ __html: t("javaHome.testsGenText") }}
         />
 
-        <div className={styles.actions}>
-          <Link to="https://www.utbot.org/demo/?language=Java&source=public%20class%20Recursion%20%7B%0A%20%20public%20int%20factorial(int%20n)%20%7B%0A%20%20%20%20if%20(n%20%3C%200)%20%7B%0A%20%20%20%20%20%20throw%20new%20IllegalArgumentException()%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20if%20(n%20%3D%3D%200)%20%7B%0A%20%20%20%20%20%20return%201%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20return%20n%20*%20factorial(n%20-%201)%3B%0A%20%20%7D%0A%7D%0A">
-            <Button>{t("javaHome.tryOnlineText")}</Button>
-          </Link>
-
-          <Link
-            to="https://youtu.be/p6GtTqc599Q"
-            className={styles.howWorksLink}
-          >
-            <img src={watchDemoIcon} width="32" height="30" alt="Video icon" />
-            {t("javaHome.watchHowWorksText")}
-          </Link>
-
-          <Link to="https://github.com/UnitTestBot/UTBotJava">
-            <img src={githubIcon} width="50" height="50" alt="Github Logo" />
-          </Link>
-        </div>
+        <ButtonGroup
+          tryOnlineLink="/demo/?language=Java&source=public%20class%20Recursion%20%7B%0A%20%20public%20int%20factorial(int%20n)%20%7B%0A%20%20%20%20if%20(n%20%3C%200)%20%7B%0A%20%20%20%20%20%20throw%20new%20IllegalArgumentException()%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20if%20(n%20%3D%3D%200)%20%7B%0A%20%20%20%20%20%20return%201%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20return%20n%20*%20factorial(n%20-%201)%3B%0A%20%20%7D%0A%7D%0A"
+          demoVideoLink="https://youtu.be/p6GtTqc599Q"
+          gitHubLink="https://github.com/UnitTestBot/UTBotJava"
+        />
       </Container>
 
       <Container className={styles.examples}>
@@ -138,14 +124,3 @@ const MainPage = ({ location }) => {
 };
 
 export default withTrans(MainPage);
-
-// const isActive = className => ({ isPartiallyCurrent }) => ({
-//   className: className + (isPartiallyCurrent ? " active" : ""),
-// });
-
-// const CustomLink = ({ className, children, ...propsCustomLink }) => (
-//   /* eslint-disable-next-line react/jsx-props-no-spreading */
-//   <Link getProps={isActive(className)} {...propsCustomLink}>
-//     {children}
-//   </Link>
-// );

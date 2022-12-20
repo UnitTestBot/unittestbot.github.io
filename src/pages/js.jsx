@@ -8,6 +8,7 @@ import Heading from "../components/heading";
 import Text from "../components/text";
 import ExampleCard from "../components/exampleCard/ExampleCard";
 import SEO from "../components/seo";
+import ButtonGroup from "../components/buttonGroup/buttonGroup";
 
 import { useTranslation } from "react-i18next";
 import Layout from "../components/layout";
@@ -20,7 +21,7 @@ import noAnnotationsImg from "../images/javascript/no-annotations.svg";
 
 import coverageGif from "../gifs/javascript/coverage.gif";
 import typeInferenceGif from "../gifs/javascript/type-inference.gif";
-import pluginGif from "../gifs/javascript/plugin.gif";
+import pluginAndCliGif from "../gifs/javascript/plugin-and-cli.gif";
 import fuzzingHeuristicGif from "../gifs/javascript/fuzzing-heuristic.gif";
 
 const JsPage = ({ location }) => {
@@ -42,11 +43,7 @@ const JsPage = ({ location }) => {
           }}
         />
 
-        <div className={styles.actions}>
-          <Link to="https://www.utbot.org/demo/?language=JavaScript&source=function%20fibonacci(n)%20%7B%0A%20%20if%20(n%20%3C%200%20%7C%7C%20n%20%3E%2025)%0A%20%20%20%20return%20-1%0A%0A%20%20if%20(n%20%3D%3D%3D%200)%0A%20%20%20%20return%200%0A%0A%20%20if%20(n%20%3D%3D%3D%201)%0A%20%20%20%20return%201%0A%0A%20%20return%20this.fib(n%20-%201)%20%2B%20this.fib(n%20-%202)%0A%7D">
-            <Button>{t("jsHome.tryOnlineText")}</Button>
-          </Link>
-        </div>
+        <ButtonGroup tryOnlineLink="/demo/?language=JavaScript&source=function%20fibonacci(n)%20%7B%0A%20%20if%20(n%20%3C%200%20%7C%7C%20n%20%3E%2025)%0A%20%20%20%20return%20-1%0A%0A%20%20if%20(n%20%3D%3D%3D%200)%0A%20%20%20%20return%200%0A%0A%20%20if%20(n%20%3D%3D%3D%201)%0A%20%20%20%20return%201%0A%0A%20%20return%20this.fib(n%20-%201)%20%2B%20this.fib(n%20-%202)%0A%7D" />
       </Container>
 
       <Container className={styles.examples}>
@@ -69,8 +66,8 @@ const JsPage = ({ location }) => {
         <ExampleCard
           heading={<>{t("jsHome.twoKindsOfDevelopersTitle")}</>}
           text={t("jsHome.twoKindsOfDevelopersText")}
-          gifSrc={pluginGif}
-          gifAlt="Plugin usage example"
+          gifSrc={pluginAndCliGif}
+          gifAlt="Plugin and CLI usage examples"
           gifPlacement="right"
         />
 
