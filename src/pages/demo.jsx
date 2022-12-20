@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Layout from "../components/layout";
 import { useTranslation } from "react-i18next";
 import {
-  Alert,
   Button as Btn,
-  ButtonGroup as BtnGroup,
   NavDropdown,
   OverlayTrigger,
   Spinner,
@@ -30,7 +28,6 @@ import "prismjs/components/prism-markup";
 import "prismjs/themes/prism.css";
 
 import {
-  LanguageIndex,
   Language as LanguageEnum,
   languageIsExperimentalFeature,
   languageToHighlight,
@@ -100,7 +97,7 @@ const UTBotOnlinePage = () => {
       setLanguage(4);
     } else if (urlParams.get("language").toLowerCase() === "go") {
       setLanguage(5);
-    } else if (urlParams.get("language").toLowerCase() === "charp") {
+    } else if (urlParams.get("language").toLowerCase() === "csharp") {
       setLanguage(6);
     } else {
       return;
@@ -503,6 +500,7 @@ const UTBotOnlinePage = () => {
                   </div>
                   <div className={stylesDesktop.dropdownContainer}>
                     <NavDropdown
+                      testId="languages"
                       className={stylesDesktop.dropdownLanguages}
                       title={langName}
                       show={showLanguages}
@@ -524,6 +522,7 @@ const UTBotOnlinePage = () => {
                       ))}
                     </NavDropdown>
                     <NavDropdown
+                      testId="examples"
                       title="Examples"
                       show={showExamples}
                       onClick={() => {}}
