@@ -41,7 +41,7 @@ export function languageToString(lang) {
 const langToSnippetMap = {
   [Language.C]: dedent`#include <stdio.h>\n#include <string.h>\n#include <math.h>\n#include <stdlib.h>\n\nint foo() \n{\n  // TODO: write your code here\n  return 0;\n}`,
   [Language.CPP]: dedent`#include <cmath>\n#include <cstring>\n\nusing namespace std;\n\nint foo() \n{\n  // TODO: write your code here\n  return 0;\n}`,
-  [Language.JAVA]: dedent`import java.util.*;\n\npublic class Solution {\n  // TODO: write your code here\n}`,
+  [Language.JAVA]: dedent`import java.util.*;\n\npublic class Solution {\n public int max(int a, int b) {\n if (a > b) {\n return a;\n }\n\n return b;\n }\n}`,
   [Language.PYTHON]: dedent`def max(a, b):\n  if a > b:\n    return a\n  return b`,
   [Language.JS]: dedent`function max(a, b) {\n  if (a > b) {\n    return a\n  } else {\n    return b\n  }\n}`,
   [Language.GO]: dedent`package simple\n\nfunc example() {\n  // Write your code here\n}`,
