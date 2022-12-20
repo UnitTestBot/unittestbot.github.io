@@ -89,15 +89,15 @@ const UTBotOnlinePage = () => {
       setLanguage(0);
     } else if (urlParams.get("language").toLowerCase() === "cpp") {
       setLanguage(1);
-    } else if (urlParams.get("language").toLowerCase() === "java") {
-      setLanguage(2);
-    } else if (urlParams.get("language").toLowerCase() === "python") {
-      setLanguage(3);
-    } else if (urlParams.get("language").toLowerCase() === "javascript") {
-      setLanguage(4);
-    } else if (urlParams.get("language").toLowerCase() === "go") {
-      setLanguage(5);
     } else if (urlParams.get("language").toLowerCase() === "csharp") {
+      setLanguage(2);
+    } else if (urlParams.get("language").toLowerCase() === "go") {
+      setLanguage(3);
+    } else if (urlParams.get("language").toLowerCase() === "java") {
+      setLanguage(4);
+    } else if (urlParams.get("language").toLowerCase() === "javascript") {
+      setLanguage(5);
+    } else if (urlParams.get("language").toLowerCase() === "python") {
       setLanguage(6);
     } else {
       return;
