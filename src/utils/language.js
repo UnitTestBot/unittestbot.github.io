@@ -7,6 +7,7 @@ export const Language = {
   PYTHON: 3,
   JS: 4,
   GO: 5,
+  CSHARP: 6,
 };
 
 const langToQueryMap = {
@@ -16,6 +17,7 @@ const langToQueryMap = {
   [Language.PYTHON]: "Python",
   [Language.JS]: "JavaScript",
   [Language.GO]: "Go",
+  [Language.CSHARP]: "CSharp",
 };
 
 export function languageToQuery(lang) {
@@ -29,6 +31,7 @@ const langToStringMap = {
   [Language.PYTHON]: "Python",
   [Language.JS]: "JavaScript",
   [Language.GO]: "Go",
+  [Language.CSHARP]: "C#",
 };
 
 export function languageToString(lang) {
@@ -42,6 +45,7 @@ const langToSnippetMap = {
   [Language.PYTHON]: dedent`def max(a, b):\n  if a > b:\n    return a\n  return b`,
   [Language.JS]: dedent`function max(a, b) {\n  if (a > b) {\n    return a\n  } else {\n    return b\n  }\n}`,
   [Language.GO]: dedent`package simple\n\nfunc example() {\n  // Write your code here\n}`,
+  [Language.CSHARP]: dedent`public static class Solution {\n  public static int Max(int a, int b) {\n    if (a > b) {\n      return a;\n    }\n\n  return b;\n  }\n}`,
 };
 
 export function languageToSnippet(lang) {
@@ -55,6 +59,7 @@ const langToExamplesMap = {
   [Language.PYTHON]: require("../examples_json/examples_python.json"),
   [Language.JS]: require("../examples_json/examples_js.json"),
   [Language.GO]: require("../examples_json/examples_go.json"),
+  [Language.CSHARP]: require("../examples_json/examples_csharp.json"),
 };
 
 export function languageToExamples(lang) {
@@ -68,6 +73,7 @@ const langToHighlightMap = {
   [Language.PYTHON]: "python",
   [Language.JS]: "javascript",
   [Language.GO]: "go",
+  [Language.CSHARP]: "csharp",
 };
 
 export function languageToHighlight(lang) {
