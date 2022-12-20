@@ -7,21 +7,26 @@
     },
     {
       "id": "2",
+      "name": "Arrays: unsafe and safe copy",
+      "code": "public static class ArraysCopy {\n\tprivate static void SafeCopy(int[] source, int sourceOffset, int[] target, int targetOffset, int count)\n\t{\n\t\tfor (int i = 0; i < count; i++)\n\t\t{\n\t\t\ttarget[targetOffset + i] = source[sourceOffset + i];\n\t\t}\n\t}\n\n\tprivate static unsafe void UnsafeCopy(int[] source, int sourceOffset, int[] target, int targetOffset, int count)\n\t{\n\t\tfixed (int* pSource = source, pTarget = target)\n\t\t{\n\t\t\tbyte* pSourceByte = (byte*)pSource;\n\t\t\tbyte* pTargetByte = (byte*)pTarget;\n\t\t\tvar sourceOffsetByte = sourceOffset * sizeof(int);\n\t\t\tvar targetOffsetByte = targetOffset * sizeof(int);\n\t\t\t// Copy the specified number of bytes from source to target.\n\t\t\tfor (int i = 0; i < count * sizeof(int); i++)\n\t\t\t{\n\t\t\t\tpTargetByte[targetOffsetByte + i] = pSourceByte[sourceOffsetByte + i];\n\t\t\t}\n\t\t}\n\t}\n\n\tpublic static bool CheckUnsafeArrayCopy(int offset1, int offset2, int value)\n\t{\n\t\tvar length = 5;\n\t\tif (offset1 < 0 || offset1 >= length || offset2 < 0 || offset2 >= length)\n\t\t\tthrow new ArgumentException(\"wrong offsets\");\n\n\t\t// Create three arrays of the same length\n\t\tint[] array1 = new int[length];\n\t\tint[] array2 = new int[length];\n\t\tint[] array3 = new int[length];\n\n\t\t// Filling first array\n\t\tfor (int i = 0; i < length; ++i)\n\t\t{\n\t\t\tarray1[i] = i + value;\n\t\t}\n\n\t\t// Copy first array to second via unsafe code\n\t\tUnsafeCopy(array1, 0, array2, 0, length - offset1);\n\n\t\t// Copy first array to third via simple 'for'\n\t\tSafeCopy(array1, 0, array3, 0, length - offset2);\n\n\t\t// Checking equality of second and third arrays\n\t\tfor (int i = 0; i < length; i++)\n\t\t{\n\t\t\tif (array2[i] != array3[i])\n\t\t\t\treturn false;\n\t\t}\n\n\t\treturn true;\n\t}\n}"
+    },
+    {
+      "id": "3",
       "name": "Recursion",
       "code": "public sealed class NotPositive : Exception { } \n\npublic class Recursion {\n\tprivate int Fact(int n)\n\t{\n\t\tif (n <= 0)\n\t\t\tthrow new NotPositive();\n\t\ttry\n\t\t{\n\t\t\treturn n * Fact(n - 1);\n\t\t}\n\t\tcatch (NotPositive)\n\t\t{\n\t\t\treturn 1;\n\t\t}\n\t}\n\n\tpublic int FactResult(int n)\n\t{\n\t\ttry\n\t\t{\n\t\t\treturn Fact(n);\n\t\t}\n\t\tcatch (NotPositive)\n\t\t{\n\t\t\treturn 0;\n\t\t}\n\t}\n}"
     },
     {
-      "id": "3",
+      "id": "4",
       "name": "LINQ",
       "code": "public class Customer\n{\n\tpublic int Id { get; set; }\n\tpublic long Money { get; set; }\n\tpublic int OrderId { get; set; }\n}\n\npublic class Order\n{\n\tpublic int Id { get; set; }\n\tpublic int Cost { get; set; }\n}\n\npublic static class OrdersUtil {\n\tpublic static long CountOfPossibleOrders(int m1, int m2, int id1, int id2, int c1, int c2)\n\t{\n\t\tif (m1 <= 0 | m2 <= 0 | c1 <= 0 | c2 <= 0)\n\t\t\tthrow new ArgumentException(\"wrong arguments\");\n\n\t\tvar customers = new List<Customer>\n\t\t{\n\t\t\tnew Customer {Id = 1, Money = m1, OrderId = 1},\n\t\t\tnew Customer {Id = 2, Money = m2, OrderId = 2},\n\t\t};\n\t\tvar orders = new List<Order>\n\t\t{\n\t\t\tnew Order {Id = id1, Cost = c1},\n\t\t\tnew Order {Id = id2, Cost = c2},\n\t\t};\n\t\tvar innerJoinQuery =\n\t\tfrom c in customers\n\t\tjoin o in orders on c.OrderId equals o.Id\n\t\tselect c.Money / o.Cost;\n\n\t\tvar validOrdersCount = innerJoinQuery.Count(x => x > 0);\n\t\tif (validOrdersCount > 0)\n\t\t\treturn innerJoinQuery.Sum();\n\n\t\treturn 0;\n\t}\n}"
     },
     {
-      "id": "4",
+      "id": "5",
       "name": "Trees",
       "code": "public class Trees { \n\tprivate class Tree\n\t{\n\t\tpublic int Key { get; set; }\n\t\tpublic Tree Left { get; set; }\n\t\tpublic Tree Right { get; set; }\n\n\t\tpublic static Tree Generate(int depth)\n\t\t{\n\t\t\treturn depth == 0 ? null : new Tree {Key = 0, Left = Generate(depth - 1), Right = Generate(depth - 1)};\n\t\t}\n\n\t\tpublic int Size => 1 + (Left?.Size ?? 0) + (Left?.Size ?? 0);\n\n\t\tpublic int Depth => 1 + Math.Max(Left?.Depth ?? 0, Right?.Depth ?? 0);\n\t}\n\n\tpublic static bool CheckGeneratedDepth(int d, int s)\n\t{\n\t\tif (d < 0 | d > 10)\n\t\t\tthrow new ArgumentException(\"wrong tree depth\");\n\n\t\tTree t = Tree.Generate(d);\n\n\t\tif (t.Depth != d || t.Size != s)\n\t\t\treturn false;\n\n\t\treturn true;\n\t}\n}"
     },
     {
-      "id": "5",
+      "id": "6",
       "name": "Regexp",
       "code": "public static class RegexpUtil \n{\n\tprivate static bool MatchStar(char c, string re, int repos, string text, int textpos)\n\t{\n\t\tdo\n\t\t{\n\t\t\tif (MatchHere(re, repos, text, textpos))\n\t\t\t{\n\t\t\t\treturn true;\n\t\t\t}\n\t\t} while (textpos < text.Length && (text[textpos++] == c || c == '.'));\n\t\treturn false;\n\t}\n\n\tprivate static bool MatchHere(string re, int repos, string text, int textpos)\n\t{\n\t\tif (repos >= re.Length)\n\t\t\treturn textpos >= text.Length;\n\t\tif (repos + 1 < re.Length && re[repos + 1] == '*')\n\t\t\treturn MatchStar(re[repos], re, repos + 2, text, textpos);\n\t\tif (re[repos] == '$' && repos + 1 >= re.Length)\n\t\t\treturn textpos >= text.Length;\n\t\tif (textpos < text.Length && (re[repos] == '.' || re[repos] == text[textpos]))\n\t\t\treturn MatchHere(re, repos + 1, text, textpos + 1);\n\t\treturn false;\n\t}\n\n\tprivate static bool Match(string re, string text)\n\t{\n\t\tif (re[0] == '^')\n\t\t\treturn MatchHere(re, 1, text, 0);\n\t\tint textpos = 0;\n\t\tdo\n\t\t{\n\t\t\tif (MatchHere(re, 0, text, textpos))\n\t\t\t\treturn true;\n\t\t} while (textpos++ < text.Length);\n\n\t\treturn false;\n\t}\n\n\tpublic static bool RegexpMatch(string pattern)\n\t{\n\t\treturn Match(pattern, \"Hello\");\n\t}\n}"
     }
