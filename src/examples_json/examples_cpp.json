@@ -1,8 +1,29 @@
 {
   "examples": [
-    { "id": "1", "name": "Loops", "code": "int whileLoop(int k) {\n    int i = 0;\n    int sum = 0;\n  \n    while (i < k) {\n      sum += i;\n      i += 1;\n    }\n    return sum;\n}\n  \nint loopInsideLoop(int x) {\n    for (int i = x - 5; i < x; i++) {\n        if (i < 0) {\n            return 2;\n        } \n        else {\n            for (int j = i; j < x + i; j++) {\n                if (j == 7) {\n                    return 1;\n                }\n            }\n        }\n    }\n    \n    return -1;\n}" },
-    { "id": "2", "name":  "Pointers", "code": "int pointer(int* a) {\n    if (*a < 0) {\n        *a *= -2;\n    }\n    return (*a);\n}\n\nint double_pointer(int** a) {\n    if (**a < 0) {\n        **a *= -2;\n    }\n    return (**a);\n}" },
-    { "id": "3", "name": "Lvalue reference", "code": "int lvalue_reference(const int& a) {\n    if (a < 0) {\n        return -2 * a;\n    }\n    return a;\n}" },
-    { "id": "4", "name": "Class Point", "code": "#include <cmath>\n\nclass Point_2d {\npublic:\n  unsigned int x;\n  unsigned int y;\n\n  Point_2d();\n  Point_2d(const unsigned int& x, const unsigned int& y);\n  double get_manhatan();\n};\n\nPoint_2d::Point_2d() : x(0), y(0) {\n}\n\nPoint_2d::Point_2d(const unsigned int& x, const unsigned int& y) : x(x), y(y) {\n}\n\ndouble Point_2d::get_manhatan() {\n    return x + y;\n}\n\nbool is_long(Point_2d p2d) {\n    if(p2d.get_manhatan() > 5) {\n        return true;\n    }\n    return false;\n}" }
+    {
+      "id": "1",
+      "name": "Assembler insert",
+      "code": "int add_sub()\n{\n\tint src = 1;\n\tint dst;\n\n\tasm (\"mov %1, %0\\n\\t\"\n\t\t\"add $1, %0\"\n\t\t: \"=r\" (dst)\n\t\t: \"r\" (src));\n\treturn dst;\n}"
+    },
+    {
+      "id": "2",
+      "name": "Loops",
+      "code": "int whileLoop(int k) {\n    int i = 0;\n    int sum = 0;\n  \n    while (i < k) {\n      sum += i;\n      i += 1;\n    }\n    return sum;\n}\n  \nint loopInsideLoop(int x) {\n    for (int i = x - 5; i < x; i++) {\n        if (i < 0) {\n            return 2;\n        } \n        else {\n            for (int j = i; j < x + i; j++) {\n                if (j == 7) {\n                    return 1;\n                }\n            }\n        }\n    }\n    \n    return -1;\n}"
+    },
+    {
+      "id": "3",
+      "name": "Pointers",
+      "code": "int pointer(int* a) {\n    if (*a < 0) {\n        *a *= -2;\n    }\n    return (*a);\n}\n\nint double_pointer(int** a) {\n    if (**a < 0) {\n        **a *= -2;\n    }\n    return (**a);\n}"
+    },
+    {
+      "id": "4",
+      "name": "Lvalue reference",
+      "code": "int lvalue_reference(const int& a) {\n    if (a < 0) {\n        return -2 * a;\n    }\n    return a;\n}"
+    },
+    {
+      "id": "5",
+      "name": "Class Point",
+      "code": "#include <cmath>\n\nclass Point_2d {\npublic:\n  unsigned int x;\n  unsigned int y;\n\n  Point_2d();\n  Point_2d(const unsigned int& x, const unsigned int& y);\n  double get_manhatan();\n};\n\nPoint_2d::Point_2d() : x(0), y(0) {\n}\n\nPoint_2d::Point_2d(const unsigned int& x, const unsigned int& y) : x(x), y(y) {\n}\n\ndouble Point_2d::get_manhatan() {\n    return x + y;\n}\n\nbool is_long(Point_2d p2d) {\n    if(p2d.get_manhatan() > 5) {\n        return true;\n    }\n    return false;\n}"
+    }
   ]
 }
