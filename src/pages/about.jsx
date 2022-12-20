@@ -19,9 +19,7 @@ const AboutPage = () => {
         <Text
           className="text-left"
           dangerouslySetInnerHTML={{
-            __html: `${t("aboutUs.whoWeAreText")} ${t("aboutUs.spbu")}, ${t(
-              "aboutUs.hse"
-            )}, ${t("aboutUs.itmo")}, ${t("aboutUs.spbpu")}.<br><br>`,
+            __html: `${t("aboutUs.whoWeAreText")}<br><br>`,
           }}
         />
 
