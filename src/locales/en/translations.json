@@ -88,7 +88,7 @@
     "minimizationTitle": "Sharp as Occam's razor.",
     "minimizationText": "UnitTestBot .NET executes all the program instructions with the symbolic values, scanning each and every path. It explores a program's computation tree with as much coverage as possible — you can monitor it right in your IDE. But it never goes the same way: due to minimization procedures, it does not multiply the tests beyond necessity.",
     "guaranteedByMathTitle": "Unit testing guaranteed by math.",
-    "guaranteedByMathText": "Symbolic execution technique in UnitTestBot .NET reduces the rate of false positives among bugs to a bare minimum. And it is not the question of luck: we develop algorithms to cope with path explosion, recursion, and false positives to",
+    "guaranteedByMathText": "Symbolic execution technique in UnitTestBot .NET reduces the rate of false positives among bugs to a bare minimum. And it is not the question of luck: we develop algorithms to cope with path explosion, recursion, and false positives too.",
     "supportsDotNetTitle": "Keeping pace with .NET platform.",
     "supportsDotNetText": "UnitTestBot .NET generates NUnit tests in C#. It helps to keep the test suite exhaustive and up to date even when you develop a high-load, complex, cross-platform app — just the kind of .NET projects. UnitTestBot .NET plugin is available for JetBrains Rider* providing you with support for .NET Framework, .NET Core, .NET 5, and .NET 6.",
     "mockingTitle": "Generate tests for any program you write.",
