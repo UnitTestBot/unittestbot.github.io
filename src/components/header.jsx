@@ -7,7 +7,7 @@ import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
 import withTrans from "../i18n/withTrans";
 
-import { NavDropdown } from "./nav-dropdown";
+import { DownloadDropdown } from "./download-dropdown";
 import logo from "../images/utbot-logo-white-text.svg";
 import * as styles from "./header.module.css";
 
@@ -26,12 +26,6 @@ function Header({ location }) {
       location.pathname === "/js/" ||
       location.pathname === "/dotnet" ||
       location.pathname === "/dotnet/");
-
-  const isJavaOrCppPage =
-    location &&
-    (location.pathname === "/" ||
-      location.pathname === "/cpp" ||
-      location.pathname === "/cpp/");
 
   const headerRef = React.useRef(null);
   const [isPinned, setIsPinned] = React.useState(false);
@@ -121,7 +115,7 @@ function Header({ location }) {
               </Nav.Item>
             </Nav>
 
-            {isJavaOrCppPage && (
+            {isLanguagePage && (
               <Nav as="ul" className={cn(styles.nav, styles.navBottom)}>
                 {location.pathname == "/" && (
                   <>
@@ -133,10 +127,12 @@ function Header({ location }) {
                         {t("header.userGuide")}
                       </CustomLink>
                     </Nav.Item>
-                    <NavDropdown
+                    <DownloadDropdown
                       isShowDownloadFrom={showDownloadFrom}
                       onShowDropdownDownloadFrom={showDropdownDownloadFrom}
                       onHideDropdownDownloadFrom={hideDropdownDownloadFrom}
+                      downloadGitHubLink="https://github.com/UnitTestBot/UTBotJava/releases"
+                      downloadJetBrainsMarketplaceLink="https://plugins.jetbrains.com/plugin/19445-unittestbot"
                     />
                   </>
                 )}
@@ -161,6 +157,51 @@ function Header({ location }) {
                         {t("header.download")}
                       </a>
                     </Nav.Item>
+                  </>
+                )}
+                {(location.pathname === "/python" ||
+                  location.pathname === "/python/") && (
+                  <>
+                    <Nav.Item as="li">
+                      <CustomLink to="/python">Overview</CustomLink>
+                    </Nav.Item>
+                    <DownloadDropdown
+                      isShowDownloadFrom={showDownloadFrom}
+                      onShowDropdownDownloadFrom={showDropdownDownloadFrom}
+                      onHideDropdownDownloadFrom={hideDropdownDownloadFrom}
+                      downloadGitHubLink="https://github.com/UnitTestBot/UTBotJava/releases"
+                      downloadJetBrainsMarketplaceLink="https://plugins.jetbrains.com/plugin/19445-unittestbot"
+                    />
+                  </>
+                )}
+                {(location.pathname === "/js" ||
+                  location.pathname === "/js/") && (
+                  <>
+                    <Nav.Item as="li">
+                      <CustomLink to="/js">Overview</CustomLink>
+                    </Nav.Item>
+                    <DownloadDropdown
+                      isShowDownloadFrom={showDownloadFrom}
+                      onShowDropdownDownloadFrom={showDropdownDownloadFrom}
+                      onHideDropdownDownloadFrom={hideDropdownDownloadFrom}
+                      downloadGitHubLink="https://github.com/UnitTestBot/UTBotJava/releases"
+                      downloadJetBrainsMarketplaceLink="https://plugins.jetbrains.com/plugin/19445-unittestbot"
+                    />
+                  </>
+                )}
+                {(location.pathname === "/dotnet" ||
+                  location.pathname === "/dotnet/") && (
+                  <>
+                    <Nav.Item as="li">
+                      <CustomLink to="/dotnet">Overview</CustomLink>
+                    </Nav.Item>
+                    <DownloadDropdown
+                      isShowDownloadFrom={showDownloadFrom}
+                      onShowDropdownDownloadFrom={showDropdownDownloadFrom}
+                      onHideDropdownDownloadFrom={hideDropdownDownloadFrom}
+                      downloadGitHubLink="https://github.com/UnitTestBot/UTBotJava/releases"
+                      downloadJetBrainsMarketplaceLink="https://plugins.jetbrains.com/plugin/19445-unittestbot"
+                    />
                   </>
                 )}
               </Nav>
