@@ -15,11 +15,11 @@ public class DemoPage extends UTBotPage{
     public static final String GENERATE_AND_RUN_TESTS_BTN_TEXT = "Generate & Run Tests";
 
     public static final Dropdown languageDropdown = new Dropdown("Language",
-            byXpath("//main//div[contains(@class,'nav-item')][(.='C') or contains(.,'Java')]"),
+            byXpath("//div[contains(@class, 'dropdownLanguages')]"),
             byClassName("dropdown-item"));
 
     public static final Dropdown examplesDropdown = new Dropdown("Examples",
-            byXpath("//main//div[contains(@class, 'nav-item') and contains(.,'Examples')]"),
+            byXpath("//div[contains(@class, 'nav-item') and contains(.,'Examples')]"),
             byClassName("dropdown-item"));
 
     public static final SelenideElement generateAndRunTestsBtn = $(byText(GENERATE_AND_RUN_TESTS_BTN_TEXT));
