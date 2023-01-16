@@ -1,16 +1,11 @@
 import * as React from "react";
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
-import { Link } from "gatsby";
-import withTrans from "../i18n/withTrans";
-import { useState } from "react";
 
 import Header from "./header";
+import Footer from "./footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as styles from "./layout.module.css";
-
-import youtubeIcon from "../images/youtube-icon.svg";
-import githubIcon from "../images/github.svg";
 
 const Layout = ({ children, location }) => {
   const { t, i18n } = useTranslation();
@@ -20,28 +15,8 @@ const Layout = ({ children, location }) => {
   return (
     <div className={cn(styles.site, isDemoPage && styles.demoBg)}>
       <Header location={location} />
-      <main className={cn(styles.main)}>{children}</main>
-      <footer className={cn(styles.footer, "mt-auto text-white")}>
-        <div className={styles.footerContent}>
-          <div className={styles.copyright}>{t("footer.utbotCopyright")}</div>
-          <div className={styles.buttons}>
-            <a href="https://www.youtube.com/channel/UCnvEzTrYfaLswAUDrPL-3uQ">
-              <img
-                className={styles.youtubeIcon}
-                src={youtubeIcon}
-                alt="YouTube icon"
-              />
-            </a>
-            <a href="https://github.com/UnitTestBot">
-              <img
-                className={styles.githubIcon}
-                src={githubIcon}
-                alt="GitHub icon"
-              />
-            </a>
-          </div>
-        </div>
-      </footer>
+      <main className={styles.main}>{children}</main>
+      <Footer />
     </div>
   );
 };

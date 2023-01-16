@@ -17,15 +17,7 @@ function Header({ location }) {
 
   const isLanguagePage =
     location &&
-    (location.pathname === "/" ||
-      location.pathname === "/cpp" ||
-      location.pathname === "/cpp/" ||
-      location.pathname === "/python" ||
-      location.pathname === "/python/" ||
-      location.pathname === "/js" ||
-      location.pathname === "/js/" ||
-      location.pathname === "/dotnet" ||
-      location.pathname === "/dotnet/");
+        (location.pathname === "/" || location.pathname.match(/\/[cpp|python|js|dotnet](\/)?/g))
 
   const headerRef = React.useRef(null);
   const [isPinned, setIsPinned] = React.useState(false);
@@ -117,7 +109,7 @@ function Header({ location }) {
 
             {isLanguagePage && (
               <Nav as="ul" className={cn(styles.nav, styles.navBottom)}>
-                {location.pathname == "/" && (
+                {location.pathname === "/" && (
                   <>
                     <Nav.Item as="li">
                       <CustomLink to="/">Overview</CustomLink>
@@ -136,8 +128,7 @@ function Header({ location }) {
                     />
                   </>
                 )}
-                {(location.pathname === "/cpp" ||
-                  location.pathname === "/cpp/") && (
+                {(location.pathname.match(/\/cpp(\/)?/g)) && (
                   <>
                     <Nav.Item as="li">
                       <CustomLink to="/cpp">Overview</CustomLink>
@@ -159,8 +150,7 @@ function Header({ location }) {
                     </Nav.Item>
                   </>
                 )}
-                {(location.pathname === "/python" ||
-                  location.pathname === "/python/") && (
+                {(location.pathname.match(/\/python(\/)?/g)) && (
                   <>
                     <Nav.Item as="li">
                       <CustomLink to="/python">Overview</CustomLink>
@@ -174,8 +164,7 @@ function Header({ location }) {
                     />
                   </>
                 )}
-                {(location.pathname === "/js" ||
-                  location.pathname === "/js/") && (
+                {(location.pathname.match(/\/js(\/)?/g)) && (
                   <>
                     <Nav.Item as="li">
                       <CustomLink to="/js">Overview</CustomLink>
@@ -189,8 +178,7 @@ function Header({ location }) {
                     />
                   </>
                 )}
-                {(location.pathname === "/dotnet" ||
-                  location.pathname === "/dotnet/") && (
+                {(location.pathname.match(/\/dotnet(\/)?/g)) && (
                   <>
                     <Nav.Item as="li">
                       <CustomLink to="/dotnet">Overview</CustomLink>
@@ -235,7 +223,7 @@ const isActive = (className, to) => ({ isCurrent, location }) => {
     className: cn(
       className,
       styles.myLink,
-      (to == location.pathname || to + "/" == location.pathname) &&
+      (to === location.pathname || to + "/" === location.pathname) &&
         styles.active
     ),
   };
