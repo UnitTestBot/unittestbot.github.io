@@ -16,6 +16,7 @@ jobs:
     - name: Install dependencies
       run: |
         set -o xtrace
+        npm uninstall -g yarn
         npm install -g yarn 
         npm install -g gatsby-cli
         
