@@ -22,7 +22,7 @@ jobs:
     - name: Install packages
       run: |
         set -o xtrace
-        npm install
+        npm install --force
         yarn
 
     - name: Build UTBot Site
