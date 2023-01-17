@@ -21,6 +21,7 @@ jobs:
         
     - name: Install packages
       run: |
+        npm config set legacy-peer-deps true
         set -o xtrace
         npm install --force
         yarn
