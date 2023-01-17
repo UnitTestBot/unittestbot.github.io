@@ -24,7 +24,7 @@ jobs:
       run: |
         set -o xtrace
         npm install --legacy-peer-deps
-        yarn install --immutable --inline-builds
+        yarn
 
     - name: Build UTBot Site
       run:
