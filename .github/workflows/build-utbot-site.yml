@@ -16,7 +16,6 @@ jobs:
     - name: Install dependencies
       run: |
         set -o xtrace
-        npm uninstall -g yarn
         npm install -g yarn 
         npm install -g gatsby-cli
         
@@ -24,7 +23,7 @@ jobs:
       run: |
         set -o xtrace
         npm install --legacy-peer-deps
-        yarn
+        yarn --immutable --inline-builds
 
     - name: Build UTBot Site
       run:
