@@ -21,9 +21,8 @@ jobs:
         
     - name: Install packages
       run: |
-        npm config set legacy-peer-deps true
         set -o xtrace
-        npm install --force
+        npm install --legacy-peer-deps
         yarn
 
     - name: Build UTBot Site
