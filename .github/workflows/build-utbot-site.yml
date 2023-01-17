@@ -1,7 +1,5 @@
 name: Build Site
 on:
-  push:
-    branches: [source]
   pull_request:
     branches: [source]
 
