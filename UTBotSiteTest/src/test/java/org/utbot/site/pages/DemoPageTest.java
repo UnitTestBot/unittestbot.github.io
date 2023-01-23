@@ -13,7 +13,7 @@ import static org.utbot.site.pages.DemoPage.*;
 public class DemoPageTest extends UTBotSiteTest {
 
     @ParameterizedTest
-    @CsvSource({ "C, 20", "CPP, 4", "JAVA, 13", "GO, 7", "JAVASCRIPT, 6", "PYTHON, 7", "KOTLIN, 1" })
+    @CsvSource({ "C, 20", "CPP, 4", "C_SHARP, 6", "JAVA, 13", "GO, 7", "JAVASCRIPT, 6", "PYTHON, 7" })
     public void checkExamplesArePresent(Language language, int minimalNumberOfExamples) {
         demoPage.open();
         languageDropdown.select(language.getName());
