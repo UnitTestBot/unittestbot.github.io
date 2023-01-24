@@ -85,31 +85,25 @@ const UTBotOnlinePage = () => {
     if (!urlParams.has("language")) {
       return;
     }
-    if (urlParams.get("language").toLowerCase() === "c") {
-      setLanguage(0);
-    } else if (urlParams.get("language").toLowerCase() === "cpp") {
-      setLanguage(1);
-    } else if (urlParams.get("language").toLowerCase() === "csharp") {
-      setLanguage(2);
-    } else if (urlParams.get("language").toLowerCase() === "go") {
-      setLanguage(3);
-    } else if (urlParams.get("language").toLowerCase() === "java") {
-      setLanguage(4);
-    } else if (urlParams.get("language").toLowerCase() === "javascript") {
-      setLanguage(5);
-    } else if (urlParams.get("language").toLowerCase() === "python") {
-      setLanguage(6);
-    } else {
+
+    const queryLanguage = urlParams.get("language").toLowerCase();
+    const languageIndex = Object.values(LanguageEnum).findIndex(lang =>
+        languageToQuery(lang).toLowerCase() === queryLanguage);
+
+    if (languageIndex === -1) {
       return;
+    } else {
+      setLanguage(languageIndex);
     }
 
     if (urlParams.has("source")) {
       setSourceCode(urlParams.get("source"));
-      setTestCode("");
     } else {
-      // For the case when the language is in URL but the source no
+      // For the case when the language is in URL but the source no.
       setSourceCode("");
     }
+
+    setTestCode("");
   }, []);
 
   const url = `${href}?language=${languageToQuery(
@@ -150,7 +144,6 @@ const UTBotOnlinePage = () => {
   };
 
   function queryGenerateAndRunTests() {
-    console.log("Run and generate tests!!!");
     setIsGeneratingAndRunning(true);
     setDetailsText("");
     setTestCode("");
