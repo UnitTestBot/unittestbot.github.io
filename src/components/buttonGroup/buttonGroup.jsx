@@ -3,7 +3,7 @@ import cn from "classnames";
 import { useTranslation } from "react-i18next";
 import { Link } from "gatsby";
 
-import Button from "../button";
+import Button from "../button/button";
 
 import * as styles from "./button-group.module.css";
 

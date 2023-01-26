@@ -2,8 +2,8 @@ import * as React from "react";
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
 
-import Header from "./header";
-import Footer from "./footer";
+import Header from "./header/header";
+import Footer from "./footer/footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as styles from "./layout.module.css";
 

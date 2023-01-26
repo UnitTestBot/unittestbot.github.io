@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import cn from "classnames";
 import { graphql, useStaticQuery } from "gatsby";
 
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 import { useTranslation } from "react-i18next";
 import {
   Button as Btn,
@@ -19,7 +19,7 @@ import * as stylesMobile from "./styles/demo-mobile.module.css";
 import Editor from "@monaco-editor/react";
 // Do not remove the import. It's used to render the page correctly.
 import { highlight, languages } from "prismjs/components/prism-core";
-import SEO from "../components/seo";
+import SEO from "../components/seo/seo";
 import withTrans from "../i18n/withTrans";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
@@ -87,8 +87,9 @@ const UTBotOnlinePage = () => {
     }
 
     const queryLanguage = urlParams.get("language").toLowerCase();
-    const languageIndex = Object.values(LanguageEnum).findIndex(lang =>
-        languageToQuery(lang).toLowerCase() === queryLanguage);
+    const languageIndex = Object.values(LanguageEnum).findIndex(
+      lang => languageToQuery(lang).toLowerCase() === queryLanguage
+    );
 
     if (languageIndex === -1) {
       return;

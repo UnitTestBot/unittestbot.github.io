@@ -1,14 +1,12 @@
 import * as React from "react";
-import cn from "classnames";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from "../components/layout/layout";
+import SEO from "../components/seo/seo";
 import { useTranslation } from "react-i18next";
 import withTrans from "../i18n/withTrans";
 
-import Heading from "../components/heading";
-import Text from "../components/text";
-import PdfCard from "../components/pdf-card";
-import PdfContainer from "../components/pdf-container";
+import Heading from "../components/heading/heading";
+import Text from "../components/text/text";
+import PdfCard from "../components/cards/pdfCard/pdfCard";
 
 import * as styles from "./styles/research.module.css";
 

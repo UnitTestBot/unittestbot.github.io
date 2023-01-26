@@ -3,17 +3,16 @@ import cn from "classnames";
 import { Container } from "react-bootstrap";
 import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 import withTrans from "../i18n/withTrans";
 import * as styles from "./styles/index.module.css";
 import "../utils/global.css";
 
-import Button from "../components/button";
-import Heading from "../components/heading";
-import Text from "../components/text";
-import ExampleCard from "../components/exampleCard/ExampleCard";
-import SEO from "../components/seo";
-import TextContent from "../components/exampleCard/textContent/TextContent";
+import Heading from "../components/heading/heading";
+import Text from "../components/text/text";
+import ExampleCard from "../components/cards/exampleCard/ExampleCard";
+import SEO from "../components/seo/seo";
+import TextContent from "../components/textContent/TextContent";
 import ButtonGroup from "../components/buttonGroup/buttonGroup";
 
 import simpleGif from "../gifs/java/Simple.gif";

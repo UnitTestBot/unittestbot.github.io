@@ -2,22 +2,22 @@ import * as React from "react";
 import cn from "classnames";
 import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 import withTrans from "../i18n/withTrans";
 
 import * as styles from "./styles/index.module.css";
 import * as stylesCpp from "./styles/cpp.module.css";
 
-import Heading from "../components/heading";
-import Text from "../components/text";
-import InfoCard from "../components/info-card";
-import SEO from "../components/seo";
+import Heading from "../components/heading/heading";
+import Text from "../components/text/text";
+import InfoCard from "../components/cards/infoCard/infoCard";
+import SEO from "../components/seo/seo";
 import ButtonGroup from "../components/buttonGroup/buttonGroup";
+import ExampleCard from "../components/cards/exampleCard/ExampleCard";
 
 import testsGenerationExample from "../gifs/cpp/test-generation-example.gif";
 import configurationGif from "../gifs/cpp/configuration-example.gif";
 import vsCodeClionImage from "../images/cpp/vs-code-clion.png";
-import ExampleCard from "../components/exampleCard/ExampleCard";
 
 const CppPage = ({ location }) => {
   const { t, i18n } = useTranslation();

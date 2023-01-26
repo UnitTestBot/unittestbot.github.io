@@ -1,8 +1,7 @@
 import React from "react";
-import cn from "classnames";
 
-import Heading from "./heading";
-import Text from "./text";
+import Heading from "../../heading/heading";
+import Text from "../../text/text";
 
 import * as styles from "./info-card.module.css";
 

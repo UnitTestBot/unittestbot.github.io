@@ -2,22 +2,22 @@ import * as React from "react";
 import cn from "classnames";
 import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 import withTrans from "../i18n/withTrans";
 
 import * as styles from "./styles/index.module.css";
 import * as stylesDotNet from "./styles/dotnet.module.css";
 
-import Heading from "../components/heading";
-import Text from "../components/text";
-import SEO from "../components/seo";
+import Heading from "../components/heading/heading";
+import Text from "../components/text/text";
+import SEO from "../components/seo/seo";
 import ButtonGroup from "../components/buttonGroup/buttonGroup";
 
 import arrayUtilsGif from "../gifs/csharp/array_utils_1.gif";
 import autosaveServiceGif from "../gifs/csharp/autosave_service_2.gif";
 import dotnet6Image from "../images/csharp/dotnet6_3.png";
 import mocksImage from "../images/csharp/mocks_4.png";
-import ExampleCard from "../components/exampleCard/ExampleCard";
+import ExampleCard from "../components/cards/exampleCard/ExampleCard";
 
 const DotNetPage = ({ location }) => {
   const { t, i18n } = useTranslation();

@@ -1,12 +1,11 @@
 import * as React from "react";
 import cn from "classnames";
 
-import Heading from "./heading";
-import Text from "./text";
+import Text from "../../text/text";
 
 import * as styles from "./pdf-card.module.css";
 
-import pdfIcon from "../images/pdf-icon.svg.webp";
+import pdfIcon from "../../../images/pdf-icon.svg.webp";
 
 export default function PdfCard({
   conferenceTitle,

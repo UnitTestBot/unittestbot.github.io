@@ -1,11 +1,11 @@
 import * as React from "react";
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from "../components/layout/layout";
+import SEO from "../components/seo/seo";
 import withTrans from "../i18n/withTrans";
 
-import Text from "../components/text";
+import Text from "../components/text/text";
 
 import * as styles from "./styles/about.module.css";
 

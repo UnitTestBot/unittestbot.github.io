@@ -1,11 +1,9 @@
 import cn from "classnames";
 
-import { Link } from "gatsby";
-import Button from "../../button";
-import Heading from "../../heading";
-import Text from "../../text";
+import Heading from "../heading/heading";
+import Text from "../text/text";
 
-import * as styles from "./style.module.css";
+import * as styles from "./text-content.module.css";
 
 export default function TextContent({
   heading,

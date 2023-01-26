@@ -1,3 +1,3 @@
 /* eslint-disable */
 
-export { default as Header } from "../../../components/header";
+export { default as Header } from "../../../components/layout/header/header";

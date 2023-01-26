@@ -2,10 +2,10 @@ import React from "react";
 import cn from "classnames";
 import * as styles from "./footer.module.css";
 
-import youtubeIcon from "../images/youtube-icon.svg";
-import githubIcon from "../images/github.svg";
+import youtubeIcon from "../../../images/youtube-icon.svg";
+import githubIcon from "../../../images/github.svg";
 import { useTranslation } from "react-i18next";
-import withTrans from "../i18n/withTrans";
+import withTrans from "../../../i18n/withTrans";
 
 function Footer() {
   const { t, i18n } = useTranslation();

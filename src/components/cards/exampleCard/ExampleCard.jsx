@@ -2,8 +2,8 @@ import React from "react";
 import cn from "classnames";
 import * as styles from "./example-card.module.css";
 
-import Gif from "../gif";
-import TextContent from "./textContent/TextContent";
+import Gif from "../../gif/gif";
+import TextContent from "../../textContent/TextContent";
 
 export default function ExampleCard({
   heading,

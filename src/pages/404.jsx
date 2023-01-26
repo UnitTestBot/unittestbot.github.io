@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Container } from "react-bootstrap";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from "../components/layout/layout";
+import SEO from "../components/seo/seo";
 import "./styles/page.css";
 
 const NotFoundPage = () => (

@@ -1,5 +1,5 @@
-@import "../utils/colors.css";
-@import "../utils/fonts.css";
+@import "../../utils/colors.css";
+@import "../../utils/fonts.css";
 
 .text {
   color: var(----text-color);
