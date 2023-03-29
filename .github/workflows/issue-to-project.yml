@@ -1,16 +1,16 @@
-name: Add issues to UTBot Site project
+name: [DEPRECATED] Add issues to UTBot Site project
 
-on:
-  issues:
-    types:
-      - opened
+#on:
+#  issues:
+#    types:
+#      - opened
 
-jobs:
-  add-to-project:
-    name: Add issue to project
-    runs-on: ubuntu-latest
-    steps: 
-      - uses: actions/add-to-project@main
-        with:
-          project-url: https://github.com/orgs/UnitTestBot/projects/5
-          github-token: ${{ secrets.COPY_ISSUE_TO_PROJECT }}
+#jobs:
+#  add-to-project:
+#    name: Add issue to project
+#    runs-on: ubuntu-latest
+#    steps: 
+#      - uses: actions/add-to-project@main
+#        with:
+#         project-url: https://github.com/orgs/UnitTestBot/projects/5
+#          github-token: ${{ secrets.COPY_ISSUE_TO_PROJECT }}
