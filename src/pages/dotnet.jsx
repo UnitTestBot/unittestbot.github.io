@@ -83,7 +83,7 @@ const DotNetPage = ({ location }) => {
       <Container className={stylesDotNet.notes}>
         <Text
           dangerouslySetInnerHTML={{
-            __html: t("dotnetHome.needDotNet6Installed"),
+            __html: t("dotnetHome.needDotNetInstalled"),
           }}
           size="sm"
           className={stylesDotNet.note}
