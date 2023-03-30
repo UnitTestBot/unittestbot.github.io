@@ -93,7 +93,7 @@
     "supportsDotNetText": "UnitTestBot .NET generates NUnit tests in C#. It helps to keep the test suite exhaustive and up to date even when you develop a high-load, complex, cross-platform app — just the kind of .NET projects. UnitTestBot .NET plugin is available for JetBrains Rider* providing you with support for .NET Framework, .NET Core, .NET 5, and .NET 6.",
     "mockingTitle": "Generate tests for any program you write.",
     "mockingText": "UnitTestBot .NET applies to code that uses LINQ syntax — so popular among C# developers. What about code containing complex generics? <a href=\"https://drops.dagstuhl.de/opus/volltexte/2019/10799/\">They say</a>, it's impossible to use symbolic execution in such cases, but UnitTestBot .NET deals with it. What if you need mocking? UnitTestBot .NET has the custom mocking framework. And more features are coming.",
-    "needDotNet6Installed": "* To launch UnitTestBot .NET, you need .NET 6 installed."
+    "needDotNetInstalled": "* To launch UnitTestBot .NET, you need .NET 7 SDK installed."
   },
   "docs": {
     "cdocsTitle": "UnitTestBot C/C++",
