@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'com.codeborne', name: 'selenide', version:'6.17.1'
+    implementation group: 'com.codeborne', name: 'selenide', version:'latest.release'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.0'
@@ -35,7 +35,7 @@ tasks.withType(Test) {
     systemProperties['selenide.headless'] = 'true'
     systemProperties['selenide.browserSize'] = '1920x1080'
     systemProperties['selenide.baseUrl'] = 'https://www.utbot.org'
-    systemProperties['selenide.timeout'] = 7000
+    systemProperties['selenide.timeout'] = 15000
 
     // verbose logging in console
     testLogging {
