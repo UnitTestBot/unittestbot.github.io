@@ -7,6 +7,9 @@ on:
     - cron: '0 6 * * *'
   workflow_dispatch:
 
+env:
+  subpath: UTBotSiteTest
+
 jobs:
   run-tests:
     name: "Run smoke tests"
@@ -29,9 +32,10 @@ jobs:
         with:
           gradle-version: 7.4.2
           arguments: build
+          build-root-directory: ${{ env.subpath }}
 
       - name: Upload report
         uses: actions/upload-artifact@v3
         with:
           name: Smoke tests report
-          path: build/reports/tests/test/index.html
+          path: ${{ env.subpath }}/build/reports/tests/test/index.html
