@@ -33,7 +33,7 @@ public class DemoPageTest extends UTBotSiteTest {
         waitSpinnerDisappears();
         generatedTest.shouldHave(text("Test"));
         testGenerationResult
-                .shouldHave(text("SUCCEEDED"));
+                .shouldHave(text("TEST GENERATION: SUCCEEDED"));
     }
 
     @ParameterizedTest

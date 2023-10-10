@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'com.codeborne', name: 'selenide', version:'6.9.0'
+    implementation group: 'com.codeborne', name: 'selenide', version:'latest.release'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.0'
@@ -18,7 +18,7 @@ dependencies {
 
     // Logging of 3-rd party libraries
     testImplementation group: 'org.slf4j', name: 'slf4j-simple', version:'2.0.0'
-    testImplementation group: 'ch.qos.logback', name: 'logback-classic', version:'1.2.3'
+    testImplementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.9'
 }
 
 test {
@@ -26,6 +26,8 @@ test {
 }
 
 tasks.withType(Test) {
+    testLogging.showStandardStreams = true
+    outputs.upToDateWhen { false }
     // for using properties from gradle.properties
     systemProperties = System.properties
 
@@ -33,6 +35,7 @@ tasks.withType(Test) {
     systemProperties['selenide.headless'] = 'true'
     systemProperties['selenide.browserSize'] = '1920x1080'
     systemProperties['selenide.baseUrl'] = 'https://www.utbot.org'
+    systemProperties['selenide.timeout'] = 15000
 
     // verbose logging in console
     testLogging {
