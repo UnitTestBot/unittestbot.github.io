@@ -1,0 +1,35 @@
+name: "Run smoke tests"
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-tests:
+    name: "Run smoke tests"
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Print environment variables
+        run: printenv
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 17
+
+      - name: Run build
+        uses: gradle/gradle-build-action@v2.9.0
+        with:
+          gradle-version: 7.4.2
+          arguments: build
+
+      - name: Upload report
+        uses: actions/upload-artifact@v3
+        with:
+          name: Smoke tests report
+          path: build/reports/tests/test/index.html
